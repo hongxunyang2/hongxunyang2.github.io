@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collective Evaluation Report</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="evaluation-report">
+        <h1>Collective Evaluation Report</h1>
+
+        <!-- Optional: Table of Contents -->
+        <ul class="student-list">
+            
+            <li><a href="#Xunyang_Hong">Xunyang Hong</a></li>
+            
+            <li><a href="#Xunyang_Hong">Xunyang Hong</a></li>
+            
+        </ul>
+
+        
+        <div class="student-evaluation" id="Xunyang_Hong">
+            <h2>Xunyang Hong</h2>
+
+            <table>
+                <tr>
+                    <th colspan="3">Lab Performance</th>
+                </tr>
+                <tr>
+                    <td><strong>Criteria</strong></td>
+                    <td><strong>Grade</strong></td>
+                    <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                    <td>Preparation</td>
+                    <td>5.0/6</td>
+                    <td>test test test testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testvvv</td>
+                </tr>
+                <tr>
+                    <td>Motivation</td>
+                    <td>4.0/6</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>Teamwork</td>
+                    <td>6.0/6</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Report Evaluation</th>
+                </tr>
+                <tr>
+                    <td><strong>Criteria</strong></td>
+                    <td><strong>Grade</strong></td>
+                    <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                    <td>Writing</td>
+                    <td>5.0/6</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>Discussion</td>
+                    <td>6.0/6</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>Data Analysis</td>
+                    <td>5.5/6</td>
+                    <td>test</td>
+                </tr>
+            </table>
+
+            <hr>
+        </div>
+        
+        <div class="student-evaluation" id="Xunyang_Hong">
+            <h2>Xunyang Hong</h2>
+
+            <table>
+                <tr>
+                    <th colspan="3">Lab Performance</th>
+                </tr>
+                <tr>
+                    <td><strong>Criteria</strong></td>
+                    <td><strong>Grade</strong></td>
+                    <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                    <td>Preparation</td>
+                    <td>5.0/6</td>
+                    <td>test test test testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testte</td>
+                </tr>
+                <tr>
+                    <td>Motivation</td>
+                    <td>4.0/6</td>
+                    <td>resr</td>
+                </tr>
+                <tr>
+                    <td>Teamwork</td>
+                    <td>6.0/6</td>
+                    <td>sad</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Report Evaluation</th>
+                </tr>
+                <tr>
+                    <td><strong>Criteria</strong></td>
+                    <td><strong>Grade</strong></td>
+                    <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                    <td>Writing</td>
+                    <td>6.0/6</td>
+                    <td>qweasd</td>
+                </tr>
+                <tr>
+                    <td>Discussion</td>
+                    <td>5.0/6</td>
+                    <td>asdaweq</td>
+                </tr>
+                <tr>
+                    <td>Data Analysis</td>
+                    <td>6.0/6</td>
+                    <td>sadasd asd asd as dasd ass das da sdasd as qw eqw z xc gwae qw e</td>
+                </tr>
+            </table>
+
+            <hr>
+        </div>
+        
+    </div>
+</body>
+</html>
