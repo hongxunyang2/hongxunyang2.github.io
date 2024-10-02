@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My First GitHub Page</title>
+    <title>My First PHP Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,12 +42,14 @@
 <body>
 
 <header>
-    <h1>Welcome to My GitHub Page</h1>
+    <h1>Welcome to My PHP Page</h1>
 </header>
 
 <main>
-    <p>Hello! This is a basic page created to get started with GitHub Pages.</p>
-    <p>You can edit this file to add more content and styles as needed.</p>
+    <p><?php echo "Hello! This is a simple PHP page."; ?></p>
+    <p><?php echo "The current server time is: " . date('Y-m-d H:i:s'); ?></p>
+    <p>Here is some basic server information:</p>
+    <pre><?php echo phpinfo(); ?></pre>
 </main>
 
 <footer>
