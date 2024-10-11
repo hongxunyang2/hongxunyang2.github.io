@@ -14,7 +14,12 @@
 <ul>
 <li><strong>Turn off the X-ray</strong> whenevery you are about to open the door of the Laue machine.</li>
 <li><strong>Note down everything worthwhile</strong>: take notes, take pictures, make screenshot of everything you think is worth putting into the lab report. And remember to send all the files to your own email after the lab. </li>
+<li><strong>Wear gloves</strong> whenever you are operating anything.</li>
 </ul>
+<hr />
+<p><strong>About the lab report</strong>:
+1. Please hand in your lab report in 3 weeks after the lab via email (to: <code>xunyang.hong@physik.uzh.ch</code>).
+2. lab report is best in PDF format.</p>
 <h1 id="step-by-step-instructions">Step-by-step instructions</h1>
 <ol>
 <li>
@@ -36,9 +41,10 @@
 <li>
 <p>Quick Laue setup</p>
 <ul>
-<li>Turn both computers on. Press the power button on the bottom under the Laue machine and press the <code>reset</code> button.</li>
-<li>The computer on the left is for controlling the robot arm. The labview program can be started up in <code>robotarm/RobotarmControlVz.vi</code>. Run the program by clicking the arrow icon, and click the <code>reset error</code> button.</li>
-<li>The computer on the right is for displaying the camera images and aquiring the Laue diffraction image. The camera app can be opened up in ``; The Laue program can be started up by clicking Pviewer -&gt; camera -&gt; dualxxx -&gt; clicking the setting icon. </li>
+<li>Turn both computers on. To turn on the robot arm: press the power button on the bottom under the Laue machine and press the <code>reset</code> button. </li>
+<li>To iniatilze the Laue machine: (1) turn on the main power supply above the Laue cabinet, cabinet lights on; (2) turn on the TWO X-ray detectors power supply next to the cabinet, the two green lights on the top of the detectors are on (very faint), wait for a few minutes for them to warm/set up; When this is done, the green lights will be fully on.(4) only now you can start the Laue software (see next two steps); (5) <strong>After the experiment</strong>, turn off the two X-ray detectors power first, then turn off the main power supply. </li>
+<li>The computer on the left is for controlling the robot arm. The labview program can be started up in <code>robotarm/RobotarmControlVz.vi</code>. Run the program by clicking the arrow icon, wait for a few seconds; and click the <code>reset</code> button, wait for a few seconds; and then <code>activate</code> button. After this, you can click <code>get goniometer</code> once you have put the goniometer.</li>
+<li>The computer on the right is for displaying the camera images and aquiring the Laue diffraction image. The camera app can be opened up on the desktop: <code>IC capture</code>; The Laue program can be started up on the desktop by clicking PSLviewer -&gt; camera -&gt; duaFDS -&gt; clicking the setting icon. </li>
 </ul>
 </li>
 <li>
@@ -52,12 +58,12 @@
 <li>
 <p>Installiing the goniometer into the Laue machine</p>
 <ul>
-<li>Put the goniometer to the starting position inside the Laue machine. </li>
+<li>Put the goniometer to the starting position inside the Laue machine. the face that is going to face the X-ray is facing outward at the initial position. Make sure you position the sample on the right face.</li>
 <li>On the computer on the left, click <code>get goniometer</code> button. Remember to oversee the whole process in case the goniometer is not grabed properly. Keep the door open and always be ready to adjust the position of the goniometer. The final position of the goniometer should be right before the CCD (X-ray detector). </li>
-<li>adjust the x,y position on the computer on the right, to move it further away from the CCD, in order for the needle to fit in between the goniometer and the CCD. </li>
-<li>The needle is to align the CCD to the X-ray source. When the needle is put down, look at the camera image on the right computer, toggle <code>xy jogging</code> of the robot arm on the left computer. Starting adjusting the position of the goniometer so that it aligns with the needle. </li>
-<li>Once the alignment is done, pull up the needle again. Adjust the position of the goniometer so that it moves closer to the CCD. (183 is the optimal position).</li>
-<li>Close the door of the Laue machine. Now you are all set to start the measurement.</li>
+<li>Toggle the <code>xzy jogging</code> button. This enable the stage movement. Adjust the <code>y</code> position on the computer on the right, to move it further away from the CCD, in order for the needle to fit in between the goniometer and the CCD. </li>
+<li>Ensure there's enough space for the needle (y&gt;-163). Put down the needle. The needle is to align the CCD to the X-ray source. When the needle is put down, look at the camera image on the right computer. Starting adjusting the <code>x</code> and <code>z</code> position of the goniometer so that it aligns with the needle. </li>
+<li>Once the alignment is done, pull up the needle again, lock it tight. Adjust the <code>y</code> position of the goniometer so that it moves closer to the CCD. (y=-183 is the optimal position).</li>
+<li>Close the door of the Laue machine, lock the door as well. Now you are all set to start the measurement.</li>
 </ul>
 </li>
 <li>
@@ -73,22 +79,36 @@
 <p>Qualitative analysis</p>
 <ul>
 <li>Purely from the Laue image, ask yourself: <em>What's the orientation of this sample?</em>, and <em>why?</em>. </li>
-<li>Pull up your Qlaue simulation, find the potential orientation. Ask yourself: <em>Do they really match in a way?</em>, <em>If not, why</em>. There are some parameters to consider: (1) distance between the sample and the CCD; (2) The <code>phi</code> orientation; (3) The <code>theta</code> and <code>chi</code> orientation. All those parameters will affect the Laue pattern.</li>
-<li>You can adjust the parameters in Qlaue to make it more similar to the real Laue pattern.</li>
-<li>If possible, overlay the simulation onto the real image. </li>
+<li>Pull up your Qlaue simulation, find the potential orientation. Ask yourself: <em>Do they really match in a way?</em>, <em>If not, why</em>. There are some parameters to consider: (1) distance between the sample and the CCD; (2) The <code>phi</code> orientation; (3) The <code>theta</code> and <code>chi</code> orientation. All those parameters will affect the Laue pattern. </li>
+<li>You can adjust the parameters in Qlaue to make it more similar to the real Laue pattern. <code>File</code> -&gt; <code>preference</code> to adjust the simulation parameters. <code>laue</code> -&gt; <code>set image scale</code> to adjust the scale of the simulation.</li>
+<li>If possible, overlay the simulation onto the real image. On the Qlaue window, you can click <code>laue</code> -&gt; <code>import image</code> to import the real Laue image. </li>
+<li><em>What would you expect to see if the orientation is (1,0,0) or (1,1,0)? What symmetry would you expect?</em></li>
 </ul>
 </li>
 <li>
 <p>Steps before changing the sample</p>
 <ul>
 <li><strong>Turn off the X-ray!!</strong></li>
-<li>Toggle off the <code>xy jogging</code> icon. Click <code>put back gonio</code> icon to put it back to the initial position. </li>
+<li>Toggle off the <code>xy jogging</code> icon. Click <code>put gonio. back</code> icon to put it back to the initial position. Once it's back, click <code>deactivate</code> icon.</li>
 <li>Open the door and take out the goniometer.</li>
 <li>Take out the sample, wash it with Acetone and put it back to the container. Return it to where it belongs to.</li>
 <li>Now you are ready for the next sample.</li>
 </ul>
 </li>
+<li>
+<p>Sapphire-specific questions</p>
+<ul>
+<li>What is the crystal structure of sapphire?</li>
+<li>what is the symmetry when we are centered at (001) direction. And why? </li>
+<li>Is that a 3-fold or 6-fold symmetry? </li>
+</ul>
+</li>
 </ol>
+<h1 id="after-the-lab">After the lab</h1>
+<ul>
+<li><strong>Turn off Laue machine</strong>: (1) Turn off the program; (2) Turn off the two X-ray power supplies; (3) turn off the main power supply on the cabinet.</li>
+<li><strong>Turn off robot arm</strong>: (1) make sure the robot arm is at its initial position; (2) Deactivate robot arm on the labview panel; (3) Pressing the power button of the robot arm below the cabinet. </li>
+</ul>
     </div>
 </body>
 </html>
