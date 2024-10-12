@@ -1,0 +1,29 @@
+name: "Xunyang Hong"
+title: "Ph.D. Candidate"
+affiliation: "University of Zurich"
+email: "xunyang.hong@uzh.ch"
+phone: ""
+address: "Y36 H52, UZH, Winterthurerstrasse 190, 8057 Zurich, Switzerland"
+photo: "../assets/images/selfie.jpg"
+cv_link: "path/to/your/cv.pdf"
+
+research_interests:
+  - "Resonant Inelastic X-ray Scattering"
+  - "High-temperature Superconductivity"
+  - "Phonon and Magnon Physics"
+
+publications:
+  - title: "Propagation of gravitational waves in a cosmological background"
+    authors: "Xian Gao, Xunyang Hong"
+    journal: "Physics Review D"
+    year: 2020
+    link: "https://doi.org/10.1103/PhysRevD.101.064057"
+
+
+education:
+  - degree: "M.Sc. in Physics"
+    institution: "ETH Zurich"
+    year: 2022
+  - degree: "B.Sc. in Physics"
+    institution: "Sun-yat Sen University"
+    year: 2020
