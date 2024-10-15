@@ -5,6 +5,17 @@
     <title>Manual for "Laue"</title>
     <meta name="date" content="2024-10-10">
     <link rel="stylesheet" href="laue_manual_style.css">
+    <script>
+        // Check authentication on page load
+        function checkAuthentication() {
+            var isAuthenticated = sessionStorage.getItem("authenticated");
+            if (isAuthenticated !== "true") {
+                // Redirect back to the login page if not authenticated
+                window.location.href = "/pages/laue_manual_protected.html";
+            }
+        }
+        window.onload = checkAuthentication;
+    </script>
 </head>
 <body>
     <div class="content">
@@ -127,16 +138,6 @@
 </body>
 
 
-<script>
-    // Check authentication on page load
-    function checkAuthentication() {
-        var isAuthenticated = sessionStorage.getItem("authenticated");
-        if (isAuthenticated !== "true") {
-            // Redirect back to the login page if not authenticated
-            window.location.href = "/pages/laue_manual_protected.html";
-        }
-    }
-    window.onload = checkAuthentication;
-</script>
+
 </html>
 
