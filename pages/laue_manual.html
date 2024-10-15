@@ -1,128 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Manual for "Laue"</title>
-    <meta name="date" content="2024-10-10">
-    <link rel="stylesheet" href="laue_manual_style.css">
+    <title>Password Protected Page</title>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "laue") {
+                // Store a flag in sessionStorage
+                sessionStorage.setItem("authenticated", "true");
+                // Redirect to the protected page
+                window.location.href = "pages/laue_manual_protected.html";
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="content">
-        <h1 id="preface">Preface</h1>
-<p>This is a student manual for the solid state physics lab course, 2024 fall semester. The manual is designed to provide a quick step-by-step guidance for the students the conduct the <strong>Laue diffraction</strong> experiment. The experiment will last for 3-4 hours approximately. </p>
-<p>The samples we are going to measure are: Copper, sapphire (Al2O3), and LSCO (La2-xSrxCuO4). The main goal of the experiment is to understand the concept of Laue diffraction, and to be able to identify the crystal orientation from the diffraction pattern.</p>
-<hr />
-<p>Here are some things to keep in mind during the experiment:</p>
-<ul>
-<li><strong>Turn off the X-ray</strong> whenevery you are about to open the door of the Laue machine.</li>
-<li><strong>Note down everything worthwhile</strong>: take notes, take pictures, make screenshot of everything you think is worth putting into the lab report. And remember to send all the files to your own email after the lab. </li>
-<li><strong>Wear gloves</strong> whenever you are operating anything.</li>
-</ul>
-<h1 id="step-by-step-instructions">Step-by-step instructions</h1>
-<ol>
-<li>
-<p>Installing softwares</p>
-<ul>
-<li><a href="https://sourceforge.net/projects/qlaue/">Qlaue</a>: this is a software for simulating Laue diffraction patterns.</li>
-<li><a href="https://jp-minerals.org/vesta/en/download.html">Vesta</a>: this is a software for visualizing crystal structures. </li>
-</ul>
-</li>
-<li>
-<p>A quick look at the crystal structure and the corresponding Laue pattern </p>
-<ul>
-<li>Most of the crystal can be looked up on the website <a href="http://www.crystallography.net/cod/">Crystallography open database</a></li>
-<li><a href="http://www.crystallography.net/cod/5000216.html">Copper crystallographic data</a>. look at the crystal structure and download the <a href="/files/copper_5000216.cif">CIF file</a>. Open up Vesta, load the CIF file and visualize the crystal structure.</li>
-<li>Open up Qlaue, type in information of copper and simulate the Laue pattern. </li>
-<li>Questions: what are the symmetries of the copper structure? How are these symmetry reflected in the Laue diffraction pattern?</li>
-</ul>
-</li>
-<li>
-<p>Quick Laue setup</p>
-<ul>
-<li>Turn both computers on. To turn on the robot arm: press the power button on the bottom under the Laue machine and press the <code>reset</code> button. </li>
-<li>To iniatilze the Laue machine: (1) turn on the main power supply above the Laue cabinet, cabinet lights on; (2) turn on the TWO X-ray detectors power supply next to the cabinet, the two green lights on the top of the detectors are on (very faint), wait for a few minutes for them to warm/set up; When this is done, the green lights will be fully on.(4) only now you can start the Laue software (see next two steps); (5) <strong>After the experiment</strong>, turn off the two X-ray detectors power first, then turn off the main power supply. </li>
-<li>The computer on the left is for controlling the robot arm. The labview program can be started up in <code>robotarm/RobotarmControlVz.vi</code>. Run the program by clicking the arrow icon, wait for a few seconds; and click the <code>reset</code> button, wait for a few seconds; and then <code>activate</code> button. After this, you can click <code>get goniometer</code> once you have put the goniometer.</li>
-<li>The computer on the right is for displaying the camera images and aquiring the Laue diffraction image. The camera app can be opened up on the desktop: <code>IC capture</code>; The Laue program can be started up on the desktop by clicking PSLviewer -&gt; camera -&gt; duaFDS -&gt; clicking the setting icon. </li>
-</ul>
-</li>
-<li>
-<p>Mounting sample</p>
-<ul>
-<li>bring out copper piece from the sample container. </li>
-<li>stick double-side tape onto the goniometer. (stick it to the right side of the goniometer!!!)</li>
-<li>stick the copper piece to the tape. </li>
-</ul>
-</li>
-<li>
-<p>Installiing the goniometer into the Laue machine</p>
-<ul>
-<li>Put the goniometer to the starting position inside the Laue machine. the face that is going to face the X-ray is facing outward at the initial position. Make sure you position the sample on the right face.</li>
-<li>On the computer on the left, click <code>get goniometer</code> button. Remember to oversee the whole process in case the goniometer is not grabed properly. Keep the door open and always be ready to adjust the position of the goniometer. The final position of the goniometer should be right before the CCD (X-ray detector). </li>
-<li>Toggle the <code>xzy jogging</code> button. This enable the stage movement. Adjust the <code>y</code> position on the computer on the right, to move it further away from the CCD, in order for the needle to fit in between the goniometer and the CCD. </li>
-<li>Ensure there's enough space for the needle (y&gt;-163). Put down the needle. The needle is to align the CCD to the X-ray source. When the needle is put down, look at the camera image on the right computer. Starting adjusting the <code>x</code> and <code>z</code> position of the goniometer so that it aligns with the needle. </li>
-<li>Once the alignment is done, pull up the needle again, lock it tight. Adjust the <code>y</code> position of the goniometer so that it moves closer to the CCD. (y=-183 is the optimal position).</li>
-<li>Close the door of the Laue machine, lock the door as well. Now you are all set to start the measurement.</li>
-</ul>
-</li>
-<li>
-<p>Acquiring Laue diffraction pattern </p>
-<ul>
-<li><strong>Ensure the door of the Laue machine is tightly closed (to avoid radiation!)</strong> </li>
-<li>Turn on the X-ray source by toggling the button on the top of the machine. Wait until the current gets stable. </li>
-<li>On the right computer, set the initial acquisition time (conventionally ranging from 1 to 180 seconds). Click <code>snap</code> icon (not <code>play</code>) and wait. If you see the pattern, you could adjust the filter parameters to get a better image. If not, the X-ray might not be on the sample, and therefore you might need to adjust the position of the sample again until you find the diffraction pattern. </li>
-<li>Create a folder for today's lab. Remember to save the image once you obtain a good one.</li>
-</ul>
-</li>
-<li>
-<p>Qualitative analysis</p>
-<ul>
-<li>Purely from the Laue image, ask yourself: <em>What's the orientation of this sample?</em>, and <em>why?</em>. </li>
-<li>Pull up your Qlaue simulation, find the potential orientation. Ask yourself: <em>Do they really match in a way?</em>, <em>If not, why</em>. There are some parameters to consider: (1) distance between the sample and the CCD; (2) The <code>phi</code> orientation; (3) The <code>theta</code> and <code>chi</code> orientation. All those parameters will affect the Laue pattern. </li>
-<li>You can adjust the parameters in Qlaue to make it more similar to the real Laue pattern. <code>File</code> -&gt; <code>preference</code> to adjust the simulation parameters. <code>laue</code> -&gt; <code>set image scale</code> to adjust the scale of the simulation.</li>
-<li>If possible, overlay the simulation onto the real image. On the Qlaue window, you can click <code>laue</code> -&gt; <code>import image</code> to import the real Laue image. </li>
-<li><em>What would you expect to see if the orientation is (1,0,0) or (1,1,0)? What symmetry would you expect?</em></li>
-</ul>
-</li>
-<li>
-<p>Steps before changing the sample</p>
-<ul>
-<li><strong>Turn off the X-ray!!</strong></li>
-<li>Toggle off the <code>xy jogging</code> icon. Click <code>put gonio. back</code> icon to put it back to the initial position. Once it's back, click <code>deactivate</code> icon.</li>
-<li>Open the door and take out the goniometer.</li>
-<li>Take out the sample, wash it with Acetone and put it back to the container. Return it to where it belongs to.</li>
-<li>Now you are ready for the next sample.</li>
-</ul>
-</li>
-<li>
-<p>Sapphire-specific questions</p>
-<ul>
-<li>What is the crystal structure of sapphire?</li>
-<li>what is the symmetry when we are centered at (001) direction. And why? </li>
-<li>Is that a 3-fold or 6-fold symmetry? </li>
-</ul>
-</li>
-</ol>
-<h1 id="after-the-lab">After the lab</h1>
-<ul>
-<li><strong>Turn off Laue machine</strong>: (1) Turn off the program; (2) Turn off the two X-ray power supplies; (3) turn off the main power supply on the cabinet.</li>
-<li><strong>Turn off robot arm</strong>: (1) make sure the robot arm is at its initial position; (2) Deactivate robot arm on the labview panel; (3) Pressing the power button of the robot arm below the cabinet. </li>
-<li>Make sure all the samples are returned to the container.</li>
-<li>Wash you hands.</li>
-</ul>
-<h1 id="lab-report">Lab report</h1>
-<p>Please hand in your lab report in 3 weeks after the lab via email (to: <code>xunyang.hong@physik.uzh.ch</code>). lab report is best in PDF format. When the report is received, it will be corrected. Only those reports that are "acceptable as they were handed in the first time" are good for a grade 6 (<em>According to Matthias</em>). </p>
-<p>This means that the report could possibly be sent back to the students if there are mistakes needed to be corrected. The students need to correct the mistakes and send back to the TA. If this is the case, 0.5 points will be subtracted from the final grade for each iteration.</p>
-<p>The report doesn't have to be perfect to be accepted upon the first submission. But it should be complete as a report and well-structured. </p>
-<p><strong>Tips</strong>: if you are unsure about any details of the experiment or report, please feel free to send an email to the TA, or simply stop by the office. This would be an efficient way to avoid unnecessary mistakes before you send the report. (<em>Xun: "you could directly ask 'whether I can get a 6, if not, how I can get a six' if you bring your report to me before sending it via email :D :D "</em>)</p>
-<p><strong>A rough summary of what is expected in the report</strong>:</p>
-<ol>
-<li>A brief introduction of the theory of Laue/X-ray diffraction, as the start of the report.</li>
-<li>An overview of the samples we measured. Detailed information of the samples are appreciated.</li>
-<li>A short description of the experimental setup. Pictures are always welcome. </li>
-<li>The Laue diffraction patterns of the samples, and a discussion of what you can get out of the diffraction patterns, and what you can learn from them. </li>
-<li>Everything else that happened during the experiment that you think is worth mentioning. For example, what went wrong and why it happened; what is a stupid design; What could be made better or easier to handle; </li>
-</ol>
-<p>(<em>Xun: my philosophy of writing a report is that whoever reading my report in the future will be able to understand what has happened, and if they follow the report they will be able to reproduce the same resuls</em>)</p>
-    </div>
+    <h2>Please enter the password to access the page:</h2>
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkPassword()">Submit</button>
 </body>
 </html>
