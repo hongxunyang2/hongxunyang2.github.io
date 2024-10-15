@@ -11,7 +11,7 @@
             var isAuthenticated = sessionStorage.getItem("authenticated");
             if (isAuthenticated !== "true") {
                 // Redirect back to the login page if not authenticated
-                window.location.href = "/pages/laue_manual_protected.html";
+                window.location.href = "/pages/laue_manual_password.html";
             }
         }
         window.onload = checkAuthentication;
