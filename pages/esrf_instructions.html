@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ESRF ID32 Instructions</title>
+    <meta name="date" content="2024-10-29">
+    <link rel="stylesheet" href="markdown_to_html.css">
+
+</head>
+<body>
+    <div class="content">
+        <p>The first morning is usually reserved for beamline alignment. The local contact will take care of this. If everything goes well, the first XAS measurement can be conducted in the afternoon after lunch. </p>
+<hr />
+<h2 id="useful-information">Useful information</h2>
+<ul>
+<li>Energy range [400, 1600] eV. 1600 eV is usually used for diffraction. </li>
+<li>Typical values: The maximum momentum is 0.5 r.l.u. when E = 900eV and a = 5.4 Å. With these typical values you can estimate whether the Bragg peaks are reachable.</li>
+<li>maximum tth = 149.5°</li>
+<li>sampleholder size: 10x10 mm^2</li>
+<li>nominal th + th_offset = actual th</li>
+</ul>
+<h1 id="procedure">Procedure</h1>
+<ol>
+<li>Sample mounting</li>
+<li>Beamline alignment (local contact)</li>
+<li>Locate samples position (local contact)</li>
+<li>XAS measurement</li>
+<li>RIXS measurement </li>
+</ol>
+<h3 id="sample-mounting">Sample mounting</h3>
+<ol>
+<li>Use Silver paste/paint to glue the sample if sample doesn't need to be cleaved. Silver Epoxy if sample needs to be cleaved.</li>
+<li>a bit of silver paste on the corners of the sample holder to ensure good electrical contact. Not too much in case the paste blocks the beam at grazing angle.</li>
+<li>make sure the carbon tape won't be shadowed by other sample or silver paint/expoxy. This is important. This applies to all samples because we need to to half cutting and this cannot be blocked by anything else. Remember to arrange the samples on the sampe holder well enough for the local contact to do the half cutting. </li>
+</ol>
+<h3 id="xas">XAS</h3>
+<p>To do XAS, you need to: (1) turn off the CCD; (2) Move the in-coming beam to the right angle; (3) move the photo diode to the right position; (4) determine the energy range you wanna sweep</p>
+<h3 id="rixs">RIXS</h3>
+<p>If you are focused on the excitations, it's better to do a quick energy map to determine the best incoming energy. This is because the resonance energy might not be the energy at which the excitations of interest are the strongest. </p>
+<p>Once you've nailed down the energy, you can fix the energy and do a real RIXS scan. </p>
+<hr />
+<h1 id="esrf-hardware">ESRF Hardware</h1>
+<h3 id="goniometer">Goniometer</h3>
+<p>The half cutting has to be done for the goniometer to work as expected. Half cutting is to bring the surface of the sample to the center of rotation. at ESRF, the center of rotation is initially not the focal point of the beam, but the during the optimization process, these two points (center of rotation and the focal point) withh be brought to the same point. Therefore, the half cutting is necessary: (1) this make sure that the x-ray is always hitting at the same spot on the sameple; (2) and this spot is also the focal point of the beam.</p>
+<p>The <code>beamx</code> and <code>beamz</code> motor move the sample horizontally and vertically (lab reference frame), this is decoupled to the rotation. </p>
+<p>However, the <code>xsam</code>, <code>zsam</code> are coupled to the rotation. This is a coordinates system in the sample reference frame. </p>
+<ul>
+<li>Initially, when the sample get transfered into the chamber, <code>phi=45</code>. This means that the lab reference frame and the sample reference frame are 45 degrees apart. </li>
+<li>When <code>phi=0</code>, <code>xsam = beamx</code> are the same, i.e. the two reference frames coincide. However, once you move <code>phi</code> away from 0, the <code>xsam</code> and <code>beamx</code> depart from each other. In general, moving <code>beamx</code> in the lab reference will simultaneously move <code>xsam</code> and <code>zsam</code>. </li>
+<li>When <code>phi=90</code>, <code>zsam = beamx</code>. </li>
+</ul>
+<p>So this is the rule of thumb: If you wanna go back to the same position, you need to record the <code>xsam</code> and <code>zsam</code> coordinates. This is independent of the angles. But if you wanna do XAS scan and plot it against the position, it's better to do a <code>beamx</code> and <code>beamz</code> scan, because this has the same reference frame as the lab, making it easier to understand the movement.</p>
+<h1 id="esrf-sofware">ESRF Sofware</h1>
+<h3 id="folder-structure-and-file-logic">Folder structure and file logic</h3>
+<pre class="codehilite"><code class="language-markdown">data/visitor/hc5878/id32/20241029/
+│  ├─ RAW_DATA/
+│  ├─ PROCESSED_DATA/  # This is the folder of concern
+│  │  ├─ align/ # this is for the align data, type newsample(&quot;align&quot;) to create
+│  │  ├─ LaNiO4310/ # type newsample(&quot;LaNiO4310&quot;) in terminal to create
+│  │  │  ├─ LaNiO4310_0001/ #retype newsample(&quot;LaNiO4310&quot;) to create
+│  │  │  ├─ LaNiO4310_0002/ #retype newsample(&quot;LaNiO4310&quot;) to create 
+│  │  │  └─ LaNiO4310_0003/
+│  │  │     ├─ andor1/ # direct RIXS data
+│  │  │     │  ├─ Scan_0001_andor1.spec # data with all frames
+│  │  │     │  └─ *.spec 
+│  │  │     ├─ andor2/ # polarimetric RIXS data
+│  │  │     │  └─ *.spec # data with all the frames
+│  │  │     ├─ workflow/
+│  │  │     ├─ Online-analysis_LaNiO4310_003_andor1_info.spec
+│  │  │     └─ Online-analysis_LaNiO4310_003_andor1.spec  #auto-processed data 
+│  └─ rixs_toolbox_aligned/ #manually aligned data
+├─ SCRIPTS/
+├─ NOTES/
+├─ NOBAKCUP/
+└─ GALLERY/
+</code></pre>
+
+<p>Comments:
+1. the <code>online_analysis_xxx.spec</code> file stores all auto-processed scan number in this folder. (all frames summed up automatically)
+2. <code>rixs_toolbox_aligned/</code> is the folder where the manually aligned data is stored if you don't trust the auto-aligned data.
+3. <strong>If you wanna re-align and sum up the data manually</strong>, you should open up RIXS ToolBox, then open align app. The data in the <code>PROCESSED_DATA/LaNiO4310/LaNiO4310_003/andor1/</code> folder is the data without being auto-combined. You should open the <code>*.spec</code> file in this folder. This manually processed data should then be saved in another folder <code>PROCESSED_DATA/rixs_toolbox_aligned/</code>.
+4. <strong>If you choose to trust the auto-aligned data</strong>, then you don't need to process then yourselve. Simply open the <code>PROCESSED_DATA/LaNiO4310/LaNiO4310_003/Online-analysis_LaNiO4310_003_andor1.spec</code> file in PyMca. This is the auto-processed data. Of course, you can also open the manually aligned file in PyMca.</p>
+<h3 id="polarimetric-analysis-rixs-toolbox">polarimetric analysis (RIXS Toolbox)</h3>
+<ul>
+<li>toolbox/polarimetric -&gt; type in the reflectivity, Rn = 0.073 Rsigma = 0.137 -&gt; open file <code>online_analysis_xxx_andor2.spec</code> (This has to be done first!!) -&gt; X:energy Y:SPC Mon: mir_rixs -&gt; click on the correct scan number on the top left panel -&gt; click the button: "set as polarised spectrum" -&gt; open another file <code>online_analysis_xxx_andor1.spec</code> -&gt; click on the file -&gt; set as direct spectrum.</li>
+</ul>
+<p>Now you should be able to see the direct signal, polarized signal, pi (LH) out-going signal, and sigma (LV) signal. Dahsed lines are actual signal; solid lines are gaussian filtered.</p>
+<ul>
+<li>signal type: <code>polarized beam renormalized</code>: indirect after renormalization; <code>pi out</code> and <code>sigma out</code>, <code>direct beam</code>: is the directly received signal.</li>
+<li>select everything on the right panel before changing any values on the top panel.</li>
+<li>what you can tweak: <code>shift by</code> in the direct spectrum box, and <code>stretch by</code> in the polairzed spectrum box.</li>
+<li><code>shift by</code> will shift the zero energy of the direct spectrum. Move it to the right place to get it overlapping with the indirect/polarized spectrum.</li>
+<li><code>stretch by</code> will propotionally inflatee/deflate the data in pixel/energy.</li>
+<li>If the resolution changes during the scan, you could also try to tweak the <code>broden by</code> parameter. I won't recommend it unless you know what you are doing. This will create some artificial effect in the data.</li>
+</ul>
+<p><strong>What we want to achieve</strong>: Ideally, the resulting <code>sigma out</code> and <code>pi out</code> signal/intensity should always be positive. Try to minimize the negative intensity by tweaking the <code>shift by</code> and <code>stretch by</code> parameters.</p>
+<h3 id="plotting-color-map-rixs-toolbox">Plotting color map (RIXS ToolBox)</h3>
+<p>open color map app on the RIXS toolbox, import all the files you wanna plot as color map. X-&gt;energy, Y-&gt;SPC, Mon-&gt;mir_rixs. Now you need a third axis. This can be choose in the botton right corner. click on the refresh icon and you will see the color map.</p>
+<h3 id="aligning-and-recombining-data-manually-rixs-toolbox">Aligning and recombining data manually (RIXS ToolBox)</h3>
+<p>When we are doing long scan (&gt;1 hours), the energy might undergo a small drifts and the pixel position of the elastic peak might shift a bit. This is why we need to align each spectrum by doing cross correlation, i.e. move the elastic to the same pixel position to compensate for the energy drift effecct. This tool also allows you to recombine two different scan, for example, two scans under the same condition but done at different time. </p>
+<blockquote>
+<p>At the time of writing, two polarimetric scans done at two different time can be summed up using this toolbox.</p>
+</blockquote>
+<p>open up rixs toolbox -&gt; open app "align and sum spectra" -&gt; need to go to folder <code>/PROCESSED_DATA/LaNiO4310/LaNiO4310_003/andor1/</code>: this is the data without being atuocombined -&gt; open the *.spec file within</p>
+<p>On the left panel, ctrl + A to select everything -&gt; add those files to the canvas by clicking the "ADD" button -&gt; check X-pixel, Y-SPC. Now you should be able to see a bunch of lines on the canvas</p>
+<p>drag the "min" blue line and the "max" blue line closer to the elastic peak. This is to tell the sytem where the elastic is roughly is. -&gt; "Calculate shifts" button will calculate the shift of the elastic peak by doing cross correlation. If the counting time is too long (&gt; 1 hours), you might see a clear trend in the elastic peak position. If that's the case, you will want to check the "align to trend" box. Usually 1/2 order polynomial should be enough. Then click the "Align" button then "Sum" button. You should be able to see the final re-combined spectrum.</p>
+<p>To save the file, open output file in the bottom left corner. Create a new folder in the <code>PROCESSED_DATA/</code> folder. You can name it "re-processed_data" or "toolbox_processed". Remember to click the "save" button in the top-right corner. You can now plot this re-combined spectrum in PyMca.</p>
+<h3 id="move-elastic-to-zero-energy-rixs-toolbox">Move elastic to zero energy (RIXS ToolBox)</h3>
+<p>sometimes PyMca cannot detect the correct elastic peak so we need to manually relocate the elastic peak to zero energy. </p>
+<p>Open up RIXS toolbox -&gt; Open the aligned spec data (auto-aligned or self-aligned done in the last section) -&gt; plot X-pixel, Y-SPC (single photon counting), Mon-acquisition -&gt; fill in the factor of conversion (pixel to energy, ask the local contact for this value if unknown. If you can't find your local contact, go to PyMca, right click a scan, choose scan header to find this value) -&gt; drag the blue vertical line to where you think the zero energy is located. You can also plot a gaussian as a guide to eye. </p>
+<p>Once you've done everything above, click the "convert" button. Now the pixel coordinate should be converted to energy. -&gt; again open output folder, name it, and click the "save" button in the top right corner. </p>
+<hr />
+<h1 id="appendix">Appendix</h1>
+<h3 id="movement-control">Movement control</h3>
+<h3 id="commands">Commands</h3>
+<ul>
+<li><code>ct()</code>: tstate = temperature of the sample.</li>
+<li>
+<p><code>umv(th,0)</code></p>
+</li>
+<li>
+<p><code>sample_motor/sam_motor()</code>: output coordinates.</p>
+</li>
+<li>record the <code>xsam</code> coordinates if we need to go back to the same position, this position is independent of angles. When you rotate th, phi, chi, you can see that the <code>beamx</code> and <code>beamy</code> change as well. Therefore, <code>beamx</code> and <code>beamy</code> do not allow you to go back to the same position. </li>
+<li>when we do the scan, we need to do the <code>beamx</code> or <code>beamz</code> movement.</li>
+</ul>
+<h2 id="half-cutting">half cutting</h2>
+<ul>
+<li><code>umv(dtth, 0)</code>: move the diode </li>
+<li><code>dscan(ysam, -0.5, 0.5, 50, 0.1)</code>: </li>
+<li><code>where()</code>: where we are now</li>
+<li><code>goto_cen(det)</code>: go to the new center.</li>
+<li><code>dscan(th,-4,4,50,0.1)</code></li>
+<li>
+<p><code>goto_peak(det)</code></p>
+</li>
+<li>
+<p><code>goto_click()</code>: go to the place where you clicked on the image.
+repeate the steps, until it converges. Note down the <code>ysam</code> and <code>th</code> (this will be the th offset). </p>
+</li>
+<li>
+<p><code>elog_add()</code>, and <code>elog_print("stuff you wanna write in the log book")</code> print stuff to the log book.</p>
+</li>
+</ul>
+<p>the initial orientation when we transfer the sample is: <code>phi = 45</code>. </p>
+<ul>
+<li><code>bliss -s rixs</code>: to launch the software.</li>
+</ul>
+<h3 id="step-1-xas">step 1: XAS</h3>
+<p>XAS: <code>escan.energy(energy_ini, energy_final, npoints, ctime)</code>. 
+or macro:</p>
+<pre class="codehilite"><code>take_XAS(845, 865, 200, 1, 14, 45, 'v')
+umv(dtth, 165) # this is always the good dtth, never blocking anything. 
+or0()
+</code></pre>
+
+<p>Run the macro: ctrl+S save it, blacken the name. Run the first two commands on the top of the script.</p>
+<h3 id="read-the-data-and-plot-it">Read the data and plot it</h3>
+<p>.hdf5 raw and .spec processed data. 
+- folder -&gt; RAW data -&gt; samole folder -&gt; dataset -&gt; .h5 XAS data -&gt; plot energy)enc, dbig_n photodiode flourcence, sam_n electron yield. </p>
+<h3 id="step-3-rixs">Step 3: RIXS</h3>
+<ul>
+<li><code>loopscan(90,30)</code>: 90 frames, 30 seconds each. </li>
+</ul>
+<h3 id="carbon-tape">carbon tape</h3>
+<ul>
+<li><code>ccdoff()</code></li>
+<li><code>umv(th, 90, dtth, 0)</code> find the position of the carbon tape. We need do the half cutting for the carbon tape.</li>
+<li>half cutting</li>
+</ul>
+<h3 id="movement-motors">Movement motors</h3>
+<p>Q1: when you rotate in chi, does the sample move in x or z?
+Q2: What does half cutting do?
+Q3: what does "not coupled to rotation" mean</p>
+<h3 id="rixs-checklist">RIXS checklist</h3>
+<h3 id="id32-commands-cheatsheet">ID32 Commands cheatsheet</h3>
+<p>In this beamline there are two types of objects: motors and detectors. Motors include <code>th</code>, <code>phi</code>, <code>beamx</code>, <code>beamz</code>, <code>xsam</code>, <code>ysam</code>, <code>zsam</code>, <code>energy</code>, and etc. detectors include the andor (RIXS), diode (florence), and electron yield detectors.</p>
+<ul>
+<li>Absolute movement: <code>umv(th, 20, phi,30)</code> this moves <code>th</code> to 20 and <code>phi</code> to 30 at the same time. in general, you can do <code>umv(motor, values)</code>. </li>
+<li>Relative movement: <code>umvr(chi, 30)</code> moves <code>chi</code> up by 30 degress for example. In general, the command is <code>umvr(motor, values)</code></li>
+<li>quick locate motor: <code>goto_click</code>: go to where the mouse clicks on; <code>goto_cen()</code>: go to the center of the step function (useful when you do the ysam scan for the half cutting); <code>goto_peak()</code>: go to the peak position, useful when you do the theta scan for the half cutting.</li>
+<li>motor info: <code>wm(xsam, ysam, zsam, th, chi, phi, beamx, beamz)</code>: this prints out all the parameters listed in the parenthesis.</li>
+</ul>
+<p>Comments 1: it's better to create a macro/function named <code>goto_sample_1()</code> and all the positions and stuff are stored in this function. Also, define a function for the silver paint as well.</p>
+<p>Comments 2: each time we change the polarization, the mirror will be heated up or cooled down, therefore we need around 9 mins before starting the next scan for the mirror to reach a thermal equillibrium.</p>
+<p><strong>XAS command</strong>:
+- <code>ccdoff()</code>: turn off CCD
+- <code>pol_h()</code> or <code>pol_v</code>: to turn to the correct polarization. 
+- <code>umv(exagap, 30)</code>: open up slit for higher flux
+- <code>umv(energyund, 845)</code>: the initial energy is 845 eV
+- <code>escan.energy(845, 865, 100, 0.2)</code>: XAS from 845 to 865, 100 points, 0.2 second each.</p>
+<p>We could create a macro for these steps.</p>
+<p><strong>RIXS commands</strong>:
+- <code>ccdon(andor1_ccd=True, andor2_ccd=False)</code>: andor_1 is for normal RIXS scan; andor_2 is for polarimetric scan.
+- <code>umv(exagap, 15)</code>: turn it back to small slit for higher resolution.
+- <code>umv(energy, 853.6)</code>: move energy to resonance energy
+- <code>umv(th, 135, phi, 45)</code>: move theta to 135 (grazing out), and phi to 45 (this is the default angle when we transfer the sample).
+- <code>loopscan(60,30)</code>: take 60 frames, and 30 seconds each. 30 is the best counting time for each frame, usually we don't change it.</p>
+<p>Comments 1: we need the local contact to change edge for the first time. They need to determine the <code>detz</code>, <code>detx</code>, <code>grtx</code>, <code>cff</code>, <code>pgm.tracking</code>, <code>hu70a</code>, <code>hu70c</code>, <code>ps35b</code>. But this can be wrapped in a function. After that the user can change polarization by themselves. </p>
+<h3 id="miscelanous">miscelanous</h3>
+<ul>
+<li>double counts should be less than 20% of the single coun, you can check this in PyMca. If the double counts are too high, you should reduce the counting time for each frame. </li>
+<li>Chaging energy leads to a change in the position of the elastic peak on the CCD. Therefore, always beware of possiblity that the signal of interest could move out of the CCD. At the same time, you could also limit the CCD readout range in order to save some readout time. Generally, the readout time ranges from 5% to 15% of the counting time of each frame, depending on the readout area of the CCD. Ask the local contact for the command to change this region. <strong>Remember to change it back to full CCD if you wanna do a energy map</strong>. Related command</li>
+</ul>
+<pre class="codehilite"><code>andor1.image.roi = 0, 0, 2048, 1000 #(x_start, y_start, x_size, y_size)
+
+andor1.image.reset_roi # this is to retain the full CCD readout
+</code></pre>
+    </div>
+</body>
+
+
+
+</html>
+
