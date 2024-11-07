@@ -11,7 +11,7 @@
 <body>
     <div class="content">
         <p>The first morning is usually reserved for beamline alignment. The local contact will take care of this. If everything goes well, the first XAS measurement can be conducted in the afternoon after lunch. </p>
-<hr />
+<hr>
 <h2 id="useful-information">Useful information</h2>
 <ul>
 <li>Energy range [400, 1600] eV. 1600 eV is usually used for diffraction. </li>
@@ -38,7 +38,7 @@
 <h3 id="rixs">RIXS</h3>
 <p>If you are focused on the excitations, it's better to do a quick energy map to determine the best incoming energy. This is because the resonance energy might not be the energy at which the excitations of interest are the strongest. </p>
 <p>Once you've nailed down the energy, you can fix the energy and do a real RIXS scan. </p>
-<hr />
+<hr>
 <h1 id="esrf-hardware">ESRF Hardware</h1>
 <h3 id="goniometer">Goniometer</h3>
 <p>The half cutting has to be done for the goniometer to work as expected. Half cutting is to bring the surface of the sample to the center of rotation. at ESRF, the center of rotation is initially not the focal point of the beam, but the during the optimization process, these two points (center of rotation and the focal point) withh be brought to the same point. Therefore, the half cutting is necessary: (1) this make sure that the x-ray is always hitting at the same spot on the sameple; (2) and this spot is also the focal point of the beam.</p>
@@ -111,7 +111,7 @@
 <p>sometimes PyMca cannot detect the correct elastic peak so we need to manually relocate the elastic peak to zero energy. </p>
 <p>Open up RIXS toolbox -&gt; Open the aligned spec data (auto-aligned or self-aligned done in the last section) -&gt; plot X-pixel, Y-SPC (single photon counting), Mon-acquisition -&gt; fill in the factor of conversion (pixel to energy, ask the local contact for this value if unknown. If you can't find your local contact, go to PyMca, right click a scan, choose scan header to find this value) -&gt; drag the blue vertical line to where you think the zero energy is located. You can also plot a gaussian as a guide to eye. </p>
 <p>Once you've done everything above, click the "convert" button. Now the pixel coordinate should be converted to energy. -&gt; again open output folder, name it, and click the "save" button in the top right corner. </p>
-<hr />
+<hr>
 <h1 id="appendix">Appendix</h1>
 <h3 id="movement-control">Movement control</h3>
 <h3 id="commands">Commands</h3>
