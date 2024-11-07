@@ -18,7 +18,6 @@
 <li>Typical values: The maximum momentum is 0.5 r.l.u. when E = 900eV and a = 5.4 Å. With these typical values you can estimate whether the Bragg peaks are reachable.</li>
 <li>maximum tth = 149.5°</li>
 <li>sampleholder size: 10x10 mm^2</li>
-<li>nominal th + th_offset = actual th</li>
 </ul>
 <h1 id="procedure">Procedure</h1>
 <ol>
@@ -76,11 +75,13 @@
 └─ GALLERY/
 </code></pre>
 
-<p>Comments:
-1. the <code>online_analysis_xxx.spec</code> file stores all auto-processed scan number in this folder. (all frames summed up automatically)
-2. <code>rixs_toolbox_aligned/</code> is the folder where the manually aligned data is stored if you don't trust the auto-aligned data.
-3. <strong>If you wanna re-align and sum up the data manually</strong>, you should open up RIXS ToolBox, then open align app. The data in the <code>PROCESSED_DATA/LaNiO4310/LaNiO4310_003/andor1/</code> folder is the data without being auto-combined. You should open the <code>*.spec</code> file in this folder. This manually processed data should then be saved in another folder <code>PROCESSED_DATA/rixs_toolbox_aligned/</code>.
-4. <strong>If you choose to trust the auto-aligned data</strong>, then you don't need to process then yourselve. Simply open the <code>PROCESSED_DATA/LaNiO4310/LaNiO4310_003/Online-analysis_LaNiO4310_003_andor1.spec</code> file in PyMca. This is the auto-processed data. Of course, you can also open the manually aligned file in PyMca.</p>
+<p><strong>Comments</strong>:</p>
+<ol>
+<li>the <code>online_analysis_xxx.spec</code> file stores all auto-processed scan number in this folder. (all frames summed up automatically)</li>
+<li><code>rixs_toolbox_aligned/</code> is the folder where the manually aligned data is stored if you don't trust the auto-aligned data.</li>
+<li><strong>If you wanna re-align and sum up the data manually</strong>, you should open up RIXS ToolBox, then open align app. The data in the <code>PROCESSED_DATA/LaNiO4310/LaNiO4310_003/andor1/</code> folder is the data without being auto-combined. You should open the <code>*.spec</code> file in this folder. This manually processed data should then be saved in another folder <code>PROCESSED_DATA/rixs_toolbox_aligned/</code>.</li>
+<li><strong>If you choose to trust the auto-aligned data</strong>, then you don't need to process then yourselve. Simply open the <code>PROCESSED_DATA/LaNiO4310/LaNiO4310_003/Online-analysis_LaNiO4310_003_andor1.spec</code> file in PyMca. This is the auto-processed data. Of course, you can also open the manually aligned file in PyMca.</li>
+</ol>
 <h3 id="polarimetric-analysis-rixs-toolbox">polarimetric analysis (RIXS Toolbox)</h3>
 <ul>
 <li>toolbox/polarimetric -&gt; type in the reflectivity, Rn = 0.073 Rsigma = 0.137 -&gt; open file <code>online_analysis_xxx_andor2.spec</code> (This has to be done first!!) -&gt; X:energy Y:SPC Mon: mir_rixs -&gt; click on the correct scan number on the top left panel -&gt; click the button: "set as polarised spectrum" -&gt; open another file <code>online_analysis_xxx_andor1.spec</code> -&gt; click on the file -&gt; set as direct spectrum.</li>
@@ -201,12 +202,23 @@ Q3: what does "not coupled to rotation" mean</p>
 <h3 id="miscelanous">miscelanous</h3>
 <ul>
 <li>double counts should be less than 20% of the single coun, you can check this in PyMca. If the double counts are too high, you should reduce the counting time for each frame. </li>
-<li>Chaging energy leads to a change in the position of the elastic peak on the CCD. Therefore, always beware of possiblity that the signal of interest could move out of the CCD. At the same time, you could also limit the CCD readout range in order to save some readout time. Generally, the readout time ranges from 5% to 15% of the counting time of each frame, depending on the readout area of the CCD. Ask the local contact for the command to change this region. <strong>Remember to change it back to full CCD if you wanna do a energy map</strong>. Related command</li>
+<li>
+<p>Chaging energy leads to a change in the position of the elastic peak on the CCD. Therefore, always beware of possiblity that the signal of interest could move out of the CCD. At the same time, you could also limit the CCD readout range in order to save some readout time. Generally, the readout time ranges from 5% to 15% of the counting time of each frame, depending on the readout area of the CCD. Ask the local contact for the command to change this region. <strong>Remember to change it back to full CCD if you wanna do a energy map</strong>. Related command
+    ```
+    andor1.image.roi = 0, 0, 2048, 1000 #(x_start, y_start, x_size, y_size)</p>
+<p>andor1.image.reset_roi # this is to retain the full CCD readout
+```</p>
+</li>
+<li>
+<p><strong>Definition of offsets</strong>: <em>nominal_value - offset_value = actual_value</em>. </p>
+<ol>
+<li>Example 1: in the half cutting process, you get the half-cut condition at the motor value <code>th=-3.6</code>, then you will define the offset as <code>th_offset=-3.6</code>, because the actual theta value now is <code>th=0</code>. </li>
+<li>Example 2: say now the offset is <code>th_offset=-3.6</code>. If you wanna go to specular condition (say the real theta now is <code>th=75</code>), you should do <code>umv(th, 75+th_offset)</code>. This is because <code>75</code> is the real theta value for specular condition, and the motor/nominal value should be <code>75+offset</code></li>
+<li>Example 3: again offset is <code>-3.6</code>. Now you are to do a Q scan and you calculate the theta value <code>th=135</code> corresonding to <code>Q=0.25</code>. This theta value is again a "real theta", so what you want to do is <code>umv(th, 135+th_offset)</code>. </li>
+</ol>
+<p>Always keep an eye on how you define the offset and how you can convert the real theta value to the motor value.</p>
+</li>
 </ul>
-<pre class="codehilite"><code>andor1.image.roi = 0, 0, 2048, 1000 #(x_start, y_start, x_size, y_size)
-
-andor1.image.reset_roi # this is to retain the full CCD readout
-</code></pre>
     </div>
 </body>
 
