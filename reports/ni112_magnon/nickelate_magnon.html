@@ -5,23 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Index</title>
     <link rel="stylesheet" href="static/css/style.css">
-    <script>
-        // Check authentication on page load
-        function checkAuthentication() {
-            var isAuthenticated = sessionStorage.getItem("authenticated");
-            if (isAuthenticated !== "true") {
-                // Redirect back to the login page if not authenticated
-                window.location.href = "nickelate_magnon_login.html";
-            }
-        }
-        window.onload = checkAuthentication;
-    </script>
 </head>
 <body>
     <header>
         <h1>Report Index</h1>
         <div class="metadata">
-            <p>Last updated: 2025-03-06 18:20:13</p>
+            <p>Last updated: 2025-03-06 20:02:25</p>
         </div>
     </header>
     
@@ -38,7 +27,7 @@
                     
                     <li>
                         <a href="pno_fit.html">PNO Fit and Magnon Dispersion</a>
-                        <span class="report-date">2025-03-06 18:20:13</span>
+                        <span class="report-date">2025-03-06 20:02:25</span>
                     </li>
                     
                 </ul>
@@ -49,5 +38,17 @@
     <footer>
         <p>Generated using Report Generator</p>
     </footer>
+
+    
+    <script>
+        // Check if user is authenticated
+        if (!sessionStorage.getItem('authenticated')) {
+            // Redirect to login page by adding _login before .html
+            const currentPath = window.location.pathname;
+            const baseName = currentPath.substring(currentPath.lastIndexOf('/') + 1).split('.')[0];
+            window.location.href = baseName + '_login.html';
+        }
+    </script>
+    
 </body>
 </html> 
