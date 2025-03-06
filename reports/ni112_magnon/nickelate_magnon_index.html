@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Index</title>
     <link rel="stylesheet" href="static/css/style.css">
+    <script>
+        // Check authentication on page load
+        function checkAuthentication() {
+            var isAuthenticated = sessionStorage.getItem("authenticated");
+            if (isAuthenticated !== "true") {
+                // Redirect back to the login page if not authenticated
+                window.location.href = "nickelate_magnon_login.html";
+            }
+        }
+        window.onload = checkAuthentication;
+    </script>
 </head>
 <body>
     <header>
