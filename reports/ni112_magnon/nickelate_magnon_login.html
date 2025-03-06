@@ -74,12 +74,17 @@
     </div>
 
     <script>
+        // Check if already authenticated
+        if (localStorage.getItem('authenticated')) {
+            window.location.href = "nickelate_magnon.html";
+        }
+
         function validateLogin(event) {
             event.preventDefault();
             const password = document.getElementById('password').value;
             
             if (password === "xun") {
-                sessionStorage.setItem("authenticated", "true");
+                localStorage.setItem("authenticated", "true");
                 window.location.href = "nickelate_magnon.html";
             } else {
                 alert("Incorrect password!");
