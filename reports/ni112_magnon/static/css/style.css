@@ -126,6 +126,7 @@ tr:nth-child(even) {
 
 .figure-image {
     width: 100%;
+    background-color: #ffffff;
     overflow: hidden;
 }
 
