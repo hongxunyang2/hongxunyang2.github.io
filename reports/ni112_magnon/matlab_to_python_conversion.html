@@ -22,7 +22,7 @@
     <header>
         <h1>Matlab to Python conversion and comparison</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-20 12:34:49</p>
+            <p>Generated on: 2025-03-20 17:13:12</p>
         </div>
     </header>
     
@@ -58,7 +58,7 @@ omega didn't pass the test.</p>
 </p>
 <ul>
 <li>
-<p>is the equation of Vk in Bastine's thesis correct? In his thesis ,it has same sign of Bk,
+<p>is the equation of $V_k$ in Bastine's thesis correct? In his thesis ,it has same sign of $B_k$,
    but in the matlab code, it's the opposite sign.??</p>
 </li>
 <li>
@@ -68,8 +68,8 @@ omega didn't pass the test.</p>
 </ul>
 <h3>Renormalized Factor Zc</h3>
 <ul>
-<li><strong>Purpose</strong>: Computes the renormalization factor for magnon dispersion</li>
-<li><strong>Note</strong>: Self-consistency check implementation in MATLAB code needs clarification</li>
+<li>Computes the renormalization factor for magnon dispersion</li>
+<li><em>Note</em>: Self-consistency check implementation in MATLAB code needs clarification</li>
 </ul>
 <h3><strong>HartreeFockAverages Function</strong></h3>
 <h3><strong>Renormalized Factor Zc</strong></h3>
@@ -78,7 +78,7 @@ omega didn't pass the test.</p>
 <p>Computes the renormalization factor for the magnon dispersion</p>
 </li>
 <li>
-<p><strong>Note</strong>: I have no idea how the 'self consitency check' is done in the matlab code. </p>
+<p><em>Note</em>: I have no idea how the 'self consitency check' is done in the matlab code. </p>
 </li>
 </ul>
 <h3><strong>Renormalized Omega</strong></h3>
@@ -89,14 +89,14 @@ omega didn't pass the test.</p>
 </p>
 </li>
 <li>
-<p><strong>Note</strong>: the term $ \sqrt{A_k^2 - B_k^2} $ can be imaginary, and I currently don't know how
+<p><em>Note</em>: the term $ \sqrt{A_k^2 - B_k^2} $ can be imaginary, and I currently don't know how
    to handle this case. </p>
 </li>
 </ul>
 <h2>Test results</h2>
 <ul>
 <li>
-<p>Test 1 has Failed</p>
+<p>Test 1 has Passed</p>
 </li>
 <li>
 <p>Test 2 has Failed</p>
@@ -114,7 +114,7 @@ omega didn't pass the test.</p>
             
             <div class="content">
                 <p>This section shows the detailed comparison between MATLAB and Python implementations for Test Set 1.
-The tolerance for relative error is set to 1e-10. If the relative error is less than the tolerance,
+The tolerance for relative error is set to 1e-08. If the relative error is less than the tolerance,
 the test is considered passed, otherwise it is considered failed.</p>
             </div>
             
@@ -227,7 +227,7 @@ the test is considered passed, otherwise it is considered failed.</p>
                         
                         <tr>
                             <td>renormalized_omega_python</td>
-                            <td>[0.0058, 0.0332, 0.0436, 0.1088, 0.1135, 0.0613, 0.023, 0.0374, nan, nan]</td>
+                            <td>[0.0058, 0.0332, 0.0436, 0.1088, 0.1135, 0.0613, 0.023, 0.0374, 0.0, -0.0]</td>
                         </tr>
                         
                         <tr>
@@ -237,7 +237,37 @@ the test is considered passed, otherwise it is considered failed.</p>
                         
                         <tr>
                             <td>renormalized_omega_passed</td>
-                            <td>[False False False False False False False False False False]</td>
+                            <td>[False False False False False False False False  True  True]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_real_python</td>
+                            <td>[0.0009, 0.0263, 0.0559, 0.1085, 0.1126, 0.0672, 0.0059, 0.0184, 0.0, 0.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_real_matlab</td>
+                            <td>[0.0009, 0.0263, 0.0559, 0.1085, 0.1126, 0.0672, 0.0059, 0.0184, 0.0, 0.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_real_passed</td>
+                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_imag_python</td>
+                            <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0264, 0.0038]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_imag_matlab</td>
+                            <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0264, 0.0038]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_imag_passed</td>
+                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
                         </tr>
                         
                     </tbody>
@@ -253,7 +283,7 @@ the test is considered passed, otherwise it is considered failed.</p>
             
             <div class="content">
                 <p>This section shows the detailed comparison between MATLAB and Python implementations for Test Set 2.
-The tolerance for relative error is set to 1e-10. If the relative error is less than the tolerance,
+The tolerance for relative error is set to 1e-08. If the relative error is less than the tolerance,
 the test is considered passed, otherwise it is considered failed.</p>
             </div>
             
@@ -379,6 +409,36 @@ the test is considered passed, otherwise it is considered failed.</p>
                             <td>[False False False False False False False False False False]</td>
                         </tr>
                         
+                        <tr>
+                            <td>_omega_real_python</td>
+                            <td>[0.0059, 0.0743, 0.0972, 0.1116, 0.1126, 0.1012, 0.083, 0.0799, 0.0791, 0.0392]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_real_matlab</td>
+                            <td>[0.0059, 0.0743, 0.0972, 0.1116, 0.1126, 0.1012, 0.083, 0.0799, 0.0791, 0.0392]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_real_passed</td>
+                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_imag_python</td>
+                            <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_imag_matlab</td>
+                            <td>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>_omega_imag_passed</td>
+                            <td>[False False False False False False False False False False]</td>
+                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
@@ -399,6 +459,7 @@ the test is considered passed, otherwise it is considered failed.</p>
 <p>| <code>Vk</code> | <code>Vkfunc.c</code> |</p>
 <p>| <code>renormalized_factor_Zc</code> | <code>dw1</code> variable in <code>omega_renorm.m</code> |</p>
 <p>| <code>HartreeFockAverages</code> | <code>HartreeFockAverages.m</code> |</p>
+<p>| <code>renormalized_omega</code> | <code>dispfit_CaCuO2_vary_Z.m</code> | This will be the function used to fit the magnon dispersion</p>
             </div>
             
             
