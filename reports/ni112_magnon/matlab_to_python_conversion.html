@@ -22,7 +22,7 @@
     <header>
         <h1>Matlab to Python conversion and comparison</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-20 12:13:40</p>
+            <p>Generated on: 2025-03-20 12:16:34</p>
         </div>
     </header>
     
@@ -35,6 +35,10 @@
                 <p>I tried to convert the matlab code to python code. This is a document showing the results of the
 comparsion between the matlab code and the python code.</p>
 <p>The equations are based on Bastien's thesis, page 121-131 onwards.</p>
+<p>The problem I currently have is: (1) I have no idea how the 'self consitency check' is done in the
+matlab code; (2) the equation of $V_k$ in Bastien's thesis is different from the one in the matlab
+code; (3) The $V_k$ function is not continous, is that really what we want? (4) The renormalized
+omega didn't pass the test.</p>
 <h3><strong>Ak Function</strong></h3>
 <ul>
 <li>Takes kx, ky (in 2π units) and parameters [U, t, tp, tpp]</li>
@@ -58,7 +62,7 @@ comparsion between the matlab code and the python code.</p>
    but in the matlab code, it's the opposite sign.??</p>
 </li>
 <li>
-<p>Also, $V_k$ is not continous at $Bk = 0$. When $B_k = 0^+$, $V_k = -1$, but when $B_k = 0^-$, $V_k
+<p>Also, $V_k$ is not continous at $B_k = 0$. When $B_k = 0^+$, $V_k = -1$, but when $B_k = 0^-$, $V_k
   = 1$. Is this really what we want?</p>
 </li>
 </ul>
@@ -110,7 +114,8 @@ comparsion between the matlab code and the python code.</p>
             
             <div class="content">
                 <p>This section shows the detailed comparison between MATLAB and Python implementations for Test Set 1.
-The tolerance for relative error is set to 1e-10.</p>
+The tolerance for relative error is set to 1e-10. If the relative error is less than the tolerance,
+the test is considered passed, otherwise it is considered failed.</p>
             </div>
             
             
@@ -248,7 +253,8 @@ The tolerance for relative error is set to 1e-10.</p>
             
             <div class="content">
                 <p>This section shows the detailed comparison between MATLAB and Python implementations for Test Set 2.
-The tolerance for relative error is set to 1e-10.</p>
+The tolerance for relative error is set to 1e-10. If the relative error is less than the tolerance,
+the test is considered passed, otherwise it is considered failed.</p>
             </div>
             
             
