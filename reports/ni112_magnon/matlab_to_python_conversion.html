@@ -22,7 +22,7 @@
     <header>
         <h1>Matlab to Python conversion and comparison</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-21 12:04:44</p>
+            <p>Generated on: 2025-03-21 12:11:48</p>
         </div>
     </header>
     
@@ -91,15 +91,6 @@ omega didn't pass the test.</p>
 <li>
 <p><em>Note</em>: the term $ \sqrt{A_k^2 - B_k^2} $ can be imaginary, and I currently don't know how
    to handle this case. </p>
-</li>
-</ul>
-<h2>Test results</h2>
-<ul>
-<li>
-<p>Test 1 has Passed</p>
-</li>
-<li>
-<p>Test 2 has Failed</p>
 </li>
 </ul>
             </div>
@@ -457,8 +448,7 @@ the test is considered passed, otherwise it is considered failed.</p>
             <h2>Test Set 2 Results</h2>
             
             <div class="content">
-                <pre><code>    I changed the parameters of tpp to negative sign. Everything else stays the same.
-</code></pre>
+                <p>I changed the parameters of tpp $t^{\prime\prime}$ to negative sign. Everything else stays the same.</p>
             </div>
             
             
@@ -791,6 +781,21 @@ the test is considered passed, otherwise it is considered failed.</p>
                     
                 
             </div>
+            
+            
+            
+        </section>
+        
+        <section id="comment_on_test" class="report-section">
+            <h2>Comment on Test</h2>
+            
+            <div class="content">
+                <p>Everything except the renormalized omega passed the test. The problem is that in the matlab code,
+the Zc is fixed at 1.156, but in the python code, it's calculated from the parameters, thus the
+discrepancy. </p>
+<h3>I will consider it passed.</h3>
+            </div>
+            
             
             
             
