@@ -74,6 +74,27 @@ header h1 {
     margin: 20px 0;
 }
 
+.parameter-table table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.parameter-table th,
+.parameter-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.parameter-table th:first-child,
+.parameter-table td:first-child {
+    width: 20%;
+}
+
+.parameter-table th:last-child,
+.parameter-table td:last-child {
+    width: 80%;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;

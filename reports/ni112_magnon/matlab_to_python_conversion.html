@@ -22,7 +22,7 @@
     <header>
         <h1>Matlab to Python conversion and comparison</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-20 17:13:12</p>
+            <p>Generated on: 2025-03-21 12:04:44</p>
         </div>
     </header>
     
@@ -120,158 +120,333 @@ the test is considered passed, otherwise it is considered failed.</p>
             
             
             <div class="parameters">
-                <h3>Parameters</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Parameter</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td>params_names</td>
-                            <td>['U', 't', 'tp', 'tpp']</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>params</td>
-                            <td>[1.0, 0.2, -0.08, 0.03]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>kx</td>
-                            <td>[0.0628, 1.0053, 1.9478, 2.8903, 3.1416, 2.5133, 1.885, 1.5708, 0.9425, 0.3142]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>ky</td>
-                            <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.6283, 1.2566, 1.5708, 0.9425, 0.3142]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Ak_python</td>
-                            <td>[0.1149, 0.0681, 0.0564, 0.1085, 0.1126, 0.0672, -0.0059, -0.0184, 0.0283, 0.1027]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Ak_matlab</td>
-                            <td>[0.1149, 0.0681, 0.0564, 0.1085, 0.1126, 0.0672, -0.0059, -0.0184, 0.0283, 0.1027]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Ak_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Bk_python</td>
-                            <td>[-0.1149, -0.0628, -0.008, 0.0001, 0.0, 0.0, 0.0, -0.0, -0.0388, -0.1027]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Bk_matlab</td>
-                            <td>[-0.1149, -0.0628, -0.008, 0.0001, 0.0, 0.0, -0.0, -0.0, -0.0388, -0.1027]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Bk_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Uk_python</td>
-                            <td>[8.0449, 1.3386, 1.0025, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0176, 3.735]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Uk_matlab</td>
-                            <td>[8.0449, 1.3386, 1.0025, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0176, 3.735]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Uk_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Vk_python</td>
-                            <td>[7.9825, 0.8899, 0.071, -0.0004, 0.0, -0.0, -1.0, 1.0, 0.1886, 3.5986]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Vk_matlab</td>
-                            <td>[7.9825, 0.8899, 0.071, -0.0004, 0.0, 0.0, 1.0, 1.0, 0.1886, 3.5986]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Vk_passed</td>
-                            <td>[ True  True  True  True  True  True False  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Zc_python</td>
-                            <td>[(6.4636+0j), (1.2585+0j), (0.7805+0j), (1.003+0j), (1.0086+0j), (0.9116+0j), (3.8975+0j), (2.0356+0j), (0.0352+0j), (-12.5142+0j)]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Zc_matlab</td>
-                            <td>[6.4636, 1.2585, 0.7805, 1.003, 1.0086, 0.9116, 3.8975, 2.0356, 0.0352, -12.5142]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Zc_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>renormalized_omega_python</td>
-                            <td>[0.0058, 0.0332, 0.0436, 0.1088, 0.1135, 0.0613, 0.023, 0.0374, 0.0, -0.0]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>renormalized_omega_matlab</td>
-                            <td>[0.001, 0.0305, 0.0647, 0.1256, 0.1304, 0.0778, 0.0068, 0.0213, 0.0, 0.0]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>renormalized_omega_passed</td>
-                            <td>[False False False False False False False False  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_real_python</td>
-                            <td>[0.0009, 0.0263, 0.0559, 0.1085, 0.1126, 0.0672, 0.0059, 0.0184, 0.0, 0.0]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_real_matlab</td>
-                            <td>[0.0009, 0.0263, 0.0559, 0.1085, 0.1126, 0.0672, 0.0059, 0.0184, 0.0, 0.0]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_real_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_imag_python</td>
-                            <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0264, 0.0038]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_imag_matlab</td>
-                            <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0264, 0.0038]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_imag_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
+                
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>params_names</td>
+                                        <td>['U', 't', 'tp', 'tpp']</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>params</td>
+                                        <td>[1.0, 0.2, -0.08, 0.03]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>kx</td>
+                                        <td>[0.0628, 1.0053, 1.9478, 2.8903, 3.1416, 2.5133, 1.885, 1.5708, 0.9425, 0.3142]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>ky</td>
+                                        <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.6283, 1.2566, 1.5708, 0.9425, 0.3142]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Ak_python</td>
+                                        <td>[0.1149, 0.0681, 0.0564, 0.1085, 0.1126, 0.0672, -0.0059, -0.0184, 0.0283, 0.1027]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Ak_matlab</td>
+                                        <td>[0.1149, 0.0681, 0.0564, 0.1085, 0.1126, 0.0672, -0.0059, -0.0184, 0.0283, 0.1027]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Ak_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Bk_python</td>
+                                        <td>[-0.1149, -0.0628, -0.008, 0.0001, 0.0, 0.0, 0.0, -0.0, -0.0388, -0.1027]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Bk_matlab</td>
+                                        <td>[-0.1149, -0.0628, -0.008, 0.0001, 0.0, 0.0, -0.0, -0.0, -0.0388, -0.1027]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Bk_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Uk_python</td>
+                                        <td>[8.0449, 1.3386, 1.0025, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0176, 3.735]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Uk_matlab</td>
+                                        <td>[8.0449, 1.3386, 1.0025, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0176, 3.735]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Uk_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Vk_python</td>
+                                        <td>[7.9825, 0.8899, 0.071, -0.0004, 0.0, -0.0, -1.0, 1.0, 0.1886, 3.5986]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Vk_matlab</td>
+                                        <td>[7.9825, 0.8899, 0.071, -0.0004, 0.0, 0.0, 1.0, 1.0, 0.1886, 3.5986]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Vk_passed</td>
+                                        <td>[ True  True  True  True  True  True False  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Zc_python</td>
+                                        <td>[(6.4636+0j), (1.2585+0j), (0.7805+0j), (1.003+0j), (1.0086+0j), (0.9116+0j), (3.8975+0j), (2.0356+0j), (0.0352+0j), (-12.5142+0j)]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Zc_matlab</td>
+                                        <td>[6.4636, 1.2585, 0.7805, 1.003, 1.0086, 0.9116, 3.8975, 2.0356, 0.0352, -12.5142]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Zc_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_python</td>
+                                        <td>[0.0058, 0.0332, 0.0436, 0.1088, 0.1135, 0.0613, 0.023, 0.0374, 0.0, -0.0]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_matlab</td>
+                                        <td>[0.001, 0.0305, 0.0647, 0.1256, 0.1304, 0.0778, 0.0068, 0.0213, 0.0, 0.0]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_passed</td>
+                                        <td>[False False False False False False False False  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Zc_python</td>
+                                        <td>[(6.4636+0j), (1.2585+0j), (0.7805+0j), (1.003+0j), (1.0086+0j), (0.9116+0j), (3.8975+0j), (2.0356+0j), (0.0352+0j), (-12.5142+0j)]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Zc_matlab</td>
+                                        <td>[6.4636, 1.2585, 0.7805, 1.003, 1.0086, 0.9116, 3.8975, 2.0356, 0.0352, -12.5142]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Zc_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>_omega_real_python</td>
+                                        <td>[0.0009, 0.0263, 0.0559, 0.1085, 0.1126, 0.0672, 0.0059, 0.0184, 0.0, 0.0]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>_omega_real_matlab</td>
+                                        <td>[0.0009, 0.0263, 0.0559, 0.1085, 0.1126, 0.0672, 0.0059, 0.0184, 0.0, 0.0]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>_omega_real_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>_omega_imaginary_python</td>
+                                        <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0264, 0.0038]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>_omega_imaginary_matlab</td>
+                                        <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0264, 0.0038]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>_omega_imaginary_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_python</td>
+                                        <td>[0.0058, 0.0332, 0.0436, 0.1088, 0.1135, 0.0613, 0.023, 0.0374, 0.0, -0.0]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_matlab</td>
+                                        <td>[0.001, 0.0305, 0.0647, 0.1256, 0.1304, 0.0778, 0.0068, 0.0213, 0.0, 0.0]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_passed</td>
+                                        <td>[False False False False False False False False  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                
             </div>
             
             
@@ -282,173 +457,347 @@ the test is considered passed, otherwise it is considered failed.</p>
             <h2>Test Set 2 Results</h2>
             
             <div class="content">
-                <p>This section shows the detailed comparison between MATLAB and Python implementations for Test Set 2.
-The tolerance for relative error is set to 1e-08. If the relative error is less than the tolerance,
-the test is considered passed, otherwise it is considered failed.</p>
+                <pre><code>    I changed the parameters of tpp to negative sign. Everything else stays the same.
+</code></pre>
             </div>
             
             
             <div class="parameters">
-                <h3>Parameters</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Parameter</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td>params_names</td>
-                            <td>['U', 't', 'tp', 'tpp']</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>params</td>
-                            <td>[1.0, 0.2, -0.08, -0.03]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>kx</td>
-                            <td>[0.0628, 1.0053, 1.9478, 2.8903, 3.1416, 2.5133, 1.885, 1.5708, 0.9425, 0.3142]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>ky</td>
-                            <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.6283, 1.2566, 1.5708, 0.9425, 0.3142]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Ak_python</td>
-                            <td>[0.1151, 0.1031, 0.0989, 0.1116, 0.1126, 0.1012, 0.083, 0.0799, 0.0927, 0.112]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Ak_matlab</td>
-                            <td>[0.1151, 0.1031, 0.0989, 0.1116, 0.1126, 0.1012, 0.083, 0.0799, 0.0927, 0.112]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Ak_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Bk_python</td>
-                            <td>[-0.115, -0.0715, -0.0186, -0.0007, 0.0, 0.0, 0.0, -0.0, -0.0482, -0.105]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Bk_matlab</td>
-                            <td>[-0.115, -0.0715, -0.0186, -0.0007, 0.0, 0.0, -0.0, -0.0, -0.0482, -0.105]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Bk_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Uk_python</td>
-                            <td>[3.2151, 1.0928, 1.0045, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0419, 1.3888]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Uk_matlab</td>
-                            <td>[3.2151, 1.0928, 1.0045, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0419, 1.3888]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Uk_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Vk_python</td>
-                            <td>[3.0556, 0.4407, 0.0951, 0.003, 0.0, -0.0, -0.0, 0.0, 0.2924, 0.9637]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Vk_matlab</td>
-                            <td>[3.0556, 0.4407, 0.0951, 0.003, 0.0, 0.0, 0.0, 0.0, 0.2924, 0.9637]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Vk_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Zc_python</td>
-                            <td>[(1.4107+0j), (1.4709+0j), (1.5422+0j), (1.5028+0j), (1.4988+0j), (1.5487+0j), (1.6565+0j), (1.6795+0j), (1.5549+0j), (1.4268+0j)]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Zc_matlab</td>
-                            <td>[1.4107, 1.4709, 1.5422, 1.5028, 1.4988, 1.5487, 1.6565, 1.6795, 1.5549, 1.4268]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Zc_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>renormalized_omega_python</td>
-                            <td>[0.0083, 0.1092, 0.1499, 0.1676, 0.1687, 0.1567, 0.1375, 0.1343, 0.1231, 0.0559]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>renormalized_omega_matlab</td>
-                            <td>[0.0068, 0.086, 0.1125, 0.1292, 0.1304, 0.1172, 0.0961, 0.0926, 0.0916, 0.0454]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>renormalized_omega_passed</td>
-                            <td>[False False False False False False False False False False]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_real_python</td>
-                            <td>[0.0059, 0.0743, 0.0972, 0.1116, 0.1126, 0.1012, 0.083, 0.0799, 0.0791, 0.0392]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_real_matlab</td>
-                            <td>[0.0059, 0.0743, 0.0972, 0.1116, 0.1126, 0.1012, 0.083, 0.0799, 0.0791, 0.0392]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_real_passed</td>
-                            <td>[ True  True  True  True  True  True  True  True  True  True]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_imag_python</td>
-                            <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_imag_matlab</td>
-                            <td>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>_omega_imag_passed</td>
-                            <td>[False False False False False False False False False False]</td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
+                
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>params_names</td>
+                                        <td>['U', 't', 'tp', 'tpp']</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>params</td>
+                                        <td>[1.0, 0.2, -0.08, -0.03]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>kx</td>
+                                        <td>[0.0628, 1.0053, 1.9478, 2.8903, 3.1416, 2.5133, 1.885, 1.5708, 0.9425, 0.3142]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>ky</td>
+                                        <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.6283, 1.2566, 1.5708, 0.9425, 0.3142]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Ak_python</td>
+                                        <td>[0.1151, 0.1031, 0.0989, 0.1116, 0.1126, 0.1012, 0.083, 0.0799, 0.0927, 0.112]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Ak_matlab</td>
+                                        <td>[0.1151, 0.1031, 0.0989, 0.1116, 0.1126, 0.1012, 0.083, 0.0799, 0.0927, 0.112]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Ak_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Bk_python</td>
+                                        <td>[-0.115, -0.0715, -0.0186, -0.0007, 0.0, 0.0, 0.0, -0.0, -0.0482, -0.105]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Bk_matlab</td>
+                                        <td>[-0.115, -0.0715, -0.0186, -0.0007, 0.0, 0.0, -0.0, -0.0, -0.0482, -0.105]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Bk_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Uk_python</td>
+                                        <td>[3.2151, 1.0928, 1.0045, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0419, 1.3888]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Uk_matlab</td>
+                                        <td>[3.2151, 1.0928, 1.0045, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0419, 1.3888]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Uk_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Vk_python</td>
+                                        <td>[3.0556, 0.4407, 0.0951, 0.003, 0.0, -0.0, -0.0, 0.0, 0.2924, 0.9637]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Vk_matlab</td>
+                                        <td>[3.0556, 0.4407, 0.0951, 0.003, 0.0, 0.0, 0.0, 0.0, 0.2924, 0.9637]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Vk_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Zc_python</td>
+                                        <td>[(1.4107+0j), (1.4709+0j), (1.5422+0j), (1.5028+0j), (1.4988+0j), (1.5487+0j), (1.6565+0j), (1.6795+0j), (1.5549+0j), (1.4268+0j)]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Zc_matlab</td>
+                                        <td>[1.4107, 1.4709, 1.5422, 1.5028, 1.4988, 1.5487, 1.6565, 1.6795, 1.5549, 1.4268]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Zc_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_python</td>
+                                        <td>[0.0083, 0.1092, 0.1499, 0.1676, 0.1687, 0.1567, 0.1375, 0.1343, 0.1231, 0.0559]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_matlab</td>
+                                        <td>[0.0068, 0.086, 0.1125, 0.1292, 0.1304, 0.1172, 0.0961, 0.0926, 0.0916, 0.0454]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_passed</td>
+                                        <td>[False False False False False False False False False False]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Zc_python</td>
+                                        <td>[(1.4107+0j), (1.4709+0j), (1.5422+0j), (1.5028+0j), (1.4988+0j), (1.5487+0j), (1.6565+0j), (1.6795+0j), (1.5549+0j), (1.4268+0j)]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Zc_matlab</td>
+                                        <td>[1.4107, 1.4709, 1.5422, 1.5028, 1.4988, 1.5487, 1.6565, 1.6795, 1.5549, 1.4268]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Zc_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>_omega_real_python</td>
+                                        <td>[0.0059, 0.0743, 0.0972, 0.1116, 0.1126, 0.1012, 0.083, 0.0799, 0.0791, 0.0392]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>_omega_real_matlab</td>
+                                        <td>[0.0059, 0.0743, 0.0972, 0.1116, 0.1126, 0.1012, 0.083, 0.0799, 0.0791, 0.0392]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>_omega_real_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>_omega_imaginary_python</td>
+                                        <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>_omega_imaginary_matlab</td>
+                                        <td>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>_omega_imaginary_passed</td>
+                                        <td>[ True  True  True  True  True  True  True  True  True  True]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="parameter-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_python</td>
+                                        <td>[0.0083, 0.1092, 0.1499, 0.1676, 0.1687, 0.1567, 0.1375, 0.1343, 0.1231, 0.0559]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_matlab</td>
+                                        <td>[0.0068, 0.086, 0.1125, 0.1292, 0.1304, 0.1172, 0.0961, 0.0926, 0.0916, 0.0454]</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>renormalized_omega_passed</td>
+                                        <td>[False False False False False False False False False False]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                
             </div>
             
             
             
         </section>
         
-        <section id="sidenote" class="report-section">
-            <h2>Sidenote</h2>
+        <section id="lookup_table" class="report-section">
+            <h2>Lookup Table</h2>
             
             <div class="content">
                 <p>Here is how you can find the corresponding matlab functions (stored in the <code>routines/</code> directory):</p>
@@ -460,6 +809,50 @@ the test is considered passed, otherwise it is considered failed.</p>
 <p>| <code>renormalized_factor_Zc</code> | <code>dw1</code> variable in <code>omega_renorm.m</code> |</p>
 <p>| <code>HartreeFockAverages</code> | <code>HartreeFockAverages.m</code> |</p>
 <p>| <code>renormalized_omega</code> | <code>dispfit_CaCuO2_vary_Z.m</code> | This will be the function used to fit the magnon dispersion</p>
+            </div>
+            
+            
+            
+            
+        </section>
+        
+        <section id="self_consistency_check" class="report-section">
+            <h2>Self Consistency Check</h2>
+            
+            <div class="content">
+                <h3>From Bastien's thesis</h3>
+<ol>
+<li>
+<p>Set $Z_c = 1.156$ as a constant.</p>
+</li>
+<li>
+<p>Fit the experimental data with this Zc, and get the resultsing parameters set params.</p>
+</li>
+<li>
+<p>With the obtained params, we can again calculate the new $Z_c$ value using these
+    parameters. </p>
+</li>
+<li>
+<p>Do the fit again with the new $Z_c$ value, and repeat the process until the self
+    consistency is reached, or when it hit the maximum iteration number (set as 10 in the
+    original code).</p>
+</li>
+</ol>
+<hr />
+<h3>My sidenote</h3>
+<p>The most computational expensive part of the code is the HartreeFockAverages function. This involves
+around 100^2 times of addition. If you are to use it for the fit, it will takes a lot of time.
+That's why we Bastine needs this self consistency check. However:</p>
+<ol>
+<li>
+<p>We don't necessarily need that because I (the AI) has already vectorize the HartreeFockAverages
+   code which is supposed to be faster than the original code.</p>
+</li>
+<li>
+<p>Even if we are to use the self-consistency check loop, we need to set a tolerance for the
+   relative error, instead of defining a maximum iteration number, which is not super clever to be honest.</p>
+</li>
+</ol>
             </div>
             
             
