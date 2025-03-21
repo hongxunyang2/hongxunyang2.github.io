@@ -19,10 +19,28 @@
     </script>
 </head>
 <body>
+    <!--
+    
+<nav class="nav-bar">
+    <div class="nav-container">
+        <div class="nav-right">
+            <a href="" class="nav-button">Home</a>
+        </div>
+    </div>
+</nav>
+-->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <a href="nickelate_magnon.html" class="nav-button">Home</a>
+            </div>
+        </div>
+    </nav>
+    
     <header>
         <h1>PNO Fit and Magnon Dispersion</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-20 12:35:40</p>
+            <p>Generated on: 2025-03-21 12:39:19</p>
         </div>
     </header>
     
@@ -88,48 +106,51 @@ function goes to zero at $x=0$. This way, everything below zero is set to zero.<
             
             
             <div class="parameters">
-                <h3>Parameters</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Parameter</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td>elastic</td>
-                            <td>Gaussian function<br>  <strong>Parameters:</strong> elastic_center, elastic_intensity, elastic_fwhm<br>  <strong>Initial values:</strong> [0, 0.5, 39]<br>  <strong>Bounds:</strong> [-20, 10],  [0, 2],  [38.5, 39.5]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>phonon</td>
-                            <td>Gaussian function<br>  <strong>Parameters:</strong> phonon_center, phonon_intensity, phonon_fwhm<br>  <strong>Initial values:</strong> [30, 0.05, 39]<br>  <strong>Bounds:</strong> [0, 60],  [0, 0.2],  [38.5, 39.5]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>phonon2</td>
-                            <td>Gaussian function<br>  <strong>Parameters:</strong> phonon2_center, phonon2_intensity, phonon2_fwhm<br>  <strong>Initial values:</strong> [80, 0.05, 39]<br>  <strong>Bounds:</strong> [50, 110],  [0, 0.2],  [38.5, 39.5]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>magnon</td>
-                            <td>Convoluted Damped harmonic oscillator<br>  <strong>Parameters:</strong> magnon_center, magnon_intensity, magnon_gamma<br>  <strong>Initial values:</strong> [100, 0.2, 100]<br>  <strong>Bounds:</strong> [0, 400],  [0, 10],  [0, 1000]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>background</td>
-                            <td>quadratic function<br>  <strong>Parameters:</strong> peak_center_3, peak_amplitude_3<br>  <strong>Initial values:</strong> [1000, 0.02]<br>  <strong>Bounds:</strong> [800, 20000],  [0, 0.1]</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Sample</td>
-                            <td>PNO (undoped infinite-layer Pr1Ni1O2)</td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
+                
+                    <div class="parameter-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td>elastic</td>
+                                    <td>Gaussian function<br>  <strong>Parameters:</strong> elastic_center, elastic_intensity, elastic_fwhm<br>  <strong>Initial values:</strong> [0, 0.5, 39]<br>  <strong>Bounds:</strong> [-20, 10],  [0, 2],  [38.5, 39.5]</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>phonon</td>
+                                    <td>Gaussian function<br>  <strong>Parameters:</strong> phonon_center, phonon_intensity, phonon_fwhm<br>  <strong>Initial values:</strong> [30, 0.05, 39]<br>  <strong>Bounds:</strong> [0, 60],  [0, 0.2],  [38.5, 39.5]</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>phonon2</td>
+                                    <td>Gaussian function<br>  <strong>Parameters:</strong> phonon2_center, phonon2_intensity, phonon2_fwhm<br>  <strong>Initial values:</strong> [80, 0.05, 39]<br>  <strong>Bounds:</strong> [50, 110],  [0, 0.2],  [38.5, 39.5]</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>magnon</td>
+                                    <td>Convoluted Damped harmonic oscillator<br>  <strong>Parameters:</strong> magnon_center, magnon_intensity, magnon_gamma<br>  <strong>Initial values:</strong> [100, 0.2, 100]<br>  <strong>Bounds:</strong> [0, 400],  [0, 10],  [0, 1000]</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>background</td>
+                                    <td>quadratic function<br>  <strong>Parameters:</strong> peak_center_3, peak_amplitude_3<br>  <strong>Initial values:</strong> [1000, 0.02]<br>  <strong>Bounds:</strong> [800, 20000],  [0, 0.1]</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>Sample</td>
+                                    <td>PNO (undoped infinite-layer Pr1Ni1O2)</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
             </div>
             
             
