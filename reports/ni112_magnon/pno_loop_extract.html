@@ -40,7 +40,7 @@
     <header>
         <h1>PNO Loop Extraction Analysis</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-24 17:12:29</p>
+            <p>Generated on: 2025-03-24 18:00:33</p>
         </div>
     </header>
     
@@ -50,8 +50,8 @@
             <h2>Fit to Dispersion</h2>
             
             <div class="content">
-                <p>We Performed both the direct-Zc-calculation method ($Z_c$ is directly calculated during the fit) and the
-self-consistent-loop method ($Z_c$ is fixed during the fit and only gets updated after the fit). The following
+                <p>We Performed both the <strong>direct-Zc-calculation</strong> method ($Z_c$ is directly calculated during the fit) and the
+<strong>self-consistent-loop</strong> method ($Z_c$ is fixed during the fit and only gets updated after the fit). The following
 tables shows the parameters used in the fit. </p>
             </div>
             
@@ -128,7 +128,7 @@ tables shows the parameters used in the fit. </p>
                                 
                                 <tr>
                                     <td>time_spent</td>
-                                    <td>221.29 seconds</td>
+                                    <td>225.71 seconds</td>
                                 </tr>
                                 
                                 <tr>
@@ -225,7 +225,7 @@ tables shows the parameters used in the fit. </p>
                                 
                                 <tr>
                                     <td>time_spent</td>
-                                    <td>377.81 seconds</td>
+                                    <td>388.49 seconds</td>
                                 </tr>
                                 
                                 <tr>
@@ -289,6 +289,34 @@ tables shows the parameters used in the fit. </p>
                     
                 </div>
             </div>
+            
+        </section>
+        
+        <section id="summary" class="report-section">
+            <h2>Summary</h2>
+            
+            <div class="content">
+                <p>As can be seen from results of the the two methods above: </p>
+<ol>
+<li>
+<p>The two methods gives identical results. This means at least within my python code, the two
+   methods do not contradict each other. What's remaining is to compare my python results with the
+   old matlab results. </p>
+</li>
+<li>
+<p>The <strong>direct-Zc-calculation</strong> method is even <strong style="color:red;">faster</strong> than the <strong>self-consistent-loop</strong> method. This
+   means it's not quite necessary to use the self-consistent loop... </p>
+</li>
+<li>
+<p>Interestingly, the the system favors $t^\prime = 0$... This is interesting. I am not sure if I
+   have some bugs in my code, or this is really what it is. Therefore, it is very necessary to
+do the analysis once again with the old matlab code (with self-consistent loop). </p>
+</li>
+</ol>
+            </div>
+            
+            
+            
             
         </section>
         
