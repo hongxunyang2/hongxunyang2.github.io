@@ -7,6 +7,7 @@
     --border-color: #ddd;
     --hover-color: #2980b9;
     --section-bg: #fff;
+    --base-font-size: 19.8px;
 }
 
 * {
@@ -23,6 +24,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    font-size: var(--base-font-size);
 }
 
 /* Header styles */
@@ -39,7 +41,7 @@ header h1 {
 }
 
 .metadata {
-    font-size: 0.9em;
+    font-size: 1em;
     opacity: 0.8;
 }
 
@@ -87,12 +89,12 @@ header h1 {
 
 .parameter-table th:first-child,
 .parameter-table td:first-child {
-    width: 20%;
+    width: 25%;
 }
 
 .parameter-table th:last-child,
 .parameter-table td:last-child {
-    width: 80%;
+    width: 75%;
 }
 
 table {
@@ -169,7 +171,7 @@ tr:nth-child(even) {
 }
 
 .figure-caption p {
-    font-size: 0.9em;
+    font-size: 1em;
     color: var(--secondary-color);
 }
 
@@ -179,7 +181,7 @@ footer {
     margin-top: 30px;
     padding: 20px;
     color: #777;
-    font-size: 0.9em;
+    font-size: 1em;
     border-top: 1px solid var(--border-color);
 }
 
@@ -227,7 +229,7 @@ footer {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1em;
+    font-size: 1.21em;
 }
 
 .toc a:hover {
@@ -237,7 +239,7 @@ footer {
 
 .report-date {
     color: #777;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 /* Navigation bar styles */

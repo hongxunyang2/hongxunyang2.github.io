@@ -40,7 +40,7 @@
     <header>
         <h1>PNO Loop Extraction Analysis</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-24 18:03:29</p>
+            <p>Generated on: 2025-03-24 18:25:02</p>
         </div>
     </header>
     
@@ -51,7 +51,32 @@
             
             <div class="content">
                 <p>We Performed both the <strong>direct-Zc-calculation</strong> method ($Z_c$ is directly calculated during the fit) and the
-<strong>self-consistent-loop</strong> method ($Z_c$ is fixed during the fit and only gets updated after the fit). The following
+<strong>self-consistent-loop</strong> method ($Z_c$ is fixed during the fit and only gets updated after the fit).
+Note that all the following analysis is done in my python code, no matlab code is involved.
+Therefore, apart from verifying the two methods give identical results, I also need to verify that
+the python code gives the same results as the old matlab code. </p>
+<p><br></p>
+<p>In the fitting process:</p>
+<ul>
+<li>
+<p>$U$ is the only free parameter for the fit. </p>
+</li>
+<li>
+<p>$t^{\prime\prime}$ is fixed  throughout the entire script. denoted as <code>tppt</code> in the code.</p>
+</li>
+<li>
+<p>$\frac{t}{U}$ and $\frac{t^\prime}{t}$ are being looped over. denoted as <code>tU</code> and <code>tpt</code> in the code. In each step of the loop, these two
+  parameters are also fixed. within this step, we fit the data with the only free parameter $U$. 
+  With the resulting $U$, we calculate the $\chi^2$. In effect, $\chi^2(\frac{t}{U}, \frac{t^\prime}{t})$
+  is a function of $\frac{t}{U}$ and $\frac{t^\prime}{t}$. </p>
+</li>
+<li>
+<p>At the end of the fit, we plot out the $\chi^2(\frac{t}{U}, \frac{t^\prime}{t})$ landscape,
+and pick the best parameters set. </p>
+</li>
+</ul>
+<p><br></p>
+<p>The following
 tables shows the parameters used in the fit. </p>
             </div>
             
