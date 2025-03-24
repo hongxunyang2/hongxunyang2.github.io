@@ -8,6 +8,9 @@
     --hover-color: #2980b9;
     --section-bg: #fff;
     --base-font-size: 19.8px;
+    --code-bg: #f5f7f9;
+    --code-border: #e1e4e8;
+    --code-text: #24292e;
 }
 
 * {
@@ -285,4 +288,27 @@ footer {
 
 .nav-button:hover {
     background-color: var(--hover-color);
+}
+
+/* Code styles */
+code {
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 3px;
+    color: var(--code-text);
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre code {
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+    line-height: 1.45;
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 5px;
 } 
