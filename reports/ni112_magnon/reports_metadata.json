@@ -1,5 +1,10 @@
 [
     {
+        "filename": "compatibility_check.html",
+        "title": "IMPORTANT: Compatibility Check",
+        "date": "2025-03-24 15:33:21"
+    },
+    {
         "filename": "pno_loop_extract.html",
         "title": "PNO Loop Extraction Analysis",
         "date": "2025-03-24 13:12:15"

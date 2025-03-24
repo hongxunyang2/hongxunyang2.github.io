@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPORTANT: Compatibility Check</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true
+            }
+        });
+    </script>
+</head>
+<body>
+    <!--
+    
+<nav class="nav-bar">
+    <div class="nav-container">
+        <div class="nav-right">
+            <a href="" class="nav-button">Home</a>
+        </div>
+    </div>
+</nav>
+-->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <a href="nickelate_magnon.html" class="nav-button">Home</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header>
+        <h1>IMPORTANT: Compatibility Check</h1>
+        <div class="metadata">
+            <p>Generated on: 2025-03-24 15:33:21</p>
+        </div>
+    </header>
+    
+    <main>
+        
+        <section id="introduction" class="report-section">
+            <h2>Introduction</h2>
+            
+            <div class="content">
+                <p>So far I have rewritten the matlab+C codes into python. There are a couple of things I need to check
+to make sure everything is correct.</p>
+<h3>Oldest Matlab codes</h3>
+<p>In the oldest Matlab codes, the fit involves a self-consistent loop to update the renormalized factor $Z_c$. The purpose is that
+directly calculating $Z_c$ is very computational expensive. Typically each fit requires
+evaluation of the fit function $\tilde{\omega}$ at least 100 times, which means the factor
+$Z_c$ is calculated 100 times for each fit. This is very time consuming. Therefore, Bastine came
+up with an idea (see Bastine's thesis, page 131): a two-step self-consistent fitting procedure
+is used: </p>
+<p><br></p>
+<ol>
+<li>
+<p>set $Z_c = 1.156$, a constant as an initial guess. </p>
+</li>
+<li>
+<p>Fit the experimental magnon dispersion with parameters $(U, t, t^{\prime}, t^{\prime\prime})$
+   using the formula $\tilde{\omega} = Z_c(k) \cdot \omega(k\,|\, U, t, t^{\prime},
+   t^{\prime\prime})$. </p>
+</li>
+<li>
+<p>This fit will give us a set of best parameters $(U, t, t^{\prime}, t^{\prime\prime})$. These
+   parameters can be used to calculate the renormalized factor $Z_c$ using the formula Eq.3.5.60
+   in Bastine's thesis. </p>
+</li>
+<li>
+<p>Compare this newly-calculated $Z_c$ with the old one, if the difference is less than a threshold,
+   the fit converges. Otherwise, update the $Z_c$ and repeat the process from step 2. </p>
+</li>
+</ol>
+<p>Notice that even in the oldest matlab code, the last step is not "repeat the process until the fit
+converges", but rather "repeat the process 10 times". </p>
+<p><br></p>
+<p>This self-consistent loop only requires calculation of the $Z_c$ 10 times, instead of typicall 100
+times. It saves time for sure. However, it's not guaranteed 10 times is enough to converge, nor it
+will converge at all. </p>
+<p><br></p>
+<p><strong>Therefore, we need to check whether this approach is really valid, by comparing the results
+obtained from this process with the results obtained from the fit process where $Z_c$ is directly
+calculated.</strong></p>
+<p><br></p>
+<p>We can use the old LCO data to do the test.</p>
+<p><br></p>
+<hr />
+<h3>Matlab codes for fitting SCO data</h3>
+<p>Somehow in the matlab codes for fitting the SCO data, the self-consistent loop is not implemented.
+In effect, the $Z_c$ is fixed at its initial value 1.156 during the entire fitting process. And only
+after we obtained the best parameters set $(U, t, t^{\prime}, t^{\prime\prime})$, $Z_c$ is
+calculated. At this point, even if the resulting $Z_c$ is $k$-dependent, it's not used in the fit.
+During the fit, $Z_c$ is neither $k$-dependent nor updated. </p>
+<p><br></p>
+<p><strong>Therefore, we need to redo the fit process with the old method (self-consistent loop) and the new
+method (direct calculation of $Z_c$).</strong></p>
+<p><br></p>
+<p>The best outcome will be that they are all the same. But we have to be prepared for the case where
+at least one of them gives different results. </p>
+<p><br></p>
+<hr />
+<h3>To-do list</h3>
+<ul>
+<li>
+<p>[] Implement self-consistent loop in my python codes. (currently I only have the "direct
+  calculation of $Z_c$" method)</p>
+</li>
+<li>
+<p>[] Perform the fit for LCO data using (1) old matlab codes (with self-consistent loop) and (2) my
+  python code (with self-consistent loop); and (3) my python code (with direct calculation of
+  $Z_c$). </p>
+</li>
+<li>
+<p>[] Redo the fit for the SCO data with the different methods and see how it goes. </p>
+</li>
+</ul>
+<p><br></p>
+<hr />
+<h3>Jargons:</h3>
+<ul>
+<li>
+<p><strong>Self-consistent-loop method</strong>: The method used by the oldest matlab codes where the $Z_c$ is
+  updated within a self-consistent loop, but is kept unchanged during the fit. See the first
+  section. </p>
+</li>
+<li>
+<p><strong>Direct-$Z_c$-calculation method</strong>: the method where $Z_c$ is varying during the fit. It's a function
+  of the parameters $(U, t, t^{\prime}, t^{\prime\prime})$. </p>
+</li>
+</ul>
+            </div>
+            
+            
+            
+            
+        </section>
+        
+    </main>
+    
+    <footer>
+        <p>Generated using Report Generator</p>
+    </footer>
+</body>
+</html> 
