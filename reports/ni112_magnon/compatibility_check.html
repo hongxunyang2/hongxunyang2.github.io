@@ -40,7 +40,7 @@
     <header>
         <h1>IMPORTANT: Compatibility Check</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-24 15:34:33</p>
+            <p>Generated on: 2025-03-26 10:32:08</p>
         </div>
     </header>
     
@@ -67,12 +67,14 @@ is used: </p>
 <li>
 <p>Fit the experimental magnon dispersion with parameters $(U, t, t^{\prime}, t^{\prime\prime})$
    using the formula $\tilde{\omega} = Z_c(k) \cdot \omega(k\,|\, U, t, t^{\prime},
-   t^{\prime\prime})$. </p>
+   t^{\prime\prime})$. Keep in mind that in this step during the fit, $Z_c$ is not updated. It's a
+   function only of $k$, but not of $U, t, t^{\prime}, t^{\prime\prime}$. </p>
 </li>
 <li>
 <p>This fit will give us a set of best parameters $(U, t, t^{\prime}, t^{\prime\prime})$. These
-   parameters can be used to calculate the renormalized factor $Z_c$ using the formula Eq.3.5.60
-   in Bastine's thesis. </p>
+   parameters can be used to calculate the renormalized factor $Z_c(k\, |\, U, t, t^{\prime},
+   t^{\prime\prime})$ using the formula Eq.3.5.60 in Bastine's thesis. Only now we update the $Z_c$
+   to be a function of $U, t, t^{\prime}, t^{\prime\prime}$. </p>
 </li>
 <li>
 <p>Compare this newly-calculated $Z_c$ with the old one, if the difference is less than a threshold,
@@ -84,7 +86,11 @@ converges", but rather "repeat the process 10 times". </p>
 <p><br></p>
 <p>This self-consistent loop only requires calculation of the $Z_c$ 10 times, instead of typicall 100
 times. It saves time for sure. However, it's not guaranteed 10 times is enough to converge, nor it
-will converge at all. </p>
+will converge at all. The safest way is, however, to allow $Z_c$ to vary during the fit, aka. make
+$Z_c$ a function of the parameters $(U, t, t^{\prime}, t^{\prime\prime})$ in the equation
+$\tilde{\omega} = Z_c(k\,|\, U, t, t^{\prime}, t^{\prime\prime}) \cdot \omega(k\,|\, U, t,
+t^{\prime}, t^{\prime\prime})$. Although this approach is more time consuming, it's robust and it's
+guaranted to be correct. We temporarily call this approach as "direct-$Z_c$-calculation method".</p>
 <p><br></p>
 <p><strong>Therefore, we need to check whether this approach is really valid, by comparing the results
 obtained from this process with the results obtained from the fit process where $Z_c$ is directly
@@ -110,16 +116,30 @@ at least one of them gives different results. </p>
 <h3>To-do list</h3>
 <ul>
 <li>
-<p>[] Implement self-consistent loop in my python codes. (currently I only have the "direct
+<p>✅ Implement self-consistent loop in my python codes. (currently I only have the "direct
   calculation of $Z_c$" method)</p>
 </li>
 <li>
-<p>[] Perform the fit for LCO data using (1) old matlab codes (with self-consistent loop) and (2) my
+<p>(2-3)✅, (1)❌: Perform the fit for LCO data using (1) old matlab codes (with self-consistent loop) and (2) my
   python code (with self-consistent loop); and (3) my python code (with direct calculation of
   $Z_c$). </p>
 </li>
 <li>
 <p>[] Redo the fit for the SCO data with the different methods and see how it goes. </p>
+</li>
+<li>
+<p>[] Try to use $\omega_0$ to fit the data. Also Fano shape could also be used. </p>
+</li>
+<li>
+<p>[] Update the compatibility check report. It has passed the test, but the report is not complete
+  yet. </p>
+</li>
+<li>
+<p>[] Try experimenting on the sign of $V_k$. Alternatively, we can read the literature and find that
+  out.</p>
+</li>
+<li>
+<p>[] Put phonon intensity analysis into the report. </p>
 </li>
 </ul>
 <p><br></p>
