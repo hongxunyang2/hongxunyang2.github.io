@@ -1,0 +1,42 @@
+{
+    "python_implementation_part2": {
+        "content": "<p>Implement the <strong>precise-self-consistent-loop</strong> method and the <strong>precise-direct-Zc_calculation</strong> method in python. Those two methods are more precise than the previous two methods, since it does not approximate the renormalization factor $Z_c$.</p>",
+        "is_check": false
+    },
+    "lco_fit_part2": {
+        "content": "<p>Re-fit the LaCuO data using the <strong>precise version</strong> of the two methods..</p>",
+        "is_check": false
+    },
+    "sco_fit": {
+        "content": "<p>Re-fit the SrCaO data using <strong>self-consistent-loop</strong> method and the <strong>direct-Zc_calculation</strong> method.</p>",
+        "is_check": false
+    },
+    "sco_fit_part2": {
+        "content": "<p>Re-fit the SrCaO data using the <strong>precise version</strong> of the two methods.</p>",
+        "is_check": false
+    },
+    "omega_0_fit": {
+        "content": "<p>Try to use $\\omega_0$ as the data to do the fit, instead of using $\\omega_1$</p>",
+        "is_check": false
+    },
+    "compatibility_check": {
+        "content": "<p>Try doing the fit using the oldest matlab code where self-consistent-loop was used, and compare the result with the my new python code. Do it on LaCuO and SrCaO.</p>",
+        "is_check": false
+    },
+    "vk_role": {
+        "content": "<p>Figure out the role of $V_k$ and see if the sign of $V_k$ really matters. To do this, change the sign and run the code again. Alternatively, I can dig into the theory and see how it is derived.</p>",
+        "is_check": false
+    },
+    "phonon_analysis": {
+        "content": "<p>For PNO, also put the phonon intensities into the report,</p>",
+        "is_check": false
+    },
+    "python_implementation": {
+        "content": "<p>Implement the <strong>self-consistent-loop</strong> method and the <strong>direct-Zc_calculation</strong> method in python. </p>",
+        "is_check": true
+    },
+    "lco_fit": {
+        "content": "<p>Re-fit the LaCuO data using <strong>self-consistent-loop</strong> method and the <strong>direct-Zc_calculation</strong> method.</p>",
+        "is_check": true
+    }
+}

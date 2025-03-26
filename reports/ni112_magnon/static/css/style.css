@@ -311,4 +311,65 @@ pre code {
     background-color: var(--code-bg);
     border: 1px solid var(--code-border);
     border-radius: 5px;
+}
+
+/* Todo list styles */
+.todo-list {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.todo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.todo-table th,
+.todo-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.todo-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+.todo-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.todo-table .status-col {
+    width: 10%;
+    text-align: center;
+}
+
+.todo-table .identifier-col {
+    width: 20%;
+    font-weight: 500;
+}
+
+.todo-table .content-col {
+    width: 70%;
+}
+
+.todo-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+@media (max-width: 768px) {
+    .todo-table {
+        font-size: 0.9em;
+    }
+    
+    .todo-table th,
+    .todo-table td {
+        padding: 8px 10px;
+    }
 } 

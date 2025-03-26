@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Index</title>
     <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
         <h1>Report Index</h1>
         <div class="metadata">
-            <p>Last updated: 2025-03-26 10:32:08</p>
+            <p>Last updated: 2025-03-27 00:12:58</p>
         </div>
     </header>
     
@@ -51,6 +63,84 @@
                     </li>
                     
                 </ul>
+            </div>
+        </section>
+
+        <section class="report-section">
+            <h2>To-Do List</h2>
+            <div class="todo-list">
+                <table class="todo-table">
+                    <thead>
+                        <tr>
+                            <th class="status-col">Status</th>
+                            <th class="identifier-col">Identifier</th>
+                            <th class="content-col">Content</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="status-col">⬜</td>
+                            <td class="identifier-col">python_implementation_part2</td>
+                            <td class="content-col"><p>Implement the <strong>precise-self-consistent-loop</strong> method and the <strong>precise-direct-Zc_calculation</strong> method in python. Those two methods are more precise than the previous two methods, since it does not approximate the renormalization factor $Z_c$.</p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="status-col">⬜</td>
+                            <td class="identifier-col">lco_fit_part2</td>
+                            <td class="content-col"><p>Re-fit the LaCuO data using the <strong>precise version</strong> of the two methods..</p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="status-col">⬜</td>
+                            <td class="identifier-col">sco_fit</td>
+                            <td class="content-col"><p>Re-fit the SrCaO data using <strong>self-consistent-loop</strong> method and the <strong>direct-Zc_calculation</strong> method.</p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="status-col">⬜</td>
+                            <td class="identifier-col">sco_fit_part2</td>
+                            <td class="content-col"><p>Re-fit the SrCaO data using the <strong>precise version</strong> of the two methods.</p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="status-col">⬜</td>
+                            <td class="identifier-col">omega_0_fit</td>
+                            <td class="content-col"><p>Try to use $\omega_0$ as the data to do the fit, instead of using $\omega_1$</p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="status-col">⬜</td>
+                            <td class="identifier-col">compatibility_check</td>
+                            <td class="content-col"><p>Try doing the fit using the oldest matlab code where self-consistent-loop was used, and compare the result with the my new python code. Do it on LaCuO and SrCaO.</p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="status-col">⬜</td>
+                            <td class="identifier-col">vk_role</td>
+                            <td class="content-col"><p>Figure out the role of $V_k$ and see if the sign of $V_k$ really matters. To do this, change the sign and run the code again. Alternatively, I can dig into the theory and see how it is derived.</p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="status-col">⬜</td>
+                            <td class="identifier-col">phonon_analysis</td>
+                            <td class="content-col"><p>For PNO, also put the phonon intensities into the report,</p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="status-col">✅</td>
+                            <td class="identifier-col">python_implementation</td>
+                            <td class="content-col"><p>Implement the <strong>self-consistent-loop</strong> method and the <strong>direct-Zc_calculation</strong> method in python. </p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="status-col">✅</td>
+                            <td class="identifier-col">lco_fit</td>
+                            <td class="content-col"><p>Re-fit the LaCuO data using <strong>self-consistent-loop</strong> method and the <strong>direct-Zc_calculation</strong> method.</p></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
