@@ -40,7 +40,7 @@
     <header>
         <h1>Potential Pitfall in $Z_c$ Calculation</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-27 11:47:04</p>
+            <p>Generated on: 2025-03-27 23:18:46</p>
         </div>
     </header>
     
@@ -78,7 +78,7 @@ exact formula, the result without approximation should be $\sqrt{1+2} \approx 1.
 relative error is $(2-1.7)/1.7 \approx 18\%$. </p>
 <p>Therefore, we probably need to use the exact formula for $Z_c$ for those cases. From here on, we
 call the method without the approximation (1) <strong>precise-self-consistent-loop</strong> and (2)
-<strong>precise-direct-Zc_calculation</strong>. </p>
+<strong>precise-direct-zc-calculation</strong>. </p>
             </div>
             
             
@@ -97,7 +97,14 @@ subscript $p$ stands for "precise". </p>
 <p>
 <script type="math/tex; mode=display">Z_p \equiv \sqrt{\frac{(A+dA)^2 - (B+dB)^2}{A^2 - B^2}}</script>
 </p>
-<p>so that we stil keep the same definition: $\tilde{\omega}_k = Z_p \cdot \omega_k$. </p>
+<p>so that we stil keep the same definition: $\tilde{\omega}_k = Z_p \cdot \omega_k$. We will be using
+this definition of $Z_p$ for the precise fit method from now on.</p>
+<p><strong style="color: deeppink;"> However, is it really necessary to calculate $Z_p$? I think the
+exact formula of $\tilde{\omega}_k$ is already enough. Does the $Z_p$ still have any physical
+meaning? </strong></p>
+<p>After a few tests (See LCO loop Extraction), The $Z_p$ actually blows up at some $k$ points. I am
+not sure if this is a good sign tho. Anyway, to understand this, I think we need to dive deeper into
+the theory of this magnon problem...</p>
             </div>
             
             

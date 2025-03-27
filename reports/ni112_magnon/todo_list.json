@@ -1,12 +1,4 @@
 {
-    "python_implementation_part2": {
-        "content": "<p>Implement the <strong>precise-self-consistent-loop</strong> method and the <strong>precise-direct-Zc_calculation</strong> method in python. Those two methods are more precise than the previous two methods, since it does not approximate the renormalization factor $Z_c$.</p>",
-        "is_check": false
-    },
-    "lco_fit_part2": {
-        "content": "<p>Re-fit the LaCuO data using the <strong>precise version</strong> of the two methods..</p>",
-        "is_check": false
-    },
     "sco_fit": {
         "content": "<p>Re-fit the SrCaO data using <strong>self-consistent-loop</strong> method and the <strong>direct-Zc_calculation</strong> method.</p>",
         "is_check": false
@@ -29,7 +21,15 @@
     },
     "phonon_analysis": {
         "content": "<p>For PNO, also put the phonon intensities into the report,</p>",
-        "is_check": false
+        "is_check": true
+    },
+    "lco_fit_part2": {
+        "content": "<p>Re-fit the LaCuO data using the <strong>precise version</strong> of the two methods..</p>",
+        "is_check": true
+    },
+    "python_implementation_part2": {
+        "content": "<p>Implement the <strong>precise-self-consistent-loop</strong> method and the <strong>precise-direct-Zc_calculation</strong> method in python. Those two methods are more precise than the previous two methods, since it does not approximate the renormalization factor $Z_c$.</p>",
+        "is_check": true
     },
     "python_implementation": {
         "content": "<p>Implement the <strong>self-consistent-loop</strong> method and the <strong>direct-Zc_calculation</strong> method in python. </p>",
