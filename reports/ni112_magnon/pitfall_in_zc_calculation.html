@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potential Pitfall in $Z_c$ Calculation</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true
+            }
+        });
+    </script>
+</head>
+<body>
+    <!--
+    
+<nav class="nav-bar">
+    <div class="nav-container">
+        <div class="nav-right">
+            <a href="" class="nav-button">Home</a>
+        </div>
+    </div>
+</nav>
+-->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <a href="nickelate_magnon.html" class="nav-button">Home</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header>
+        <h1>Potential Pitfall in $Z_c$ Calculation</h1>
+        <div class="metadata">
+            <p>Generated on: 2025-03-27 11:39:05</p>
+        </div>
+    </header>
+    
+    <main>
+        
+        <section id="introduction" class="report-section">
+            <h2>Introduction</h2>
+            
+            <div class="content">
+                <p>In page 112 in Bastien's thesis, the renormalized energy for <strong>single-layered</strong> system is given
+by:</p>
+<p>
+<script type="math/tex; mode=display">\tilde{\omega}_k = \sqrt{(A_k + dA_k)^2 + (B_k + dB_k)^2}</script>
+</p>
+<p>where $A_k$, $dA_k$, $B_k$, and $dB_k$ are  analytic expressions of momentum $k$, and also the
+tight-binding parameters $(U, t, t^\prime, t^{\prime\prime})$. What is suspicious is It gets taylor
+expanded to the first order:</p>
+<p>
+<script type="math/tex; mode=display">\begin{align*}
+\tilde{\omega}_k^2 &= \sqrt{(A + dA_k)^2  (B_k + dB_k)^2} \\
+&= \sqrt{A_k^2 - B^2 + 2A dA - 2B dB + (dA)^2 - (dB_k)^2} \\
+&= \sqrt{A^2 - B^2} \cdot \sqrt{1 + \frac{2A dA - 2B dB + (dA)^2 - (dB)^2}{A^2 - B^2}} \\
+&\approx \omega \underbrace{\left(1 + \frac{A dA - B dB}{\omega^2} \right)}_{Z_c} +
+\mathcal{O}((dA)^2, (dB)^2)\\
+&= Z_c \cdot \omega + \mathcal{O}((dA)^2, (dB)^2)
+\end{align*}</script>
+</p>
+<p>where $\omega \equiv \sqrt{A^2 - B^2}$ is the unrenormalized energy, and $Z_c$ is defined as above.
+In principle, in order for this expansion to be valid, the term $(AdA - BdB)/\omega^2$ should be
+small, i.e. $Z_c \rightarrow 1$. However, in our fit, we found that $Z_c$ is close to 2 for LaCuO,
+and even larger than 2 for SrCuO. The first order approximation breaks down in those cases. </p>
+<p>To estimate the error brought by this approximation: We know that this approximation is simply $\sqrt{1
++ \epsilon} \approx 1 + \frac{\epsilon}{2} = Z_c$. If $Z_c = 2$, then $\epsilon = 2$. If we use the
+exact formula, the result without approximation should be $\sqrt{1+2} \approx 1.7$. Therefore, the
+relative error is $(2-1.7)/1.7 \approx 18\%$. </p>
+<p>therefore, we probably need to use the exact formula for $Z_c$ for those cases. </p>
+            </div>
+            
+            
+            
+            
+        </section>
+        
+    </main>
+    
+    <footer>
+        <p>Generated using Report Generator</p>
+    </footer>
+</body>
+</html> 
