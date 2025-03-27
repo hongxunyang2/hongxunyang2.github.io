@@ -40,7 +40,7 @@
     <header>
         <h1>Potential Pitfall in $Z_c$ Calculation</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-27 11:41:33</p>
+            <p>Generated on: 2025-03-27 11:47:04</p>
         </div>
     </header>
     
@@ -79,6 +79,25 @@ relative error is $(2-1.7)/1.7 \approx 18\%$. </p>
 <p>Therefore, we probably need to use the exact formula for $Z_c$ for those cases. From here on, we
 call the method without the approximation (1) <strong>precise-self-consistent-loop</strong> and (2)
 <strong>precise-direct-Zc_calculation</strong>. </p>
+            </div>
+            
+            
+            
+            
+        </section>
+        
+        <section id="fix_it" class="report-section">
+            <h2>Fix it then!!!</h2>
+            
+            <div class="content">
+                <p>To fix this issue, we redefine the $Z_c$ in a more precise way. To differentiate it from the old
+$Z_c$ (where approximation is applied), we call the new renormalization factor $Z_p$, where the
+subscript $p$ stands for "precise". </p>
+<p>The new $Z_p$ is calculated by the exact formula:</p>
+<p>
+<script type="math/tex; mode=display">Z_p \equiv \sqrt{\frac{(A+dA)^2 - (B+dB)^2}{A^2 - B^2}}</script>
+</p>
+<p>so that we stil keep the same definition: $\tilde{\omega}_k = Z_p \cdot \omega_k$. </p>
             </div>
             
             
