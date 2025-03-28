@@ -1,5 +1,15 @@
 [
     {
+        "filename": "lco_loop_extract.html",
+        "title": "LCO Loop Extraction Analysis",
+        "date": "2025-03-28 17:12:32"
+    },
+    {
+        "filename": "pno_loop_extract.html",
+        "title": "PNO Loop Extraction Analysis",
+        "date": "2025-03-28 15:47:40"
+    },
+    {
         "filename": "sco_loop_extract.html",
         "title": "SCO Loop Extraction Analysis",
         "date": "2025-03-28 14:59:00"
@@ -10,19 +20,9 @@
         "date": "2025-03-28 11:13:15"
     },
     {
-        "filename": "pno_loop_extract.html",
-        "title": "PNO Loop Extraction Analysis",
-        "date": "2025-03-28 00:07:14"
-    },
-    {
         "filename": "pno_fit.html",
         "title": "PNO Fit and Magnon Dispersion",
         "date": "2025-03-27 17:00:30"
-    },
-    {
-        "filename": "lco_loop_extract.html",
-        "title": "LCO Loop Extraction Analysis",
-        "date": "2025-03-27 16:32:42"
     },
     {
         "filename": "compatibility_check.html",
