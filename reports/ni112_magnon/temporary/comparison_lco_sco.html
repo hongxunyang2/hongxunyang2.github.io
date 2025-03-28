@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zc Table</title>
+    <style>
+        .page-title {
+            text-align: center;
+            margin: 30px auto;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 10px;
+            text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(even) td {
+            background-color: #eef7ee;
+        }
+        /* Set specific column widths */
+        th:nth-child(1), td:nth-child(1) { width: 20%; } /* Method column */
+        th:nth-child(2), td:nth-child(2) { width: 13.33%; } /* Precise Zc LCO */
+        th:nth-child(3), td:nth-child(3) { width: 13.33%; } /* Precise Zc SCO */
+        th:nth-child(4), td:nth-child(4) { width: 13.33%; } /* Approximated Zc LCO */
+        th:nth-child(5), td:nth-child(5) { width: 13.33%; } /* Approximated Zc SCO */
+        th:nth-child(6), td:nth-child(6) { width: 13.33%; } /* Paper LCO */
+        th:nth-child(7), td:nth-child(7) { width: 13.33%; } /* Paper SCO */
+    </style>
+</head>
+<body>
+
+<h1 class="page-title">Comparison of U/t across five methods</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2">Method</th>
+            <th colspan="2">Precise Zc</th>
+            <th colspan="2">Approximated Zc</th>
+            <th colspan="2">Paper</th>
+        </tr>
+        <tr>
+            <th>LCO</th>
+            <th>SCO</th>
+            <th>LCO</th>
+            <th>SCO</th>
+            <th>LCO</th>
+            <th>SCO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>consistent-loop</td>
+            <td>10.00</td>
+            <td>8.75</td>
+            <td>9.09</td>
+            <td>6.36</td>
+            <td>8.33</td>
+            <td>6.25</td>
+        </tr>
+        <tr>
+            <td>direct-zc-calculation</td>
+            <td>10.00</td>
+            <td>8.75</td>
+            <td>9.09</td>
+            <td>6.36</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>Comments</td>
+            <td colspan="2"><p>Zc probably doesn't have a clear physical meaning. </p> <p> Zp has
+            imarginary values somewhere and blows up. </p> <p> good fit for SCO. </p> <p> Zc <
+            infinity</p></td>
+            <td colspan="2"><p>Zc probably has physical meaning (renoramlized factor). </p> <p>
+            kinda decent fit for SCO.</p> <p> 1.5 < Zc < 2.5 </p></td>
+            <td colspan="2"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
