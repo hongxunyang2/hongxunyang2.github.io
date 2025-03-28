@@ -38,5 +38,9 @@
     "lco_fit": {
         "content": "<p>Re-fit the LaCuO data using <strong>self-consistent-loop</strong> method and the <strong>direct-Zc_calculation</strong> method.</p>",
         "is_check": true
+    },
+    "chi2_within_a_range": {
+        "content": "<p>$\\chi^2$ within 10\\%, for the LCO, PNO, SCO data. Enlarge PNO to tpt from -0.5 to 0.</p>",
+        "is_check": true
     }
 }

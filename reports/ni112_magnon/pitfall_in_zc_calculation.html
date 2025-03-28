@@ -40,7 +40,7 @@
     <header>
         <h1>Potential Pitfall in $Z_c$ Calculation</h1>
         <div class="metadata">
-            <p>Generated on: 2025-03-27 23:18:46</p>
+            <p>Generated on: 2025-03-28 11:13:15</p>
         </div>
     </header>
     
@@ -53,14 +53,14 @@
                 <p>In page 112 in Bastien's thesis, the renormalized energy for <strong>single-layered</strong> system is given
 by:</p>
 <p>
-<script type="math/tex; mode=display">\tilde{\omega}_k = \sqrt{(A_k + dA_k)^2 + (B_k + dB_k)^2}</script>
+<script type="math/tex; mode=display">\tilde{\omega}_k = \sqrt{(A_k + dA_k)^2 - (B_k + dB_k)^2}</script>
 </p>
 <p>where $A_k$, $dA_k$, $B_k$, and $dB_k$ are  analytic expressions of momentum $k$, and also the
 tight-binding parameters $(U, t, t^\prime, t^{\prime\prime})$. What is suspicious is It gets taylor
 expanded to the first order:</p>
 <p>
 <script type="math/tex; mode=display">\begin{align*}
-\tilde{\omega}_k^2 &= \sqrt{(A + dA_k)^2  (B_k + dB_k)^2} \\
+\tilde{\omega}_k^2 &= \sqrt{(A + dA_k)^2  - (B_k + dB_k)^2} \\
 &= \sqrt{A_k^2 - B^2 + 2A dA - 2B dB + (dA)^2 - (dB_k)^2} \\
 &= \sqrt{A^2 - B^2} \cdot \sqrt{1 + \frac{2A dA - 2B dB + (dA)^2 - (dB)^2}{A^2 - B^2}} \\
 &\approx \omega \underbrace{\left(1 + \frac{A dA - B dB}{\omega^2} \right)}_{Z_c} +
