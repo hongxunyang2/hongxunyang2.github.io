@@ -1,5 +1,10 @@
 [
     {
+        "filename": "sco_loop_extract.html",
+        "title": "SCO Loop Extraction Analysis",
+        "date": "2025-04-06 23:37:54"
+    },
+    {
         "filename": "pno_fit.html",
         "title": "PNO Fit and Magnon Dispersion",
         "date": "2025-04-03 16:31:27"
@@ -18,11 +23,6 @@
         "filename": "lco_loop_extract.html",
         "title": "LCO Loop Extraction Analysis",
         "date": "2025-03-28 17:12:32"
-    },
-    {
-        "filename": "sco_loop_extract.html",
-        "title": "SCO Loop Extraction Analysis",
-        "date": "2025-03-28 14:59:00"
     },
     {
         "filename": "pitfall_in_zc_calculation.html",
