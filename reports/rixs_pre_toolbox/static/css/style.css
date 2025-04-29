@@ -1,0 +1,375 @@
+/* General styles */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --border-color: #ddd;
+    --hover-color: #2980b9;
+    --section-bg: #fff;
+    --base-font-size: 19.8px;
+    --code-bg: #f5f7f9;
+    --code-border: #e1e4e8;
+    --code-text: #24292e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: var(--base-font-size);
+}
+
+/* Header styles */
+header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+.metadata {
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+/* Section styles */
+.report-section {
+    background-color: var(--section-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.report-section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.report-section h3 {
+    color: var(--secondary-color);
+    margin: 20px 0 10px;
+}
+
+.content {
+    margin-bottom: 20px;
+}
+
+/* Parameters table styles */
+.parameters {
+    margin: 20px 0;
+}
+
+.parameter-table table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.parameter-table th,
+.parameter-table td {
+    padding: 8px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.parameter-table th:first-child,
+.parameter-table td:first-child {
+    width: 25%;
+}
+
+.parameter-table th:last-child,
+.parameter-table td:last-child {
+    width: 75%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Figure styles */
+.figures {
+    margin: 20px 0;
+}
+
+.figure-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: flex-start;
+}
+
+.figure {
+    flex: 0 1 calc(40%);
+    min-width: 300px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.figure:hover {
+    transform: scale(1.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.figure-image {
+    width: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.figure-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.figure:hover .figure-image img {
+    transform: scale(0.95);
+}
+
+.figure-caption {
+    padding: 10px;
+    background-color: var(--section-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.figure-caption p {
+    font-size: 1em;
+    color: var(--secondary-color);
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: #777;
+    font-size: 1em;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .figure {
+        flex: 0 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --base-font-size: 15.8px;  /* About 20% smaller on mobile */
+    }
+    
+    .figure {
+        flex: 0 1 100%;
+    }
+    
+    body {
+        padding: 10px;
+    }
+    
+    .report-section {
+        padding: 15px;
+    }
+}
+
+/* Table of Contents styles */
+.toc ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.toc li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.toc li:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.toc a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.21em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex: 1;
+    min-width: 200px;
+}
+
+.toc a:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+.report-date {
+    color: #777;
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+/* Navigation bar styles */
+.nav-bar {
+    background-color: var(--secondary-color);
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-right {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Code styles */
+code {
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 3px;
+    color: var(--code-text);
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre code {
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+    line-height: 1.45;
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 5px;
+}
+
+/* Todo list styles */
+.todo-list {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.todo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.todo-table th,
+.todo-table td {
+    padding: 0 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.todo-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+.todo-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.todo-table .status-col {
+    width: 10%;
+    text-align: center;
+}
+
+.todo-table .identifier-col {
+    width: 20%;
+    font-weight: 500;
+}
+
+.todo-table .content-col {
+    width: 70%;
+}
+
+.todo-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+@media (max-width: 768px) {
+    .todo-table {
+        font-size: 0.9em;
+    }
+    
+    .todo-table th,
+    .todo-table td {
+        padding: 8px 10px;
+    }
+} 

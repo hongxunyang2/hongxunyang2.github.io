@@ -1,0 +1,10 @@
+{
+    "tootips": {
+        "content": "<p>Add tooltips to the buttons and input boxes.</p>",
+        "is_check": false
+    },
+    "test_brillouin_calculator": {
+        "content": "<p>Test the Brillouin zone calculator with a known structure.</p>",
+        "is_check": false
+    }
+}
