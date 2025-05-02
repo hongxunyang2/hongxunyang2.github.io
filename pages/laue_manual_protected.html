@@ -49,13 +49,34 @@
 </ul>
 </li>
 <li>
-<p>Quick Laue setup</p>
+<p><strong>Laue Machine Setup</strong></p>
 <ul>
-<li>Turn both computers on. To turn on the robot arm: press the power button on the bottom under the Laue machine and press the <code>reset</code> button. </li>
-<li>To iniatilze the Laue machine: (1) turn on the main power supply above the Laue cabinet, cabinet lights on; (2) turn on the TWO X-ray detectors power supply next to the cabinet, the two green lights on the top of the detectors are on (very faint), wait for a few minutes for them to warm/set up; When this is done, the green lights will be fully on.(4) only now you can start the Laue software (see next two steps); (5) <strong>After the experiment</strong>, turn off the two X-ray detectors power first, then turn off the main power supply. </li>
-<li>The computer on the left is for controlling the robot arm. The labview program can be started up in <code>robotarm/RobotarmControlVz.vi</code>. Run the program by clicking the arrow icon, wait for a few seconds; and click the <code>reset</code> button, wait for a few seconds; and then <code>activate</code> button. After this, you can click <code>get goniometer</code> once you have put the goniometer.</li>
-<li>The computer on the right is for displaying the camera images and aquiring the Laue diffraction image. The camera app can be opened up on the desktop: <code>IC capture</code>; The Laue program can be started up on the desktop by clicking PSLviewer -&gt; camera -&gt; duaFDS -&gt; clicking the setting icon. </li>
+<li>Turn computer on (password: chang). </li>
+<li>To iniatilze the Laue machine: (1) turn on the main power supply above the Laue cabinet, cabinet lights on; (2) turn on the TWO X-ray detectors power supply next to the cabinet, the two green lights on the top of the detectors are on (very faint), wait for a few minutes for them to warm/set up; When this is done, the green lights will be fully on.(4) only now you can start the Laue software (see next two steps); </li>
+<li>The Laue program can be started up on the desktop by clicking PSLviewer -&gt; camera -&gt; duaFDS -&gt;
+  clicking the setting icon. </li>
+<li>After the experiment, turn off the two X-ray detectors power first, then turn off the main power supply. </li>
 </ul>
+</li>
+<li>
+<p><strong>Robot Arm Setup</strong>: </p>
+<ul>
+<li>To turn on the robot arm: press the power button at the bottom under the Laue machine and then
+  press the <code>reset</code> button on the side.</li>
+<li>The labview program can be started up by opening the
+  labview app (orange icon) and open the file <code>RobotarmControl2.vi</code>. Run the program by clicking
+  the arrow icon on the top left, wait for a few
+  seconds; and click the <code>reset</code> button, wait for a few seconds; and then <code>activate</code> button and wait for a few seconds.
+  If this succeeds, you should see the robot arm wiggling a bit to indicate it is activated. If
+  you don't see the robot arm's wiggle, close the app and reopen it and redo the steps above
+  until you see that wiggle. </li>
+<li>After this, you can click <code>get goniometer</code> once you have put the goniometer. This will bring
+  the goniometer to the initial position. See instructions below.</li>
+</ul>
+</li>
+<li>
+<p><strong>Camera setup</strong>: The camera app can be opened up on the desktop: <code>IC capture</code>; This camera is to
+   align the crystal with the X-ray beam.  </p>
 </li>
 <li>
 <p>Mounting sample</p>
@@ -68,9 +89,16 @@
 <li>
 <p>Installiing the goniometer into the Laue machine</p>
 <ul>
-<li>Put the goniometer to the starting position inside the Laue machine. the face that is going to face the X-ray is facing outward at the initial position. Make sure you position the sample on the right face.</li>
-<li>On the computer on the left, click <code>get goniometer</code> button. Remember to oversee the whole process in case the goniometer is not grabed properly. Keep the door open and always be ready to adjust the position of the goniometer. The final position of the goniometer should be right before the CCD (X-ray detector). </li>
-<li>Toggle the <code>xzy jogging</code> button. This enable the stage movement. Adjust the <code>y</code> position on the computer on the right, to move it further away from the CCD, in order for the needle to fit in between the goniometer and the CCD. </li>
+<li>Put the goniometer to the starting position inside the Laue machine. the face that will face
+  the X-ray is currently facing outward at the initial position. Make sure you position the
+  sample on the correct face.</li>
+<li>On the robot arm app, click <code>get goniometer</code> button. Remember to oversee the whole process in
+  case the goniometer is not grabed properly. Keep the door open and always be ready to adjust
+  the position of the goniometer. The final position of the goniometer should be right next to the
+  CCD (X-ray detector). </li>
+<li>Toggle the <code>xzy jogging</code> button. This enable the stage movement. Adjust the <code>y</code> position on
+  the computer on the right, to move it further away from the CCD, to leave space for the needle to fit in
+  between the goniometer and the CCD. </li>
 <li>Ensure there's enough space for the needle (y&gt;-163). Put down the needle. The needle is to align the CCD to the X-ray source. When the needle is put down, look at the camera image on the right computer. Starting adjusting the <code>x</code> and <code>z</code> position of the goniometer so that it aligns with the needle. </li>
 <li>Once the alignment is done, pull up the needle again, lock it tight. Adjust the <code>y</code> position of the goniometer so that it moves closer to the CCD. (y=-183 is the optimal position).</li>
 <li>Close the door of the Laue machine, lock the door as well. Now you are all set to start the measurement.</li>
@@ -81,7 +109,11 @@
 <ul>
 <li><strong>Ensure the door of the Laue machine is tightly closed (to avoid radiation!)</strong> </li>
 <li>Turn on the X-ray source by toggling the button on the top of the machine. Wait until the current gets stable. </li>
-<li>On the right computer, set the initial acquisition time (conventionally ranging from 1 to 180 seconds). Click <code>snap</code> icon (not <code>play</code>) and wait. If you see the pattern, you could adjust the filter parameters to get a better image. If not, the X-ray might not be on the sample, and therefore you might need to adjust the position of the sample again until you find the diffraction pattern. </li>
+<li>On PSViewer software, set the initial acquisition time (conventionally ranging from 1 to 180
+  seconds). Click <code>snap</code> icon (not <code>play</code>) and wait on the bottom left. If you see the pattern, you could adjust
+  the filter parameters to get a better image. If not, the X-ray might not be on the sample, and
+  therefore you might need to adjust the position of the sample again until you find the
+  diffraction pattern. </li>
 <li>Create a folder for today's lab. Remember to save the image once you obtain a good one.</li>
 </ul>
 </li>
