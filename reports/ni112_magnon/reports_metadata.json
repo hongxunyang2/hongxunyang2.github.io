@@ -1,8 +1,13 @@
 [
     {
+        "filename": "pno_loop_extract_tpptp05.html",
+        "title": "PNO Loop Extraction Analysis (tpptp=-0.5)",
+        "date": "2025-06-05 17:33:07"
+    },
+    {
         "filename": "pno_loop_extract_tpptp0.html",
         "title": "PNO Loop Extraction Analysis (tpptp=0)",
-        "date": "2025-05-21 12:27:22"
+        "date": "2025-06-05 17:06:06"
     },
     {
         "filename": "pno_sco_comparison.html",
