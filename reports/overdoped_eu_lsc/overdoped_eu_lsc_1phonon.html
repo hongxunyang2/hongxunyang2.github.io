@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Index</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Report Index</h1>
+        <div class="metadata">
+            <p>Last updated: 2025-07-22 10:08:41</p>
+        </div>
+    </header>
+    
+    <main>
+        <section class="report-section">
+            <h2>Table of Contents</h2>
+            
+            <div class="content">
+                <p>This page contains links to all generated reports.</p>
+            </div>
+            
+            <div class="toc">
+                <ul>
+                    
+                    <li>
+                        <a href="phonon_fit_0p125_lv_1phonon.html">Phonon Fit for LESCO 0.125 (1-phonon model)</a>
+                        <span class="report-date">2025-07-22 10:08:35</span>
+                    </li>
+                    
+                    <li>
+                        <a href="phonon_fit_0p125_lv.html">Phonon Fit for LESCO 0.125</a>
+                        <span class="report-date">2025-07-22 09:59:14</span>
+                    </li>
+                    
+                    <li>
+                        <a href="basic_phonon_fit_0p26_lv.html">Basic phonon Fit for 0.26 LV</a>
+                        <span class="report-date">2025-07-21 17:43:10</span>
+                    </li>
+                    
+                    <li>
+                        <a href="phonon_doping_dependence.html">Phonon Doping Dependence Comparison</a>
+                        <span class="report-date">2025-07-21 14:59:55</span>
+                    </li>
+                    
+                    <li>
+                        <a href="self_absorp_report_0p26.html">Normalization for LESCO 0.26</a>
+                        <span class="report-date">2025-07-18 15:58:11</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+
+        <section class="report-section">
+            <h2>To-Do List</h2>
+            <div class="todo-list">
+                <table class="todo-table">
+                    <thead>
+                        <tr>
+                            <th class="status-col">Status</th>
+                            <th class="identifier-col">Identifier</th>
+                            <th class="content-col">Content</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Generated using Report Generator</p>
+    </footer>
+
+    
+    <script>
+        // Check if user is authenticated
+        if (!localStorage.getItem('authenticated')) {
+            // Redirect to login page by adding _login before .html
+            const currentPath = window.location.pathname;
+            const baseName = currentPath.substring(currentPath.lastIndexOf('/') + 1).split('.')[0];
+            window.location.href = baseName + '_login.html';
+        }
+    </script>
+    
+</body>
+</html> 

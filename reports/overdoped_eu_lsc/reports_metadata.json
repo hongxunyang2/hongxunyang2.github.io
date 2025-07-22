@@ -1,18 +1,23 @@
 [
     {
-        "filename": "phonon_fit_0p125_lv.html",
-        "title": "Phonon Fit for LESCO 0.125",
-        "date": "2025-07-21 11:15:17"
+        "filename": "phonon_fit_0p125_lv_1phonon.html",
+        "title": "Phonon Fit for LESCO 0.125 (1-phonon model)",
+        "date": "2025-07-22 11:59:01"
     },
     {
-        "filename": "phonon_doping_dependence.html",
-        "title": "Phonon Doping Dependence Comparison",
-        "date": "2025-07-21 11:13:26"
+        "filename": "phonon_fit_0p125_lv.html",
+        "title": "Phonon Fit for LESCO 0.125",
+        "date": "2025-07-22 11:54:16"
     },
     {
         "filename": "basic_phonon_fit_0p26_lv.html",
         "title": "Basic phonon Fit for 0.26 LV",
-        "date": "2025-07-21 09:20:48"
+        "date": "2025-07-21 17:43:10"
+    },
+    {
+        "filename": "phonon_doping_dependence.html",
+        "title": "Phonon Doping Dependence Comparison",
+        "date": "2025-07-21 14:59:55"
     },
     {
         "filename": "self_absorp_report_0p26.html",
