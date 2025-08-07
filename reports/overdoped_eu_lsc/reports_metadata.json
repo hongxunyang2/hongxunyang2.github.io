@@ -2,7 +2,12 @@
     {
         "filename": "basic_phonon_fit_0p26_lv.html",
         "title": "Basic phonon Fit for 0.26 LV",
-        "date": "2025-07-25 12:54:48"
+        "date": "2025-07-28 14:30:38"
+    },
+    {
+        "filename": "self_absorp_report_0p26.html",
+        "title": "Normalization for LESCO 0.26",
+        "date": "2025-07-28 14:16:29"
     },
     {
         "filename": "elastic_fit_analysis_0p26.html",
@@ -23,10 +28,5 @@
         "filename": "phonon_fit_0p125_lv.html",
         "title": "Phonon Fit for LESCO 0.125",
         "date": "2025-07-22 11:54:16"
-    },
-    {
-        "filename": "self_absorp_report_0p26.html",
-        "title": "Normalization for LESCO 0.26",
-        "date": "2025-07-18 15:58:11"
     }
 ]
