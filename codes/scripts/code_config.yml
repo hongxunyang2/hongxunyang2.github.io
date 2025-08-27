@@ -1,6 +1,0 @@
-root_path: "../../"
-css_path: "../../assets/css/"
-includes_path: "../../includes/"
-pages_path: "../../pages/"
-templates_path: "../templates/"
-data_path: "../data/"
