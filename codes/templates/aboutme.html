@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }} - About Me</title>
+    <link rel="stylesheet" href="../assets/css/aboutme.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="{{ photo }}" alt="{{ name }}" class="profile-photo">
+            <div class="header-text">
+                <h1>{{ name }}</h1>
+                <h2>{{ title }}</h2>
+                <h3>{{ affiliation }}</h3>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact">
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:{{ email }}">{{ email }}</a></p>
+        <p>Phone: {{ phone }}</p>
+        <p>Address: {{ address }}</p>
+        <p><a href="{{ cv_link }}">Download CV</a></p>
+    </section>
+
+    <section class="research">
+        <h2>Research Interests</h2>
+        <ul>
+            {% for interest in research_interests %}
+            <li>{{ interest }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="publications">
+        <h2>Publications</h2>
+        {% for pub in publications %}
+        <div class="publication">
+            <p><strong>{{ pub.title }}</strong></p>
+            <p>{{ pub.authors }}</p>
+            <p><em>{{ pub.journal }}</em>, {{ pub.year }}</p>
+            <p><a href="{{ pub.link }}">View Publication</a></p>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="education">
+        <h2>Education</h2>
+        <ul>
+            {% for edu in education %}
+            <li>{{ edu.degree }}, {{ edu.institution }}, {{ edu.year }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>

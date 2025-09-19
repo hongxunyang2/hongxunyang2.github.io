@@ -6,3 +6,6 @@
 .env.test.local
 .env.production.local
 *.sh
+**/.DS_Store
+**/__pycache__
+**/.venv
