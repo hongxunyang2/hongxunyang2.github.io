@@ -3,64 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xun's Research Portal</title>
-    <link rel="stylesheet" href="static/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Xun's Portal</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Xun's Research Portal</div>
-            <div class="nav-links">
-                <a href="/index.html">Home</a>
-                <a href="#about">About</a>
-                <a href="#research">Research</a>
-                <a href="#contact">Contact</a>
+    <div class="page-wrapper">
+        <header>
+            <nav>
+                <div class="logo">Xunyang Hong</div>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section class="hero">
+                <h1>Welcome</h1>
+                <p class="subtitle">Select a portal to explore</p>
+            </section>
+
+            <section class="portal-cards">
+                <a href="research/index.html" class="portal-card research-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                            <path d="M11 8v6"/>
+                            <path d="M8 11h6"/>
+                        </svg>
+                    </div>
+                    <h2>Research</h2>
+                    <p>Explore my research projects, including nickelate magnon studies, overdoped Eu-LSCO analysis, and Laue diffraction automation.</p>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a href="teaching/index.html" class="portal-card teaching-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                    </div>
+                    <h2>Teaching</h2>
+                    <p>Access course materials, educational resources, and teaching-related content for students and collaborators.</p>
+                    <span class="card-arrow">→</span>
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Xun's Portal</p>
             </div>
-        </nav>
-    </header>
-
-    <main class="container">
-        <section class="hero">
-            <h1>Xun's Research Portal</h1>
-            <p>Everything (not really) about my research</p>
-        </section>
-
-        <section id="about" class="content-section">
-            <h2>About My research</h2>
-            <p>Currently I am working on three projects: (1) Nickelate magnon, (2) Overdoped
-            Eu-LSCO, (3) Automating Laue diffraction data collection.</p>
-        </section>
-
-        <section class="content-section">
-            <h2>Research Notes</h2>
-            <div class="link-card">
-                <a href="reports/ni112_magnon/nickelate_magnon_login.html">Nickelate Magnon Study</a>
-                <p>Analysis and results from our recent nickelate magnon
-                project.</p>
-                <a href="reports/overdoped_eu_lsc/overdoped_eu_lsc_login.html">Overdoped Eu-LSCO Study</a>
-                <p>Analysis and results from our recent overdoped Eu-LSCO study.</p>
-            </div>
-        </section>
-
-
-
-        <section id="contact" class="content-section">
-            <h2>Contact Us</h2>
-            <p>Interested in collaborating or learning more about our research? Get in touch with our team.</p>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Research Portal. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Use</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
