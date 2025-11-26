@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Index</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Report Index</h1>
+        <div class="metadata">
+            <p>Last updated: 2025-11-26 17:07:23</p>
+        </div>
+    </header>
+    
+    <main>
+        <section class="report-section">
+            <h2>Table of Contents</h2>
+            
+            <div class="content">
+                <p>This page contains links to all generated reports.</p>
+            </div>
+            
+            <div class="toc">
+                <ul>
+                    
+                    <li>
+                        <a href="introduction.html">Introduction</a>
+                        <span class="report-date">2025-11-26 17:07:23</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+
+        <section class="report-section">
+            <h2>To-Do List</h2>
+            <div class="todo-list">
+                <table class="todo-table">
+                    <thead>
+                        <tr>
+                            <th class="status-col">Status</th>
+                            <th class="identifier-col">Identifier</th>
+                            <th class="content-col">Content</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Generated using Report Generator</p>
+    </footer>
+
+    
+    <script>
+        // Check if user is authenticated
+        if (!localStorage.getItem('authenticated')) {
+            // Redirect to login page by adding _login before .html
+            const currentPath = window.location.pathname;
+            const baseName = currentPath.substring(currentPath.lastIndexOf('/') + 1).split('.')[0];
+            window.location.href = baseName + '_login.html';
+        }
+    </script>
+    
+</body>
+</html> 

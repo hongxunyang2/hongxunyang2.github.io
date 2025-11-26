@@ -360,6 +360,167 @@ footer .footer-links a:hover {
     }
 }
 
+/* ============================================
+   Card Sections (Courses, Blog, etc.)
+   ============================================ */
+
+.card-section {
+    margin-bottom: 3rem;
+}
+
+.section-header-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    transition: gap var(--transition-smooth);
+}
+
+.section-header-link:hover {
+    gap: 0.75rem;
+}
+
+.section-header-link h2 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.section-header-link:hover h2 {
+    color: var(--color-accent-teaching);
+}
+
+.section-arrow {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    transition: 
+        transform var(--transition-smooth),
+        color var(--transition-smooth);
+}
+
+.section-header-link:hover .section-arrow {
+    transform: translateX(4px);
+    color: var(--color-accent-teaching);
+}
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+/* Mini Cards */
+.mini-card {
+    display: block;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: 
+        transform var(--transition-smooth),
+        border-color var(--transition-smooth),
+        box-shadow var(--transition-smooth);
+}
+
+.mini-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
+}
+
+.mini-card-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent-teaching);
+    background: rgba(5, 150, 105, 0.1);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+.mini-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+    transition: color var(--transition-smooth);
+}
+
+.mini-card:hover h3 {
+    color: var(--color-accent-teaching);
+}
+
+.mini-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Show More Link */
+.show-more-link {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-accent-teaching);
+    text-decoration: none;
+    transition: color var(--transition-smooth);
+}
+
+.show-more-link:hover {
+    color: #047857;
+    text-decoration: underline;
+}
+
+/* Resource List */
+.resource-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.resource-list li {
+    position: relative;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    color: var(--color-text-muted);
+}
+
+.resource-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-teaching);
+    font-weight: 500;
+}
+
+/* ============================================
+   Responsive Adjustments for Card Sections
+   ============================================ */
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header-link h2 {
+        font-size: 1.5rem;
+    }
+}
+
 /* Selection color */
 ::selection {
     background: rgba(37, 99, 235, 0.2);
