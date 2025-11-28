@@ -1,0 +1,641 @@
+/* ============================================
+   Tutorials Page - Custom Styles
+   Two-column layout with PDF viewer + commentary
+   ============================================ */
+
+/* Page header adjustments */
+.tutorials-header {
+    margin: 2rem auto;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tutorials-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.tutorials-header .intro-note {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    max-width: 700px;
+    line-height: 1.7;
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(5, 150, 105, 0.05);
+    border-left: 3px solid var(--color-accent-teaching);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Navigation sidebar for sheets */
+.sheets-nav {
+    top: 1rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.sheets-nav h3 {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+}
+
+.sheets-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.sheets-nav-list a {
+    display: inline-block;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all var(--transition-smooth);
+}
+
+.sheets-nav-list a:hover {
+    color: var(--color-accent-teaching);
+    background: rgba(5, 150, 105, 0.08);
+    border-color: rgba(5, 150, 105, 0.2);
+}
+
+/* Exercise Sheet Section */
+.sheet-section {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    transition: box-shadow var(--transition-smooth);
+}
+
+.sheet-section:hover {
+    box-shadow: 0 8px 30px -12px rgba(0, 0, 0, 0.12);
+}
+
+/* Section header */
+.sheet-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.06) 0%, rgba(5, 150, 105, 0.02) 100%);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sheet-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.sheet-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent-teaching);
+    background: rgba(5, 150, 105, 0.12);
+    border-radius: 8px;
+}
+
+.sheet-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.sheet-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all var(--transition-smooth);
+    cursor: pointer;
+}
+
+.sheet-action-btn:hover {
+    color: var(--color-accent-teaching);
+    border-color: var(--color-accent-teaching);
+    background: rgba(5, 150, 105, 0.05);
+}
+
+.sheet-action-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Two-column layout */
+.sheet-content {
+    display: grid;
+    grid-template-columns: minmax(320px, 420px) 1fr;
+    min-height: 500px;
+}
+
+/* PDF Viewer column */
+.pdf-viewer-column {
+    border-right: 1px solid var(--color-border);
+    background: #f5f5f5;
+    position: relative;
+}
+
+.pdf-embed {
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    border: none;
+    display: block;
+}
+
+.pdf-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 550px;
+    padding: 2rem;
+    text-align: center;
+    color: var(--color-text-muted);
+}
+
+.pdf-fallback svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    opacity: 0.4;
+}
+
+.pdf-fallback p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Commentary column */
+.commentary-column {
+    padding: 1.75rem 2rem;
+}
+
+.commentary-column h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.commentary-column p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.commentary-column p:last-child {
+    margin-bottom: 0;
+}
+
+/* Minimal styling tag */
+.tag-minimal {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+/* Horizontal rule in commentary */
+.commentary-column hr {
+    border: none;
+    height: 1px;
+    background: var(--color-border);
+    margin: 1.5rem 0;
+}
+
+/* LaTeX math styling */
+.commentary-column .math-inline {
+    font-family: 'Latin Modern Math', 'STIX Two Math', 'Times New Roman', serif;
+    font-style: italic;
+    padding: 0 0.15em;
+}
+
+/* Highlighted exercise notes */
+.exercise-note {
+    background: rgba(37, 99, 235, 0.05);
+    border-left: 3px solid var(--color-accent-research);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1rem 0;
+}
+
+.exercise-note p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Question callout */
+.question-callout {
+    background: rgba(245, 158, 11, 0.08);
+    border-left: 3px solid #f59e0b;
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1rem 0;
+}
+
+.question-callout strong {
+    color: #d97706;
+}
+
+/* Tutorial note link */
+.tutorial-note-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-accent-teaching);
+    background: rgba(5, 150, 105, 0.08);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all var(--transition-smooth);
+}
+
+.tutorial-note-link:hover {
+    background: rgba(5, 150, 105, 0.15);
+    text-decoration: none;
+}
+
+/* Data table styling */
+.data-table-wrapper {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.data-table th {
+    font-weight: 600;
+    color: var(--color-text);
+    background: rgba(0, 0, 0, 0.02);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.data-table td {
+    color: var(--color-text-muted);
+}
+
+.data-table tbody tr:hover {
+    background: rgba(5, 150, 105, 0.03);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .sheet-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .pdf-viewer-column {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .pdf-embed {
+        min-height: 450px;
+    }
+    
+    .pdf-fallback {
+        min-height: 300px;
+    }
+    
+    .commentary-column {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .sheet-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .sheet-actions {
+        width: 100%;
+    }
+    
+    .sheet-action-btn {
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .sheets-nav-list a {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   Feedback Row - Two column layout below content
+   ============================================ */
+
+.sheet-feedback-row {
+    display: grid;
+    grid-template-columns: minmax(280px, 380px) 1fr;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-secondary);
+}
+
+.workload-column {
+    padding: 1.5rem;
+    border-right: 1px solid var(--color-border);
+}
+
+.workload-column h4 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.workload-column h4 svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-accent-teaching);
+}
+
+.pie-chart-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.pie-chart {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.pie-chart-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: var(--color-bg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.pie-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+}
+
+.pie-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-text-muted);
+}
+
+.pie-legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.pie-legend-item span:last-child {
+    opacity: 0.7;
+    font-size: 0.72rem;
+}
+
+/* Color scheme for pie chart - pastel palette */
+.color-1hr { background: #86efac; }   /* Mint green */
+.color-2hrs { background: #93c5fd; }  /* Sky blue */
+.color-3hrs { background: #fcd34d; }  /* Soft amber */
+.color-4hrs { background: #c4b5fd; }  /* Lavender */
+.color-5hrs { background: #f9a8d4; }  /* Pink */
+.color-more { background: #94a3b8; }  /* Slate */
+
+/* ============================================
+   Student Feedback Column
+   ============================================ */
+
+.feedback-column {
+    padding: 1.5rem 2rem;
+}
+
+.feedback-column h4 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feedback-column h4 svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-accent-teaching);
+}
+
+.feedback-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.feedback-item {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    padding: 0.6rem 0.75rem 0.6rem 1.5rem;
+    background: transparent;
+    border-radius: 4px;
+    position: relative;
+}
+
+.feedback-item::before {
+    content: '"';
+    position: absolute;
+    top: 0.3rem;
+    left: 0;
+    font-size: 1.4rem;
+    color: rgba(5, 150, 105, 0.35);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.feedback-item p {
+    margin: 0;
+}
+
+/* ============================================
+   Summary Section Styles
+   ============================================ */
+
+.summary-section {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.summary-section h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.summary-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.summary-pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.summary-pie-chart .pie-chart-center {
+    width: 80px;
+    height: 80px;
+    font-size: 0.85rem;
+}
+
+.summary-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.summary-legend .pie-legend-item {
+    font-size: 0.9rem;
+}
+
+.summary-stats {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.summary-stats p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .sheet-feedback-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .workload-column {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+}
+
+@media (max-width: 640px) {
+    .pie-chart-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .summary-content {
+        flex-direction: column;
+    }
+    
+    .feedback-column {
+        padding: 1.5rem;
+    }
+}
+

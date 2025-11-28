@@ -4,48 +4,393 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Condensed Matter Physics - Xun's Teaching Portal</title>
-    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Course Page Specific Styles */
+        .course-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .course-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+        
+        .course-hero .semester-badge {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-accent-teaching);
+            background: rgba(5, 150, 105, 0.1);
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+        }
+        
+        /* Topics Grid */
+        .topics-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+        
+        .topic-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text);
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            transition: all var(--transition-smooth);
+        }
+        
+        .topic-chip:hover {
+            border-color: var(--color-accent-teaching);
+            background: rgba(5, 150, 105, 0.05);
+        }
+        
+        a.topic-chip {
+            text-decoration: none;
+            color: var(--color-text);
+        }
+        
+        a.topic-chip:hover {
+            color: var(--color-accent-teaching);
+        }
+        
+        .topic-chip svg {
+            width: 16px;
+            height: 16px;
+            color: var(--color-accent-teaching);
+        }
+        
+        /* Course Sections */
+        .course-section {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: box-shadow var(--transition-smooth);
+        }
+        
+        .course-section:hover {
+            box-shadow: 0 8px 30px -12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .section-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(5, 150, 105, 0.1);
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        
+        .section-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--color-accent-teaching);
+        }
+        
+        .section-title h2 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0 0 0.25rem 0;
+            letter-spacing: -0.01em;
+        }
+        
+        .section-title .subtitle {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin: 0;
+        }
+        
+        .section-body {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+        
+        .section-body p {
+            margin-bottom: 1rem;
+        }
+        
+        .section-body p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Highlight box */
+        .highlight-box {
+            background: rgba(5, 150, 105, 0.05);
+            border-left: 3px solid var(--color-accent-teaching);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Link button */
+        .section-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.6rem 1.1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-accent-teaching);
+            background: rgba(5, 150, 105, 0.08);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all var(--transition-smooth);
+        }
+        
+        .section-link:hover {
+            background: rgba(5, 150, 105, 0.15);
+            transform: translateX(2px);
+        }
+        
+        .section-link svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Exam format list */
+        .exam-format {
+            list-style: none;
+            margin: 1rem 0 0 0;
+            padding: 0;
+        }
+        
+        .exam-format li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .exam-format li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .exam-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-accent-teaching);
+            background: rgba(5, 150, 105, 0.12);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        .exam-format li span:not(.exam-step) {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .exam-format li strong {
+            color: var(--color-text);
+        }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+            .course-section {
+                padding: 1.5rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .topics-grid {
+                gap: 0.5rem;
+            }
+            
+            .topic-chip {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">Xun's Teaching Portal</div>
             <div class="nav-links">
-                <a href="../../index.html">Home</a>
-                <a href="../index.html">Teaching</a>
-                <a href="index.html">Courses</a>
+                <a href="../../../index.html">Home</a>
+                <a href="../../index.html">Teaching</a>
+                <a href="../index.html">Courses</a>
             </div>
         </nav>
     </header>
 
     <main class="container">
-        <section class="hero">
+        <!-- Hero Section -->
+        <section class="course-hero">
             <h1>Condensed Matter Physics</h1>
-            <p>Fall 2025 • Graduate Level</p>
+            <span class="semester-badge">Fall 2025 · Graduate Level</span>
         </section>
 
-        <section class="content-section">
-            <h2>Course Overview</h2>
-            <p>A comprehensive study of the physics of solids, covering crystal structures, electronic band theory, and collective phenomena in condensed matter systems.</p>
-        </section>
+        <!-- Course Overview -->
+        <article class="course-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <div class="section-title">
+                    <h2>Course Overview</h2>
+                    <p class="subtitle">Key topics covered in this course</p>
+                </div>
+            </div>
+            <div class="topics-grid">
+                <a href="https://en.wikipedia.org/wiki/Hall_effect" target="_blank" class="topic-chip">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    Hall Effect
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Superconductivity" target="_blank" class="topic-chip">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                    Superconductivity
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Quantum_oscillations" target="_blank" class="topic-chip">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    Quantum Oscillation
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Magnetism" target="_blank" class="topic-chip">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    Magnetism
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Ginzburg–Landau_theory" target="_blank" class="topic-chip">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>
+                    Ginzburg-Landau Theory
+                </a>
+            </div>
+        </article>
 
-        <section class="content-section">
-            <h2>Topics Covered</h2>
-            <ul class="resource-list">
-                <li>Crystal structure and symmetry</li>
-                <li>Reciprocal lattice and diffraction</li>
-                <li>Lattice dynamics and phonons</li>
-                <li>Free electron model</li>
-                <li>Band theory of solids</li>
-                <li>Semiconductors and superconductors</li>
-            </ul>
-        </section>
+        <!-- Tutorial Session -->
+        <article class="course-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <div class="section-title">
+                    <h2>Tutorial Session</h2>
+                    <p class="subtitle">Interactive problem-solving sessions</p>
+                </div>
+            </div>
+            <div class="section-body">
+                <p>During tutorial sessions, students are invited to present their solutions to the exercises in front of the class. As the teaching assistant, I provide comments on their solutions, clarify common misconceptions, and offer further insights on the topics covered in each exercise.</p>
 
-        <section class="content-section">
-            <h2>Materials</h2>
-            <p>Course materials will be available here once the semester begins.</p>
-        </section>
+                    <p>This format encourages active participation and helps students develop their ability to communicate physics concepts clearly—a valuable skill for both exams and future careers.</p>
+
+            </div>
+        </article>
+
+        <!-- Exercise Sheets -->
+        <article class="course-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <div class="section-title">
+                    <h2>Exercise Sheets</h2>
+                    <p class="subtitle">A curated mix of classic and new problems</p>
+                </div>
+            </div>
+            <div class="section-body">
+                <p>The exercises draw from an existing pool from last year's course, supplemented with new problems I designed myself. This hybrid approach was necessary for two reasons:</p>
+                <p>First, this year's course arrangement differs from last year, so some adjustments were needed. Second, I wanted to create exercises that help students better bridge the conceptual gaps between different topics, while also providing them with extra insights that go beyond standard textbook problems.</p>
+                <a href="tutorials.html" class="section-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    View Tutorial Reflections & Student Feedback
+                </a>
+            </div>
+        </article>
+
+        <!-- Exam -->
+        <article class="course-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    </svg>
+                </div>
+                <div class="section-title">
+                    <h2>Examination</h2>
+                    <p class="subtitle">Oral exam format</p>
+                </div>
+            </div>
+            <div class="section-body">
+                <p>The course concludes with an oral examination. I will be part of the examiner team alongside the course instructor.</p>
+                <ul class="exam-format">
+                    <li>
+                        <span class="exam-step">1</span>
+                        <span><strong>Topic Presentation (10 min)</strong> — The student presents a randomly selected topic from the course material, demonstrating their understanding and ability to explain the concepts.</span>
+                    </li>
+                    <li>
+                        <span class="exam-step">2</span>
+                        <span><strong>Exercise Walk-through</strong> — An exercise is picked from the exercise sheets, and the student walks us through their approach and solution.</span>
+                    </li>
+                </ul>
+            </div>
+        </article>
     </main>
 
     <footer>
@@ -53,11 +398,10 @@
             <div class="footer-content">
                 <p>&copy; 2024 Xun's Teaching Portal</p>
                 <div class="footer-links">
-                    <a href="index.html">Back to Courses</a>
+                    <a href="../index.html">Back to Courses</a>
                 </div>
             </div>
         </div>
     </footer>
 </body>
 </html>
-
