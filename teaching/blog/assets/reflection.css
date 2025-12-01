@@ -2,6 +2,22 @@
    Reflection Blog Post - Custom Styles
    ============================================ */
 
+/* Banner image */
+.article-banner {
+    width: 100%;
+    aspect-ratio: 4 / 1;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
+}
+
+.article-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 /* Article header */
 .article-header {
     text-align: center;
