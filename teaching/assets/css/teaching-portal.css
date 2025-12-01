@@ -1,0 +1,429 @@
+/* ============================================
+   Teaching Portal - Showcase Styles
+   Eye-catching photo gallery and experience showcase
+   ============================================ */
+
+/* Teaching Experience Showcase Section */
+.teaching-showcase {
+    margin-bottom: 3.5rem;
+}
+
+.showcase-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.showcase-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.showcase-header .tagline {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* Photo Gallery Container */
+.photo-gallery-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.photo-gallery-wrapper::before,
+.photo-gallery-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.photo-gallery-wrapper::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--color-bg) 0%, transparent 100%);
+}
+
+.photo-gallery-wrapper::after {
+    right: 0;
+    background: linear-gradient(-90deg, var(--color-bg) 0%, transparent 100%);
+}
+
+/* Horizontal Scrolling Gallery */
+.photo-gallery {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent-teaching) transparent;
+    -webkit-overflow-scrolling: touch;
+}
+
+.photo-gallery::-webkit-scrollbar {
+    height: 6px;
+}
+
+.photo-gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.photo-gallery::-webkit-scrollbar-thumb {
+    background: var(--color-accent-teaching);
+    border-radius: 3px;
+}
+
+/* Photo Card */
+.photo-card {
+    flex: 0 0 auto;
+    width: 280px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    overflow: visible;
+    transition: 
+        box-shadow var(--transition-smooth);
+    position: relative;
+}
+
+.photo-card:hover {
+    box-shadow: 0 16px 40px -12px rgba(5, 150, 105, 0.2);
+    z-index: 10;
+}
+
+/* Photo card image container */
+.photo-card-image {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    border-radius: 16px 16px 0 0;
+}
+
+.photo-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+/* Photo zoom effect on hover */
+.photo-card:hover .photo-card-image img {
+    transform: scale(1.4);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    z-index: 20;
+    position: relative;
+}
+
+.photo-card:hover .photo-card-image.placeholder {
+    transform: scale(1.4);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    z-index: 20;
+}
+
+/* Placeholder styles for when no image is set */
+.photo-card-image.placeholder {
+    background: linear-gradient(135deg, 
+        rgba(5, 150, 105, 0.15) 0%, 
+        rgba(5, 150, 105, 0.05) 50%,
+        rgba(37, 99, 235, 0.05) 100%
+    );
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.photo-card-image.placeholder::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 3px dashed rgba(5, 150, 105, 0.3);
+    border-radius: 12px;
+}
+
+.photo-card-image.placeholder::after {
+    content: 'Photo';
+    position: absolute;
+    font-size: 0.75rem;
+    color: rgba(5, 150, 105, 0.5);
+    font-weight: 500;
+    margin-top: 80px;
+}
+
+.photo-card-content {
+    padding: 1rem 1.25rem;
+}
+
+.photo-card-content h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 0.25rem 0;
+    line-height: 1.4;
+}
+
+.photo-card-content p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.photo-card-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent-teaching);
+    background: rgba(5, 150, 105, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+/* Gallery Navigation Dots */
+.gallery-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.gallery-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(5, 150, 105, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+}
+
+.gallery-dot:hover,
+.gallery-dot.active {
+    background: var(--color-accent-teaching);
+    transform: scale(1.2);
+}
+
+/* Experience Highlights - Minimalist Strip */
+.experience-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-item {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+}
+
+.highlight-item .number {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-accent-teaching);
+}
+
+.highlight-item .label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.highlight-item .separator {
+    color: var(--color-border);
+    margin-left: 0.5rem;
+}
+
+/* Featured Teaching Moment */
+.featured-moment {
+    position: relative;
+    background: linear-gradient(135deg, 
+        rgba(5, 150, 105, 0.08) 0%, 
+        rgba(5, 150, 105, 0.02) 100%
+    );
+    border: 1px solid rgba(5, 150, 105, 0.15);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.featured-moment::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.featured-moment-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.featured-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-image.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, 
+        rgba(5, 150, 105, 0.1) 0%, 
+        rgba(5, 150, 105, 0.02) 100%
+    );
+}
+
+.featured-image.placeholder::before {
+    content: 'Featured Photo';
+    font-size: 0.9rem;
+    color: rgba(5, 150, 105, 0.5);
+    font-weight: 500;
+}
+
+.featured-text h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.01em;
+}
+
+.featured-text p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0 0 1rem 0;
+}
+
+.featured-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-accent-teaching);
+    background: rgba(5, 150, 105, 0.1);
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+}
+
+.featured-tag svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Blog Posts Preview */
+.blog-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .photo-gallery-wrapper::before,
+    .photo-gallery-wrapper::after {
+        width: 30px;
+    }
+    
+    .photo-card {
+        width: 240px;
+    }
+    
+    .photo-card-image {
+        height: 150px;
+    }
+    
+    .featured-moment-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .featured-image {
+        order: -1;
+    }
+    
+    .showcase-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .experience-highlights {
+        gap: 0.4rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-highlights {
+        gap: 0.3rem 1rem;
+    }
+    
+    .photo-card {
+        width: 220px;
+    }
+}
+
+/* Scroll Animation for Gallery */
+@keyframes scrollHint {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+.scroll-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.scroll-hint svg {
+    width: 16px;
+    height: 16px;
+    animation: scrollHint 1.5s ease-in-out infinite;
+}
+

@@ -1,0 +1,264 @@
+/* ============================================
+   Reflection Blog Post - Custom Styles
+   ============================================ */
+
+/* Article header */
+.article-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.article-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+.article-meta {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+.article-meta .course-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-accent-teaching);
+    background: rgba(5, 150, 105, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+}
+
+/* Article content */
+.article-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.article-content h2 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 2.5rem 0 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    letter-spacing: -0.01em;
+}
+
+.article-content h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.article-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 2rem 0 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.article-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.article-content a {
+    color: var(--color-accent-teaching);
+    text-decoration: none;
+    transition: color var(--transition-smooth);
+}
+
+.article-content a:hover {
+    text-decoration: underline;
+}
+
+/* Horizontal rule */
+.article-content hr {
+    border: none;
+    height: 1px;
+    background: var(--color-border);
+    margin: 2rem 0;
+}
+
+/* Image gallery for wide images */
+.evaluation-gallery {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.evaluation-image {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow var(--transition-smooth);
+}
+
+.evaluation-image:hover {
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.15);
+}
+
+/* Student comments section */
+.student-comments {
+    margin: 1.5rem 0;
+}
+
+.student-comments h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-list li {
+    position: relative;
+    padding: 0.6rem 0 0.6rem 1.75rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+}
+
+.comment-list li::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    font-size: 1.5rem;
+    font-family: Georgia, serif;
+    color: rgba(5, 150, 105, 0.4);
+    line-height: 1;
+}
+
+/* Numbered list */
+.numbered-list {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.numbered-list li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+}
+
+/* Collapsible reference block */
+.collapsible-block {
+    margin: 1.5rem 0;
+    background: rgba(5, 150, 105, 0.04);
+    border: 1px solid rgba(5, 150, 105, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.collapsible-block summary {
+    padding: 1rem 1.25rem;
+    font-weight: 500;
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    transition: background var(--transition-smooth);
+}
+
+.collapsible-block summary::-webkit-details-marker {
+    display: none;
+}
+
+.collapsible-block summary:hover {
+    background: rgba(5, 150, 105, 0.08);
+}
+
+.collapsible-block summary::before {
+    content: '▶';
+    font-size: 0.7rem;
+    color: var(--color-accent-teaching);
+    transition: transform var(--transition-smooth);
+}
+
+.collapsible-block[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.collapsible-preview {
+    font-weight: 400;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-left: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+}
+
+.collapsible-content {
+    padding: 0 1.25rem 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    border-top: 1px solid rgba(5, 150, 105, 0.1);
+}
+
+.collapsible-content p {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+}
+
+.collapsible-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Reflection note block */
+.reflection-note {
+    background: rgba(5, 150, 105, 0.05);
+    border-left: 3px solid var(--color-accent-teaching);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+}
+
+.reflection-note p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .article-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .article-content h3 {
+        font-size: 1.15rem;
+    }
+
+    .collapsible-preview {
+        display: none;
+    }
+}
+
