@@ -11,6 +11,7 @@
     --color-text-muted: #64748b;
     --color-accent-research: #2563eb;
     --color-accent-teaching: #059669;
+    --color-accent-blog: #c026d3;
     --color-border: rgba(0, 0, 0, 0.08);
     --font-display: 'Crimson Pro', Georgia, serif;
     --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -47,7 +48,8 @@ body::before {
     height: 100%;
     background: 
         radial-gradient(ellipse at 20% 30%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 70%, rgba(5, 150, 105, 0.04) 0%, transparent 50%);
+        radial-gradient(ellipse at 80% 70%, rgba(5, 150, 105, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 90%, rgba(192, 38, 211, 0.03) 0%, transparent 40%);
     pointer-events: none;
     z-index: -1;
 }
@@ -170,6 +172,10 @@ main {
     background: linear-gradient(90deg, var(--color-accent-teaching), transparent);
 }
 
+.blog-card::before {
+    background: linear-gradient(90deg, var(--color-accent-blog), transparent);
+}
+
 .portal-card:hover {
     transform: translateY(-4px);
     border-color: rgba(0, 0, 0, 0.12);
@@ -193,6 +199,10 @@ main {
     color: var(--color-accent-teaching);
 }
 
+.blog-card .card-icon {
+    color: var(--color-accent-blog);
+}
+
 .portal-card:hover .card-icon {
     transform: scale(1.1);
 }
@@ -211,6 +221,10 @@ main {
 
 .teaching-card h2 {
     color: var(--color-accent-teaching);
+}
+
+.blog-card h2 {
+    color: var(--color-accent-blog);
 }
 
 .portal-card p {
@@ -238,6 +252,10 @@ main {
 
 .teaching-card .card-arrow {
     color: var(--color-accent-teaching);
+}
+
+.blog-card .card-arrow {
+    color: var(--color-accent-blog);
 }
 
 .portal-card:hover .card-arrow {
