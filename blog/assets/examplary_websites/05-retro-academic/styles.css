@@ -1,0 +1,561 @@
+/* ============================================
+   Retro Academic / Vintage Paper Design
+   Color Scheme: Sepia + Dark Brown + Burgundy
+   Style: Classic academia, newspaper aesthetic
+   ============================================ */
+
+:root {
+    --color-paper: #f8f4e8;
+    --color-paper-dark: #ede6d6;
+    --color-ink: #2c2416;
+    --color-ink-light: #5c4a36;
+    --color-accent: #8b2332;
+    --color-accent-light: #a63446;
+    --color-gold: #c4a35a;
+    --font-display: 'IM Fell English SC', serif;
+    --font-serif: 'Libre Baskerville', Georgia, serif;
+    --font-typewriter: 'Special Elite', 'Courier New', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-serif);
+    background: #e8e0cc;
+    color: var(--color-ink);
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+/* Page Border Decoration */
+.page-border {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-gold);
+}
+
+.corner-tl { top: 20px; left: 20px; border-right: none; border-bottom: none; }
+.corner-tr { top: 20px; right: 20px; border-left: none; border-bottom: none; }
+.corner-bl { bottom: 20px; left: 20px; border-right: none; border-top: none; }
+.corner-br { bottom: 20px; right: 20px; border-left: none; border-top: none; }
+
+/* Paper Container */
+.paper {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 4rem 5rem;
+    background: var(--color-paper);
+    box-shadow: 
+        0 0 0 1px rgba(44, 36, 22, 0.1),
+        0 20px 60px rgba(44, 36, 22, 0.15),
+        inset 0 0 100px rgba(139, 35, 50, 0.02);
+    position: relative;
+}
+
+.paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 28px,
+            rgba(139, 35, 50, 0.03) 28px,
+            rgba(139, 35, 50, 0.03) 29px
+        );
+    pointer-events: none;
+}
+
+/* Masthead */
+.masthead {
+    text-align: center;
+    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-ink);
+}
+
+.masthead-ornament {
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+}
+
+.masthead-title {
+    font-family: var(--font-display);
+    font-size: 2.75rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: var(--color-ink);
+}
+
+.masthead-subtitle {
+    font-style: italic;
+    color: var(--color-ink-light);
+    font-size: 1.1rem;
+}
+
+/* Navigation */
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.nav-bar a {
+    color: var(--color-ink);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+    color: var(--color-accent);
+}
+
+.nav-dot {
+    color: var(--color-gold);
+    font-size: 0.6rem;
+}
+
+/* Dividers */
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-ink-light), transparent);
+    margin: 2rem 0;
+}
+
+.divider-ornate {
+    position: relative;
+    height: auto;
+    background: none;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.divider-ornate::before {
+    content: '✦ ✦ ✦';
+    display: block;
+    color: var(--color-gold);
+    letter-spacing: 1em;
+    font-size: 0.7rem;
+}
+
+.divider-ornate::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-ink-light) 20%, transparent 40%, transparent 60%, var(--color-ink-light) 80%, transparent);
+    z-index: -1;
+}
+
+/* Sections */
+.section {
+    margin: 3rem 0;
+    position: relative;
+}
+
+.section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-number {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-accent);
+}
+
+.section-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-ink);
+}
+
+.section-intro {
+    font-style: italic;
+    color: var(--color-ink-light);
+    margin-bottom: 1.5rem;
+}
+
+/* About Section */
+.about-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.portrait-frame {
+    text-align: center;
+}
+
+.portrait-placeholder {
+    width: 180px;
+    height: 220px;
+    background: var(--color-paper-dark);
+    border: 1px solid var(--color-ink-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: var(--color-ink-light);
+    margin: 0 auto;
+}
+
+.portrait-caption {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-ink-light);
+    margin-top: 0.75rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.drop-cap::first-letter {
+    float: left;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    line-height: 0.8;
+    padding-right: 0.5rem;
+    padding-top: 0.1rem;
+    color: var(--color-accent);
+}
+
+/* Research Section */
+.research-columns {
+    column-count: 2;
+    column-gap: 2.5rem;
+}
+
+.research-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+}
+
+.research-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-ink);
+}
+
+.research-item p {
+    font-size: 0.95rem;
+    color: var(--color-ink-light);
+    text-align: justify;
+}
+
+/* Publications Section */
+.publications-list {
+    list-style: none;
+    counter-reset: publication;
+}
+
+.publication {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--color-paper-dark);
+}
+
+.publication:last-child {
+    border-bottom: none;
+}
+
+.pub-marker {
+    font-family: var(--font-typewriter);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    min-width: 24px;
+}
+
+.pub-content cite {
+    display: block;
+    font-style: italic;
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-ink);
+}
+
+.pub-authors {
+    font-size: 0.9rem;
+    color: var(--color-ink-light);
+    margin-bottom: 0.15rem;
+}
+
+.pub-journal {
+    font-size: 0.85rem;
+    color: var(--color-ink-light);
+}
+
+.pub-journal strong {
+    color: var(--color-ink);
+}
+
+.view-more {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.view-more a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.view-more a:hover {
+    text-decoration: underline;
+}
+
+/* Teaching Section */
+.teaching-table {
+    border: 1px solid var(--color-ink-light);
+}
+
+.teaching-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    border-bottom: 1px solid var(--color-paper-dark);
+}
+
+.teaching-row:last-child {
+    border-bottom: none;
+}
+
+.teaching-term {
+    padding: 1.25rem 1rem;
+    background: var(--color-paper-dark);
+    font-family: var(--font-typewriter);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-right: 1px solid var(--color-ink-light);
+}
+
+.teaching-course {
+    padding: 1.25rem 1.5rem;
+}
+
+.teaching-course strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--color-ink);
+}
+
+.teaching-course p {
+    font-size: 0.9rem;
+    color: var(--color-ink-light);
+}
+
+/* Contact Section */
+.contact-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.contact-card h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-gold);
+    color: var(--color-ink);
+}
+
+.contact-card address {
+    font-style: normal;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-ink-light);
+}
+
+.contact-card p {
+    font-size: 0.95rem;
+    color: var(--color-ink-light);
+    margin-bottom: 0.5rem;
+}
+
+.contact-card a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+.profile-links {
+    list-style: none;
+}
+
+.profile-links li {
+    margin-bottom: 0.5rem;
+}
+
+.profile-links a {
+    font-size: 0.95rem;
+    color: var(--color-ink);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.profile-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--color-ink);
+}
+
+.footer-ornament {
+    color: var(--color-gold);
+    letter-spacing: 0.5em;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    font-size: 0.85rem;
+    color: var(--color-ink-light);
+    margin-bottom: 0.25rem;
+}
+
+.footer-note {
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .paper {
+        margin: 1.5rem;
+        padding: 2.5rem 2rem;
+    }
+
+    .corner {
+        display: none;
+    }
+
+    .masthead-title {
+        font-size: 2rem;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .portrait-frame {
+        margin-bottom: 1rem;
+    }
+
+    .research-columns {
+        column-count: 1;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .paper {
+        margin: 0.5rem;
+        padding: 2rem 1.25rem;
+    }
+
+    .masthead-title {
+        font-size: 1.5rem;
+        letter-spacing: 0.05em;
+    }
+
+    .nav-bar {
+        gap: 0.5rem;
+    }
+
+    .nav-bar a {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+    }
+
+    .nav-dot {
+        display: none;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .teaching-row {
+        grid-template-columns: 1fr;
+    }
+
+    .teaching-term {
+        border-right: none;
+        border-bottom: 1px solid var(--color-paper-dark);
+    }
+
+    .drop-cap::first-letter {
+        font-size: 3rem;
+    }
+}
+

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-assisted 1-minute Webpage Creation - Xun's Blog</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/blog-portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Gallery styles for webpage showcase */
+        .webpage-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .webpage-card {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 
+                transform var(--transition-smooth),
+                border-color var(--transition-smooth),
+                box-shadow var(--transition-smooth);
+            text-decoration: none;
+            display: block;
+        }
+
+        .webpage-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(192, 38, 211, 0.3);
+            box-shadow: 0 16px 32px -8px rgba(192, 38, 211, 0.15);
+        }
+
+        .webpage-card-image {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(192, 38, 211, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+        }
+
+        .webpage-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .webpage-card:hover .webpage-card-image img {
+            transform: scale(1.03);
+        }
+
+        .webpage-card-content {
+            padding: 1.25rem;
+        }
+
+        .webpage-card-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            transition: color var(--transition-smooth);
+        }
+
+        .webpage-card:hover .webpage-card-title {
+            color: var(--color-accent-blog);
+        }
+
+        .webpage-card-description {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .webpage-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .webpage-tag {
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--color-accent-blog);
+            background: rgba(192, 38, 211, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .gallery-placeholder {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(192, 38, 211, 0.04);
+            border: 2px dashed rgba(192, 38, 211, 0.2);
+            border-radius: 12px;
+            color: var(--color-text-muted);
+        }
+
+        .gallery-placeholder p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .webpage-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Xun's Blog</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="index.html">Blog</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Image -->
+    <div class="article-banner">
+        <img src="assets/images/banner.png" alt="AI-assisted Webpage Creation">
+    </div>
+
+    <main class="container">
+        <section class="article-header">
+            <h1>AI-assisted 1-minute Webpage Creation</h1>
+            <div class="article-meta">
+                <span class="post-tag">AI</span>
+                <time datetime="2025-12-03">December 3, 2025</time>
+            </div>
+        </section>
+
+        <article class="article-content">
+            <p>In this post, I will share my experience of using AI to create a webpage in 1 minute.</p>
+
+            <details class="collapsible-block">
+                <summary>
+                    Here is the story if you are interested
+                    <span class="collapsible-preview">— "I learned to build websites before the AI era..."</span>
+                </summary>
+                <div class="collapsible-content">
+                    <p>I learned to build websites before the AI era. I had to write my own tedious HTML and CSS files on my own. I am an artsy person and I was so obsessed with designing and colouring. I pretty much spent 80% of the time moving elements around, redesigning and tweaking. This is fun but in fact it is so time consuming. It kinda reminds me of the pixel drawing experience when I played Animal Crossing. Can you imagine using a Joy-Con doing pixel art and drawing an entire swimming pool for 5 hours? This is pretty much what it was like for me to construct and maintain my webpage.</p>
+
+                    <p>And then there came ChatGPT and later Gemini, Cursor, and Codex. It totally changed the way we build websites. People no longer need to take care of the design, or in general, the frontend part of everything. This includes the CSS part of the website design, the GUI design for any software.</p>
+
+                    <p>This is the story going around and there is a real hype about the frontend power of AI. I got to realize that it is a real thing when I was trying to help a friend with building her personal website. A short prompt in 1 minute and a couple of iterations and a super fancy liquid-glass-like website just popped up. I was shocked how good-looking it could be and how fast it was created. I have to say that 5 years of experience in webpage designing is nowhere close to this AI's capability.</p>
+
+                    <p>Because of this, I didn't even bother doing any frontend job by myself. AI is straight up better than you, and faster.</p>
+                </div>
+            </details>
+            <p> The tool I used to generate the website is Cursor</p>
+            <details class="collapsible-block">
+                <summary>
+                    The prompt I used to generate the website is as follows
+                    <span class="collapsible-preview">— "I would like to generate a personal website..."</span>
+                </summary>
+                <div class="collapsible-content">
+                    <p>Hi cursor, I would like to generate a personal website where I can showcase my research results and teaching experience. You don't have to generate everything at a time. But would be good to have an index.html page, an about.html page, and so on. Put all the styling design in a single css file. .JS file if needed. </p>
+                </div>
+            </details> 
+            <h2>Gallery</h2>
+            <p>You can click on the following webpages to take a look at the websites generated by Cursor with the prompt mentioned above. Each website was created with different color schemes, layouts, and design styles to showcase the diversity AI can produce.</p>
+
+            <div class="webpage-gallery">
+                <a href="assets/examplary_websites/01-glassmorphism-split/index.html" class="webpage-card" target="_blank">
+                    <div class="webpage-card-image">
+                        <img src="assets/examplary_websites/01-glassmorphism-split/impression.jpg" alt="Glassmorphism Split Layout">
+                    </div>
+                    <div class="webpage-card-content">
+                        <h3 class="webpage-card-title">Glassmorphism Split</h3>
+                        <p class="webpage-card-description">A liquid glass aesthetic with left-right split layout. Deep indigo background with coral/peach accents. Frosted glass cards with elegant serif typography.</p>
+                        <div class="webpage-card-tags">
+                            <span class="webpage-tag">Glassmorphism</span>
+                            <span class="webpage-tag">Split Layout</span>
+                            <span class="webpage-tag">Dark Theme</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="assets/examplary_websites/02-bento-earthy/index.html" class="webpage-card" target="_blank">
+                    <div class="webpage-card-image">
+                        <img src="assets/examplary_websites/02-bento-earthy/impression.jpg" alt="Bento Grid Earthy">
+                    </div>
+                    <div class="webpage-card-content">
+                        <h3 class="webpage-card-title">Bento Grid Earthy</h3>
+                        <p class="webpage-card-description">Modern bento/dashboard grid layout with warm earthy palette. Cream background, terracotta accents, sage green highlights. Clean typography with DM Serif Display.</p>
+                        <div class="webpage-card-tags">
+                            <span class="webpage-tag">Bento Grid</span>
+                            <span class="webpage-tag">Earthy Tones</span>
+                            <span class="webpage-tag">Light Theme</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="assets/examplary_websites/03-brutalist-mono/index.html" class="webpage-card" target="_blank">
+                    <div class="webpage-card-image">
+                        <img src="assets/examplary_websites/03-brutalist-mono/impression.jpg" alt="Brutalist Monochrome">
+                    </div>
+                    <div class="webpage-card-content">
+                        <h3 class="webpage-card-title">Brutalist Monochrome</h3>
+                        <p class="webpage-card-description">Raw brutalist design with stark black & white contrast. Bold Bebas Neue typography, electric blue accents, grid-based layouts. Live clock and Japanese character decoration.</p>
+                        <div class="webpage-card-tags">
+                            <span class="webpage-tag">Brutalist</span>
+                            <span class="webpage-tag">Monochrome</span>
+                            <span class="webpage-tag">Typography</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="assets/examplary_websites/04-pastel-gradient/index.html" class="webpage-card" target="_blank">
+                    <div class="webpage-card-image">
+                        <img src="assets/examplary_websites/04-pastel-gradient/impression.jpg" alt="Pastel Gradient">
+                    </div>
+                    <div class="webpage-card-content">
+                        <h3 class="webpage-card-title">Pastel Gradient</h3>
+                        <p class="webpage-card-description">Soft, dreamy aesthetic with animated gradient blobs. Lavender, mint, and peach color scheme. Rounded shapes, floating navigation pills, and playful emoji accents.</p>
+                        <div class="webpage-card-tags">
+                            <span class="webpage-tag">Pastel</span>
+                            <span class="webpage-tag">Gradient</span>
+                            <span class="webpage-tag">Playful</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="assets/examplary_websites/05-retro-academic/index.html" class="webpage-card" target="_blank">
+                    <div class="webpage-card-image">
+                        <img src="assets/examplary_websites/05-retro-academic/impression.jpg" alt="Retro Academic">
+                    </div>
+                    <div class="webpage-card-content">
+                        <h3 class="webpage-card-title">Retro Academic</h3>
+                        <p class="webpage-card-description">Vintage newspaper/academia aesthetic with sepia paper texture. Drop caps, Roman numerals, ornamental dividers, and old-style typography. Elegant and scholarly.</p>
+                        <div class="webpage-card-tags">
+                            <span class="webpage-tag">Vintage</span>
+                            <span class="webpage-tag">Academic</span>
+                            <span class="webpage-tag">Typography</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="assets/examplary_websites/06-neomorphism-soft/index.html" class="webpage-card" target="_blank">
+                    <div class="webpage-card-image">
+                        <img src="assets/examplary_websites/06-neomorphism-soft/impression.jpg" alt="Neomorphism Soft UI">
+                    </div>
+                    <div class="webpage-card-content">
+                        <h3 class="webpage-card-title">Neomorphism Soft</h3>
+                        <p class="webpage-card-description">Soft UI design with extruded and inset shadows creating 3D depth. Light gray background, teal accent. Clean Manrope typography with toggle switches and pill buttons.</p>
+                        <div class="webpage-card-tags">
+                            <span class="webpage-tag">Neomorphism</span>
+                            <span class="webpage-tag">Soft UI</span>
+                            <span class="webpage-tag">Minimal</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Xun's Blog</p>
+                <div class="footer-links">
+                    <a href="index.html">Back to Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
