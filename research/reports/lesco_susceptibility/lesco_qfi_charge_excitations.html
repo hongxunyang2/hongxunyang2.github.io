@@ -40,7 +40,7 @@
     <header>
         <h1>QFI from charge excitations</h1>
         <div class="metadata">
-            <p>Generated on: 2026-03-25 15:02:52</p>
+            <p>Generated on: 2026-03-25 15:08:37</p>
         </div>
     </header>
     
@@ -64,9 +64,16 @@ excitations. </p>
 where $\mathrm{Im}\chi$ is the charge intensity and $I_\text{phonons}$ denotes the phonon intensity.</p>
 <p>The Quantum Fisher Information (QFI) is defined (see <a href="https://journals.aps.org/prb/abstract/10.1103/xk42-b9cx">this paper</a>) as:</p>
 <p>
+<script type="math/tex; mode=display">F_Q(T,q)=\int_{0}^{\omega_{\max}} \left[\mathrm{Im}\chi(T,q,\omega)\right]\,
+\tanh\left(\frac{\omega}{2T}\right)\, d\omega.</script>
+</p>
+<p>Since we currently do not filter out the phonon contributions, in this report we
+calculate: </p>
+<p>
 <script type="math/tex; mode=display">F_Q(T,q)=\int_{0}^{\omega_{\max}} \left[\mathrm{Im}\chi(T,q,\omega)+I_\text{phonons}(T,q,\omega)\right]\,
 \tanh\left(\frac{\omega}{2T}\right)\, d\omega.</script>
 </p>
+<p>instead. </p>
 <p>Here $T$ is the temperature expressed in meV. Therefore the implemented weighting is
 $\tanh(\omega/(2T))$ over $\omega \in [0,\omega_{\max}]$. In our analysis we set $\omega_{\max} =
 90$ meV. Beyond that, other contributions kick in. </p>
