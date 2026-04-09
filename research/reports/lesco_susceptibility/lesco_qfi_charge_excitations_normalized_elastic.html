@@ -40,7 +40,7 @@
     <header>
         <h1>QFI normalized by elastic</h1>
         <div class="metadata">
-            <p>Generated on: 2026-04-09 14:49:36</p>
+            <p>Generated on: 2026-04-09 15:36:25</p>
         </div>
     </header>
     
@@ -203,15 +203,16 @@ therefore I normalize it to the elastic. According to <em><a href="https://doi.o
 (in the most simplified form): </p>
 <p>
 <script type="math/tex; mode=display"> I_\mathrm{charge} \sim \sum_p \frac{f(\epsilon_{p+q}) - f(\epsilon_{p})}{|\epsilon_{p} -
-\epsilon_{p+q} + i\Gamma|^2}</script>
+\epsilon_{p+q} + i\Gamma + \omega|^2}</script>
 </p>
 <p>The square in the denominator, if I understand correctly, comes from the fact that RIXS is a
 second-order process. While on the other hand, if we use Lindhard function to approximate the
 density-density susceptibility, it would be </p>
 <p>
-<script type="math/tex; mode=display"> \chi_\mathrm{charge} \sim \sum_p \frac{f(\epsilon_{p+q}) - f(\epsilon_{p})}{(\epsilon_{p} -
-\epsilon_{p+q} + i\Gamma)}</script>
+<script type="math/tex; mode=display"> \chi_\mathrm{charge} \sim \sum_p \frac{f(\epsilon_{p+q}) - f(\epsilon_{p})}{\epsilon_{p} -
+\epsilon_{p+q} + i\Gamma + \omega}</script>
 </p>
+<p>The difference is in the denominator. </p>
 <p style="color: orange;">
 Therefore, I don't know how I can directly get the absolute value of the susceptibility from the
 RIXS intensity. At the moment the best I can do is to normalize it to the (pseudo-)elastic
