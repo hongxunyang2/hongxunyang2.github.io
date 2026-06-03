@@ -1,13 +1,18 @@
 [
     {
-        "filename": "lesco_qfi_charge_excitations_normalized_elastic.html",
-        "title": "QFI normalized by elastic",
-        "date": "2026-04-09 15:36:25"
+        "filename": "chi_scaling_analysis.html",
+        "title": "Chi scaling analysis",
+        "date": "2026-06-03 18:11:56"
     },
     {
         "filename": "lesco_qfi_charge_excitations.html",
         "title": "QFI from charge excitations",
-        "date": "2026-04-07 16:49:43"
+        "date": "2026-06-01 13:46:59"
+    },
+    {
+        "filename": "lesco_qfi_charge_excitations_normalized_elastic.html",
+        "title": "QFI normalized by elastic",
+        "date": "2026-04-09 15:36:25"
     },
     {
         "filename": "lesco_pure_intensity.html",
