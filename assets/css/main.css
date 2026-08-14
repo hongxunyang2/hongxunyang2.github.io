@@ -11,7 +11,7 @@
     --color-text-muted: #64748b;
     --color-accent-research: #2563eb;
     --color-accent-teaching: #059669;
-    --color-accent-blog: #c026d3;
+    --color-accent-art: #d97706;
     --color-border: rgba(0, 0, 0, 0.08);
     --font-display: 'Crimson Pro', Georgia, serif;
     --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -172,8 +172,8 @@ main {
     background: linear-gradient(90deg, var(--color-accent-teaching), transparent);
 }
 
-.blog-card::before {
-    background: linear-gradient(90deg, var(--color-accent-blog), transparent);
+.art-card::before {
+    background: linear-gradient(90deg, var(--color-accent-art), transparent);
 }
 
 .portal-card:hover {
@@ -199,8 +199,8 @@ main {
     color: var(--color-accent-teaching);
 }
 
-.blog-card .card-icon {
-    color: var(--color-accent-blog);
+.art-card .card-icon {
+    color: var(--color-accent-art);
 }
 
 .portal-card:hover .card-icon {
@@ -223,8 +223,8 @@ main {
     color: var(--color-accent-teaching);
 }
 
-.blog-card h2 {
-    color: var(--color-accent-blog);
+.art-card h2 {
+    color: var(--color-accent-art);
 }
 
 .portal-card p {
@@ -254,8 +254,22 @@ main {
     color: var(--color-accent-teaching);
 }
 
-.blog-card .card-arrow {
-    color: var(--color-accent-blog);
+.art-card .card-arrow {
+    color: var(--color-accent-art);
+}
+
+.coming-soon-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 .portal-card:hover .card-arrow {
