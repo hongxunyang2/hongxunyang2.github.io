@@ -132,34 +132,23 @@ button {
     flex-shrink: 0;
 }
 
-/* ---------- Gallery ---------- */
+/* ---------- Gallery ----------
+   True masonry via CSS multi-column layout: each image keeps its natural
+   aspect ratio (no forced crop) and the browser fills column 1 top-to-
+   bottom, then column 2, etc. — the column-based, uneven-row look of
+   https://www.levijacobs.nl/'s Wix Pro Gallery (masonry mode, fixed
+   columns, no smart-crop), not a row-by-row grid. */
 
 .art-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.25rem;
-}
-
-@media (min-width: 769px) {
-    .art-gallery {
-        grid-template-columns: repeat(4, 1fr);
-        row-gap: 2.75rem;
-    }
-
-    /* With a fixed 4-column grid, nth-child(even) lands on columns 2 and 4
-       for every row — a cheap way to get a column-level stagger without
-       tracking row/column indices by hand. Kept desktop-only: on narrow
-       auto-fill grids the column count isn't fixed, so the same rule
-       would land on arbitrary tiles instead of a consistent column. */
-    .art-tile:nth-child(even) {
-        margin-top: 2.25rem;
-    }
+    column-count: 4;
+    column-gap: 1.25rem;
 }
 
 .art-tile {
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 5;
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
     border: none;
     border-radius: 4px;
     background: none;
@@ -190,14 +179,13 @@ button {
 
 .art-tile img {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
-    object-fit: cover;
 }
 
 .art-tile-placeholder {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 4 / 5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -358,12 +346,20 @@ body.art-scroll-lock {
     }
 
     .art-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 0.9rem;
+        column-count: 3;
+        column-gap: 0.9rem;
+    }
+
+    .art-tile {
+        margin-bottom: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
+    .art-gallery {
+        column-count: 2;
+    }
+
     dialog.art-lightbox {
         max-width: 94vw;
     }
