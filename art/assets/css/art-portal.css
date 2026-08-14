@@ -14,6 +14,7 @@ body[data-theme="minimal"] {
     --border: rgba(0, 0, 0, 0.12);
     --accent: #111111;
     --tile-dash: rgba(0, 0, 0, 0.25);
+    --tile-shadow: rgba(0, 0, 0, 0.2);
     --backdrop: rgba(10, 10, 10, 0.88);
 }
 
@@ -25,6 +26,7 @@ body[data-theme="amber"] {
     --border: rgba(180, 110, 20, 0.25);
     --accent: #c1660b;
     --tile-dash: rgba(193, 102, 11, 0.4);
+    --tile-shadow: rgba(120, 72, 12, 0.28);
     --backdrop: rgba(30, 18, 4, 0.88);
 }
 
@@ -36,6 +38,7 @@ body[data-theme="dark"] {
     --border: rgba(255, 255, 255, 0.14);
     --accent: #e8a33d;
     --tile-dash: rgba(255, 255, 255, 0.28);
+    --tile-shadow: rgba(0, 0, 0, 0.55);
     --backdrop: rgba(0, 0, 0, 0.92);
 }
 
@@ -137,6 +140,22 @@ button {
     gap: 1.25rem;
 }
 
+@media (min-width: 769px) {
+    .art-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 2.75rem;
+    }
+
+    /* With a fixed 4-column grid, nth-child(even) lands on columns 2 and 4
+       for every row — a cheap way to get a column-level stagger without
+       tracking row/column indices by hand. Kept desktop-only: on narrow
+       auto-fill grids the column count isn't fixed, so the same rule
+       would land on arbitrary tiles instead of a consistent column. */
+    .art-tile:nth-child(even) {
+        margin-top: 2.25rem;
+    }
+}
+
 .art-tile {
     display: block;
     width: 100%;
@@ -146,12 +165,19 @@ button {
     background: none;
     cursor: pointer;
     overflow: hidden;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .art-tile:hover,
 .art-tile:focus-visible {
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(1.015);
+}
+
+.art-tile:hover {
+    box-shadow: 0 18px 32px -16px var(--tile-shadow);
+}
+
+.art-tile:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
 }
