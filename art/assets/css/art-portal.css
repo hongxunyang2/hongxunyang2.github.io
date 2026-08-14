@@ -107,6 +107,28 @@ button {
     line-height: 1.6;
 }
 
+.art-ig-follow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: color 0.2s ease;
+}
+
+.art-ig-follow:hover,
+.art-ig-follow:focus-visible {
+    color: var(--accent);
+}
+
+.art-ig-follow svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
 /* ---------- Gallery ---------- */
 
 .art-gallery {
@@ -171,6 +193,34 @@ button {
     text-align: center;
     font-size: 0.8rem;
     color: var(--text-muted);
+}
+
+.art-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.1rem;
+}
+
+.art-social-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.art-social-link:hover,
+.art-social-link:focus-visible {
+    color: var(--accent);
+}
+
+.art-social-link svg {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
 }
 
 /* ---------- Lightbox ----------
