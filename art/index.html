@@ -46,18 +46,10 @@
               aren't reliable captions) — hand-edit alt text afterward if you
               want nicer descriptions; the script won't touch it again unless
               you rerun it and it regenerates that tile.
-
-              To add an Instagram reel as a tile: drop a cover-frame image
-              into art/assets/images/ like any artwork photo, then add an
-              entry mapping that filename to the reel's URL in
-              art/assets/reels.json, then rerun the script. Reel tiles get a
-              play-icon overlay and open the real Instagram embed (playing
-              inline) in the lightbox instead of a static image.
             -->
             <!-- GALLERY:START -->
-            <button class="art-tile art-tile--reel" type="button" aria-label="Play reel 1" data-reel="https://www.instagram.com/reel/DcDoycvCQat/">
-                <img src="assets/images/reel1.jpg" alt="Reel cover 1">
-                <span class="art-tile-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8V4z"/></svg></span>
+            <button class="art-tile" type="button" aria-label="Open artwork 1">
+                <img src="assets/images/IMG_7412.jpg" alt="Artwork 1">
             </button>
             <button class="art-tile" type="button" aria-label="Open artwork 2">
                 <img src="assets/images/IMG_7414.jpg" alt="Artwork 2">
@@ -168,8 +160,6 @@
         <div class="art-lightbox-content"></div>
     </dialog>
 
-    <script async src="//www.instagram.com/embed.js"></script>
-
     <script>
         (function () {
             var lightbox = document.getElementById('artLightbox');
@@ -184,32 +174,12 @@
             // that. We only add: building the content, an open animation,
             // closing on backdrop click, and restoring focus on close.
 
-            // Instagram's embed.js only auto-scans the page once on load;
-            // blockquotes inserted later (every time a reel tile opens the
-            // lightbox) need Embeds.process() called explicitly to hydrate
-            // into the real player. The script loads async, so retry briefly
-            // if it isn't ready yet.
-            function processReelEmbed() {
-                if (window.instgrm && window.instgrm.Embeds) {
-                    window.instgrm.Embeds.process();
-                } else {
-                    setTimeout(processReelEmbed, 300);
-                }
-            }
-
             function openLightbox(tile) {
-                var reelUrl = tile.getAttribute('data-reel');
                 var img = tile.querySelector('img');
                 var caption = tile.getAttribute('data-caption') || '';
                 contentEl.innerHTML = '';
 
-                if (reelUrl) {
-                    contentEl.innerHTML =
-                        '<blockquote class="instagram-media" data-instgrm-permalink="' + reelUrl + '" data-instgrm-version="14">' +
-                        '<a href="' + reelUrl + '" target="_blank" rel="noopener noreferrer">View on Instagram</a>' +
-                        '</blockquote>';
-                    processReelEmbed();
-                } else if (img) {
+                if (img) {
                     var full = document.createElement('img');
                     full.src = tile.getAttribute('data-full') || img.src;
                     full.alt = img.alt || caption;
