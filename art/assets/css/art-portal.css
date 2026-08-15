@@ -335,6 +335,7 @@ dialog.art-lightbox::backdrop {
     position: absolute;
     top: -14px;
     right: -14px;
+    z-index: 1;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
