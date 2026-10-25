@@ -180,10 +180,6 @@
     text-transform: uppercase;
 }
 
-.software-feature h2 {
-    font: 400 24px/1.25 var(--font-display);
-}
-
 .software-feature p {
     margin-top: 4px;
     color: var(--color-muted);
@@ -206,6 +202,11 @@
     font-size: 15px;
     font-weight: 500;
     line-height: 1.375;
+}
+
+.software-feature h2,
+.automation-feature h2 {
+    font: 400 24px/1.25 var(--font-display);
 }
 
 .work-feature:hover h2,
@@ -281,7 +282,8 @@
         aspect-ratio: auto;
     }
 
-    .software-feature h2 {
+    .software-feature h2,
+    .automation-feature h2 {
         font-size: 28px;
     }
 
@@ -294,7 +296,8 @@
 }
 
 @media (min-width: 1280px) {
-    .software-feature h2 {
+    .software-feature h2,
+    .automation-feature h2 {
         font-size: 32px;
     }
 
