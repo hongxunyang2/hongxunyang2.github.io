@@ -1,16 +1,7 @@
-# art/assets/images
+# Published artwork images
 
-Drop saved artwork images here (exported from Instagram posts or highlights — both are treated the same, since highlights have no public embeddable URL).
+`thumbs/` contains small WebP gallery images; `full/` contains larger WebP lightbox images. These generated files are committed and served directly by the static website.
 
-- `.jpg` / `.jpeg` / `.png` / `.webp`.
-- Any filename works — IG screenshot filenames are unpredictable, so the gallery doesn't rely on them for anything except sort order.
+Put originals in **`art/temp_images/`**, then double-click **`art/update_art.command`**, or run `make -C art` from the repository root. Do not put originals in this output folder.
 
-Then, from the repo root:
-
-```
-python3 art/update_gallery.py
-```
-
-This scans this folder, sorts images **newest-first by file modified time**, and regenerates the gallery tiles in `art/index.html` (between the `GALLERY:START`/`GALLERY:END` markers) automatically — one tile per image, no manual HTML editing. No captions are generated (unreliable filenames), just generic alt text (`"Artwork N"`) — hand-edit an individual tile's `alt` afterward if you want a nicer description, though rerunning the script will regenerate that tile and drop the edit.
-
-If this folder is empty, the script falls back to 8 placeholder tiles instead.
+See [the art workflow guide](../../README.md) for conversion settings, stable ordering, descriptions and dependency setup.

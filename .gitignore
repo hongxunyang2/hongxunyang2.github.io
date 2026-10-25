@@ -13,4 +13,8 @@
 # Original showcase media; optimized website assets are committed separately.
 /showcase/temp_assets/
 
+# Artwork originals stay local; only optimized WebP copies are published.
+/art/temp_images/
+!/art/update_art.sh
+
 **/.DS_Store

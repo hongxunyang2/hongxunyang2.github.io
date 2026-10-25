@@ -1,0 +1,9 @@
+{
+  "max_width": 720,
+  "max_height": 1280,
+  "fps": 30,
+  "crf": 26,
+  "preset": "slow",
+  "audio_bitrate": "96k",
+  "poster_second": 2
+}

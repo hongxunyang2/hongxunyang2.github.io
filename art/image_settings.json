@@ -1,0 +1,5 @@
+{
+  "thumbnail": {"max_edge": 800, "quality": 88},
+  "full": {"max_edge": 2400, "quality": 90},
+  "method": 6
+}

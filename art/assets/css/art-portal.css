@@ -67,7 +67,7 @@ button {
 /* ---------- Layout ---------- */
 
 .art-page {
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 4rem 1.5rem 6rem;
 }
@@ -133,22 +133,28 @@ button {
 }
 
 /* ---------- Gallery ----------
-   True masonry via CSS multi-column layout: each image keeps its natural
-   aspect ratio (no forced crop) and the browser fills column 1 top-to-
-   bottom, then column 2, etc. — the column-based, uneven-row look of
-   https://www.levijacobs.nl/'s Wix Pro Gallery (masonry mode, fixed
-   columns, no smart-crop), not a row-by-row grid. */
+   The featured reel spans two columns on the right, alongside three
+   narrower columns of artwork. Tiny grid rows measured
+   by art-gallery.js let the remaining artwork pack naturally around it.
+   Without JS, this remains an ordinary responsive grid. */
 
 .art-gallery {
-    column-count: 4;
-    column-gap: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: start;
+    grid-auto-flow: dense;
+}
+
+.art-gallery--masonry {
+    grid-auto-rows: 1px;
+    row-gap: 0;
 }
 
 .art-tile {
     display: block;
     width: 100%;
-    break-inside: avoid;
-    margin-bottom: 1.25rem;
+    min-width: 0;
     border: none;
     border-radius: 4px;
     background: none;
@@ -181,6 +187,48 @@ button {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.art-feature {
+    grid-column: -3 / -1;
+    grid-row-start: 1;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0.65rem 0.65rem 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+.art-feature video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    object-fit: contain;
+    border-radius: 5px;
+    background: #111;
+}
+
+.art-feature figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.95rem 0.35rem 1rem;
+}
+
+.art-feature figcaption > :last-child {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+    line-height: 1.15;
+}
+
+.art-feature-kicker {
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
 
 .art-tile-placeholder {
@@ -269,6 +317,7 @@ dialog.art-lightbox::backdrop {
     border-radius: 6px;
     padding: 1rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
@@ -285,6 +334,17 @@ dialog.art-lightbox::backdrop {
     max-width: 100%;
     max-height: 80vh;
     border-radius: 4px;
+}
+
+.art-lightbox-content:has(.art-lightbox-caption) img {
+    max-height: 70vh;
+}
+
+.art-lightbox-caption {
+    margin: 0.75rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: center;
 }
 
 .art-lightbox-placeholder {
@@ -338,6 +398,12 @@ body.art-scroll-lock {
 
 /* ---------- Responsive ---------- */
 
+@media (max-width: 1000px) {
+    .art-gallery {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     .art-page {
         padding: 3rem 1.25rem 4rem;
@@ -351,20 +417,28 @@ body.art-scroll-lock {
     }
 
     .art-gallery {
-        column-count: 3;
         column-gap: 0.9rem;
     }
 
-    .art-tile {
-        margin-bottom: 0.9rem;
+    .art-gallery:not(.art-gallery--masonry) {
+        row-gap: 0.9rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .art-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .art-feature {
+        grid-column: 1 / -1;
+        max-width: 360px;
+        justify-self: center;
+        margin-bottom: 0.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    .art-gallery {
-        column-count: 2;
-    }
-
     dialog.art-lightbox {
         max-width: 94vw;
     }

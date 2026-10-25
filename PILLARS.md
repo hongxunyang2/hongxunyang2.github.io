@@ -29,14 +29,14 @@ Unlike every other pillar, `art/index.html` and `art/assets/css/art-portal.css` 
 
 It also has a dev-only (not visitor-facing) style switch: a `data-theme` attribute on `<body>` in `art/index.html` picks between three CSS presets (`minimal` / `amber` / `dark`) defined in `art-portal.css` — pure CSS, no JS.
 
-Gallery content is not hand-edited in `index.html` — it's generated. Drop image files into `art/assets/images/` and run `python3 art/update_gallery.py` from the repo root; it regenerates the tiles between the `<!-- GALLERY:START -->`/`<!-- GALLERY:END -->` markers, newest file first by modified time, no captions (see `art/assets/images/README.md`).
+Gallery content is not hand-edited in `index.html` — it's generated. Drop originals into ignored `art/temp_images/`, then double-click `art/update_art.command` or run `make -C art`. Only added/changed artwork is converted to thumbnail/full-size WebP pairs; the gallery is regenerated from `art/gallery.json`, which preserves existing order and optional alt text/captions. New images appear first. See `art/README.md` for the workflow and settings.
 
 ## Art pillar: media & commissioning plan
 
 When building out `art/` further:
 
-- **Images** — store directly in the repo at `art/assets/images/`, web-optimized (JPG or WebP, roughly a few hundred KB each). This matches the existing convention (e.g. `research/assets/figure_research/`) and GitHub Pages serves this fine at personal-site scale.
-- **Videos** — do not commit raw video files to the repo; git handles large binaries badly (slow clones, repo bloat) and GitHub Pages has soft bandwidth limits. Host clips externally (YouTube unlisted is the default recommendation — free compression/CDN/thumbnails) and embed them. Only self-host a clip directly (e.g. under `art/assets/videos/`) if it's a few seconds and well under ~5-10MB.
+- **Images** — keep originals in ignored `art/temp_images/` and publish generated WebP files in `art/assets/images/thumbs/` and `art/assets/images/full/`. Run `make -C art` after adding or editing originals. GitHub Pages serves the generated files without a server-side build; keep originals separately backed up.
+- **Videos** — the art gallery has one locally hosted featured reel: ignored `art/temp_images/video.MP4` is incrementally converted by `make -C art` into `art/assets/videos/feature.mp4` (H.264/AAC, 720 × 1280, approximately 5.77 MB for the first 30.7-second reel), plus a WebP poster. It sits at the top right of the responsive masonry grid, autoplays muted with controls, and respects reduced motion. See `art/README.md` for settings and playback behaviour. For additional clips, do not commit raw video files to the repo; git handles large binaries badly (slow clones, repo bloat) and GitHub Pages has soft bandwidth limits. Host clips externally (YouTube unlisted is the default recommendation — free compression/CDN/thumbnails) and embed them. Only self-host a clip directly (e.g. under `art/assets/videos/`) if it's a few seconds and well under ~5-10MB.
 - **Contact / commissioning form** — GitHub Pages is fully static, so there's no backend to receive a form submission directly. Use a third-party form service (Formspree is the default recommendation: point the form's `action` at their endpoint, submissions land by email, free tier is enough here) rather than a bare `mailto:` link, so a commission request can capture structured info (reference images, budget, timeline). Needs a Formspree account/form endpoint from the user before wiring in.
 
 ## Showcase navigation

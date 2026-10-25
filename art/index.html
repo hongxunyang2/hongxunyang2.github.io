@@ -25,7 +25,7 @@
 
         <section class="art-intro">
             <h1>Drawings and paintings.</h1>
-            <a class="art-ig-follow" href="https://www.instagram.com/xunyanghong/" target="_blank" rel="noopener noreferrer">
+            <a class="art-ig-follow" href="https://www.instagram.com/xunartt/" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -37,113 +37,155 @@
 
         <section class="art-gallery" aria-label="Gallery">
             <!--
-              Everything between GALLERY:START and GALLERY:END is generated
-              by art/update_gallery.py — don't hand-edit tiles here, they'll
-              be overwritten. To add artwork: drop .jpg/.png/.webp files into
-              art/assets/images/, then run `python3 art/update_gallery.py`
-              from the repo root. Newest file (by modified time) appears
-              first. No captions are generated (IG screenshot filenames
-              aren't reliable captions) — hand-edit alt text afterward if you
-              want nicer descriptions; the script won't touch it again unless
-              you rerun it and it regenerates that tile.
+              Everything between GALLERY:START and GALLERY:END is generated.
+              Drop images and the featured video.MP4 into art/temp_images/, then double-click
+              art/update_art.command or run `make -C art` from the repo root.
+              Edit art/gallery.json for stable ordering, alt text and captions.
+              Do not hand-edit the generated tiles. See art/README.md.
             -->
             <!-- GALLERY:START -->
-            <button class="art-tile" type="button" aria-label="Open artwork 1">
-                <img src="assets/images/IMG_7797.JPG" alt="Artwork 1">
+            <figure class="art-feature" aria-label="Featured drawing video">
+                <video id="artFeatureVideo" autoplay muted loop playsinline controls preload="metadata" poster="assets/videos/feature.webp?v=f96ccc890ed3" width="720" height="1280" aria-label="Outdoor drawing reel">
+                    <source src="assets/videos/feature.mp4?v=20b133988038" type="video/mp4">
+                    <a href="assets/videos/feature.mp4">Watch the outdoor drawing video</a>
+                </video>
+                <figcaption><span class="art-feature-kicker">In motion</span><span>Outdoor drawing</span></figcaption>
+            </figure>
+            <button class="art-tile" type="button" aria-label="Open Artwork 1" data-full="assets/images/full/img-7972-211ffff2e85c.webp">
+                <img src="assets/images/thumbs/img-7972-211ffff2e85c.webp" alt="Artwork 1" width="446" height="800" loading="eager" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 2">
-                <img src="assets/images/IMG_7728.jpeg" alt="Artwork 2">
+            <button class="art-tile" type="button" aria-label="Open Artwork 2" data-full="assets/images/full/ea756b0f-482c-439d-af57-5ee53266aa41-ced96773be05.webp">
+                <img src="assets/images/thumbs/ea756b0f-482c-439d-af57-5ee53266aa41-ced96773be05.webp" alt="Artwork 2" width="542" height="800" loading="eager" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 3">
-                <img src="assets/images/IMG_7554.JPG" alt="Artwork 3">
+            <button class="art-tile" type="button" aria-label="Open Artwork 3" data-full="assets/images/full/e5f28dfb-ba4a-4b6a-9a3e-b3a39e49cf7e-6ff542e033a4.webp">
+                <img src="assets/images/thumbs/e5f28dfb-ba4a-4b6a-9a3e-b3a39e49cf7e-6ff542e033a4.webp" alt="Artwork 3" width="628" height="800" loading="eager" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 4">
-                <img src="assets/images/IMG_7676.JPG" alt="Artwork 4">
+            <button class="art-tile" type="button" aria-label="Open Artwork 4" data-full="assets/images/full/4628a624-d24d-4bcf-bece-7299a7ee3760-8fd09eecff0a.webp">
+                <img src="assets/images/thumbs/4628a624-d24d-4bcf-bece-7299a7ee3760-8fd09eecff0a.webp" alt="Artwork 4" width="556" height="800" loading="eager" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 5">
-                <img src="assets/images/IMG_7412.jpg" alt="Artwork 5">
+            <button class="art-tile" type="button" aria-label="Open Artwork 5" data-full="assets/images/full/img-8619-ae0e64584650.webp">
+                <img src="assets/images/thumbs/img-8619-ae0e64584650.webp" alt="Artwork 5" width="593" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 6">
-                <img src="assets/images/IMG_7414.jpg" alt="Artwork 6">
+            <button class="art-tile" type="button" aria-label="Open Artwork 6" data-full="assets/images/full/img-8292-4501f56f5372.webp">
+                <img src="assets/images/thumbs/img-8292-4501f56f5372.webp" alt="Artwork 6" width="600" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 7">
-                <img src="assets/images/IMG_7417.jpg" alt="Artwork 7">
+            <button class="art-tile" type="button" aria-label="Open Artwork 7" data-full="assets/images/full/img-8247-e1700cbc9829.webp">
+                <img src="assets/images/thumbs/img-8247-e1700cbc9829.webp" alt="Artwork 7" width="435" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 8">
-                <img src="assets/images/IMG_7427.jpg" alt="Artwork 8">
+            <button class="art-tile" type="button" aria-label="Open Artwork 8" data-full="assets/images/full/img-8192-92665ed91010.webp">
+                <img src="assets/images/thumbs/img-8192-92665ed91010.webp" alt="Artwork 8" width="392" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 9">
-                <img src="assets/images/IMG_7413.jpg" alt="Artwork 9">
+            <button class="art-tile" type="button" aria-label="Open Artwork 9" data-full="assets/images/full/img-8076-37483e417764.webp">
+                <img src="assets/images/thumbs/img-8076-37483e417764.webp" alt="Artwork 9" width="413" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 10">
-                <img src="assets/images/IMG_7419.jpg" alt="Artwork 10">
+            <button class="art-tile" type="button" aria-label="Open Artwork 10" data-full="assets/images/full/img-8069-af858233878f.webp">
+                <img src="assets/images/thumbs/img-8069-af858233878f.webp" alt="Artwork 10" width="399" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 11">
-                <img src="assets/images/IMG_7432.jpg" alt="Artwork 11">
+            <button class="art-tile" type="button" aria-label="Open Artwork 11" data-full="assets/images/full/img-8038-bf2b17ab3135.webp">
+                <img src="assets/images/thumbs/img-8038-bf2b17ab3135.webp" alt="Artwork 11" width="600" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 12">
-                <img src="assets/images/IMG_7437.jpg" alt="Artwork 12">
+            <button class="art-tile" type="button" aria-label="Open Artwork 12" data-full="assets/images/full/untitled-artwork-6-48b4a5e36343.webp">
+                <img src="assets/images/thumbs/untitled-artwork-6-48b4a5e36343.webp" alt="Artwork 12" width="507" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 13">
-                <img src="assets/images/IMG_7422.jpg" alt="Artwork 13">
+            <button class="art-tile" type="button" aria-label="Open Artwork 13" data-full="assets/images/full/untitled-artwork-2-a87a7464c4b4.webp">
+                <img src="assets/images/thumbs/untitled-artwork-2-a87a7464c4b4.webp" alt="Artwork 13" width="546" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 14">
-                <img src="assets/images/IMG_7418.jpg" alt="Artwork 14">
+            <button class="art-tile" type="button" aria-label="Open Artwork 14" data-full="assets/images/full/img-7797-853a96f75f98.webp">
+                <img src="assets/images/thumbs/img-7797-853a96f75f98.webp" alt="Artwork 14" width="472" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 15">
-                <img src="assets/images/IMG_7438.jpg" alt="Artwork 15">
+            <button class="art-tile" type="button" aria-label="Open Artwork 15" data-full="assets/images/full/img-7728-4230083c4b29.webp">
+                <img src="assets/images/thumbs/img-7728-4230083c4b29.webp" alt="Artwork 15" width="426" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 16">
-                <img src="assets/images/IMG_7430.jpg" alt="Artwork 16">
+            <button class="art-tile" type="button" aria-label="Open Artwork 16" data-full="assets/images/full/img-7554-d1d885caafe5.webp">
+                <img src="assets/images/thumbs/img-7554-d1d885caafe5.webp" alt="Artwork 16" width="417" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 17">
-                <img src="assets/images/IMG_7434.jpg" alt="Artwork 17">
+            <button class="art-tile" type="button" aria-label="Open Artwork 17" data-full="assets/images/full/img-7676-24a9d922c95a.webp">
+                <img src="assets/images/thumbs/img-7676-24a9d922c95a.webp" alt="Artwork 17" width="434" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 18">
-                <img src="assets/images/IMG_7431.jpg" alt="Artwork 18">
+            <button class="art-tile" type="button" aria-label="Open Artwork 18" data-full="assets/images/full/img-7412-af0014bc02d5.webp">
+                <img src="assets/images/thumbs/img-7412-af0014bc02d5.webp" alt="Artwork 18" width="420" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 19">
-                <img src="assets/images/IMG_7429.jpg" alt="Artwork 19">
+            <button class="art-tile" type="button" aria-label="Open Artwork 19" data-full="assets/images/full/img-7414-a01af511b3d2.webp">
+                <img src="assets/images/thumbs/img-7414-a01af511b3d2.webp" alt="Artwork 19" width="496" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 20">
-                <img src="assets/images/IMG_7428.jpg" alt="Artwork 20">
+            <button class="art-tile" type="button" aria-label="Open Artwork 20" data-full="assets/images/full/img-7417-636f0fd4531c.webp">
+                <img src="assets/images/thumbs/img-7417-636f0fd4531c.webp" alt="Artwork 20" width="474" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 21">
-                <img src="assets/images/IMG_7442.jpg" alt="Artwork 21">
+            <button class="art-tile" type="button" aria-label="Open Artwork 21" data-full="assets/images/full/img-7427-8d33fd293b4f.webp">
+                <img src="assets/images/thumbs/img-7427-8d33fd293b4f.webp" alt="Artwork 21" width="471" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 22">
-                <img src="assets/images/IMG_7441.jpg" alt="Artwork 22">
+            <button class="art-tile" type="button" aria-label="Open Artwork 22" data-full="assets/images/full/img-7413-e6485fe2327d.webp">
+                <img src="assets/images/thumbs/img-7413-e6485fe2327d.webp" alt="Artwork 22" width="471" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 23">
-                <img src="assets/images/IMG_7440.jpg" alt="Artwork 23">
+            <button class="art-tile" type="button" aria-label="Open Artwork 23" data-full="assets/images/full/img-7419-3cb596fdc6cf.webp">
+                <img src="assets/images/thumbs/img-7419-3cb596fdc6cf.webp" alt="Artwork 23" width="588" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 24">
-                <img src="assets/images/IMG_7439.jpg" alt="Artwork 24">
+            <button class="art-tile" type="button" aria-label="Open Artwork 24" data-full="assets/images/full/img-7432-c747fc7b4316.webp">
+                <img src="assets/images/thumbs/img-7432-c747fc7b4316.webp" alt="Artwork 24" width="471" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 25">
-                <img src="assets/images/IMG_7436.jpg" alt="Artwork 25">
+            <button class="art-tile" type="button" aria-label="Open Artwork 25" data-full="assets/images/full/img-7437-2c2feb042889.webp">
+                <img src="assets/images/thumbs/img-7437-2c2feb042889.webp" alt="Artwork 25" width="503" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 26">
-                <img src="assets/images/IMG_7435.jpg" alt="Artwork 26">
+            <button class="art-tile" type="button" aria-label="Open Artwork 26" data-full="assets/images/full/img-7422-c46f2e3a5786.webp">
+                <img src="assets/images/thumbs/img-7422-c46f2e3a5786.webp" alt="Artwork 26" width="563" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 27">
-                <img src="assets/images/IMG_7433.jpg" alt="Artwork 27">
+            <button class="art-tile" type="button" aria-label="Open Artwork 27" data-full="assets/images/full/img-7418-9346ff9a0f62.webp">
+                <img src="assets/images/thumbs/img-7418-9346ff9a0f62.webp" alt="Artwork 27" width="474" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 28">
-                <img src="assets/images/IMG_7420.jpg" alt="Artwork 28">
+            <button class="art-tile" type="button" aria-label="Open Artwork 28" data-full="assets/images/full/img-7438-7610358d23fb.webp">
+                <img src="assets/images/thumbs/img-7438-7610358d23fb.webp" alt="Artwork 28" width="510" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 29">
-                <img src="assets/images/IMG_7416.jpg" alt="Artwork 29">
+            <button class="art-tile" type="button" aria-label="Open Artwork 29" data-full="assets/images/full/img-7430-690c694b3ecc.webp">
+                <img src="assets/images/thumbs/img-7430-690c694b3ecc.webp" alt="Artwork 29" width="500" height="800" loading="lazy" decoding="async">
             </button>
-            <button class="art-tile" type="button" aria-label="Open artwork 30">
-                <img src="assets/images/IMG_7415.jpg" alt="Artwork 30">
+            <button class="art-tile" type="button" aria-label="Open Artwork 30" data-full="assets/images/full/img-7434-23c58f6c6e60.webp">
+                <img src="assets/images/thumbs/img-7434-23c58f6c6e60.webp" alt="Artwork 30" width="559" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 31" data-full="assets/images/full/img-7431-368c4d7a40cc.webp">
+                <img src="assets/images/thumbs/img-7431-368c4d7a40cc.webp" alt="Artwork 31" width="572" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 32" data-full="assets/images/full/img-7429-bafe9bfae104.webp">
+                <img src="assets/images/thumbs/img-7429-bafe9bfae104.webp" alt="Artwork 32" width="800" height="596" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 33" data-full="assets/images/full/img-7428-2f26470982c8.webp">
+                <img src="assets/images/thumbs/img-7428-2f26470982c8.webp" alt="Artwork 33" width="537" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 34" data-full="assets/images/full/img-7442-d814ecbdec51.webp">
+                <img src="assets/images/thumbs/img-7442-d814ecbdec51.webp" alt="Artwork 34" width="491" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 35" data-full="assets/images/full/img-7441-ce0d16c6516b.webp">
+                <img src="assets/images/thumbs/img-7441-ce0d16c6516b.webp" alt="Artwork 35" width="460" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 36" data-full="assets/images/full/img-7440-66af5a0911ca.webp">
+                <img src="assets/images/thumbs/img-7440-66af5a0911ca.webp" alt="Artwork 36" width="459" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 37" data-full="assets/images/full/img-7439-5a202c659095.webp">
+                <img src="assets/images/thumbs/img-7439-5a202c659095.webp" alt="Artwork 37" width="460" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 38" data-full="assets/images/full/img-7436-7aeebafd49ae.webp">
+                <img src="assets/images/thumbs/img-7436-7aeebafd49ae.webp" alt="Artwork 38" width="460" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 39" data-full="assets/images/full/img-7435-4b21f0edd467.webp">
+                <img src="assets/images/thumbs/img-7435-4b21f0edd467.webp" alt="Artwork 39" width="460" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 40" data-full="assets/images/full/img-7433-ae707d434b6b.webp">
+                <img src="assets/images/thumbs/img-7433-ae707d434b6b.webp" alt="Artwork 40" width="460" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 41" data-full="assets/images/full/img-7420-c094db763b7f.webp">
+                <img src="assets/images/thumbs/img-7420-c094db763b7f.webp" alt="Artwork 41" width="460" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 42" data-full="assets/images/full/img-7416-bd007e68636d.webp">
+                <img src="assets/images/thumbs/img-7416-bd007e68636d.webp" alt="Artwork 42" width="460" height="800" loading="lazy" decoding="async">
+            </button>
+            <button class="art-tile" type="button" aria-label="Open Artwork 43" data-full="assets/images/full/img-7415-e86dc0788078.webp">
+                <img src="assets/images/thumbs/img-7415-e86dc0788078.webp" alt="Artwork 43" width="460" height="800" loading="lazy" decoding="async">
             </button>
             <!-- GALLERY:END -->
         </section>
 
         <footer class="art-bottom">
             <div class="art-social">
-                <a class="art-social-link" href="https://www.instagram.com/xunyanghong/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a class="art-social-link" href="https://www.instagram.com/xunartt/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -196,6 +238,12 @@
                     full.src = tile.getAttribute('data-full') || img.src;
                     full.alt = img.alt || caption;
                     contentEl.appendChild(full);
+                    if (caption) {
+                        var description = document.createElement('p');
+                        description.className = 'art-lightbox-caption';
+                        description.textContent = caption;
+                        contentEl.appendChild(description);
+                    }
                 } else {
                     var placeholder = document.createElement('div');
                     placeholder.className = 'art-lightbox-placeholder';
@@ -238,6 +286,7 @@
             });
         })();
     </script>
+    <script src="assets/js/art-gallery.js"></script>
 
 </body>
 </html>
