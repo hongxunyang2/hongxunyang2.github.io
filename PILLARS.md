@@ -43,7 +43,7 @@ When building out `art/` further:
 
 The homepage links into `showcase/`. Showcase pages use their own stylesheet and keep the name link and “Back to showcase” inside that folder. The overview's Art navigation link and Paintings & drawings panel intentionally open the existing gallery at `https://hongxunyang2.github.io/art/` in a new tab, so they also work when the showcase is hosted on its own domain. Other section content belongs in each section’s `index.html`; section media belongs in `showcase/assets/`.
 
-The overview’s Teaching navigation link and teaching panel open `teaching/index.html` in a new tab. This detail page introduces the PHY401 teaching work and links to the existing course page and evaluation/reflection article, both via relative paths in new tabs.
+The overview’s Teaching navigation link and teaching panel open `teaching/index.html` in a new tab. This detail page introduces the PHY401 teaching work and links to the existing course page and evaluation/reflection article, both via absolute `https://hongxunyang2.github.io/teaching/` URLs in new tabs so the links work on the standalone showcase domain. The Exercise 8 PDF link also uses that absolute base URL.
 
 The showcase header shows `Physics | Software | Design | CV` below the name. The final CV link opens `showcase/assets/pdf/cv_rd_1.pdf` in a new tab; update its `href` in `showcase/index.html` if a replacement CV has a different filename. Keep this line visible at compact sizes so the CV stays accessible.
 
