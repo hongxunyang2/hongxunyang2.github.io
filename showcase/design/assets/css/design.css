@@ -1,0 +1,59 @@
+/* Poster artwork keeps its full proportions; larger copies open in a new tab. */
+.design-page .poster-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(32px, 7vw, 112px);
+    padding-block: 32px;
+}
+
+.design-page .hero-copy { max-width: 32rem; }
+.featured-context { margin-top: 36px; }
+.design-page .featured-context h2 { font-size: clamp(26px, 2.5vw, 34px); }
+.featured-context > p:not(.section-label) { margin-top: 14px; color: var(--color-muted); }
+.featured-context > .text-link { display: inline-block; margin-top: 14px; font-size: 14px; }
+
+.featured-poster { width: 100%; max-width: 410px; justify-self: center; }
+.featured-poster .poster-frame { padding: 16px; }
+.poster-frame {
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    padding: clamp(12px, 2vw, 28px);
+    background: var(--color-surface);
+    cursor: zoom-in;
+    transition: border-color 160ms ease;
+}
+.poster-frame:hover { border-color: var(--color-accent); }
+.poster-frame img {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    align-self: flex-start;
+    box-shadow: 0 6px 20px oklch(0.276 0.023 249 / 0.12);
+}
+
+.poster-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(24px, 4vw, 64px);
+    margin-top: 32px;
+}
+.poster-card { min-width: 0; }
+.design-page .poster-card h3 { margin-top: 22px; }
+.design-page .poster-card .section-label { margin-top: 6px; }
+.design-page .poster-description { max-width: 32rem; margin-top: 12px; color: var(--color-muted); font-size: 14px; }
+
+@media (max-width: 1000px) {
+    .design-page .poster-hero { gap: 32px; }
+    .design-page .poster-hero h1 { font-size: clamp(36px, 5vw, 56px); }
+    .featured-context { margin-top: 24px; }
+}
+@media (max-width: 700px) {
+    .design-page .poster-hero, .poster-pair { grid-template-columns: minmax(0, 1fr); }
+    .poster-pair { gap: 36px; }
+    .featured-poster { max-width: 410px; }
+    .poster-frame { padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .poster-frame { transition: none; }
+}

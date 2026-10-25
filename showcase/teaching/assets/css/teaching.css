@@ -1,0 +1,51 @@
+/* The photo introduces the teaching; the two resource previews remain uncropped. */
+.teaching-page .teaching-hero { padding-block: 40px; }
+.teaching-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+}
+
+.teaching-resources {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(24px, 4vw, 64px);
+    border-top: 1px solid var(--color-border);
+    padding-block: 32px 48px;
+}
+.teaching-resource { min-width: 0; scroll-margin-top: 24px; }
+.resource-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: clamp(280px, 28vw, 400px);
+    border: 1px solid var(--color-border);
+    padding: 20px;
+    background: var(--color-surface);
+}
+.resource-preview:hover { border-color: var(--color-accent); }
+.resource-preview img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    background: var(--color-white);
+    box-shadow: 0 6px 20px oklch(0.276 0.023 249 / 0.08);
+}
+.teaching-page .teaching-resource h2 { margin-top: 22px; font-size: clamp(26px, 2.5vw, 34px); }
+.teaching-page .teaching-resource .section-label { margin-top: 8px; }
+.teaching-page .resource-description { max-width: 36rem; margin-top: 16px; color: var(--color-muted); }
+.resource-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 24px; font-size: 14px; }
+
+@media (max-width: 1000px) and (min-width: 701px) {
+    .teaching-page .teaching-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 24px; }
+    .teaching-page .teaching-hero h1 { font-size: 44px; }
+}
+@media (max-width: 700px) {
+    .teaching-page .teaching-hero { padding-block: 32px; }
+    .teaching-resources { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 24px 32px; }
+    .resource-preview { height: 300px; padding: 16px; }
+}

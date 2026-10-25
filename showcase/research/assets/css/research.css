@@ -1,0 +1,82 @@
+/* Research figures stay uncropped; full-size versions are one click away. */
+.research-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: var(--color-white);
+}
+
+.research-page .figure-link {
+    display: block;
+    border: 1px solid var(--color-border);
+    padding: 8px;
+    background: var(--color-white);
+    box-shadow: 0 8px 24px oklch(0.276 0.023 249 / 0.05);
+    cursor: zoom-in;
+}
+
+.research-page .figure-link:hover {
+    border-color: var(--color-accent);
+}
+
+.research-glossary dl {
+    margin: 12px 0 0;
+}
+
+.research-glossary dt {
+    margin-top: 8px;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.research-glossary dd {
+    margin: 0;
+}
+
+.research-project .section-heading {
+    max-width: 55rem;
+}
+
+.research-page .research-finding {
+    margin-top: 20px;
+    border-left: 2px solid var(--color-accent);
+    padding-left: 16px;
+}
+
+.research-finding strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--color-accent);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.model-figure {
+    width: 100%;
+    max-width: 520px;
+    justify-self: center;
+}
+
+.project-reference {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 24px;
+    margin-top: 32px;
+    color: var(--color-muted);
+    font-size: 13px;
+}
+
+.project-reference .text-link {
+    flex: none;
+    color: var(--color-text);
+}
+
+@media (max-width: 700px) {
+    .research-page .figure-link {
+        padding: 4px;
+    }
+}

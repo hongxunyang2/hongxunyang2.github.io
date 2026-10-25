@@ -4,13 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Teaching &amp; Explanation — Xunyang Hong</title>
+    <meta name="description" content="Teaching condensed matter physics at UZH: student-led tutorials, carefully designed exercises and reflections on student feedback.">
+    <meta property="og:title" content="Learning by explaining — Xunyang Hong">
+    <meta property="og:description" content="Course materials and student evaluations from PHY401, Condensed Matter Physics.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="../assets/css/showcase.css">
+    <link rel="stylesheet" href="../assets/css/showcase-project.css">
+    <link rel="stylesheet" href="assets/css/teaching.css">
 </head>
-<body>
-    <header><a href="../index.html">Xunyang Hong</a></header>
-    <main>
-        <h1>Teaching &amp; Explanation</h1>
-        <p><a href="../index.html">Back to showcase</a></p>
+<body class="project-page teaching-page">
+    <a class="skip-link" href="#teaching">Skip to teaching</a>
+    <header class="project-header">
+        <a class="site-name" href="../index.html">Xunyang Hong</a>
+        <nav aria-label="Teaching navigation">
+            <a href="#course-materials">Course materials</a>
+            <a href="#student-feedback">Student evaluations</a>
+            <a href="../index.html">Back to showcase <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main id="teaching" tabindex="-1">
+        <section class="project-hero teaching-hero" aria-labelledby="teaching-title">
+            <div class="hero-copy">
+                <h1 id="teaching-title">Learning by<br>explaining.</h1>
+                <p class="section-label">Teaching · PHY401 · UZH · Fall 2025</p>
+                <p class="project-lead">As a teaching assistant for Condensed Matter Physics, I prepared exercise sheets, led tutorials and served on the oral-exam team.</p>
+                <p class="hero-context">Students present their reasoning at the blackboard. I guide the discussion, clarify concepts and help connect the mathematics to a physical picture.</p>
+                <div class="project-actions">
+                    <a class="text-link" href="#course-materials">Course materials <span aria-hidden="true">↓</span></a>
+                    <a class="text-link" href="#student-feedback">Student evaluations <span aria-hidden="true">↓</span></a>
+                </div>
+            </div>
+            <figure class="teaching-photo">
+                <img src="../assets/images/teaching.webp?v=29cc4f8022" width="1280" height="562" alt="Xunyang explaining a connection between harmonic oscillators and phonons at a blackboard." fetchpriority="high">
+                <figcaption>Explaining physical ideas at the blackboard.</figcaption>
+            </figure>
+        </section>
+
+        <section class="teaching-resources" aria-label="Teaching materials and feedback">
+            <article id="course-materials" class="teaching-resource" aria-labelledby="course-title">
+                <figure>
+                    <a class="resource-preview sheet-preview" href="../../teaching/courses/condensed-matter/index.html" target="_blank" rel="noopener" aria-label="Browse the course and tutorial materials in a new tab">
+                        <img src="assets/images/exercise-8-preview.webp" width="1000" height="1414" alt="First page of PHY401 Exercise Sheet 8, with guided questions on the quantum Hall effect and Landau gauge." loading="lazy">
+                    </a>
+                    <figcaption>Exercise Sheet 8 · Page 1 of 3</figcaption>
+                </figure>
+                <h2 id="course-title">Course &amp; tutorial materials</h2>
+                <p class="section-label">Exercises · Teaching notes</p>
+                <p class="resource-description">Eleven exercise sheets with commentary on how the problems were designed and discussed. Sheet 8 connects a mathematical derivation to questions about electron motion in a magnetic field.</p>
+                <div class="resource-actions">
+                    <a class="button button-primary" href="../../teaching/courses/condensed-matter/index.html" target="_blank" rel="noopener">Browse course materials <span aria-hidden="true">↗</span></a>
+                    <a class="text-link" href="../../teaching/courses/condensed-matter/exercise_sheets/sheet8.pdf" target="_blank" rel="noopener">Open Exercise 8 PDF <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article id="student-feedback" class="teaching-resource" aria-labelledby="feedback-title">
+                <figure>
+                    <a class="resource-preview evaluation-preview" href="../../teaching/blog/reflection-on-cond-matter.html" target="_blank" rel="noopener" aria-label="Read the student evaluations and teaching reflections in a new tab">
+                        <img src="assets/images/student-evaluation.webp" width="1439" height="1022" alt="Student survey results for instructor Xunyang Hong, covering overall satisfaction, clarity, structure, expertise, engagement, responsiveness and availability." loading="lazy">
+                    </a>
+                    <figcaption>Student questionnaire · Five responses</figcaption>
+                </figure>
+                <h2 id="feedback-title">Student evaluations</h2>
+                <p class="section-label">Feedback · Teaching reflections</p>
+                <p class="resource-description">Students valued the exercise sheets, interactive discussions and support with questions. Their feedback also highlighted room to improve the pacing of tutorials and involve more students.</p>
+                <div class="resource-actions">
+                    <a class="button button-primary" href="../../teaching/blog/reflection-on-cond-matter.html" target="_blank" rel="noopener">Read evaluations &amp; reflections <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+        </section>
     </main>
+
+    <footer class="project-footer">
+        <a href="../index.html"><span aria-hidden="true">←</span> Back to showcase</a>
+        <span>Course materials and evaluations open in a new tab.</span>
+    </footer>
 </body>
 </html>
