@@ -41,7 +41,9 @@ When building out `art/` further:
 
 ## Showcase navigation
 
-The homepage links into `showcase/`. Showcase pages use their own stylesheet and keep all navigation inside that folder, including the name link and “Back to showcase.” Content belongs in each section’s `index.html`; section media belongs in `showcase/assets/`.
+The homepage links into `showcase/`. Showcase pages use their own stylesheet and keep the name link and “Back to showcase” inside that folder. The overview's Art navigation link and Paintings & drawings panel intentionally open the existing gallery at `https://hongxunyang2.github.io/art/` in a new tab, so they also work when the showcase is hosted on its own domain. Other section content belongs in each section’s `index.html`; section media belongs in `showcase/assets/`.
+
+The showcase header shows `Physics | Software | Design | CV` below the name. The final CV link opens `showcase/assets/pdf/cv_rd_1.pdf` in a new tab; update its `href` in `showcase/index.html` if a replacement CV has a different filename. Keep this line visible at compact sizes so the CV stays accessible.
 
 The overview additionally loads `showcase/assets/css/showcase-index.css`, scoped to `.showcase-page` so detail pages keep their simple styling. Its source design is [the Lovable project](https://lovable.dev/projects/ab19d521-91aa-4ad4-8826-e5730b68fc3f), revision `b741ebe8a47b686808477c3c9644bf72f3f762a2`, with the warm ivory/terracotta palette completed locally (accent/focus colours and frame shadows). Images in `showcase/assets/images/` are optimized copies of the originals in `showcase/temp_assets/`; the software GIF stays animated, with a still image for reduced-motion preferences. The overview works as static HTML/CSS without a build step.
 
