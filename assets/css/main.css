@@ -12,6 +12,7 @@
     --color-accent-research: #2563eb;
     --color-accent-teaching: #059669;
     --color-accent-art: #d97706;
+    --color-accent-showcase: #752d40;
     --color-border: rgba(0, 0, 0, 0.08);
     --font-display: 'Crimson Pro', Georgia, serif;
     --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -559,3 +560,13 @@ footer .footer-links a:hover {
     color: var(--color-text);
 }
 
+
+/* Showcase entry on the homepage */
+.showcase-card::before {
+    background: linear-gradient(90deg, var(--color-accent-showcase), transparent);
+}
+
+.showcase-card h2,
+.showcase-card .card-arrow {
+    color: var(--color-accent-showcase);
+}

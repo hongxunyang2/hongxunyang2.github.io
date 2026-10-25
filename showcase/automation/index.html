@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab control &amp; crystal alignment — Xunyang Hong</title>
+    <meta name="description" content="An integrated Laue experiment interface for robot positioning, dual-camera alignment and diffraction image acquisition. Project and demonstrations by Xunyang Hong.">
+    <meta property="og:title" content="Lab control &amp; crystal alignment — Xunyang Hong">
+    <meta property="og:description" content="Connecting robot motion, live cameras and Laue image acquisition in one desktop workspace.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="../assets/css/showcase.css">
+    <link rel="stylesheet" href="../assets/css/showcase-project.css">
+</head>
+<body class="project-page lab-control-page">
+    <a class="skip-link" href="#project">Skip to project</a>
+    <header class="project-header">
+        <a class="site-name" href="../index.html">Xunyang Hong</a>
+        <nav aria-label="Project navigation">
+            <a href="#in-action">Demos</a>
+            <a href="#contribution">My contribution</a>
+            <a href="../index.html">Back to showcase <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main id="project" tabindex="-1">
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="hero-copy">
+                <h1 id="project-title">From positioning<br>to diffraction.</h1>
+                <p class="section-label">Laue experiment · Instrument control</p>
+                <p class="project-lead">A desktop interface for positioning a crystal, finding its centre of rotation and recording Laue diffraction images.</p>
+                <p class="hero-context">Robot motion, live camera views and acquisition controls come together in one workspace.</p>
+                <div class="project-actions">
+                    <a class="button button-primary" href="#in-action">Explore the demos <span aria-hidden="true">↓</span></a>
+                    <a class="text-link" href="https://www.physik.uzh.ch/groups/chang/content/laue_manual.php">Read the lab guide <span aria-hidden="true">↗</span></a>
+                </div>
+                <ul class="stack-list" aria-label="Connected instruments">
+                    <li>Meca500 robot arm</li>
+                    <li>Dual IC cameras</li>
+                    <li>Laue image acquisition</li>
+                </ul>
+            </div>
+            <figure>
+                <video controls playsinline preload="none" poster="../assets/images/laue/startup.webp" width="1280" height="720" aria-label="Laue experiment startup, shown at three times recorded speed" aria-describedby="startup-caption">
+                    <source src="../assets/videos/laue/startup-3x.mp4" type="video/mp4">
+                    <p><a href="../assets/videos/laue/startup-3x.mp4">Download the startup demo.</a></p>
+                </video>
+                <figcaption id="startup-caption"><span>Pick up the goniometer and move to the cameras</span><span>9 sec · 3× speed</span></figcaption>
+                <details class="video-description">
+                    <summary>What the recording shows</summary>
+                    <p>The operator starts the application, selects Grab Gonio and then Move to Camera. The interface and robot view show the sample moving into position for camera-guided alignment.</p>
+                </details>
+            </figure>
+        </section>
+
+        <section id="in-action" class="workflow-section" aria-labelledby="workflow-title">
+            <div class="section-heading">
+                <h2 id="workflow-title">Position. Align. Acquire.</h2>
+                <p class="section-label">The experiment workflow</p>
+                <p>These recordings are sped up 3×; instrument motion is not shown in real time. Pause or expand a clip to inspect the controls.</p>
+            </div>
+
+            <article class="demo-row" aria-labelledby="robot-title">
+                <div class="demo-copy">
+                    <span class="step-number" aria-hidden="true">01</span>
+                    <h3 id="robot-title">Move around the sample.</h3>
+                    <p>Translate the Meca500 arm or rotate about a defined centre of rotation. Switch between fixed laboratory axes and the changing axes of the goniometer convention.</p>
+                    <p class="workflow-result">The coordinate convention stays explicit while the sample orientation changes.</p>
+                </div>
+                <figure>
+                    <video controls playsinline preload="none" poster="../assets/images/laue/robot-control.webp" width="1280" height="720" aria-label="Robot positioning and rotation controls, shown at three times recorded speed" aria-describedby="robot-caption">
+                        <source src="../assets/videos/laue/robot-control-3x.mp4" type="video/mp4">
+                        <p><a href="../assets/videos/laue/robot-control-3x.mp4">Download the robot-control demo.</a></p>
+                    </video>
+                    <figcaption id="robot-caption"><span>Translations, rotations and reference-frame choices</span><span>25 sec · 3× speed</span></figcaption>
+                </figure>
+            </article>
+
+            <article class="demo-row" aria-labelledby="camera-title">
+                <div class="demo-copy">
+                    <span class="step-number" aria-hidden="true">02</span>
+                    <h3 id="camera-title">Locate the crystal in two views.</h3>
+                    <p>Use the two live IC-camera views to mark the sample position and set its centre of rotation. The same workflow then moves the sample to the X-ray alignment position.</p>
+                    <p class="workflow-result">Camera feedback connects the physical sample to the robot's positioning reference.</p>
+                </div>
+                <figure>
+                    <video controls playsinline preload="none" poster="../assets/images/laue/camera-alignment.webp" width="1280" height="720" aria-label="Dual-camera sample positioning, shown at three times recorded speed" aria-describedby="camera-caption">
+                        <source src="../assets/videos/laue/camera-alignment-3x.mp4" type="video/mp4">
+                        <p><a href="../assets/videos/laue/camera-alignment-3x.mp4">Download the camera-alignment demo.</a></p>
+                    </video>
+                    <figcaption id="camera-caption"><span>Pick the sample position and set the centre of rotation</span><span>27 sec · 3× speed</span></figcaption>
+                </figure>
+            </article>
+
+            <article class="demo-row" aria-labelledby="acquisition-title">
+                <div class="demo-copy">
+                    <span class="step-number" aria-hidden="true">03</span>
+                    <h3 id="acquisition-title">Record the diffraction image.</h3>
+                    <p>Set the exposure, capture a Laue image and save it through the PS-camera module. The diffraction view sits alongside the positioning controls.</p>
+                    <p class="workflow-result">Keep acquisition and sample positioning in the same experiment workspace.</p>
+                </div>
+                <figure>
+                    <video controls playsinline preload="none" poster="../assets/images/laue/image-acquisition.webp" width="1280" height="720" aria-label="Laue image acquisition, shown at three times recorded speed" aria-describedby="acquisition-caption">
+                        <source src="../assets/videos/laue/image-acquisition-3x.mp4" type="video/mp4">
+                        <p><a href="../assets/videos/laue/image-acquisition-3x.mp4">Download the image-acquisition demo.</a></p>
+                    </video>
+                    <figcaption id="acquisition-caption"><span>Configure the exposure, capture and save an image</span><span>14 sec · 3× speed</span></figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <section id="contribution" class="engineering-section" aria-labelledby="contribution-title">
+            <div class="section-heading">
+                <h2 id="contribution-title">Making the instruments work together.</h2>
+                <p class="section-label">My contribution · Integration &amp; coordinate handling</p>
+                <p>I integrated robot control, camera monitoring and Laue image acquisition into a single interface, and connected robot motion to the goniometer conventions used in the experiment.</p>
+            </div>
+        </section>
+
+        <!--
+        TODO: FUTURE AUTOMATION SECTION — not implemented as of 2026-10-25.
+        Xunyang: add a short section here when automatic alignment is implemented
+        and validated. Explain the feedback loop, show a real demonstration, and
+        report measured results and limitations. Current demos show interactive
+        instrument control and camera-guided positioning, not automatic alignment.
+        The UZH manual's image-analysis/RL section is a placeholder; verify its
+        implementation status before making any claims about it on this page.
+        -->
+    </main>
+
+    <footer class="project-footer">
+        <a href="../index.html"><span aria-hidden="true">←</span> Back to showcase</a>
+        <a href="https://www.physik.uzh.ch/groups/chang/content/laue_manual.php">Full lab guide at UZH <span aria-hidden="true">↗</span></a>
+    </footer>
+</body>
+</html>

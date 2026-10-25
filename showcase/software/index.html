@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADVISOR — X-ray software by Xunyang Hong</title>
+    <meta name="description" content="ADVISOR connects crystal structures, scattering angles and diffraction calculations in a Python desktop app. Explore the demos and software design.">
+    <meta property="og:title" content="ADVISOR — X-ray geometry, made visible">
+    <meta property="og:description" content="Scientific software by Xunyang Hong. Watch crystal setup, scattering geometry and structure-factor demos.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="../assets/css/showcase.css">
+    <link rel="stylesheet" href="../assets/css/showcase-project.css">
+</head>
+<body class="project-page software-page">
+    <a class="skip-link" href="#project">Skip to project</a>
+    <header class="project-header">
+        <a class="site-name" href="../index.html">Xunyang Hong</a>
+        <nav aria-label="Project navigation">
+            <a href="#in-action">Demos</a>
+            <a href="#engineering">Software design</a>
+            <a href="../index.html">Back to showcase <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main id="project" tabindex="-1">
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="hero-copy">
+                <h1 id="project-title">X-ray geometry,<br>made visible.</h1>
+                <p class="section-label">ADVISOR · Software development</p>
+                <p class="project-lead">A Python desktop app that connects a crystal structure to the angles and reciprocal-space coordinates of an X-ray experiment.</p>
+                <p class="hero-context">Plan a measurement, check the geometry and explore calculated reflections in one visual workspace.</p>
+                <div class="project-actions">
+                    <a class="button button-primary" href="#in-action">Explore the demos <span aria-hidden="true">↓</span></a>
+                    <a class="text-link" href="https://github.com/HongXunyang/advisor">View source <span aria-hidden="true">↗</span></a>
+                </div>
+                <ul class="stack-list" aria-label="Technology stack">
+                    <li>Python</li>
+                    <li>PyQt5</li>
+                    <li>NumPy / SciPy</li>
+                    <li>Matplotlib</li>
+                </ul>
+            </div>
+            <figure class="overview-demo">
+                <video controls playsinline preload="none" poster="../assets/images/advisor/overview.webp" width="1366" height="792" aria-label="ADVISOR application walkthrough" aria-describedby="overview-caption">
+                    <source src="../assets/videos/advisor/overview.mp4" type="video/mp4">
+                    <p><a href="../assets/videos/advisor/overview.mp4">Download the ADVISOR walkthrough.</a></p>
+                </video>
+                <figcaption id="overview-caption"><span>From crystal setup to reciprocal-space exploration</span><span>1 min · silent demo</span></figcaption>
+                <details class="video-description">
+                    <summary>Read the walkthrough</summary>
+                    <p>The recording loads a crystal file, previews the structure and sample orientation, opens the scattering-geometry tools, then calculates structure factors and explores different reciprocal-space planes.</p>
+                </details>
+            </figure>
+        </section>
+
+        <section id="in-action" class="workflow-section" aria-labelledby="workflow-title">
+            <div class="section-heading">
+                <h2 id="workflow-title">From crystal to measurement.</h2>
+                <p class="section-label">Three workflows in action</p>
+                <p>Each clip shows a working part of the app. Play, pause or expand it to inspect the interface.</p>
+            </div>
+
+            <article class="demo-row" aria-labelledby="setup-title">
+                <div class="demo-copy">
+                    <span class="step-number" aria-hidden="true">01</span>
+                    <h3 id="setup-title">Start with your crystal.</h3>
+                    <p>Drop in a CIF—a standard crystal-structure file—or enter lattice parameters manually. Set the beam energy and sample orientation, with a visual preview of the crystal.</p>
+                    <p class="workflow-result">One setup supplies the experiment parameters to the feature tabs.</p>
+                </div>
+                <figure>
+                    <video controls playsinline preload="none" poster="../assets/images/advisor/crystal-setup.webp" width="1442" height="830" aria-label="Crystal setup demonstration" aria-describedby="setup-caption">
+                        <source src="../assets/videos/advisor/crystal-setup.mp4" type="video/mp4">
+                        <p><a href="../assets/videos/advisor/crystal-setup.mp4">Download the crystal setup demo.</a></p>
+                    </video>
+                    <figcaption id="setup-caption"><span>Import a crystal file and preview the setup</span><span>26 sec · silent demo</span></figcaption>
+                </figure>
+            </article>
+
+            <article class="demo-row" aria-labelledby="geometry-title">
+                <div class="demo-copy">
+                    <span class="step-number" aria-hidden="true">02</span>
+                    <h3 id="geometry-title">Connect angles to the measurement.</h3>
+                    <p>Convert instrument angles into HKL coordinates, or work backwards from a target HKL to scattering angles. The geometry view makes the beam and sample orientation visible.</p>
+                    <p class="workflow-result">Fixed-angle tools also support planning a sequence of measurement positions.</p>
+                    <details class="term-note">
+                        <summary>What does HKL mean?</summary>
+                        <p>H, K and L describe the momentum transfer in coordinates tied to the crystal lattice. They connect the instrument geometry to the location being probed in reciprocal space.</p>
+                    </details>
+                </div>
+                <figure>
+                    <video controls playsinline preload="none" poster="../assets/images/advisor/scattering-geometry.webp" width="1000" height="560" aria-label="Scattering angle and reciprocal-space conversion demonstration" aria-describedby="geometry-caption">
+                        <source src="../assets/videos/advisor/scattering-geometry.mp4" type="video/mp4">
+                        <p><a href="../assets/videos/advisor/scattering-geometry.mp4">Download the scattering geometry demo.</a></p>
+                    </video>
+                    <figcaption id="geometry-caption"><span>Edit angles and inspect the corresponding HKL and geometry</span><span>14 sec · silent demo</span></figcaption>
+                </figure>
+            </article>
+
+            <article class="demo-row" aria-labelledby="diffraction-title">
+                <div class="demo-copy">
+                    <span class="step-number" aria-hidden="true">03</span>
+                    <h3 id="diffraction-title">Explore the diffraction landscape.</h3>
+                    <p>Calculate structure factors from the crystal model. Explore reflections in 3D and inspect 2D slices, including planes defined by your own directions.</p>
+                    <p class="workflow-result">See how calculated reflection amplitudes vary across reciprocal space.</p>
+                    <details class="term-note">
+                        <summary>What is a structure factor?</summary>
+                        <p>It combines the scattering contributions of the atoms in a unit cell, including their relative phases. The app visualizes its amplitude, |F|; measured intensity also depends on experimental factors.</p>
+                    </details>
+                </div>
+                <figure>
+                    <video controls playsinline preload="none" poster="../assets/images/advisor/structure-factors.webp" width="1190" height="730" aria-label="Structure-factor and reciprocal-space plane demonstration" aria-describedby="diffraction-caption">
+                        <source src="../assets/videos/advisor/structure-factors.mp4" type="video/mp4">
+                        <p><a href="../assets/videos/advisor/structure-factors.mp4">Download the structure-factor demo.</a></p>
+                    </video>
+                    <figcaption id="diffraction-caption"><span>Explore a 3D reflection map and its 2D slices</span><span>14 sec · silent demo</span></figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <section id="engineering" class="engineering-section" aria-labelledby="engineering-title">
+            <div class="section-heading">
+                <h2 id="engineering-title">A research tool, built for accelerating your X-ray experiments</h2>
+            </div>
+            <div class="engineering-grid">
+                <article>
+                    <h3>Calculations independent of the UI</h3>
+                    <p>Geometry and conversion logic live in Python modules without Qt imports, making the numerical code easier to test and reuse.</p>
+                </article>
+                <article>
+                    <h3>Shared experiment context</h3>
+                    <p>Controllers pass crystal and beam parameters to feature tabs, keeping the setup connected across different tools.</p>
+                </article>
+                <article>
+                    <h3>Room for new features</h3>
+                    <p>Each feature has its own calculator, controller and view, alongside reusable widgets and visualizers.</p>
+                </article>
+            </div>
+            <p class="engineering-stack">Scientific libraries: NumPy, SciPy, Matplotlib and Dans_Diffraction. Desktop interface: PyQt5.</p>
+        </section>
+
+        <section id="try-advisor" class="try-section" aria-labelledby="try-title">
+            <div>
+                <h2 id="try-title">Try ADVISOR.</h2>
+                <p class="section-label">Run locally · Explore the source</p>
+                <p>Install the Python package, launch the app and load your crystal structure.</p>
+                <div class="resource-links">
+                    <a class="text-link" href="https://github.com/HongXunyang/advisor">GitHub <span aria-hidden="true">↗</span></a>
+                    <a class="text-link" href="https://pypi.org/project/advisor-scattering/">Python package <span aria-hidden="true">↗</span></a>
+                    <a class="text-link" href="https://advisor-scattering.readthedocs.io/">User guide <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+            <div class="install-example">
+                <p>In your Python environment</p>
+                <pre aria-label="Installation and launch commands"><code>python -m pip install advisor-scattering
+advisor-scattering</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer class="project-footer">
+        <a href="../index.html"><span aria-hidden="true">←</span> Back to showcase</a>
+        <span>Xunyang Hong · Scientific software</span>
+    </footer>
+</body>
+</html>

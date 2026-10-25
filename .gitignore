@@ -10,4 +10,7 @@
 **/__pycache__
 **/.venv
 
+# Original showcase media; optimized website assets are committed separately.
+/showcase/temp_assets/
+
 **/.DS_Store
