@@ -230,8 +230,7 @@
     line-height: 1.375;
 }
 
-.software-feature h2,
-.automation-feature h2 {
+.software-feature h2 {
     font: 400 24px/1.25 var(--font-display);
 }
 
@@ -240,18 +239,11 @@
     color: var(--color-accent);
 }
 
-.additional-work {
-    margin-top: 24px;
-}
-
-.additional-work .work-media {
-    aspect-ratio: 16 / 10;
-}
-
 .art-media {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 4px;
+    aspect-ratio: 16 / 10;
 }
 
 .art-image {
@@ -269,30 +261,34 @@
     object-fit: contain;
 }
 
-.maintenance-feature,
-.creative-feature {
-    margin-top: 32px;
-    border-top: 1px solid var(--color-border);
-    padding-top: 24px;
+.automation-media {
+    aspect-ratio: 1280 / 527;
 }
 
-.maintenance-feature {
+.feature-row,
+.creative-feature {
+    margin-top: 40px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 32px;
+}
+
+.feature-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     align-items: center;
     gap: 24px;
 }
 
-.maintenance-copy h2 {
+.feature-copy h2 {
     margin-top: 10px;
     font: 400 clamp(30px, 3.5vw, 48px)/1.15 var(--font-display);
 }
 
-.maintenance-copy h2 a:hover {
+.feature-copy h2 a:hover {
     color: var(--color-accent);
 }
 
-.maintenance-copy p {
+.feature-copy p {
     max-width: 46ch;
     margin-top: 16px;
     color: var(--color-muted);
@@ -300,7 +296,7 @@
     line-height: 1.6;
 }
 
-.showcase-page .maintenance-link {
+.showcase-page .feature-link {
     display: inline-block;
     margin-top: 20px;
     color: var(--color-accent);
@@ -402,7 +398,7 @@
     .showcase-work {
         grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
         grid-template-rows: minmax(0, 58fr) minmax(0, 42fr);
-        /* Leave about 75px of the next row's previews visible below the first four demos. */
+        /* Leave the beginning of the next feature visible below the first four demos. */
         height: max(420px, calc(100vh - var(--showcase-header-height) - 112px));
         height: max(420px, calc(100svh - var(--showcase-header-height) - 112px));
     }
@@ -419,16 +415,8 @@
         aspect-ratio: auto;
     }
 
-    .software-feature h2,
-    .automation-feature h2 {
+    .software-feature h2 {
         font-size: 28px;
-    }
-
-    .additional-work .work-media {
-        flex: none;
-        height: clamp(220px, 38vh, 380px);
-        height: clamp(220px, 38svh, 380px);
-        aspect-ratio: auto;
     }
 
     .creative-heading {
@@ -436,15 +424,28 @@
         gap: 32px;
     }
 
-    .maintenance-feature {
+    .feature-row {
         grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
         gap: clamp(24px, 4vw, 64px);
+    }
+
+    .maintenance-feature {
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
+    }
+
+    .maintenance-feature > .feature-copy {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .maintenance-feature > .maintenance-demo {
+        grid-column: 1;
+        grid-row: 1;
     }
 }
 
 @media (min-width: 1280px) {
-    .software-feature h2,
-    .automation-feature h2 {
+    .software-feature h2 {
         font-size: 32px;
     }
 
