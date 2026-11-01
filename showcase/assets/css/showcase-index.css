@@ -72,6 +72,10 @@
     font: 400 24px/1.25 var(--font-display);
 }
 
+.showcase-intro {
+    flex-shrink: 0;
+}
+
 .showcase-intro p {
     max-width: 36rem;
     margin-top: 4px;
@@ -265,10 +269,66 @@
     object-fit: contain;
 }
 
+.maintenance-feature,
 .creative-feature {
     margin-top: 32px;
     border-top: 1px solid var(--color-border);
     padding-top: 24px;
+}
+
+.maintenance-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+}
+
+.maintenance-copy h2 {
+    margin-top: 10px;
+    font: 400 clamp(30px, 3.5vw, 48px)/1.15 var(--font-display);
+}
+
+.maintenance-copy h2 a:hover {
+    color: var(--color-accent);
+}
+
+.maintenance-copy p {
+    max-width: 46ch;
+    margin-top: 16px;
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.showcase-page .maintenance-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.maintenance-demo {
+    min-width: 0;
+    margin: 0;
+}
+
+.maintenance-media video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1440 / 890;
+}
+
+.maintenance-media video:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -3px;
+}
+
+.maintenance-demo figcaption {
+    margin-top: 10px;
+    color: var(--color-muted);
+    font-size: 12px;
 }
 
 .creative-heading {
@@ -336,7 +396,7 @@
     }
 
     .showcase-nav {
-        flex-shrink: 0;
+        flex-shrink: 1;
     }
 
     .showcase-work {
@@ -374,6 +434,11 @@
     .creative-heading {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 32px;
+    }
+
+    .maintenance-feature {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
+        gap: clamp(24px, 4vw, 64px);
     }
 }
 

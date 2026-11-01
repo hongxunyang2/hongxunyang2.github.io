@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JohanWeb — Group website workflow by Xunyang Hong</title>
+    <meta name="description" content="A member self-report system and Python desktop app that connect group submissions, admin review and website updates for the Johan Chang research group at UZH.">
+    <meta property="og:title" content="JohanWeb — From group news to website">
+    <meta property="og:description" content="Members submit. Admin reviews. JohanWeb updates the website's records and files.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="../assets/css/showcase.css">
+    <link rel="stylesheet" href="../assets/css/showcase-project.css">
+</head>
+<body class="project-page maintenance-page">
+    <a class="skip-link" href="#project">Skip to project</a>
+    <header class="project-header">
+        <a class="site-name" href="../index.html">Xunyang Hong</a>
+        <nav aria-label="Project navigation">
+            <a href="#workflow">Workflow</a>
+            <a href="#features">Software design</a>
+            <a href="../index.html">Back to showcase <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main id="project" tabindex="-1">
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="hero-copy">
+                <h1 id="project-title">From group news<br>to website.</h1>
+                <p class="section-label">JohanWeb · Workflow automation</p>
+                <p class="project-lead">A web-based self-report system paired with a desktop app for maintaining our research group's website.</p>
+                <p class="hero-context">I developed both tools for the Johan Chang group at the University of Zurich, where I serve as website administrator. Members report their news; I review it and use JohanWeb to update the site.</p>
+                <div class="project-actions">
+                    <a class="button button-primary" href="#workflow">Explore the workflow <span aria-hidden="true">↓</span></a>
+                    <a class="text-link" href="https://www.physik.uzh.ch/groups/chang/content_sub.php?p=website_maintainer" target="_blank" rel="noopener noreferrer">Tool &amp; instructions <span aria-hidden="true">↗</span></a>
+                </div>
+                <ul class="stack-list" aria-label="Technology stack">
+                    <li>Python</li>
+                    <li>PyQt5</li>
+                    <li>SSH file transfers</li>
+                    <li>CSV records</li>
+                </ul>
+            </div>
+            <figure class="overview-demo">
+                <video controls muted playsinline preload="none" poster="../assets/videos/website-maintainer/poster.webp" width="1440" height="890" aria-label="JohanWeb manual-entry demonstration at three times speed" aria-describedby="overview-caption">
+                    <source src="../assets/videos/website-maintainer/manual-entry-3x.mp4" type="video/mp4">
+                    <p><a href="../assets/videos/website-maintainer/manual-entry-3x.mp4">Watch the JohanWeb demo (MP4).</a></p>
+                </video>
+                <figcaption id="overview-caption"><span>Add a preprint using manual entry</span><span>13 sec · 3× speed · silent demo</span></figcaption>
+                <details class="video-description">
+                    <summary>Read the walkthrough</summary>
+                    <p>Enter an arXiv ID to fetch the preprint details, drag in a figure and submit the entry. JohanWeb uploads the figure and updates the website's preprint records. This clip demonstrates the manual-entry route; reviewed notification emails can also be imported into the app.</p>
+                </details>
+            </figure>
+        </section>
+
+        <section id="workflow" class="workflow-section" aria-labelledby="workflow-title">
+            <div class="section-heading">
+                <h2 id="workflow-title">Submit. Review. Publish.</h2>
+                <p class="section-label">One connected workflow</p>
+            </div>
+            <div class="engineering-grid">
+                <article>
+                    <span class="step-number">01 · Members</span>
+                    <h3>Report the news.</h3>
+                    <p>Group members use a web form to submit publications, preprints, talks, theses or new-member details. Each submission sends a notification to the administrator.</p>
+                </article>
+                <article>
+                    <span class="step-number">02 · Admin</span>
+                    <h3>Review and import.</h3>
+                    <p>I check the submission, then paste the notification email into JohanWeb. The app detects the update type and fills in the relevant fields for review.</p>
+                </article>
+                <article>
+                    <span class="step-number">03 · JohanWeb</span>
+                    <h3>Update the website.</h3>
+                    <p>After review, I add any required figure, photo or PDF and submit the update. The app transfers the files and updates the appropriate website records.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="features" class="engineering-section" aria-labelledby="features-title">
+            <div class="section-heading">
+                <h2 id="features-title">Built around everyday admin work.</h2>
+                <p>A single interface handles the group's recurring updates, replacing manual CSV editing and file-transfer commands.</p>
+            </div>
+            <div class="engineering-grid">
+                <article>
+                    <h3>Import or enter directly</h3>
+                    <p>Structured email headers identify the update type. A manual-entry tab also allows updates without a notification email; preprint details can be fetched from an arXiv ID.</p>
+                </article>
+                <article>
+                    <h3>Keep related content together</h3>
+                    <p>Publishing an existing preprint moves its entry and reuses its figure. Thesis PDFs go to the appropriate section, and new members are placed according to their role.</p>
+                </article>
+                <article>
+                    <h3>Handle the server work</h3>
+                    <p>The Python/PyQt5 app manages file uploads and CSV updates through the administrator's UZH Physics Linux account, keeping these routine tasks in one GUI.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="project-footer">
+        <a href="../index.html"><span aria-hidden="true">←</span> Back to showcase</a>
+        <span>Xunyang Hong · Software &amp; workflow automation</span>
+    </footer>
+</body>
+</html>
