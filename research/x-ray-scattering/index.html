@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#faf9f5" name="theme-color"/>
+  <title>
+   X-ray scattering — look inside quantum materials | Student projects · UZH
+  </title>
+  <meta content="Use powerful X-rays to see how atoms, spins and electrons behave inside materials. Follow the clues from a tiny sample to a scientific answer." name="description"/>
+  <meta content="X-ray scattering — look inside quantum materials · Student projects at UZH" property="og:title"/>
+  <meta content="Use powerful X-rays to see how atoms, spins and electrons behave inside materials. Follow the clues from a tiny sample to a scientific answer." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="assets/hero.webp" property="og:image"/>
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="styles.css" rel="stylesheet"/>
+  <link as="image" href="assets/hero.webp" media="(min-width:721px)" rel="preload"/>
+  <script defer="" src="script.js">
+  </script>
+ </head>
+ <body data-project="xray">
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <header class="site-header">
+   <div class="wrap header-inner">
+    <a aria-label="LQMR student project overview" class="brand" href="../open-day/index.html">
+     <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 40 40">
+      <ellipse cx="20" cy="20" rx="18" ry="7" transform="rotate(-35 20 20)">
+      </ellipse>
+      <ellipse cx="20" cy="20" rx="18" ry="7" transform="rotate(35 20 20)">
+      </ellipse>
+      <circle cx="20" cy="20" fill="currentColor" r="3">
+      </circle>
+     </svg>
+     <span>
+      <strong>
+       Quantum Matter Research
+      </strong>
+      <small>
+       Johan Chang’s group · University of Zurich
+      </small>
+     </span>
+    </a>
+    <nav aria-label="Page navigation">
+     <a href="#discover">
+      The idea
+     </a>
+     <a href="#projects">
+      Thesis ideas
+     </a>
+     <a class="nav-cta" href="#visit">
+      Come say hello
+      <span aria-hidden="true">
+       ↗
+      </span>
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main class="wrap" id="main">
+   <div class="breadcrumb">
+    <a href="../open-day/index.html">
+     Student projects
+    </a>
+    <span aria-hidden="true">
+     /
+    </span>
+    <span>
+     X-ray scattering
+    </span>
+   </div>
+   <section aria-labelledby="title" class="hero">
+    <picture class="hero-art">
+     <source media="(max-width:720px)" srcset="assets/hero-small.webp"/>
+     <img alt="Rococo-inspired oil painting of a crystal lit by a beam of light, with a ring-shaped facility in the distance." fetchpriority="high" height="1024" src="assets/hero.webp" width="1536"/>
+    </picture>
+    <div class="hero-copy">
+     <p class="eyebrow">
+      Bachelor’s &amp; Master’s projects / X-ray scattering
+     </p>
+     <h1 id="title">
+      Small crystal.
+      <br/>
+      <span>
+       Big discoveries.
+      </span>
+     </h1>
+     <p class="hero-lead">
+      Use powerful X-rays to see how atoms, spins and electrons behave inside materials. Follow the clues from a tiny sample to a scientific answer.
+     </p>
+     <div class="actions">
+      <a class="button" href="#projects">
+       Find your project
+       <span aria-hidden="true">
+        ↓
+       </span>
+      </a>
+      <a class="button secondary" href="#discover">
+       Explore the idea
+      </a>
+     </div>
+     <p class="hero-note">
+      A curious mind is a good place to start.
+     </p>
+    </div>
+   </section>
+   <div aria-label="Project at a glance" class="quick-facts">
+    <div>
+     <span>
+      You’ll explore
+     </span>
+     <strong>
+      Structure &amp; motion in materials
+     </strong>
+    </div>
+    <div>
+     <span>
+      Your tools
+     </span>
+     <strong>
+      X-rays, experiments &amp; Python
+     </strong>
+    </div>
+    <div>
+     <span>
+      Where it can lead
+     </span>
+     <strong>
+      International research facilities
+     </strong>
+    </div>
+   </div>
+   <section aria-labelledby="discover-title" class="section" id="discover">
+    <div class="split">
+     <div class="copy">
+      <p class="eyebrow">
+       01 / The idea in a minute
+      </p>
+      <h2 id="discover-title">
+       Tiny worlds.
+       <br/>
+       Bright clues.
+      </h2>
+      <p>
+       How do you look inside a crystal without taking it apart? Send in X-rays and study what comes back.
+      </p>
+      <p>
+       <strong>
+        Where the X-rays go tells us about the arrangement of atoms.
+       </strong>
+       Measuring how much energy they lose can reveal motion inside the material.
+      </p>
+      <p>
+       We use these clues to study superconducting material families: how their atoms vibrate, how their magnetic moments move, and how their electrons organise.
+      </p>
+      <dl class="word-list">
+       <div>
+        <dt>
+         Diffraction
+        </dt>
+        <dd>
+         Use the pattern of scattered X-rays to learn about crystal structure.
+        </dd>
+       </div>
+       <div>
+        <dt>
+         RIXS
+        </dt>
+        <dd>
+         Resonant inelastic X-ray scattering: tune the incoming X-rays and measure the energy they exchange with a material.
+        </dd>
+       </div>
+      </dl>
+      <div class="inline-note">
+       <strong>
+        Why superconductors?
+       </strong>
+       Below a certain temperature, they carry DC electrical current with zero resistance.
+       <a href="../superconductors/index.html">
+        Meet these remarkable materials ↗
+       </a>
+      </div>
+     </div>
+     <figure class="illustration">
+      <img alt="A smiling violet crystal scatters wavy X-rays, with sketches of vibrating atoms and tilting spins." height="667" loading="lazy" sizes="(max-width:720px) calc(100vw - 32px), 48vw" src="assets/illustration.webp" srcset="assets/illustration-small.webp 768w, assets/illustration.webp 1000w" width="1000"/>
+      <figcaption>
+       X-rays can give us clues about vibrating atoms and collective magnetic motion. Concept illustration.
+      </figcaption>
+     </figure>
+    </div>
+   </section>
+   <section aria-labelledby="excitation-heading" class="section">
+    <div class="experiment">
+     <div>
+      <p class="eyebrow">
+       Look beyond the atoms
+      </p>
+      <h3 id="excitation-heading">
+       What can move
+       <br/>
+       inside a crystal?
+      </h3>
+      <p>
+       Many signals come from particles acting together. Choose a picture to meet three kinds of collective behaviour.
+      </p>
+      <div aria-label="Choose a type of motion" class="button-group js-only" role="group">
+       <button aria-pressed="true" data-excitation="phonon" type="button">
+        Atoms
+       </button>
+       <button aria-pressed="false" data-excitation="magnon" type="button">
+        Spins
+       </button>
+       <button aria-pressed="false" data-excitation="charge" type="button">
+        Charge
+       </button>
+      </div>
+      <div aria-atomic="true" aria-live="polite" class="step-description">
+       <h4 id="excitation-title">
+        Phonon / Atoms moving together
+       </h4>
+       <p id="excitation-text">
+        Atoms are always moving. When their motion forms a wave through a crystal, we call one quantum of that vibration a phonon.
+       </p>
+      </div>
+     </div>
+     <figure class="demo-stage">
+      <svg aria-labelledby="excitation-svg-title" id="excitation-art" role="img" viewbox="0 0 400 230">
+       <title id="excitation-svg-title">
+        Atoms connected by bonds in a crystal
+       </title>
+       <path d="M50 115H350" stroke="#8e9d9d" stroke-width="3">
+       </path>
+       <g fill="#739f96" stroke="#243d45" stroke-width="2">
+        <circle cx="50" cy="115" r="18">
+        </circle>
+        <circle cx="125" cy="115" r="18">
+        </circle>
+        <circle cx="200" cy="115" r="18">
+        </circle>
+        <circle cx="275" cy="115" r="18">
+        </circle>
+        <circle cx="350" cy="115" r="18">
+        </circle>
+       </g>
+       <text fill="#59696b" font-size="13" text-anchor="middle" x="200" y="202">
+        Atoms connected in a crystal
+       </text>
+      </svg>
+      <figcaption class="demo-caption" id="excitation-caption">
+       Schematic: displaced atoms joined by bonds. The displacement is exaggerated.
+      </figcaption>
+     </figure>
+    </div>
+    <noscript>
+     <p class="no-js-note">
+      A phonon is a quantum of atomic vibration. A magnon is a quantum of a spin wave. Charge fluctuations are changes in electron density. RIXS can probe all three.
+     </p>
+    </noscript>
+   </section>
+   <section aria-labelledby="facilities-title" class="section" id="facilities">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       02 / Science beyond Zürich
+      </p>
+      <h2 id="facilities-title">
+       Small samples.
+       <br/>
+       Big experiments.
+      </h2>
+     </div>
+     <p>
+      Our research uses intense X-rays at international facilities.
+     </p>
+    </div>
+    <div class="split">
+     <figure class="photo-frame">
+      <img alt="A sample holder being transferred into an X-ray instrument at Diamond Light Source, with arrows marking its position." height="900" loading="lazy" src="assets/beamline-sample.webp" width="1200"/>
+      <figcaption>
+       A real sample-transfer step at Diamond Light Source. Behind every spectrum: a sample, an instrument and a team.
+      </figcaption>
+     </figure>
+     <div class="copy">
+      <h3>
+       Take your question
+       <br/>
+       to a synchrotron.
+      </h3>
+      <p>
+       A synchrotron is a large facility that produces very bright X-rays. Working there brings together careful preparation, teamwork and a little excitement when the first data appear.
+      </p>
+      <p>
+       You could contribute to sample preparation, measurements or analysis. Depending on the project, there may be opportunities to join experiments abroad.
+      </p>
+      <div class="inline-note">
+       Travel depends on approved beamtime, training and timing. A thesis can also focus on data already collected.
+      </div>
+     </div>
+    </div>
+    <div class="facility-grid">
+     <article class="facility">
+      <span>
+       UNITED KINGDOM
+      </span>
+      <h3>
+       Diamond Light Source
+      </h3>
+      <p>
+       RIXS · energy exchanged with a crystal
+      </p>
+     </article>
+     <article class="facility">
+      <span>
+       GRENOBLE, FRANCE
+      </span>
+      <h3>
+       ESRF
+      </h3>
+      <p>
+       Resonant X-ray experiments · RIXS
+      </p>
+     </article>
+     <article class="facility">
+      <span>
+       HAMBURG, GERMANY
+      </span>
+      <h3>
+       DESY / PETRA III
+      </h3>
+      <p>
+       X-ray diffraction · structure and order
+      </p>
+     </article>
+    </div>
+   </section>
+   <section aria-labelledby="projects-title" class="section" id="projects">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       03 / Your possible project
+      </p>
+      <h2 id="projects-title">
+       Turn a pattern into an answer.
+      </h2>
+     </div>
+     <p>
+      Choose a focus: data, crystal structure or the experiment itself.
+     </p>
+    </div>
+    <h3 class="demo-label">
+     Three starting points
+    </h3>
+    <div class="projects">
+     <article class="project-card">
+      <span class="card-number">
+       IDEA / 01
+      </span>
+      <h3>
+       Find a hidden signal.
+      </h3>
+      <p>
+       Work with RIXS spectra. Separate overlapping peaks and see how a vibration or magnetic signal changes with temperature or angle.
+      </p>
+      <span class="tag">
+       Data analysis · Python
+      </span>
+      <details>
+       <summary>
+        Bachelor’s starting point
+       </summary>
+       <p>
+        Analyse a small existing dataset, fit selected peaks and check how uncertain the results are.
+       </p>
+      </details>
+      <details>
+       <summary>
+        Possible Master’s extension
+       </summary>
+       <p>
+        Compare a larger set of measurements and test a physical model; beamtime participation may be possible.
+       </p>
+      </details>
+     </article>
+     <article class="project-card">
+      <span class="card-number">
+       IDEA / 02
+      </span>
+      <h3>
+       Rebuild a crystal’s structure.
+      </h3>
+      <p>
+       Use X-ray diffraction patterns to work out where atoms sit. This process is called structure refinement.
+      </p>
+      <span class="tag">
+       Diffraction · Structure refinement
+      </span>
+      <details>
+       <summary>
+        Bachelor’s starting point
+       </summary>
+       <p>
+        Refine a known crystal structure from existing data and assess how well the model matches it.
+       </p>
+      </details>
+      <details>
+       <summary>
+        Possible Master’s extension
+       </summary>
+       <p>
+        Investigate subtle structural changes with temperature or strain, and compare competing structure models.
+       </p>
+      </details>
+     </article>
+     <article class="project-card">
+      <span class="card-number">
+       IDEA / 03
+      </span>
+      <h3>
+       Join an X-ray experiment.
+      </h3>
+      <p>
+       Help plan measurements, prepare samples and turn detector images into useful scientific plots.
+      </p>
+      <span class="tag">
+       Experiments · Teamwork
+      </span>
+      <details>
+       <summary>
+        Bachelor’s starting point
+       </summary>
+       <p>
+        Prepare and analyse one part of an experiment, with a focused question and an existing-data fallback.
+       </p>
+      </details>
+      <details>
+       <summary>
+        Possible Master’s extension
+       </summary>
+       <p>
+        Take a larger role in an experimental campaign, subject to approved beamtime and the project schedule.
+       </p>
+      </details>
+     </article>
+    </div>
+    <p class="section-footnote">
+     These ideas can be adapted to a Bachelor’s or Master’s thesis. We’ll choose a specific material, dataset and achievable question together.
+    </p>
+    <div aria-label="Skills you could develop" class="skills">
+     <span>
+      Scientific Python
+     </span>
+     <span>
+      Peak fitting
+     </span>
+     <span>
+      Crystal structures
+     </span>
+     <span>
+      X-ray experiments
+     </span>
+     <span>
+      Presenting data
+     </span>
+    </div>
+   </section>
+   <section aria-labelledby="example-title" class="section">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       04 / A question from our research
+      </p>
+      <h2 id="example-title">
+       One spectrum. Several stories.
+      </h2>
+     </div>
+    </div>
+    <div class="research-example">
+     <a aria-label="Open the full LESCO spectral-fit figure in a new tab" href="assets/lesco-spectral-fit.webp" rel="noopener" target="_blank">
+      <img alt="Measured LESCO spectra with separate fits for elastic scattering, charge, phonons and background." height="999" loading="lazy" src="assets/lesco-spectral-fit.webp" width="1839"/>
+     </a>
+     <div class="copy">
+      <h3>
+       Which part is the vibration?
+      </h3>
+      <p>
+       Several processes can overlap in one RIXS spectrum. In our copper-oxide study, modelling the atomic vibrations helped uncover a weaker signal from collective charge motion.
+      </p>
+      <p>
+       You don’t need to understand every label here. The starting question is simple: which parts of the data come from which processes?
+      </p>
+      <a class="text-link" href="https://www.the-innovation.org/article/doi/10.59717/j.tip.2026.100011" rel="noopener" target="_blank">
+       Read the research paper ↗
+      </a>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="reading-heading" class="section" id="reading">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       Go a little deeper
+      </p>
+      <h2 id="reading-heading">
+       Real research. A place to start.
+      </h2>
+     </div>
+     <p>
+      These are research papers and resources, so they go beyond the short explanations above.
+     </p>
+    </div>
+    <h3 class="demo-label">
+     Further reading
+    </h3>
+    <ul class="readings">
+     <li>
+      <a href="https://www.the-innovation.org/article/doi/10.59717/j.tip.2026.100011" rel="noopener" target="_blank">
+       Uncovering charge motion in a cuprate
+       <span aria-hidden="true" class="arrow">
+        ↗
+       </span>
+      </a>
+      <span>
+       X. Hong et al. · The Innovation Physics (2026). How a weak electronic signal can be separated from atomic vibrations.
+      </span>
+     </li>
+     <li>
+      <a href="https://www.nature.com/articles/s43246-026-01175-0" rel="noopener" target="_blank">
+       Spin waves in nickelates and cuprates
+       <span aria-hidden="true" class="arrow">
+        ↗
+       </span>
+      </a>
+      <span>
+       X. Hong, Y. Wu et al. · Communications Materials (2026). Comparing magnetic excitations to learn about electron interactions.
+      </span>
+     </li>
+     <li>
+      <a href="https://arxiv.org/abs/2607.07544" rel="noopener" target="_blank">
+       Tuning charge and magnetism with strain
+       <span aria-hidden="true" class="arrow">
+        ↗
+       </span>
+      </a>
+      <span>
+       M. Baumgartner et al. · arXiv:2607.07544 (2026), preprint. A related X-ray study of EuAl₄, a magnetic metal.
+      </span>
+     </li>
+     <li>
+      <a href="https://www.physik.uzh.ch/groups/chang/output.php" rel="noopener" target="_blank">
+       Explore the group’s publications
+       <span aria-hidden="true" class="arrow">
+        ↗
+       </span>
+      </a>
+      <span>
+       Laboratory for Quantum Matter Research · Browse more experiments, materials and research questions.
+      </span>
+     </li>
+    </ul>
+    <p class="credits">
+     Visuals: AI-generated banner painting and concept illustration; these are artistic impressions. Research figure: Xunyang Hong and collaborators; local copy from the research showcase. Beamline photograph: Xunyang Hong. Schematic demos are for explanation, not measured data.
+    </p>
+   </section>
+   <section aria-labelledby="visit-heading" class="visit-section" id="visit">
+    <div>
+     <p class="eyebrow">
+      Your next step
+     </p>
+     <h2 id="visit-heading">
+      Curious?
+      <br/>
+      Let’s talk about your thesis.
+     </h2>
+     <p>
+      Come by the office
+      <strong>
+       Y36 H50
+      </strong>
+      , look for
+      <strong>
+       Johan Chang
+      </strong>
+      and discuss a potential project. Bring your questions, your interests, or simply your curiosity.
+     </p>
+     <p>
+      We can shape the scope around a Bachelor’s or Master’s thesis and your experience.
+     </p>
+    </div>
+    <div class="office-card">
+     <span class="demo-label" style="color:#c4d8c4">
+      Find us at UZH
+     </span>
+     <div class="office-number">
+      Y36 H50
+     </div>
+     <strong>
+      Johan Chang
+     </strong>
+     <p>
+      Physik-Institut · Irchel campus
+      <br/>
+      Winterthurerstrasse 190, Zürich
+     </p>
+     <div class="actions">
+      <a class="button" href="mailto:johan.chang@physik.uzh.ch?subject=Thesis%20project%20at%20LQMR">
+       Email Johan
+       <span aria-hidden="true">
+        ↗
+       </span>
+      </a>
+     </div>
+    </div>
+   </section>
+  </main>
+  <div class="wrap">
+   <footer class="footer">
+    <div>
+     Laboratory for Quantum Matter Research
+     <br/>
+     Student projects · UZH Physik-Institut
+    </div>
+    <nav aria-label="Other student projects" class="footer-links">
+     <a href="../open-day/index.html">
+      All projects
+     </a>
+     <a href="../laue-automation/index.html">
+      Laue automation ↗
+     </a>
+     <a href="../superconductors/index.html">
+      Superconductors ↗
+     </a>
+    </nav>
+   </footer>
+  </div>
+ </body>
+</html>

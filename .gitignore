@@ -17,4 +17,7 @@
 /art/temp_images/
 !/art/update_art.sh
 
+# Full-resolution generated artwork stays local; optimized page assets are tracked.
+/generated_images/
+
 **/.DS_Store

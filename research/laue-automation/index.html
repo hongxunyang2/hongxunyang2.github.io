@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#faf9f5" name="theme-color"/>
+  <title>
+   Laue automation — build a smarter crystal lab | Student projects · UZH
+  </title>
+  <meta content="Help a robot find, photograph and measure crystals. A hands-on project where physics meets coding and engineering." name="description"/>
+  <meta content="Laue automation — build a smarter crystal lab · Student projects at UZH" property="og:title"/>
+  <meta content="Help a robot find, photograph and measure crystals. A hands-on project where physics meets coding and engineering." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="assets/hero.webp" property="og:image"/>
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="styles.css" rel="stylesheet"/>
+  <link as="image" href="assets/hero.webp" media="(min-width:721px)" rel="preload"/>
+  <script defer="" src="script.js">
+  </script>
+ </head>
+ <body data-project="laue">
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <header class="site-header">
+   <div class="wrap header-inner">
+    <a aria-label="LQMR student project overview" class="brand" href="../open-day/index.html">
+     <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 40 40">
+      <ellipse cx="20" cy="20" rx="18" ry="7" transform="rotate(-35 20 20)">
+      </ellipse>
+      <ellipse cx="20" cy="20" rx="18" ry="7" transform="rotate(35 20 20)">
+      </ellipse>
+      <circle cx="20" cy="20" fill="currentColor" r="3">
+      </circle>
+     </svg>
+     <span>
+      <strong>
+       Quantum Matter Research
+      </strong>
+      <small>
+       Johan Chang’s group · University of Zurich
+      </small>
+     </span>
+    </a>
+    <nav aria-label="Page navigation">
+     <a href="#discover">
+      The idea
+     </a>
+     <a href="#projects">
+      Thesis ideas
+     </a>
+     <a class="nav-cta" href="#visit">
+      Come say hello
+      <span aria-hidden="true">
+       ↗
+      </span>
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main class="wrap" id="main">
+   <div class="breadcrumb">
+    <a href="../open-day/index.html">
+     Student projects
+    </a>
+    <span aria-hidden="true">
+     /
+    </span>
+    <span>
+     Laue automation
+    </span>
+   </div>
+   <section aria-labelledby="title" class="hero">
+    <picture class="hero-art">
+     <source media="(max-width:720px)" srcset="assets/hero-small.webp"/>
+     <img alt="Rococo-inspired oil painting of a robot arm holding a crystal beside a laboratory instrument." fetchpriority="high" height="1024" src="assets/hero.webp" width="1536"/>
+    </picture>
+    <div class="hero-copy">
+     <p class="eyebrow">
+      Bachelor’s &amp; Master’s projects / Laue automation
+     </p>
+     <h1 id="title">
+      A tiny crystal.
+      <br/>
+      <span>
+       A smarter lab.
+      </span>
+     </h1>
+     <p class="hero-lead">
+      Help a robot find, photograph and measure crystals. A hands-on project where physics meets coding and engineering.
+     </p>
+     <div class="actions">
+      <a class="button" href="#projects">
+       Find your project
+       <span aria-hidden="true">
+        ↓
+       </span>
+      </a>
+      <a class="button secondary" href="#discover">
+       Explore the idea
+      </a>
+     </div>
+     <p class="hero-note">
+      A curious mind is a good place to start.
+     </p>
+    </div>
+   </section>
+   <div aria-label="Project at a glance" class="quick-facts">
+    <div>
+     <span>
+      You’ll explore
+     </span>
+     <strong>
+      Robots, cameras &amp; crystals
+     </strong>
+    </div>
+    <div>
+     <span>
+      Your tools
+     </span>
+     <strong>
+      Python &amp; real lab hardware
+     </strong>
+    </div>
+    <div>
+     <span>
+      Starting point
+     </span>
+     <strong>
+      Bachelor’s or Master’s thesis
+     </strong>
+    </div>
+   </div>
+   <section aria-labelledby="discover-title" class="section" id="discover">
+    <div class="split">
+     <div class="copy">
+      <p class="eyebrow">
+       01 / The idea in a minute
+      </p>
+      <h2 id="discover-title">
+       Give a crystal lab
+       <br/>
+       a helping hand.
+      </h2>
+      <p>
+       A crystal may look like a tiny stone. Inside, its atoms form an orderly pattern. Before many experiments, we need to know which way that pattern points.
+      </p>
+      <p>
+       <strong>
+        Laue diffraction makes that orientation visible.
+       </strong>
+       Shine X-rays on the crystal and collect a pattern of spots. Turn the crystal, and the pattern changes.
+      </p>
+      <p>
+       Your challenge: help a robot, cameras and software work together, so finding and measuring a sample takes less manual effort.
+      </p>
+      <div class="inline-note">
+       <strong>
+        For people who like making things work.
+       </strong>
+       <br/>
+       Mix hands-on physics, coding and a little engineering.
+      </div>
+     </div>
+     <figure class="illustration">
+      <img alt="A smiling robot arm holds a violet crystal beside a camera and a screen of diffraction spots." height="667" loading="lazy" sizes="(max-width:720px) calc(100vw - 32px), 48vw" src="assets/illustration.webp" srcset="assets/illustration-small.webp 768w, assets/illustration.webp 1000w" width="1000"/>
+      <figcaption>
+       The team: a robot to move, cameras to see, and a diffraction pattern to understand. Concept illustration.
+      </figcaption>
+     </figure>
+    </div>
+   </section>
+   <section aria-labelledby="starting-title" class="section" id="starting-point">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       02 / Already in the lab
+      </p>
+      <h2 id="starting-title">
+       A real setup to build on.
+      </h2>
+     </div>
+     <p>
+      Start with existing tools, then choose a useful next step.
+     </p>
+    </div>
+    <div class="split">
+     <figure class="lab-media">
+      <video aria-label="Existing robot and Laue interface startup demonstration, at three times recorded speed" controls="" height="720" playsinline="" poster="assets/startup.webp" preload="none" width="1280">
+       <source src="assets/startup-3x.mp4" type="video/mp4"/>
+       <a href="assets/startup-3x.mp4">
+        Download the robot demonstration
+       </a>
+      </video>
+      <figcaption>
+       The existing Laue interface in action: the robot picks up the sample holder and moves it towards the cameras. 9 seconds · 3× speed.
+      </figcaption>
+     </figure>
+     <div class="copy">
+      <h3>
+       Robot. Two cameras.
+       <br/>
+       One experiment.
+      </h3>
+      <p>
+       The current interface connects a Meca500 robot arm, two sample cameras and Laue image acquisition. The operator can position a sample, use the camera views and save a diffraction image.
+      </p>
+      <p>
+       <strong>
+        The student-project opportunity:
+       </strong>
+       develop automatic sample recognition, repeatable photo capture or better coordination between these steps.
+      </p>
+      <p>
+       <a href="https://www.physik.uzh.ch/groups/chang/content/laue_manual.php" rel="noopener" target="_blank">
+        Explore the existing lab guide ↗
+       </a>
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="workflow-heading" class="section">
+    <div class="experiment">
+     <div>
+      <p class="eyebrow">
+       Try the workflow
+      </p>
+      <h3 id="workflow-heading">
+       What happens to
+       <br/>
+       one little crystal?
+      </h3>
+      <p>
+       Follow the three main steps. These screenshots show the current tools; your thesis could help connect them.
+      </p>
+      <div aria-label="Choose a workflow step" class="button-group js-only" role="group">
+       <button aria-pressed="true" data-workflow="move" type="button">
+        1. Move
+       </button>
+       <button aria-pressed="false" data-workflow="find" type="button">
+        2. Find
+       </button>
+       <button aria-pressed="false" data-workflow="record" type="button">
+        3. Record
+       </button>
+      </div>
+      <div aria-atomic="true" aria-live="polite" class="step-description">
+       <h4 id="workflow-title">
+        01 / Move the sample
+       </h4>
+       <p id="workflow-text">
+        The robot brings the sample holder to a known position. A useful next step is to make a whole sequence repeatable.
+       </p>
+      </div>
+     </div>
+     <figure class="demo-stage">
+      <img alt="Laue control interface beside the Meca500 robot view." height="720" id="workflow-image" loading="lazy" src="assets/startup.webp" width="1280"/>
+      <figcaption class="demo-caption" id="workflow-caption">
+       Existing setup: robot positioning and instrument controls.
+      </figcaption>
+     </figure>
+    </div>
+    <noscript>
+     <p class="no-js-note">
+      The workflow is: move the sample, find it in the two camera views, then record its diffraction pattern. The videos below show the last two steps.
+     </p>
+    </noscript>
+    <div class="media-grid" style="margin-top:24px">
+     <figure class="mini-media">
+      <video aria-label="Camera-guided sample alignment demonstration at three times recorded speed" controls="" height="720" playsinline="" poster="assets/camera-alignment.webp" preload="none" width="1280">
+       <source src="assets/camera-alignment-3x.mp4" type="video/mp4"/>
+       <a href="assets/camera-alignment-3x.mp4">
+        Download the alignment demo
+       </a>
+      </video>
+      <figcaption>
+       Two camera views help locate the sample. 27 seconds · 3× speed.
+      </figcaption>
+     </figure>
+     <figure class="mini-media">
+      <video aria-label="Laue diffraction image capture demonstration at three times recorded speed" controls="" height="720" playsinline="" poster="assets/image-acquisition.webp" preload="none" width="1280">
+       <source src="assets/image-acquisition-3x.mp4" type="video/mp4"/>
+       <a href="assets/image-acquisition-3x.mp4">
+        Download the acquisition demo
+       </a>
+      </video>
+      <figcaption>
+       Record and save the diffraction pattern. 14 seconds · 3× speed.
+      </figcaption>
+     </figure>
+    </div>
+   </section>
+   <section aria-labelledby="projects-title" class="section" id="projects">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       03 / Your possible project
+      </p>
+      <h2 id="projects-title">
+       Build something the lab can use.
+      </h2>
+     </div>
+     <p>
+      Pick a direction, then shape a manageable question with us.
+     </p>
+    </div>
+    <h3 class="demo-label">
+     Three starting points
+    </h3>
+    <div class="projects">
+     <article class="project-card">
+      <span class="card-number">
+       IDEA / 01
+      </span>
+      <h3>
+       Teach the camera to see.
+      </h3>
+      <p>
+       Find a small crystal in camera images. Start with simple image processing, then test how well it works on different samples.
+      </p>
+      <span class="tag">
+       Computer vision · Python
+      </span>
+      <details>
+       <summary>
+        Bachelor’s starting point
+       </summary>
+       <p>
+        Build and assess a crystal finder on a labelled collection of sample photographs.
+       </p>
+      </details>
+      <details>
+       <summary>
+        Possible Master’s extension
+       </summary>
+       <p>
+        Use two camera views to estimate the sample position and test feedback-guided alignment.
+       </p>
+      </details>
+     </article>
+     <article class="project-card">
+      <span class="card-number">
+       IDEA / 02
+      </span>
+      <h3>
+       Make the robot repeat it.
+      </h3>
+      <p>
+       Turn a series of manual movements into a clear, repeatable workflow, with useful checks and feedback for the operator.
+      </p>
+      <span class="tag">
+       Robotics · Instrument control
+      </span>
+      <details>
+       <summary>
+        Bachelor’s starting point
+       </summary>
+       <p>
+        Implement and test one repeatable motion or photo-taking sequence with the existing robot interface.
+       </p>
+      </details>
+      <details>
+       <summary>
+        Possible Master’s extension
+       </summary>
+       <p>
+        Connect motion, camera feedback and image collection into a supervised workflow; evaluate accuracy and reliability.
+       </p>
+      </details>
+     </article>
+     <article class="project-card">
+      <span class="card-number">
+       IDEA / 03
+      </span>
+      <h3>
+       From picture to orientation.
+      </h3>
+      <p>
+       Capture images automatically and help the software recognise useful features in a Laue pattern.
+      </p>
+      <span class="tag">
+       Image analysis · Diffraction
+      </span>
+      <details>
+       <summary>
+        Bachelor’s starting point
+       </summary>
+       <p>
+        Detect diffraction spots and compare their positions with manually marked examples.
+       </p>
+      </details>
+      <details>
+       <summary>
+        Possible Master’s extension
+       </summary>
+       <p>
+        Match measured and simulated patterns, estimate crystal orientation and test how robust the method is.
+       </p>
+      </details>
+     </article>
+    </div>
+    <p class="section-footnote">
+     These are possible directions, not fixed thesis descriptions. We’ll agree on the scope, available hardware and a practical goal together. Lab work starts with training.
+    </p>
+    <div aria-label="Skills you could develop" class="skills">
+     <span>
+      Python
+     </span>
+     <span>
+      Robot control
+     </span>
+     <span>
+      Computer vision
+     </span>
+     <span>
+      Experimental design
+     </span>
+     <span>
+      Testing with real hardware
+     </span>
+    </div>
+   </section>
+   <section aria-labelledby="reading-heading" class="section" id="reading">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       Go a little deeper
+      </p>
+      <h2 id="reading-heading">
+       Real research. A place to start.
+      </h2>
+     </div>
+     <p>
+      These are research papers and resources, so they go beyond the short explanations above.
+     </p>
+    </div>
+    <h3 class="demo-label">
+     Further reading
+    </h3>
+    <ul class="readings">
+     <li>
+      <a href="https://www.physik.uzh.ch/groups/chang/content/laue_manual.php" rel="noopener" target="_blank">
+       Take a look at the Laue lab guide
+       <span aria-hidden="true" class="arrow">
+        ↗
+       </span>
+      </a>
+      <span>
+       The existing instrument interface, robot controls, camera views and image acquisition workflow.
+      </span>
+     </li>
+     <li>
+      <a href="https://www.physik.uzh.ch/groups/chang/output.php" rel="noopener" target="_blank">
+       Explore the group’s publications
+       <span aria-hidden="true" class="arrow">
+        ↗
+       </span>
+      </a>
+      <span>
+       Laboratory for Quantum Matter Research · Browse more experiments, materials and research questions.
+      </span>
+     </li>
+    </ul>
+    <p class="credits">
+     Visuals: AI-generated banner painting and concept illustration; these are artistic impressions. Lab screenshots and recordings: Xunyang Hong. Videos are shown at 3× speed. Schematic demos are for explanation, not measured data.
+    </p>
+   </section>
+   <section aria-labelledby="visit-heading" class="visit-section" id="visit">
+    <div>
+     <p class="eyebrow">
+      Your next step
+     </p>
+     <h2 id="visit-heading">
+      Curious?
+      <br/>
+      Let’s talk about your thesis.
+     </h2>
+     <p>
+      Come by the office
+      <strong>
+       Y36 H50
+      </strong>
+      , look for
+      <strong>
+       Johan Chang
+      </strong>
+      and discuss a potential project. Bring your questions, your interests, or simply your curiosity.
+     </p>
+     <p>
+      We can shape the scope around a Bachelor’s or Master’s thesis and your experience.
+     </p>
+    </div>
+    <div class="office-card">
+     <span class="demo-label" style="color:#c4d8c4">
+      Find us at UZH
+     </span>
+     <div class="office-number">
+      Y36 H50
+     </div>
+     <strong>
+      Johan Chang
+     </strong>
+     <p>
+      Physik-Institut · Irchel campus
+      <br/>
+      Winterthurerstrasse 190, Zürich
+     </p>
+     <div class="actions">
+      <a class="button" href="mailto:johan.chang@physik.uzh.ch?subject=Thesis%20project%20at%20LQMR">
+       Email Johan
+       <span aria-hidden="true">
+        ↗
+       </span>
+      </a>
+     </div>
+    </div>
+   </section>
+  </main>
+  <div class="wrap">
+   <footer class="footer">
+    <div>
+     Laboratory for Quantum Matter Research
+     <br/>
+     Student projects · UZH Physik-Institut
+    </div>
+    <nav aria-label="Other student projects" class="footer-links">
+     <a href="../open-day/index.html">
+      All projects
+     </a>
+     <a href="../x-ray-scattering/index.html">
+      X-ray scattering ↗
+     </a>
+     <a href="../superconductors/index.html">
+      Superconductors ↗
+     </a>
+    </nav>
+   </footer>
+  </div>
+ </body>
+</html>
