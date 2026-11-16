@@ -21,9 +21,9 @@ workflowButtons.forEach(button => button.addEventListener('click', () => {
 const excitationButtons = document.querySelectorAll('[data-excitation]');
 const svg = document.getElementById('excitation-art');
 const excitations = {
-  phonon:{title:'Phonon / Atoms moving together',text:'Atoms are always moving. When their motion forms a wave through a crystal, we call one quantum of that vibration a phonon.',caption:'Schematic: displaced atoms joined by bonds. The displacement is exaggerated.'},
-  magnon:{title:'Magnon / A wave of tiny magnets',text:'Electrons have a magnetic property called spin. A wave in how the spins point is a spin wave; one quantum is called a magnon.',caption:'Schematic: a snapshot of tilted spins, shown as arrows. No measured data.'},
-  charge:{title:'Charge motion / Electrons acting together',text:'Electron density can form a repeating pattern. We study how those patterns change and fluctuate, and how they relate to superconductivity.',caption:'Schematic: darker regions represent higher electron density. No measured data.'}
+  phonon:{title:'Phonon = atoms moving together',text:'Atoms are always moving. When their motion forms a wave through a crystal, we call one quantum of that vibration a phonon.',caption:'Schematic: displaced atoms joined by bonds. The displacement is exaggerated.'},
+  magnon:{title:'Magnon = spins form a wave',text:'Electrons have a magnetic property called spin. A wave in how the spins point is a spin wave; one quantum is called a magnon.',caption:'Schematic: a snapshot of tilted spins, shown as arrows. No measured data.'},
+  charge:{title:'Charge order = electrons group up',text:'Electron density can form a repeating pattern. We study how those patterns change and fluctuate, and how they relate to superconductivity.',caption:'Schematic: darker regions represent higher electron density. No measured data.'}
 };
 function excitationDrawing(type) {
   const heading = '<title id="excitation-svg-title">'+excitations[type].title+'</title>';

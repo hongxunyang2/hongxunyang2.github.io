@@ -1,0 +1,32 @@
+[
+  {
+    "project": "Laue diffraction",
+    "url": "https://hongxunyang2.github.io/research/laue-automation/",
+    "color": "#EC848C",
+    "background": "transparent",
+    "pixels": 2050,
+    "quiet_zone_modules": 4,
+    "error_correction": "M",
+    "modules": 33
+  },
+  {
+    "project": "X-ray scattering",
+    "url": "https://hongxunyang2.github.io/research/x-ray-scattering/",
+    "color": "#DEE693",
+    "background": "transparent",
+    "pixels": 2050,
+    "quiet_zone_modules": 4,
+    "error_correction": "M",
+    "modules": 33
+  },
+  {
+    "project": "Superconductors",
+    "url": "https://hongxunyang2.github.io/research/superconductors/",
+    "color": "#18656A",
+    "background": "transparent",
+    "pixels": 2050,
+    "quiet_zone_modules": 4,
+    "error_correction": "M",
+    "modules": 33
+  }
+]

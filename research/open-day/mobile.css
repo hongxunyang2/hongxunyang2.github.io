@@ -1,0 +1,60 @@
+/* Phone-specific reading and touch layouts for the three project pages. */
+@media screen and (max-width:720px){
+  :root{--phone-header:112px}
+  html{scroll-padding-top:calc(var(--phone-header) + 12px)}
+  .header-inner{min-height:var(--phone-header);gap:4px;padding:10px 0 6px}
+  .brand{min-width:0;gap:10px;flex-shrink:1}.brand span{min-width:0}
+  .brand strong{font-size:.91rem}.brand small{font-size:.69rem;line-height:1.4}
+  .site-header nav{gap:8px;font-size:.79rem}
+  .site-header nav a{min-height:44px;display:inline-flex;align-items:center;padding:10px 2px}
+  .site-header .nav-cta{padding:8px 12px}
+  .hero-art{height:clamp(180px,52vw,230px)}
+  .hero-copy{padding:26px 22px 28px}.hero h1{font-size:clamp(2.25rem,10vw,3.1rem)}
+  .hero .eyebrow{font-size:.68rem}.hero-lead{font-size:1rem}
+  .quick-facts{grid-template-columns:minmax(0,1fr);gap:12px;padding:22px 0}
+  .quick-facts>div{display:grid;grid-template-columns:100px minmax(0,1fr);align-items:baseline;gap:12px;padding-left:12px}
+  .quick-facts span{font-size:.65rem;line-height:1.5;margin:0}.quick-facts strong{font-size:.9rem;line-height:1.5}
+  .split>*{min-width:0}.section{padding-block:40px}
+  h2{font-size:clamp(1.9rem,8vw,2.25rem)}h2,h3,h4{overflow-wrap:break-word}
+  .eyebrow{font-size:.7rem}.section-heading{margin-bottom:24px}
+  .experiment{padding:24px 16px;gap:20px}.demo-stage{padding:12px}
+  .button-group{gap:8px}.button-group button{min-height:44px;font-size:.84rem;flex:1 0 auto;padding:10px 13px}
+  .demo-stage svg text{font-size:16px}
+  .illustration figcaption,.lab-media figcaption,.mini-media figcaption,.photo-frame figcaption,.demo-caption{font-size:.81rem!important;line-height:1.6}
+  .facility-grid{grid-template-columns:minmax(0,1fr);gap:0}.facility{padding:18px 0}
+  .facility h3{font-size:1.2rem}.facility span,.facility p{font-size:.84rem}
+  .project-card{padding:24px 22px}.project-card summary{min-height:44px;align-content:center;font-size:.88rem;padding:8px 0}
+  .project-card details{margin-top:12px;padding-top:8px}.project-card details p{font-size:.9rem}
+  .tag,.section-footnote{font-size:.81rem;line-height:1.6}
+  .research-example>a{padding:12px}.research-example>a::after{content:"Tap to view full size ↗";display:block;color:var(--accent);font-size:.8rem;margin-top:12px}
+  .research-example .copy{padding:22px}.research-example p,.compare-card p{font-size:.95rem}
+  .readings a{min-height:44px;align-items:center}.readings span{font-size:.84rem}.credits{font-size:.76rem}
+  .visit-section{padding:28px 22px}.visit-section h2{font-size:clamp(1.9rem,8vw,2.4rem)}
+  .visit-section p{font-size:.95rem}.office-card{padding:22px}.office-card p{font-size:.85rem}
+  .footer-links{gap:0 20px}.footer-links a{display:inline-flex;align-items:center;min-height:44px;font-size:.81rem}
+  .workflow-image-link{display:block}.workflow-image-link::after{content:"Tap to view full size ↗";display:block;font-size:.8rem;color:var(--accent);margin-top:12px}
+  .play-heading{flex-wrap:wrap;gap:12px}.model-label{max-width:none;font-size:.72rem;text-align:left}
+  .play-panel{padding:22px 16px}.play-controls label{font-size:.9rem}.play-controls output{font-size:.82rem}
+  .play-controls input[type=range]{min-height:44px}.play-panel .demo-caption,.play-chart figcaption{font-size:.8rem}
+  .reset-button{min-height:44px;font-size:.84rem}.spectrum-controls label{font-size:.84rem}
+  .spectrum-layout{display:block}.spectrum-controls{margin-top:18px}
+  .spectrum-layout>.play-chart{position:sticky;top:calc(var(--phone-header) + 8px);z-index:3;box-shadow:0 4px 16px #172e3312}
+  .spectrum-controls input{scroll-margin-top:calc(var(--phone-header) + 55vw + 70px)}
+  .play-chart{padding:10px}.charge-panel{padding:24px 18px}
+  #scattering-art text{font-size:24px}#scattering-art>text:last-child{display:none}
+  #scattering-demo .play-grid{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+  #scattering-demo .play-controls{display:contents}
+  #scattering-demo .play-controls>p:first-child{order:1}
+  #scattering-demo label{order:2;margin:0}#scattering-angle{order:3}
+  #scattering-demo .play-chart{order:4}#scattering-demo .play-insight{order:5;margin-top:4px}
+  #scattering-demo .play-equation{order:6}#scattering-demo .play-controls>.demo-caption{order:7;margin-top:0}
+}
+@media screen and (max-width:360px){
+  .brand strong{font-size:.85rem}.brand small{font-size:.64rem}
+  .site-header nav{font-size:.73rem;gap:6px}.site-header .nav-cta{padding-inline:9px}
+  .hero-copy{padding-inline:20px}.quick-facts>div{grid-template-columns:90px minmax(0,1fr)}
+  .spectrum-controls label{flex-wrap:wrap;gap:8px}.play-controls output{white-space:normal;text-align:right}
+}
+@media screen and (max-height:520px) and (orientation:landscape){
+  .site-header{position:static}.spectrum-layout>.play-chart{position:static}
+}

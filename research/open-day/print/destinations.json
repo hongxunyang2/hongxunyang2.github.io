@@ -1,0 +1,62 @@
+[
+  {
+    "file": "laue-automation.html",
+    "project": "Laue automation",
+    "url": "https://hongxunyang2.github.io/research/laue-automation/",
+    "qr_modules": 33,
+    "qr_error_correction": "M",
+    "qr_color": "#183b38",
+    "qr_plate": "#fffdf5",
+    "paper_mm": [
+      297,
+      210
+    ],
+    "artwork_safe_border_mm": 8
+  },
+  {
+    "file": "x-ray-scattering.html",
+    "project": "X-ray scattering",
+    "url": "https://hongxunyang2.github.io/research/x-ray-scattering/",
+    "qr_modules": 33,
+    "qr_error_correction": "M",
+    "qr_color": "#183b38",
+    "qr_plate": "#fffdf5",
+    "paper_mm": [
+      297,
+      210
+    ],
+    "artwork_safe_border_mm": 8
+  },
+  {
+    "file": "superconductors.html",
+    "project": "Superconductors",
+    "url": "https://hongxunyang2.github.io/research/superconductors/",
+    "qr_modules": 33,
+    "qr_error_correction": "M",
+    "qr_color": "#183b38",
+    "qr_plate": "#fffdf5",
+    "paper_mm": [
+      297,
+      210
+    ],
+    "artwork_safe_border_mm": 8
+  },
+  {
+    "file": "index.html",
+    "project": "Find your thesis project",
+    "url": "https://hongxunyang2.github.io/research/open-day/",
+    "qr_modules": 33,
+    "qr_error_correction": "M",
+    "qr_color": "#183b38",
+    "qr_plate": "#ffffff",
+    "paper_mm": [
+      297,
+      210
+    ],
+    "artwork_safe_border_mm": 8,
+    "print_style": "light-masked full Rococo painting",
+    "white_mask_opacity_left": 0.68,
+    "white_mask_opacity_center": 0.58,
+    "white_mask_opacity_right": 0.38
+  }
+]

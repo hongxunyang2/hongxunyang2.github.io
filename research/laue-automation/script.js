@@ -13,6 +13,7 @@ workflowButtons.forEach(button => button.addEventListener('click', () => {
   workflowButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   const img = document.getElementById('workflow-image');
   img.src = step.image; img.alt = step.alt;
+  document.getElementById('workflow-full-image').href = step.image;
   document.getElementById('workflow-title').textContent = step.title;
   document.getElementById('workflow-text').textContent = step.text;
   document.getElementById('workflow-caption').textContent = step.caption;

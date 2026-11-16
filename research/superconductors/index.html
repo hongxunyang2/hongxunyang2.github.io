@@ -17,6 +17,10 @@
   <link as="image" href="assets/hero.webp" media="(min-width:721px)" rel="preload"/>
   <script defer="" src="script.js">
   </script>
+  <link href="../open-day/interactive.css" rel="stylesheet"/>
+  <script defer="" src="charge-pattern.js">
+  </script>
+  <link href="../open-day/mobile.css" rel="stylesheet"/>
  </head>
  <body data-project="super">
   <a class="skip-link" href="#main">
@@ -46,8 +50,8 @@
      <a href="#discover">
       The idea
      </a>
-     <a href="#projects">
-      Thesis ideas
+     <a href="#questions">
+      Our questions
      </a>
      <a class="nav-cta" href="#visit">
       Come say hello
@@ -88,20 +92,6 @@
      </h1>
      <p class="hero-lead">
       Why can electricity flow without resistance? Explore the quantum world of superconductors—and the patterns and waves that may help us understand it.
-     </p>
-     <div class="actions">
-      <a class="button" href="#projects">
-       Find your project
-       <span aria-hidden="true">
-        ↓
-       </span>
-      </a>
-      <a class="button secondary" href="#discover">
-       Explore the idea
-      </a>
-     </div>
-     <p class="hero-note">
-      A curious mind is a good place to start.
      </p>
     </div>
    </section>
@@ -294,7 +284,7 @@
      </p>
     </noscript>
    </section>
-   <section aria-labelledby="clues-title" class="section">
+   <section aria-labelledby="clues-title" class="section" id="questions">
     <div class="section-heading">
      <div>
       <p class="eyebrow">
@@ -304,17 +294,9 @@
        What are the electrons up to?
       </h2>
      </div>
-     <p>
-      Superconductivity lives alongside other remarkable forms of behaviour.
-     </p>
     </div>
     <div class="split">
      <div class="copy">
-      <h3>
-       Patterns, waves
-       <br/>
-       and a gentle push.
-      </h3>
       <p>
        <strong>
         Charge order:
@@ -334,172 +316,61 @@
        a small squeeze or an applied field can change the balance between different states. We watch what responds—and what does not.
       </p>
      </div>
-     <div>
-      <div class="compare-card">
-       <p class="eyebrow">
-        Tools for the detective work
-       </p>
-       <h3>
-        Watch motion.
-        <br/>
-        Find structure.
-       </h3>
-       <p>
-        RIXS measures the energy exchanged by X-rays to probe vibrations and magnetic excitations. Diffraction reveals atomic structure and repeating order.
-       </p>
-       <p>
-        <a href="../x-ray-scattering/index.html">
-         Meet the X-ray tools ↗
-        </a>
-       </p>
-      </div>
-      <div class="inline-note">
-       Our related strain study of
-       <strong>
-        EuAl₄
-       </strong>
-       explores charge and magnetism in a magnetic metal. It is a comparison system, not an example of a superconductor.
-      </div>
-     </div>
-    </div>
-   </section>
-   <section aria-labelledby="projects-title" class="section" id="projects">
-    <div class="section-heading">
-     <div>
+     <div aria-labelledby="charge-heading" class="play-panel charge-panel" id="charge-demo">
       <p class="eyebrow">
-       03 / Your possible project
+       Make an electron pattern
       </p>
-      <h2 id="projects-title">
-       Help solve a small part
-       <br/>
-       of a big mystery.
-      </h2>
+      <h3 id="charge-heading">
+       From a sea to stripes.
+      </h3>
+      <p>
+       Change the strength and spacing of a charge pattern. Darker dots mean more electron density.
+      </p>
+      <figure class="play-chart">
+       <svg aria-labelledby="charge-art-title charge-art-desc" id="charge-art" role="img" viewbox="0 0 440 260">
+        <title id="charge-art-title">
+         Schematic charge density in a crystal
+        </title>
+        <desc id="charge-art-desc">
+         Darker columns show a repeating pattern of higher electron density.
+        </desc>
+       </svg>
+       <figcaption id="charge-caption">
+        Repeating stripes of higher and lower electron density.
+       </figcaption>
+      </figure>
+      <div class="play-controls">
+       <label for="charge-strength">
+        Pattern strength
+        <output for="charge-strength" id="charge-strength-value">
+         65%
+        </output>
+       </label>
+       <input class="js-only" id="charge-strength" max="100" min="0" type="range" value="65"/>
+       <label for="charge-period">
+        Stripe spacing
+        <output for="charge-period" id="charge-period-value">
+         5 lattice spacings
+        </output>
+       </label>
+       <input class="js-only" id="charge-period" max="8" min="3" step="1" type="range" value="5"/>
+      </div>
+      <p class="demo-caption">
+       A static density sketch, not individual electron positions. This does not predict how strain, field or superconductivity change charge order; experiments test those relationships.
+      </p>
+      <noscript>
+       <p>
+        Enable JavaScript to vary the pattern. Charge order means a repeating modulation of electron density.
+       </p>
+      </noscript>
      </div>
-     <p>
-      Start with one clear question and learn the tools as you go.
-     </p>
-    </div>
-    <h3 class="demo-label">
-     Three starting points
-    </h3>
-    <div class="projects">
-     <article class="project-card">
-      <span class="card-number">
-       IDEA / 01
-      </span>
-      <h3>
-       Listen to a quantum material.
-      </h3>
-      <p>
-       Study atomic vibrations or spin waves in RIXS data. Ask what their behaviour tells us about interactions inside a superconducting material family.
-      </p>
-      <span class="tag">
-       Excitations · Data analysis
-      </span>
-      <details>
-       <summary>
-        Bachelor’s starting point
-       </summary>
-       <p>
-        Track a selected peak in existing spectra and compare its energy or width across a small dataset.
-       </p>
-      </details>
-      <details>
-       <summary>
-        Possible Master’s extension
-       </summary>
-       <p>
-        Compare related materials or conditions, using models to test a focused question about their interactions.
-       </p>
-      </details>
-     </article>
-     <article class="project-card">
-      <span class="card-number">
-       IDEA / 02
-      </span>
-      <h3>
-       Give it a gentle squeeze.
-      </h3>
-      <p>
-       Apply strain—a small stretch or compression—or study measurements in a magnetic field. See how charge order, structure or superconductivity responds.
-      </p>
-      <span class="tag">
-       Strain · Magnetic field · Order
-      </span>
-      <details>
-       <summary>
-        Bachelor’s starting point
-       </summary>
-       <p>
-        Analyse one temperature, field or strain series, with a clear and limited comparison.
-       </p>
-      </details>
-      <details>
-       <summary>
-        Possible Master’s extension
-       </summary>
-       <p>
-        Help design and carry out a tuning experiment, then connect changes in structure or charge order with other measurements.
-       </p>
-      </details>
-     </article>
-     <article class="project-card">
-      <span class="card-number">
-       IDEA / 03
-      </span>
-      <h3>
-       Find the pattern in the crystal.
-      </h3>
-      <p>
-       Electrons can form repeating charge patterns, and atoms can shift slightly. Use diffraction and structure refinement to look for these changes.
-      </p>
-      <span class="tag">
-       Charge order · Crystal structure
-      </span>
-      <details>
-       <summary>
-        Bachelor’s starting point
-       </summary>
-       <p>
-        Follow a diffraction peak or refine an existing structure at a few measurement conditions.
-       </p>
-      </details>
-      <details>
-       <summary>
-        Possible Master’s extension
-       </summary>
-       <p>
-        Map structural or charge-order changes across several conditions and test their relationship to superconductivity.
-       </p>
-      </details>
-     </article>
-    </div>
-    <p class="section-footnote">
-     These are ideas to discuss. The material, methods and scope will be chosen with your supervisor to suit a Bachelor’s or Master’s thesis.
-    </p>
-    <div aria-label="Skills you could develop" class="skills">
-     <span>
-      Quantum materials
-     </span>
-     <span>
-      Scientific Python
-     </span>
-     <span>
-      RIXS &amp; diffraction
-     </span>
-     <span>
-      Physical modelling
-     </span>
-     <span>
-      Interpreting experiments
-     </span>
     </div>
    </section>
    <section aria-labelledby="charge-example-title" class="section">
     <div class="section-heading">
      <div>
       <p class="eyebrow">
-       04 / A real research example
+       03 / A real research example
       </p>
       <h2 id="charge-example-title">
        Finding charge motion
@@ -580,17 +451,6 @@
       </span>
      </li>
      <li>
-      <a href="https://arxiv.org/abs/2607.07544" rel="noopener" target="_blank">
-       Tuning charge and magnetism with strain
-       <span aria-hidden="true" class="arrow">
-        ↗
-       </span>
-      </a>
-      <span>
-       M. Baumgartner et al. · arXiv:2607.07544 (2026), preprint. A related X-ray study of EuAl₄, a magnetic metal.
-      </span>
-     </li>
-     <li>
       <a href="https://www.physik.uzh.ch/groups/chang/output.php" rel="noopener" target="_blank">
        Explore the group’s publications
        <span aria-hidden="true" class="arrow">
@@ -626,9 +486,6 @@
        Johan Chang
       </strong>
       and discuss a potential project. Bring your questions, your interests, or simply your curiosity.
-     </p>
-     <p>
-      We can shape the scope around a Bachelor’s or Master’s thesis and your experience.
      </p>
     </div>
     <div class="office-card">

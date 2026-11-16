@@ -17,6 +17,10 @@
   <link as="image" href="assets/hero.webp" media="(min-width:721px)" rel="preload"/>
   <script defer="" src="script.js">
   </script>
+  <link href="../open-day/interactive.css" rel="stylesheet"/>
+  <script defer="" src="demos.js">
+  </script>
+  <link href="../open-day/mobile.css" rel="stylesheet"/>
  </head>
  <body data-project="xray">
   <a class="skip-link" href="#main">
@@ -89,20 +93,6 @@
      <p class="hero-lead">
       Use powerful X-rays to see how atoms, spins and electrons behave inside materials. Follow the clues from a tiny sample to a scientific answer.
      </p>
-     <div class="actions">
-      <a class="button" href="#projects">
-       Find your project
-       <span aria-hidden="true">
-        ↓
-       </span>
-      </a>
-      <a class="button secondary" href="#discover">
-       Explore the idea
-      </a>
-     </div>
-     <p class="hero-note">
-      A curious mind is a good place to start.
-     </p>
     </div>
    </section>
    <div aria-label="Project at a glance" class="quick-facts">
@@ -111,7 +101,7 @@
       You’ll explore
      </span>
      <strong>
-      Structure &amp; motion in materials
+      Particles &amp; structure in materials
      </strong>
     </div>
     <div>
@@ -138,16 +128,14 @@
        01 / The idea in a minute
       </p>
       <h2 id="discover-title">
-       Tiny worlds.
-       <br/>
-       Bright clues.
+       We can see tiny particles!
       </h2>
       <p>
        How do you look inside a crystal without taking it apart? Send in X-rays and study what comes back.
       </p>
       <p>
        <strong>
-        Where the X-rays go tells us about the arrangement of atoms.
+        X-ray goes in, and gets scattered.
        </strong>
        Measuring how much energy they lose can reveal motion inside the material.
       </p>
@@ -172,15 +160,6 @@
         </dd>
        </div>
       </dl>
-      <div class="inline-note">
-       <strong>
-        Why superconductors?
-       </strong>
-       Below a certain temperature, they carry DC electrical current with zero resistance.
-       <a href="../superconductors/index.html">
-        Meet these remarkable materials ↗
-       </a>
-      </div>
      </div>
      <figure class="illustration">
       <img alt="A smiling violet crystal scatters wavy X-rays, with sketches of vibrating atoms and tilting spins." height="667" loading="lazy" sizes="(max-width:720px) calc(100vw - 32px), 48vw" src="assets/illustration.webp" srcset="assets/illustration-small.webp 768w, assets/illustration.webp 1000w" width="1000"/>
@@ -188,6 +167,78 @@
        X-rays can give us clues about vibrating atoms and collective magnetic motion. Concept illustration.
       </figcaption>
      </figure>
+    </div>
+    <div aria-labelledby="scattering-heading" class="play-panel" id="scattering-demo">
+     <div class="play-heading">
+      <div>
+       <p class="eyebrow">
+        Try the geometry
+       </p>
+       <h3 id="scattering-heading">
+        Turn the beam. Change the momentum.
+       </h3>
+      </div>
+      <span class="model-label">
+       Elastic scattering · schematic
+      </span>
+     </div>
+     <div class="play-grid">
+      <div class="play-controls">
+       <p>
+        Move the outgoing beam. The arrow
+        <strong>
+         q
+        </strong>
+        shows the momentum transferred to the crystal, in units of ℏ.
+       </p>
+       <label for="scattering-angle">
+        Scattering angle
+        <output for="scattering-angle" id="scattering-angle-value">
+         60°
+        </output>
+       </label>
+       <input aria-describedby="scattering-help" class="js-only" id="scattering-angle" max="160" min="10" step="1" type="range" value="60"/>
+       <p class="play-insight" id="scattering-help">
+        A larger angle gives a larger momentum transfer at fixed X-ray wavelength.
+       </p>
+       <p class="play-equation">
+        q = kᵢₙ − kₒᵤₜ
+        <br/>
+        <strong id="scattering-q">
+         |q| / |k| = 1.00
+        </strong>
+       </p>
+       <p class="demo-caption">
+        Incoming and outgoing wavelengths are equal here. In RIXS, the outgoing photon can also lose energy.
+       </p>
+      </div>
+      <figure class="play-chart">
+       <svg aria-labelledby="scattering-art-title scattering-art-desc" id="scattering-art" role="img" viewbox="0 0 620 350">
+        <title id="scattering-art-title">
+         X-ray scattering geometry and momentum transfer
+        </title>
+        <desc id="scattering-art-desc">
+         An incoming beam hits a crystal and scatters at 60 degrees. Momentum transfer is the difference between incoming and outgoing wavevectors.
+        </desc>
+       </svg>
+       <figcaption>
+        <span class="legend-dot" style="--dot:#355888">
+        </span>
+        Incoming
+        <span class="legend-dot" style="--dot:#739f96">
+        </span>
+        Outgoing
+        <span class="legend-dot" style="--dot:#853e58">
+        </span>
+        Momentum transfer q
+       </figcaption>
+      </figure>
+     </div>
+     <noscript>
+      <p>
+       The interactive geometry needs JavaScript. At 60°, elastic scattering gives |q| = |k|; increasing the angle increases |q|.
+      </p>
+     </noscript>
     </div>
    </section>
    <section aria-labelledby="excitation-heading" class="section">
@@ -197,9 +248,7 @@
        Look beyond the atoms
       </p>
       <h3 id="excitation-heading">
-       What can move
-       <br/>
-       inside a crystal?
+       What’s inside a crystal?
       </h3>
       <p>
        Many signals come from particles acting together. Choose a picture to meet three kinds of collective behaviour.
@@ -217,7 +266,7 @@
       </div>
       <div aria-atomic="true" aria-live="polite" class="step-description">
        <h4 id="excitation-title">
-        Phonon / Atoms moving together
+        Phonon = atoms moving together
        </h4>
        <p id="excitation-text">
         Atoms are always moving. When their motion forms a wave through a crystal, we call one quantum of that vibration a phonon.
@@ -270,9 +319,6 @@
        Big experiments.
       </h2>
      </div>
-     <p>
-      Our research uses intense X-rays at international facilities.
-     </p>
     </div>
     <div class="split">
      <figure class="photo-frame">
@@ -344,50 +390,17 @@
        Turn a pattern into an answer.
       </h2>
      </div>
-     <p>
-      Choose a focus: data, crystal structure or the experiment itself.
-     </p>
     </div>
     <h3 class="demo-label">
-     Three starting points
+     Two starting points
     </h3>
-    <div class="projects">
+    <div class="projects projects-pair">
      <article class="project-card">
       <span class="card-number">
        IDEA / 01
       </span>
       <h3>
-       Find a hidden signal.
-      </h3>
-      <p>
-       Work with RIXS spectra. Separate overlapping peaks and see how a vibration or magnetic signal changes with temperature or angle.
-      </p>
-      <span class="tag">
-       Data analysis · Python
-      </span>
-      <details>
-       <summary>
-        Bachelor’s starting point
-       </summary>
-       <p>
-        Analyse a small existing dataset, fit selected peaks and check how uncertain the results are.
-       </p>
-      </details>
-      <details>
-       <summary>
-        Possible Master’s extension
-       </summary>
-       <p>
-        Compare a larger set of measurements and test a physical model; beamtime participation may be possible.
-       </p>
-      </details>
-     </article>
-     <article class="project-card">
-      <span class="card-number">
-       IDEA / 02
-      </span>
-      <h3>
-       Rebuild a crystal’s structure.
+       Crystal refinement
       </h3>
       <p>
        Use X-ray diffraction patterns to work out where atoms sit. This process is called structure refinement.
@@ -411,10 +424,15 @@
         Investigate subtle structural changes with temperature or strain, and compare competing structure models.
        </p>
       </details>
+      <p class="project-reference">
+       <a href="https://www.nature.com/articles/s43246-024-00729-4" rel="noopener" target="_blank">
+        Reference: a giant crystal superstructure ↗
+       </a>
+      </p>
      </article>
      <article class="project-card">
       <span class="card-number">
-       IDEA / 03
+       IDEA / 02
       </span>
       <h3>
        Join an X-ray experiment.
@@ -494,6 +512,92 @@
       </a>
      </div>
     </div>
+    <div aria-labelledby="spectrum-heading" class="play-panel spectrum-panel" id="spectrum-demo">
+     <div class="play-heading">
+      <div>
+       <p class="eyebrow">
+        Mix your own spectrum
+       </p>
+       <h3 id="spectrum-heading">
+        Many signals. One curve.
+       </h3>
+      </div>
+      <button class="reset-button js-only" id="spectrum-reset" type="button">
+       Reset mix ↺
+      </button>
+     </div>
+     <p>
+      Turn each signal up or down. Can you hide the yellow charge signal beneath the other peaks?
+     </p>
+     <div class="spectrum-layout">
+      <figure class="play-chart">
+       <svg aria-labelledby="spectrum-art-title spectrum-art-desc" id="spectrum-art" role="img" viewbox="0 0 720 370">
+        <title id="spectrum-art-title">
+         A spectrum built from separate scattering signals
+        </title>
+        <desc id="spectrum-art-desc">
+         A gold total curve adds elastic scattering, charge motion, two phonons and background.
+        </desc>
+       </svg>
+       <figcaption>
+        <span class="legend-dot" style="--dot:#b5a064">
+        </span>
+        Total spectrum
+        <span class="legend-dot" style="--dot:#7795a7">
+        </span>
+        Example data at the starting mix
+       </figcaption>
+      </figure>
+      <div class="play-controls spectrum-controls">
+       <label for="mix-elastic" style="--signal:#888888">
+        Elastic
+        <output for="mix-elastic" id="mix-elastic-value">
+         100%
+        </output>
+       </label>
+       <input class="js-only" data-mix="elastic" id="mix-elastic" max="150" min="0" type="range" value="100"/>
+       <label for="mix-charge" style="--signal:#b89839">
+        Charge motion
+        <output for="mix-charge" id="mix-charge-value">
+         100%
+        </output>
+       </label>
+       <input class="js-only" data-mix="charge" id="mix-charge" max="150" min="0" type="range" value="100"/>
+       <label for="mix-bb" style="--signal:#cf388a">
+        Bond-bending phonon
+        <output for="mix-bb" id="mix-bb-value">
+         100%
+        </output>
+       </label>
+       <input class="js-only" data-mix="bb" id="mix-bb" max="150" min="0" type="range" value="100"/>
+       <label for="mix-bs" style="--signal:#ad42e0">
+        Bond-stretching phonon
+        <output for="mix-bs" id="mix-bs-value">
+         100%
+        </output>
+       </label>
+       <input class="js-only" data-mix="bs" id="mix-bs" max="150" min="0" type="range" value="100"/>
+       <label for="mix-background" style="--signal:#777777">
+        Background
+        <output for="mix-background" id="mix-background-value">
+         100%
+        </output>
+       </label>
+       <input class="js-only" data-mix="background" id="mix-background" max="150" min="0" type="range" value="100"/>
+      </div>
+     </div>
+     <p aria-live="polite" class="play-insight" id="spectrum-insight">
+      The yellow charge signal overlaps the elastic tail and the pink phonon. Fitting helps separate them.
+     </p>
+     <p class="demo-caption">
+      Illustrative Gaussian peaks with arbitrary intensity, inspired by the colours of the research figure. Blue dots are simulated examples, fixed while you adjust the model; this is not a fit to measured data.
+     </p>
+     <noscript>
+      <p>
+       Enable JavaScript to mix the components. A measured spectrum is the sum of overlapping signals.
+      </p>
+     </noscript>
+    </div>
    </section>
    <section aria-labelledby="reading-heading" class="section" id="reading">
     <div class="section-heading">
@@ -513,6 +617,17 @@
      Further reading
     </h3>
     <ul class="readings">
+     <li>
+      <a href="https://www.nature.com/articles/s43246-024-00729-4" rel="noopener" target="_blank">
+       Discovering a giant crystal superstructure
+       <span aria-hidden="true" class="arrow">
+        ↗
+       </span>
+      </a>
+      <span>
+       J. Oppliger et al. · Communications Materials (2025). X-ray diffraction reveals a large repeating structure in a nickelate.
+      </span>
+     </li>
      <li>
       <a href="https://www.the-innovation.org/article/doi/10.59717/j.tip.2026.100011" rel="noopener" target="_blank">
        Uncovering charge motion in a cuprate
@@ -582,9 +697,6 @@
        Johan Chang
       </strong>
       and discuss a potential project. Bring your questions, your interests, or simply your curiosity.
-     </p>
-     <p>
-      We can shape the scope around a Bachelor’s or Master’s thesis and your experience.
      </p>
     </div>
     <div class="office-card">
