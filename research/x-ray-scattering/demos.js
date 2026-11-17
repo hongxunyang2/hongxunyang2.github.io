@@ -93,10 +93,20 @@
       }
       $('density-art').innerHTML='<title>Finite lattice with adjustable positions and density weights</title>'+svg;
       const n=densityCanvas.width,img=densityCtx.createImageData(n,n),normal=81**2;
+      // Factor the phase into x/y terms: reuse trig values across detector pixels.
+      const count=atoms.length,cosX=new Float64Array(n*count),sinX=new Float64Array(n*count),cosY=new Float64Array(n*count),sinY=new Float64Array(n*count);
+      for(let i=0;i<n;i++) for(let j=0;j<count;j++) {
+        const q=-2+i*4/(n-1),atom=atoms[j],offset=i*count+j;
+        cosX[offset]=atom.w*Math.cos(2*Math.PI*q*atom.x);sinX[offset]=atom.w*Math.sin(2*Math.PI*q*atom.x);
+        cosY[offset]=Math.cos(-2*Math.PI*q*atom.y);sinY[offset]=Math.sin(-2*Math.PI*q*atom.y);
+      }
       const stops=[[0,[13,35,49]],[.18,[27,63,81]],[.45,[65,116,134]],[.72,[173,193,158]],[1,[255,235,169]]];
       for(let iy=0;iy<n;iy++)for(let ix=0;ix<n;ix++){
         const qx=-2+ix*4/(n-1),qy=2-iy*4/(n-1);let re=0,im=0;
-        for(const atom of atoms){const phi=2*Math.PI*(qx*atom.x+qy*atom.y);re+=atom.w*Math.cos(phi);im+=atom.w*Math.sin(phi);}
+        for(let j=0;j<count;j++) {
+          const x=ix*count+j,y=iy*count+j;
+          re+=cosX[x]*cosY[y]-sinX[x]*sinY[y];im+=sinX[x]*cosY[y]+cosX[x]*sinY[y];
+        }
         let intensity=(re*re+im*im)/normal;if(qx*qx+qy*qy<.009)intensity=0;
         const t=clamp(Math.log1p(220*intensity)/Math.log(221),0,1);let j=0;while(j<stops.length-2&&t>stops[j+1][0])j++;const a=stops[j],b=stops[j+1],f=clamp((t-a[0])/(b[0]-a[0]),0,1),off=(iy*n+ix)*4;
         for(let k=0;k<3;k++)img.data[off+k]=a[1][k]+(b[1][k]-a[1][k])*f;img.data[off+3]=255;
@@ -130,4 +140,6 @@
     document.addEventListener('visibilitychange',()=>{previous=0;if(!document.hidden)wake()});
     reduced.addEventListener('change',()=>{motion.paused=reduced.matches;wake()});
     drawMotion();drawMotionSpectrum();drawFit();wake();
+    DemoAutoplay({root:$('spectrum-demo'),input:$('fit-elastic'),min:50,max:130,period:12/1.3,render:drawFit});
+    DemoAutoplay({root:$('order'),input:$('density-disorder'),min:0,max:75,period:12/1.5,render:scheduleDensity,fps:12});
 })();

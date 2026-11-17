@@ -19,3 +19,4 @@ function drawChargePattern() {
 chargeStrength.addEventListener('input',drawChargePattern);
 chargePeriod.addEventListener('input',drawChargePattern);
 drawChargePattern();
+DemoAutoplay({root:document.getElementById('charge-demo'),input:chargeStrength,min:20,max:80,period:12/1.4,render:drawChargePattern});
