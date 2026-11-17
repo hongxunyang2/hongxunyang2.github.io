@@ -57,7 +57,7 @@
 .xray-lab .xray-method summary::before{content:"+";font-size:1.2rem;color:var(--lab-blue)}
 .xray-lab .xray-method[open] summary::before{content:"−"}
 .xray-lab .model-note{font-size:.75rem;color:var(--lab-muted);line-height:1.65;margin:8px 0 0;max-width:920px}
-#spectrum-demo.xray-lab{margin-top:34px}
+#spectrum-demo.xray-lab{margin-top:0}
 .xray-lab .js-only{display:none}
 .js-enabled .xray-lab .js-only{display:block}
 .js-enabled .xray-lab .tabs.js-only,.js-enabled .xray-lab .toolbar.js-only{display:flex}
