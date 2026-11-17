@@ -20,7 +20,7 @@
   <link href="../open-day/mobile.css" rel="stylesheet"/>
   <link href="laue-demo.css?v=2" rel="stylesheet"/>
   <script defer src="laue-model.js?v=1"></script>
-  <script defer src="laue-demo.js?v=3"></script>
+  <script defer src="laue-demo.js?v=6"></script>
   <link href="../open-day/entrance.css?v=20261117" rel="stylesheet"/>
  </head>
  <body data-project="laue">
@@ -63,12 +63,13 @@
       </figure>
      </div>
      <div class="laue-controls js-only" role="group" aria-label="Rotate the crystal">
-      <div class="laue-control"><label for="laue-yaw">Left / right <output id="laue-yaw-value" for="laue-yaw">0°</output></label><input id="laue-yaw" data-laue-angle="yaw" type="range" min="-25" max="25" value="0" step="1"/></div>
-      <div class="laue-control"><label for="laue-pitch">Up / down <output id="laue-pitch-value" for="laue-pitch">0°</output></label><input id="laue-pitch" data-laue-angle="pitch" type="range" min="-25" max="25" value="0" step="1"/></div>
-      <div class="laue-control"><label for="laue-twist">Twist <output id="laue-twist-value" for="laue-twist">0°</output></label><input id="laue-twist" data-laue-angle="twist" type="range" min="-60" max="60" value="0" step="1"/></div>
+      <div class="laue-control"><label for="laue-yaw">Left / right <output id="laue-yaw-value" for="laue-yaw">0°</output></label><input id="laue-yaw" data-laue-angle="yaw" type="range" min="-25" max="25" value="0" step="0.1"/></div>
+      <div class="laue-control"><label for="laue-pitch">Up / down <output id="laue-pitch-value" for="laue-pitch">0°</output></label><input id="laue-pitch" data-laue-angle="pitch" type="range" min="-25" max="25" value="0" step="0.1"/></div>
+      <div class="laue-control"><label for="laue-twist">Twist <output id="laue-twist-value" for="laue-twist">0°</output></label><input id="laue-twist" data-laue-angle="twist" type="range" min="-60" max="60" value="0" step="0.1"/></div>
      </div>
      <div class="laue-toolbar js-only">
       <div class="laue-select"><label for="laue-preset">Starting orientation</label><select id="laue-preset"><option value="face">Face-on · [100]</option><option value="edge">Edge-on · [110]</option><option value="corner">Corner-on · [111]</option></select></div>
+      <button class="laue-action" type="button" id="laue-rotation" aria-pressed="false">Auto-rotate</button>
       <button class="laue-action" type="button" id="laue-reset">Reset ↺</button>
       <button class="laue-action primary" type="button" id="laue-challenge" aria-pressed="false">Try an alignment challenge</button>
       <button class="laue-action" type="button" id="laue-new" hidden>New target</button>
@@ -264,6 +265,11 @@
      </figure>
     </div>
    </section>
+   <div class="more-projects">
+    <a class="button" href="../open-day/index.html">
+     Explore more projects <span aria-hidden="true">→</span>
+    </a>
+   </div>
    <section aria-labelledby="visit-heading" class="visit-section" id="visit">
     <div>
      <p class="eyebrow">

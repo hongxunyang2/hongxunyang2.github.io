@@ -9,8 +9,12 @@
   const preset=byId('laue-preset');
   const state={yaw:0,pitch:0,twist:0,preset:'face'};
   let challenge=null, pointer=null, frame=0, hint='', selectedPreset='face';
+  const motion=matchMedia('(prefers-reduced-motion: reduce)');
+  const rotationButton=byId('laue-rotation');
+  let autoRotate=!motion.matches, visible=false, animationFrame=0, lastTime=0, elapsed=0;
+  let rotationOrigin={yaw:0,pitch:0,twist:0};
   const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
-  const angleText=value=>(value>0?'+':'')+value+'°';
+  const angleText=value=>{const rounded=Math.round(value*10)/10;return (rounded>0?'+':'')+rounded+'°';};
   const vertices=[];
   for(const x of [-1,1]) for(const y of [-1,1]) for(const z of [-1,1]) vertices.push([x,y,z]);
   const project=v=>[180+50*(.86*v[0]-.5*v[2]),113+50*(.19*v[0]-.9*v[1]+.35*v[2])];
@@ -63,7 +67,7 @@
     controls.forEach(input=>{
       const angle=state[input.dataset.laueAngle];input.value=String(angle);
       byId(input.id+'-value').textContent=angleText(angle);
-      input.setAttribute('aria-valuetext',angle+' degrees');
+      input.setAttribute('aria-valuetext',(Math.round(angle*10)/10)+' degrees');
     });
     const score=byId('laue-score'), feedback=byId('laue-feedback');
     if(challenge) {
@@ -74,17 +78,62 @@
       if(won && !challenge.won) byId('laue-announcement').textContent='Crystal aligned. You matched the target orientation.';
       challenge.won=won;
     } else {
-      score.hidden=true;
-      feedback.textContent='Same crystal, different orientation. Watch the spots move and the pattern’s symmetry change as you tilt it.';
+      if(score) score.hidden=true;
+      feedback.textContent=autoRotate?'The crystal is rotating slowly. Drag it or use a slider to take control and explore how the X-ray pattern changes.':'Same crystal, different orientation. Watch the spots move and the pattern’s symmetry change as you tilt it.';
     }
   }
   function schedule() { if(!frame) frame=requestAnimationFrame(render); }
+  function syncRotation() {
+    rotationButton.textContent=autoRotate?'Pause rotation':'Auto-rotate';
+    rotationButton.setAttribute('aria-pressed',String(autoRotate));
+    if(animationFrame) cancelAnimationFrame(animationFrame);
+    animationFrame=0;lastTime=0;
+    if(autoRotate && visible && !document.hidden) animationFrame=requestAnimationFrame(animate);
+  }
+  function animate(time) {
+    animationFrame=0;
+    // Limit redraws to 30 fps; only visible time advances the gentle, bounded rotation.
+    if(!lastTime) lastTime=time;
+    const delta=time-lastTime;
+    if(delta>=1000/30) {
+      elapsed+=Math.min(delta,100)/1000*1.4;lastTime=time;
+      state.yaw=clamp(rotationOrigin.yaw+18*Math.sin(elapsed*.11),-25,25);
+      state.pitch=clamp(rotationOrigin.pitch+12*Math.sin(elapsed*.08),-25,25);
+      state.twist=clamp(rotationOrigin.twist+26*Math.sin(elapsed*.07),-60,60);
+      schedule();
+    }
+    animationFrame=requestAnimationFrame(animate);
+  }
+  function takeControl() {
+    if(!autoRotate) return;
+    autoRotate=false;syncRotation();schedule();
+  }
+  // Stop before a drag, touch, keyboard adjustment, or other control can be overwritten.
+  root.addEventListener('pointerdown',event=>{
+    if(event.isPrimary && (event.pointerType!=='mouse' || event.button===0) &&
+      event.target.closest('input,select,button,.crystal-drag') && event.target!==rotationButton) takeControl();
+  });
+  root.addEventListener('focusin',event=>{if(event.target!==rotationButton) takeControl();});
+  rotationButton.addEventListener('click',()=>{
+    if(autoRotate) takeControl();
+    else {
+      if(challenge) exitChallenge();
+      rotationOrigin={yaw:state.yaw,pitch:state.pitch,twist:state.twist};elapsed=0;
+      autoRotate=true;syncRotation();schedule();
+    }
+  });
+  document.addEventListener('visibilitychange',syncRotation);
+  motion.addEventListener('change',()=>{if(motion.matches) takeControl();});
+  if('IntersectionObserver' in globalThis) {
+    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;syncRotation();}).observe(root);
+  } else visible=true;
   function exitChallenge() {
     challenge=null;hint='';byId('laue-challenge').textContent='Try an alignment challenge';
     byId('laue-challenge').setAttribute('aria-pressed','false');
     byId('laue-new').hidden=true;byId('laue-hint').hidden=true;byId('laue-target-key').hidden=true;
   }
   function startChallenge() {
+    takeControl();
     const random=limit=>Math.round((Math.random()*2-1)*limit);
     const target={yaw:random(6),pitch:random(6),twist:random(10)};
     const initial={yaw:target.yaw+(Math.random()<.5?-10:10),pitch:target.pitch+(Math.random()<.5?-9:9),twist:target.twist+(Math.random()<.5?-16:16)};
@@ -96,18 +145,20 @@
     byId('laue-announcement').textContent='Alignment challenge started. Cyan rings mark the target pattern.';render();
     root.scrollIntoView({block:'start',behavior:'auto'});
   }
-  controls.forEach(input=>input.addEventListener('input',()=>{state[input.dataset.laueAngle]=Number(input.value);hint='';schedule();}));
+  controls.forEach(input=>input.addEventListener('input',()=>{takeControl();state[input.dataset.laueAngle]=Number(input.value);hint='';schedule();}));
   preset.addEventListener('change',()=>{
+    takeControl();
     if(challenge) {exitChallenge();byId('laue-announcement').textContent='Free exploration. Selected a new crystal view.';}
     selectedPreset=preset.value;Object.assign(state,{yaw:0,pitch:0,twist:0,preset:selectedPreset});render();
     root.scrollIntoView({block:'start',behavior:'auto'});
   });
-  byId('laue-reset').addEventListener('click',()=>{hint='';Object.assign(state,challenge?challenge.initial:{yaw:0,pitch:0,twist:0,preset:selectedPreset});render();});
-  byId('laue-challenge').addEventListener('click',()=>{
+  byId('laue-reset').addEventListener('click',()=>{takeControl();hint='';Object.assign(state,challenge?challenge.initial:{yaw:0,pitch:0,twist:0,preset:selectedPreset});render();});
+  byId('laue-challenge')?.addEventListener('click',()=>{
+    takeControl();
     if(challenge){exitChallenge();byId('laue-announcement').textContent='Free exploration resumed.';render();}else startChallenge();
   });
-  byId('laue-new').addEventListener('click',startChallenge);
-  byId('laue-hint').addEventListener('click',()=>{
+  byId('laue-new')?.addEventListener('click',startChallenge);
+  byId('laue-hint')?.addEventListener('click',()=>{
     const largest=['yaw','pitch','twist'].sort((a,b)=>Math.abs(challenge.target[b]-state[b])-Math.abs(challenge.target[a]-state[a]))[0];
     const names={yaw:'Left / right',pitch:'Up / down',twist:'Twist'};
     hint='Try moving “'+names[largest]+'” towards '+(challenge.target[largest]>state[largest]?'positive':'negative')+' angles.';
@@ -115,6 +166,7 @@
   });
   drag.addEventListener('pointerdown',event=>{
     if(!event.isPrimary || (event.pointerType==='mouse' && event.button!==0)) return;
+    takeControl();
     pointer={id:event.pointerId,x:event.clientX,y:event.clientY,yaw:state.yaw,pitch:state.pitch};
     drag.setPointerCapture(event.pointerId);drag.classList.add('is-dragging');
   });
@@ -129,5 +181,5 @@
     pointer=null;drag.classList.remove('is-dragging');
   }
   drag.addEventListener('pointerup',endDrag);drag.addEventListener('pointercancel',endDrag);drag.addEventListener('lostpointercapture',endDrag);
-  render();
+  syncRotation();render();
 })();
