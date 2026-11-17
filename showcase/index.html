@@ -42,17 +42,20 @@
 
     <main id="work" class="showcase-main" aria-label="Selected work" tabindex="-1">
         <section class="showcase-work" aria-label="Software, teaching, research and design">
-            <a class="work-feature software-feature" href="software/index.html">
-                <picture class="work-media software-media">
-                    <source media="(prefers-reduced-motion: reduce)" srcset="assets/images/software-preview.webp">
-                    <img src="assets/images/software-demo.gif" width="1190" height="730" alt="Scientific software interface showing reciprocal-space maps, crystal structure and analysis controls." fetchpriority="high">
-                </picture>
+            <article class="work-feature software-feature" aria-labelledby="software-title">
+                <a class="work-media software-media" href="software/index.html" aria-label="Explore the ADVISOR X-ray toolbox">
+                    <picture>
+                        <source media="(prefers-reduced-motion: reduce)" srcset="assets/images/software-preview.webp">
+                        <img src="assets/images/software-demo.gif" width="1190" height="730" alt="Scientific software interface showing reciprocal-space maps, crystal structure and analysis controls." fetchpriority="high">
+                    </picture>
+                </a>
                 <div class="work-caption">
-                    <h2>ADVISOR: X-ray toolbox</h2>
+                    <h2 id="software-title"><a href="software/index.html">ADVISOR: X-ray toolbox</a></h2>
                     <span class="section-label">Software development</span>
                     <p>Interactive GUI for visualising and calculating X-ray scattering/diffraction experiments.</p>
+                    <a class="feature-link feature-cta" href="https://pypi.org/project/advisor-scattering/" target="_blank" rel="noopener noreferrer">Get ADVISOR on PyPI <span aria-hidden="true">↗</span></a>
                 </div>
-            </a>
+            </article>
 
             <a class="work-feature teaching-feature" href="teaching/index.html" target="_blank" rel="noopener">
                 <div class="work-media teaching-media">
@@ -96,7 +99,7 @@
                 <span class="section-label">Instrumentation &amp; lab control</span>
                 <h2 id="automation-title"><a href="automation/index.html">Lab control &amp;<br>crystal alignment</a></h2>
                 <p>A desktop interface that brings robot positioning, live camera views and Laue diffraction acquisition into one workspace.</p>
-                <a class="feature-link" href="automation/index.html">Explore the lab tools <span aria-hidden="true">↗</span></a>
+                <a class="feature-link feature-cta" href="automation/index.html">Explore the lab tools <span aria-hidden="true">↗</span></a>
             </div>
             <a class="work-media automation-media" href="automation/index.html" aria-label="Explore lab control and crystal alignment">
                 <img src="assets/images/automation.webp?v=ece77434ba" width="1280" height="527" alt="Laue Meca500 control interface with robot positioning controls, a diffraction image and camera acquisition settings." loading="lazy">
@@ -109,7 +112,7 @@
                 <h2 id="science-title">Science you<br>can play with.</h2>
                 <p>I turn scientific ideas into interactive experiences. For our UZH physics open day, I paired a visual poster with websites that invite visitors to explore the physics themselves.</p>
                 <p>Try this one: rotate a crystal and watch its X-ray diffraction pattern change in real time.</p>
-                <a class="feature-link science-cta" href="../research/open-day/index.html" target="_blank" rel="noopener noreferrer">Try more interactive toys <span aria-hidden="true">→</span></a>
+                <a class="feature-link feature-cta" href="../research/open-day/index.html" target="_blank" rel="noopener noreferrer">Try more interactive toys <span aria-hidden="true">→</span></a>
             </div>
             <div class="science-playground">
                 <div class="laue-lab science-demo" id="laue-lab">

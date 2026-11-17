@@ -304,7 +304,7 @@
     text-underline-offset: 4px;
 }
 
-.showcase-page .science-cta {
+.showcase-page .feature-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -322,12 +322,12 @@
     text-decoration: none;
 }
 
-.showcase-page .science-cta:hover,
-.showcase-page .science-cta:focus-visible {
+.showcase-page .feature-cta:hover,
+.showcase-page .feature-cta:focus-visible {
     background: color-mix(in oklch, var(--color-accent) 85%, black);
 }
 
-.science-cta span {
+.feature-cta span {
     flex-shrink: 0;
     font-size: 20px;
 }
