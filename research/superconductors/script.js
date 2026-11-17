@@ -67,7 +67,8 @@ if(temperature){
     document.getElementById('resistance-marker').setAttribute('cx',pos[0]);
     document.getElementById('resistance-marker').setAttribute('cy',pos[1]);
     document.getElementById('temperature-status').textContent=cold?'Superconducting':'Normal state';
-    document.getElementById('temperature-description').textContent=cold?'Below the example transition temperature, the DC resistance is zero. How does a whole material enter this state? That is where the interesting questions begin.':'Above the example transition temperature, the material has electrical resistance. Move the slider below 90 K to see the idealised change.';
+    temperature.closest('.temperature-stage').dataset.state=cold?'cold':'warm';
+    document.getElementById('temperature-description').textContent=cold?'Zero DC resistance. The material is now superconducting. What are its electrons doing together?':'Above 90 K, this example has electrical resistance. Slide left to cool it down.';
   };
   temperature.addEventListener('input',updateTemperature); updateTemperature();
 }

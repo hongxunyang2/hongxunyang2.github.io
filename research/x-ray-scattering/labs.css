@@ -1,0 +1,97 @@
+/* The three X-ray playgrounds. Scope component styles to this page's labs. */
+.xray-lab{--lab-blue:#3d668c;--lab-sage:#588675;--lab-muted:#607074;container-type:inline-size;container-name:xray-lab;min-width:0;border:1px solid var(--line);border-radius:24px;background:#fffdf9;overflow:hidden}
+.xray-opening{border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;overflow:visible}
+.xray-lab .demo-head{padding:30px 28px 24px}
+.xray-lab .demo-head h2,.xray-lab .demo-head h3{font-size:clamp(2rem,4vw,3.15rem);max-width:100%;margin:0 0 14px;line-height:1.08;letter-spacing:-.045em}
+.xray-lab .demo-head em{font-family:Georgia,"Times New Roman",serif;font-weight:400;color:var(--lab-blue)}
+.xray-lab .demo-head .eyebrow{margin-bottom:13px}
+.xray-lab .demo-head>p:last-child{font-size:.95rem;line-height:1.65;color:var(--lab-muted);max-width:720px;margin-bottom:0}
+.xray-opening .demo-head{padding:0 0 24px}
+.xray-opening .demo-head h1{font-size:clamp(2.8rem,5.4vw,4.6rem);max-width:1100px;margin:0;line-height:1.08}
+.xray-lab .demo-body{padding:0 24px 24px}
+.xray-opening .demo-body{padding:24px;border:1px solid var(--line);border-radius:24px;background:radial-gradient(ellipse at 10% 10%,#ffffffc9,transparent 70%),var(--tint)}
+.xray-lab .lab-grid,.xray-lab .density-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:stretch}
+.xray-lab .lab-grid>*{min-width:0}
+.xray-lab .stage{min-width:0;border:1px solid #dce3e4;border-radius:18px;padding:18px;background:linear-gradient(145deg,#edf2f5,#f7f3ec)}
+.xray-lab .stage.rose{background:linear-gradient(145deg,#f6ecf0,#faf3e7)}
+.xray-lab .dark-stage{background:#142c39;border-color:#284859;color:#e6eef0}
+.xray-lab .stage-label{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.73rem;font-weight:650;line-height:1.5;margin-bottom:12px}
+.xray-lab .stage-label span:last-child{font-size:.66rem;font-weight:400;color:var(--lab-muted)}
+.xray-lab .dark-stage .stage-label span:last-child{color:#abc1c9}
+.xray-lab svg{display:block;width:100%;height:auto}
+.xray-lab svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.xray-lab .drawing{aspect-ratio:480/290;overflow:visible}
+.xray-lab .chart{padding:8px;border-radius:12px;background:#fffefb}
+.xray-lab .chart svg{aspect-ratio:520/280}
+.xray-lab .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.xray-lab .tabs button,.xray-lab button.secondary{min-height:44px;padding:10px 17px;border:1px solid #c6d3d9;border-radius:100px;background:#fffdf9;color:var(--lab-blue);font-size:.82rem;font-weight:600}
+.xray-lab .tabs button[aria-pressed="true"]{background:var(--lab-blue);border-color:var(--lab-blue);color:#fff}
+.xray-lab .tabs button:hover,.xray-lab button.secondary:hover{filter:brightness(.96)}
+.xray-lab .controls{margin-top:18px}
+.xray-lab .control{margin-bottom:14px}
+.xray-lab .control:last-child{margin-bottom:0}
+.xray-lab .control label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.8rem;font-weight:650;line-height:1.5}
+.xray-lab .control output{font-weight:400;color:var(--lab-muted);font-variant-numeric:tabular-nums;text-align:right}
+.xray-lab .control input[type=range]{width:100%;min-height:44px;margin:2px 0 0;accent-color:var(--lab-blue);cursor:pointer;touch-action:pan-y}
+.xray-lab .toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.xray-lab .toolbar .quiet{margin-left:auto;min-height:44px;padding:10px 2px;border:0;background:transparent;color:var(--lab-muted);font-size:.8rem;text-decoration:underline;text-underline-offset:4px}
+.xray-lab .insight{padding:16px 18px;margin-top:18px;border-left:3px solid var(--lab-blue);border-radius:0 12px 12px 0;background:#edf2f5;color:#425d68;font-size:.87rem;line-height:1.65}
+.xray-lab .insight p{margin:0}
+.xray-lab .tag{display:inline-flex;align-items:center;gap:6px;margin:0;padding:6px 10px;border-radius:100px;background:#ffffff80;color:var(--lab-blue);font-size:.7rem;font-weight:400;line-height:1.5}
+.xray-lab .metric{font-size:2.3rem;letter-spacing:-.05em;color:var(--lab-blue);font-variant-numeric:tabular-nums;line-height:1.1}
+.xray-lab .metric-label{font-size:.7rem;letter-spacing:.04em;color:var(--lab-muted);margin-top:6px;line-height:1.5}
+.xray-lab .legend{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:.68rem;line-height:1.8;color:var(--lab-muted);margin-top:12px}
+.xray-lab .legend span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--color,var(--lab-blue));margin-right:6px}
+.xray-lab .readout{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:14px}
+.xray-lab .progress{height:7px;background:#dce4e4;border-radius:10px;overflow:hidden;margin:12px 0}
+.xray-lab .progress>div{width:0;height:100%;background:var(--lab-sage);transition:width .2s}
+.xray-lab .success{color:var(--lab-sage)}
+.xray-lab .density-stage svg{aspect-ratio:1}
+.xray-lab .detector-wrap{position:relative;width:100%;aspect-ratio:1;background:#102735;border-radius:12px;overflow:hidden}
+.xray-lab .detector-wrap canvas{display:block;width:100%;height:100%;image-rendering:auto;background:url("assets/diffraction-example.png") center/100% 100% no-repeat}
+.xray-lab .detector-cross{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent calc(50% - .5px),#ffffff1c 50%,transparent calc(50% + .5px)),linear-gradient(0deg,transparent calc(50% - .5px),#ffffff1c 50%,transparent calc(50% + .5px))}
+.xray-lab .axis-labels{display:flex;justify-content:space-between;gap:8px;font-size:.64rem;color:var(--lab-muted);margin-top:8px}
+.xray-lab .xray-method{margin-top:12px;font-size:.77rem;line-height:1.6;color:var(--lab-muted)}
+.xray-lab .xray-method summary{cursor:pointer;min-height:44px;display:flex;align-items:center;gap:8px;list-style:none;font-weight:600;color:var(--ink)}
+.xray-lab .xray-method summary::-webkit-details-marker{display:none}
+.xray-lab .xray-method summary::before{content:"+";font-size:1.2rem;color:var(--lab-blue)}
+.xray-lab .xray-method[open] summary::before{content:"−"}
+.xray-lab .model-note{font-size:.75rem;color:var(--lab-muted);line-height:1.65;margin:8px 0 0;max-width:920px}
+#spectrum-demo.xray-lab{margin-top:34px}
+.xray-lab .js-only{display:none}
+.js-enabled .xray-lab .js-only{display:block}
+.js-enabled .xray-lab .tabs.js-only,.js-enabled .xray-lab .toolbar.js-only{display:flex}
+@container xray-lab (max-width:640px){
+  .xray-lab .demo-head{padding:24px 18px 20px}
+  .xray-lab .demo-head h2,.xray-lab .demo-head h3{font-size:2.05rem}
+  .xray-lab .demo-head>p:last-child{font-size:.87rem}
+  .xray-lab .demo-body{padding:0 12px 18px}
+  .xray-lab .lab-grid{grid-template-columns:1fr;gap:12px}
+  .xray-lab .stage{padding:14px;border-radius:14px}
+  .xray-lab .tabs{gap:6px;margin-bottom:14px}
+  .xray-lab .tabs button{padding-inline:13px;font-size:.77rem}
+  .xray-lab .density-pair{gap:8px}
+  .xray-lab .density-pair .stage{padding:9px}
+  .xray-lab .density-pair .stage-label{font-size:.68rem;display:block;min-height:35px;margin-bottom:8px}
+  .xray-lab .density-pair .stage-label span{display:block;font-size:.6rem}
+  .xray-lab .density-pair .axis-labels{font-size:.58rem}
+  .xray-lab .control label{font-size:.78rem}
+  .xray-lab .insight{font-size:.82rem;padding:14px}
+  .xray-lab .model-note{font-size:.72rem}
+  .xray-lab .readout .metric{font-size:2rem}
+  .xray-lab .legend{font-size:.65rem}
+  .xray-lab .toolbar{gap:8px}
+  .xray-lab button.secondary{font-size:.77rem;padding-inline:13px}
+  .xray-opening .demo-head{padding:0 0 20px}
+  .xray-opening .demo-body{padding:12px;border-radius:20px}
+}
+@media screen and (max-width:720px){
+  .xray-opening .demo-head h1{font-size:clamp(2rem,8.6vw,3.15rem);line-height:1.06}
+  .xray-opening .demo-head .eyebrow{font-size:.63rem;letter-spacing:.11em;margin-bottom:10px}
+  .xray-lab .chart svg text{font-size:20px}
+}
+@media print{
+  .xray-lab{break-inside:avoid}
+  .xray-lab .js-only,.js-enabled .xray-lab .js-only,.xray-lab .xray-method{display:none!important}
+  .xray-opening .demo-head h1{font-size:2.5rem}
+}

@@ -14,13 +14,14 @@
   <meta content="assets/hero.webp" property="og:image"/>
   <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
   <link href="styles.css" rel="stylesheet"/>
-  <link as="image" href="assets/hero.webp" media="(min-width:721px)" rel="preload"/>
+
   <script defer="" src="script.js">
   </script>
-  <link href="../open-day/interactive.css" rel="stylesheet"/>
-  <script defer="" src="demos.js">
+  <script defer="" src="demos.js?v=20261117-labs">
   </script>
   <link href="../open-day/mobile.css" rel="stylesheet"/>
+  <link href="../open-day/entrance.css?v=20261117" rel="stylesheet"/>
+  <link href="labs.css?v=20261117" rel="stylesheet"/>
  </head>
  <body data-project="xray">
   <a class="skip-link" href="#main">
@@ -46,50 +47,117 @@
       </small>
      </span>
     </a>
-    <nav aria-label="Page navigation">
-     <a href="#discover">
-      The idea
-     </a>
-     <a href="#projects">
-      Thesis ideas
-     </a>
-     <a class="nav-cta" href="#visit">
-      Come say hello
-      <span aria-hidden="true">
-       ↗
-      </span>
-     </a>
-    </nav>
    </div>
   </header>
   <main class="wrap" id="main">
-   <div class="breadcrumb">
-    <a href="../open-day/index.html">
-     Student projects
-    </a>
-    <span aria-hidden="true">
-     /
-    </span>
-    <span>
-     X-ray scattering
-    </span>
+   <section aria-labelledby="opening-title" class="xray-lab demo-opening xray-opening" id="scattering-playground">
+ <div class="demo-head">
+  <p class="eyebrow">
+   X-ray scattering · Meet the invisible
+  </p>
+  <h1 id="opening-title">
+   Atoms move. Spins dance.
+   <br/>
+   <em>
+    X-rays tell the story.
+   </em>
+  </h1>
+ </div>
+ <div class="demo-body">
+  <div aria-label="Choose a collective motion" class="tabs js-only" role="group">
+   <button aria-pressed="true" class="js-only" data-motion="phonon" type="button">
+    Vibrating atoms
+   </button>
+   <button aria-pressed="false" class="js-only" data-motion="magnon" type="button">
+    Moving spins
+   </button>
+   <button aria-pressed="false" class="js-only" data-motion="charge" type="button">
+    Charge fluctuations
+   </button>
+  </div>
+  <div class="lab-grid">
+   <div class="stage">
+    <div class="stage-label">
+     <span>
+      Inside the crystal
+     </span>
+     <span id="motion-kind">
+      A collective vibration
+     </span>
+    </div>
+    <svg aria-label="Schematic collective motion inside a crystal" class="drawing" id="motion-art" role="img" viewbox="0 0 480 290">
+<path d="M52 62H112.51280405140292" stroke="#b4c6c0" stroke-width="2"/><path d="M52 62v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="52" cy="62" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="49" cy="58" r="3" fill="#ffffff70"/><path d="M112.51280405140292 62H167.91664810452468" stroke="#b4c6c0" stroke-width="2"/><path d="M112.51280405140292 62v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="112.51280405140292" cy="62" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="109.51280405140292" cy="58" r="3" fill="#ffffff70"/><path d="M167.91664810452468 62H216.57683717391416" stroke="#b4c6c0" stroke-width="2"/><path d="M167.91664810452468 62v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="167.91664810452468" cy="62" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="164.91664810452468" cy="58" r="3" fill="#ffffff70"/><path d="M216.57683717391416 62H261.4445889797317" stroke="#b4c6c0" stroke-width="2"/><path d="M216.57683717391416 62v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="216.57683717391416" cy="62" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="213.57683717391416" cy="58" r="3" fill="#ffffff70"/><path d="M261.4445889797317 62H308.0501064177142" stroke="#b4c6c0" stroke-width="2"/><path d="M261.4445889797317 62v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="261.4445889797317" cy="62" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="258.4445889797317" cy="58" r="3" fill="#ffffff70"/><path d="M308.0501064177142 62H360.74185317672266" stroke="#b4c6c0" stroke-width="2"/><path d="M308.0501064177142 62v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="308.0501064177142" cy="62" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="305.0501064177142" cy="58" r="3" fill="#ffffff70"/><path d="M360.74185317672266 62H419.7294518513026" stroke="#b4c6c0" stroke-width="2"/><path d="M360.74185317672266 62v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="360.74185317672266" cy="62" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="357.74185317672266" cy="58" r="3" fill="#ffffff70"/><path d="M419.7294518513026 62v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="419.7294518513026" cy="62" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="416.7294518513026" cy="58" r="3" fill="#ffffff70"/><path d="M52 116H112.51280405140292" stroke="#b4c6c0" stroke-width="2"/><path d="M52 116v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="52" cy="116" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="49" cy="112" r="3" fill="#ffffff70"/><path d="M112.51280405140292 116H167.91664810452468" stroke="#b4c6c0" stroke-width="2"/><path d="M112.51280405140292 116v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="112.51280405140292" cy="116" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="109.51280405140292" cy="112" r="3" fill="#ffffff70"/><path d="M167.91664810452468 116H216.57683717391416" stroke="#b4c6c0" stroke-width="2"/><path d="M167.91664810452468 116v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="167.91664810452468" cy="116" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="164.91664810452468" cy="112" r="3" fill="#ffffff70"/><path d="M216.57683717391416 116H261.4445889797317" stroke="#b4c6c0" stroke-width="2"/><path d="M216.57683717391416 116v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="216.57683717391416" cy="116" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="213.57683717391416" cy="112" r="3" fill="#ffffff70"/><path d="M261.4445889797317 116H308.0501064177142" stroke="#b4c6c0" stroke-width="2"/><path d="M261.4445889797317 116v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="261.4445889797317" cy="116" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="258.4445889797317" cy="112" r="3" fill="#ffffff70"/><path d="M308.0501064177142 116H360.74185317672266" stroke="#b4c6c0" stroke-width="2"/><path d="M308.0501064177142 116v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="308.0501064177142" cy="116" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="305.0501064177142" cy="112" r="3" fill="#ffffff70"/><path d="M360.74185317672266 116H419.7294518513026" stroke="#b4c6c0" stroke-width="2"/><path d="M360.74185317672266 116v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="360.74185317672266" cy="116" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="357.74185317672266" cy="112" r="3" fill="#ffffff70"/><path d="M419.7294518513026 116v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="419.7294518513026" cy="116" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="416.7294518513026" cy="112" r="3" fill="#ffffff70"/><path d="M52 170H112.51280405140292" stroke="#b4c6c0" stroke-width="2"/><path d="M52 170v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="52" cy="170" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="49" cy="166" r="3" fill="#ffffff70"/><path d="M112.51280405140292 170H167.91664810452468" stroke="#b4c6c0" stroke-width="2"/><path d="M112.51280405140292 170v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="112.51280405140292" cy="170" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="109.51280405140292" cy="166" r="3" fill="#ffffff70"/><path d="M167.91664810452468 170H216.57683717391416" stroke="#b4c6c0" stroke-width="2"/><path d="M167.91664810452468 170v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="167.91664810452468" cy="170" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="164.91664810452468" cy="166" r="3" fill="#ffffff70"/><path d="M216.57683717391416 170H261.4445889797317" stroke="#b4c6c0" stroke-width="2"/><path d="M216.57683717391416 170v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="216.57683717391416" cy="170" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="213.57683717391416" cy="166" r="3" fill="#ffffff70"/><path d="M261.4445889797317 170H308.0501064177142" stroke="#b4c6c0" stroke-width="2"/><path d="M261.4445889797317 170v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="261.4445889797317" cy="170" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="258.4445889797317" cy="166" r="3" fill="#ffffff70"/><path d="M308.0501064177142 170H360.74185317672266" stroke="#b4c6c0" stroke-width="2"/><path d="M308.0501064177142 170v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="308.0501064177142" cy="170" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="305.0501064177142" cy="166" r="3" fill="#ffffff70"/><path d="M360.74185317672266 170H419.7294518513026" stroke="#b4c6c0" stroke-width="2"/><path d="M360.74185317672266 170v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="360.74185317672266" cy="170" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="357.74185317672266" cy="166" r="3" fill="#ffffff70"/><path d="M419.7294518513026 170v54" stroke="#cbd5cb" stroke-width="1.2"/><circle cx="419.7294518513026" cy="170" r="12" fill="#588675" stroke="#fffdf9" stroke-width="2"/><circle cx="416.7294518513026" cy="166" r="3" fill="#ffffff70"/><path d="M52 224H112.51280405140292" stroke="#b4c6c0" stroke-width="2"/><circle cx="52" cy="224" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="49" cy="220" r="3" fill="#ffffff70"/><path d="M112.51280405140292 224H167.91664810452468" stroke="#b4c6c0" stroke-width="2"/><circle cx="112.51280405140292" cy="224" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="109.51280405140292" cy="220" r="3" fill="#ffffff70"/><path d="M167.91664810452468 224H216.57683717391416" stroke="#b4c6c0" stroke-width="2"/><circle cx="167.91664810452468" cy="224" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="164.91664810452468" cy="220" r="3" fill="#ffffff70"/><path d="M216.57683717391416 224H261.4445889797317" stroke="#b4c6c0" stroke-width="2"/><circle cx="216.57683717391416" cy="224" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="213.57683717391416" cy="220" r="3" fill="#ffffff70"/><path d="M261.4445889797317 224H308.0501064177142" stroke="#b4c6c0" stroke-width="2"/><circle cx="261.4445889797317" cy="224" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="258.4445889797317" cy="220" r="3" fill="#ffffff70"/><path d="M308.0501064177142 224H360.74185317672266" stroke="#b4c6c0" stroke-width="2"/><circle cx="308.0501064177142" cy="224" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="305.0501064177142" cy="220" r="3" fill="#ffffff70"/><path d="M360.74185317672266 224H419.7294518513026" stroke="#b4c6c0" stroke-width="2"/><circle cx="360.74185317672266" cy="224" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="357.74185317672266" cy="220" r="3" fill="#ffffff70"/><circle cx="419.7294518513026" cy="224" r="12" fill="#a7c2b5" stroke="#fffdf9" stroke-width="2"/><circle cx="416.7294518513026" cy="220" r="3" fill="#ffffff70"/><text x="240" y="273" text-anchor="middle" font-size="14" fill="#607074">A wave in atomic positions</text>
+</svg>
    </div>
+   <div class="stage">
+    <div class="stage-label">
+     <span>
+      What the X-rays reveal
+     </span>
+     <span>
+      Example spectrum
+     </span>
+    </div>
+    <div class="chart">
+     <svg aria-label="Illustrative energy-loss spectrum" id="motion-spectrum" role="img" viewbox="0 0 520 280">
+<title>Illustrative elastic and Atomic vibration peaks</title><path d="M48 25V222H500" fill="none" stroke="#a1afb0" stroke-width="1.3"/><path d="M48 172.75H500" stroke="#e7e9e4"/><path d="M48 123.5H500" stroke="#e7e9e4"/><path d="M48 74.25H500" stroke="#e7e9e4"/><path d="M48 25H500" stroke="#e7e9e4"/><path d="M71.78947368421052 222v5" stroke="#a1afb0"/><text x="71.78947368421052" y="243" text-anchor="middle" fill="#607074" font-size="13">0</text><path d="M190.73684210526315 222v5" stroke="#a1afb0"/><text x="190.73684210526315" y="243" text-anchor="middle" fill="#607074" font-size="13">50</text><path d="M309.6842105263158 222v5" stroke="#a1afb0"/><text x="309.6842105263158" y="243" text-anchor="middle" fill="#607074" font-size="13">100</text><path d="M428.6315789473684 222v5" stroke="#a1afb0"/><text x="428.6315789473684" y="243" text-anchor="middle" fill="#607074" font-size="13">150</text><text x="274" y="270" text-anchor="middle" fill="#607074" font-size="14">Energy loss (meV)</text><text x="16" y="125" text-anchor="middle" transform="rotate(-90 16 125)" fill="#607074" font-size="12">Intensity (arb.)</text><path d="M48.00,209.56 L49.88,205.14 L51.77,199.71 L53.65,193.26 L55.53,185.87 L57.42,177.70 L59.30,169.03 L61.18,160.22 L63.07,151.74 L64.95,144.07 L66.83,137.71 L68.72,133.08 L70.60,130.53 L72.48,130.22 L74.37,132.20 L76.25,136.31 L78.13,142.25 L80.02,149.62 L81.90,157.94 L83.78,166.70 L85.67,175.45 L87.55,183.78 L89.43,191.40 L91.32,198.11 L93.20,203.81 L95.08,208.49 L96.97,212.21 L98.85,215.09 L100.73,217.24 L102.62,218.80 L104.50,219.90 L106.38,220.66 L108.27,221.17 L110.15,221.49 L112.03,221.70 L113.92,221.83 L115.80,221.90 L117.68,221.95 L119.57,221.97 L121.45,221.98 L123.33,221.99 L125.22,222.00 L127.10,222.00 L128.98,222.00 L130.87,222.00 L132.75,222.00 L134.63,222.00 L136.52,222.00 L138.40,222.00 L140.28,222.00 L142.17,222.00 L144.05,222.00 L145.93,222.00 L147.82,222.00 L149.70,222.00 L151.58,222.00 L153.47,222.00 L155.35,222.00 L157.23,222.00 L159.12,222.00 L161.00,222.00 L162.88,222.00 L164.77,222.00 L166.65,222.00 L168.53,222.00 L170.42,222.00 L172.30,222.00 L174.18,222.00 L176.07,222.00 L177.95,222.00 L179.83,222.00 L181.72,222.00 L183.60,222.00 L185.48,222.00 L187.37,222.00 L189.25,222.00 L191.13,222.00 L193.02,222.00 L194.90,222.00 L196.78,222.00 L198.67,222.00 L200.55,222.00 L202.43,222.00 L204.32,222.00 L206.20,222.00 L208.08,222.00 L209.97,222.00 L211.85,222.00 L213.73,222.00 L215.62,222.00 L217.50,222.00 L219.38,222.00 L221.27,222.00 L223.15,222.00 L225.03,222.00 L226.92,222.00 L228.80,222.00 L230.68,222.00 L232.57,222.00 L234.45,222.00 L236.33,222.00 L238.22,222.00 L240.10,222.00 L241.98,222.00 L243.87,222.00 L245.75,222.00 L247.63,222.00 L249.52,222.00 L251.40,222.00 L253.28,222.00 L255.17,222.00 L257.05,222.00 L258.93,222.00 L260.82,222.00 L262.70,222.00 L264.58,222.00 L266.47,222.00 L268.35,222.00 L270.23,222.00 L272.12,222.00 L274.00,222.00 L275.88,222.00 L277.77,222.00 L279.65,222.00 L281.53,222.00 L283.42,222.00 L285.30,222.00 L287.18,222.00 L289.07,222.00 L290.95,222.00 L292.83,222.00 L294.72,222.00 L296.60,222.00 L298.48,222.00 L300.37,222.00 L302.25,222.00 L304.13,222.00 L306.02,222.00 L307.90,222.00 L309.78,222.00 L311.67,222.00 L313.55,222.00 L315.43,222.00 L317.32,222.00 L319.20,222.00 L321.08,222.00 L322.97,222.00 L324.85,222.00 L326.73,222.00 L328.62,222.00 L330.50,222.00 L332.38,222.00 L334.27,222.00 L336.15,222.00 L338.03,222.00 L339.92,222.00 L341.80,222.00 L343.68,222.00 L345.57,222.00 L347.45,222.00 L349.33,222.00 L351.22,222.00 L353.10,222.00 L354.98,222.00 L356.87,222.00 L358.75,222.00 L360.63,222.00 L362.52,222.00 L364.40,222.00 L366.28,222.00 L368.17,222.00 L370.05,222.00 L371.93,222.00 L373.82,222.00 L375.70,222.00 L377.58,222.00 L379.47,222.00 L381.35,222.00 L383.23,222.00 L385.12,222.00 L387.00,222.00 L388.88,222.00 L390.77,222.00 L392.65,222.00 L394.53,222.00 L396.42,222.00 L398.30,222.00 L400.18,222.00 L402.07,222.00 L403.95,222.00 L405.83,222.00 L407.72,222.00 L409.60,222.00 L411.48,222.00 L413.37,222.00 L415.25,222.00 L417.13,222.00 L419.02,222.00 L420.90,222.00 L422.78,222.00 L424.67,222.00 L426.55,222.00 L428.43,222.00 L430.32,222.00 L432.20,222.00 L434.08,222.00 L435.97,222.00 L437.85,222.00 L439.73,222.00 L441.62,222.00 L443.50,222.00 L445.38,222.00 L447.27,222.00 L449.15,222.00 L451.03,222.00 L452.92,222.00 L454.80,222.00 L456.68,222.00 L458.57,222.00 L460.45,222.00 L462.33,222.00 L464.22,222.00 L466.10,222.00 L467.98,222.00 L469.87,222.00 L471.75,222.00 L473.63,222.00 L475.52,222.00 L477.40,222.00 L479.28,222.00 L481.17,222.00 L483.05,222.00 L484.93,222.00 L486.82,222.00 L488.70,222.00 L490.58,222.00 L492.47,222.00 L494.35,222.00 L496.23,222.00 L498.12,222.00 L500.00,222.00" fill="none" stroke="#b4bfc3" stroke-width="2"/><path d="M48.00,222.00 L49.88,222.00 L51.77,222.00 L53.65,222.00 L55.53,222.00 L57.42,222.00 L59.30,222.00 L61.18,222.00 L63.07,222.00 L64.95,222.00 L66.83,222.00 L68.72,222.00 L70.60,222.00 L72.48,222.00 L74.37,222.00 L76.25,222.00 L78.13,222.00 L80.02,222.00 L81.90,222.00 L83.78,222.00 L85.67,222.00 L87.55,222.00 L89.43,222.00 L91.32,222.00 L93.20,222.00 L95.08,222.00 L96.97,222.00 L98.85,222.00 L100.73,222.00 L102.62,222.00 L104.50,222.00 L106.38,221.99 L108.27,221.99 L110.15,221.98 L112.03,221.97 L113.92,221.96 L115.80,221.94 L117.68,221.92 L119.57,221.88 L121.45,221.82 L123.33,221.75 L125.22,221.64 L127.10,221.50 L128.98,221.31 L130.87,221.05 L132.75,220.71 L134.63,220.26 L136.52,219.69 L138.40,218.95 L140.28,218.01 L142.17,216.84 L144.05,215.39 L145.93,213.61 L147.82,211.47 L149.70,208.90 L151.58,205.86 L153.47,202.31 L155.35,198.22 L157.23,193.55 L159.12,188.31 L161.00,182.48 L162.88,176.10 L164.77,169.20 L166.65,161.86 L168.53,154.17 L170.42,146.24 L172.30,138.21 L174.18,130.23 L176.07,122.47 L177.95,115.11 L179.83,108.32 L181.72,102.27 L183.60,97.14 L185.48,93.05 L187.37,90.12 L189.25,88.45 L191.13,88.07 L193.02,89.00 L194.90,91.21 L196.78,94.63 L198.67,99.18 L200.55,104.72 L202.43,111.09 L204.32,118.15 L206.20,125.70 L208.08,133.57 L209.97,141.60 L211.85,149.60 L213.73,157.45 L215.62,165.00 L217.50,172.16 L219.38,178.85 L221.27,185.00 L223.15,190.59 L225.03,195.59 L226.92,200.01 L228.80,203.87 L230.68,207.20 L232.57,210.03 L234.45,212.42 L236.33,214.40 L238.22,216.04 L240.10,217.36 L241.98,218.43 L243.87,219.28 L245.75,219.95 L247.63,220.46 L249.52,220.86 L251.40,221.17 L253.28,221.40 L255.17,221.57 L257.05,221.69 L258.93,221.78 L260.82,221.85 L262.70,221.89 L264.58,221.93 L266.47,221.95 L268.35,221.97 L270.23,221.98 L272.12,221.99 L274.00,221.99 L275.88,221.99 L277.77,222.00 L279.65,222.00 L281.53,222.00 L283.42,222.00 L285.30,222.00 L287.18,222.00 L289.07,222.00 L290.95,222.00 L292.83,222.00 L294.72,222.00 L296.60,222.00 L298.48,222.00 L300.37,222.00 L302.25,222.00 L304.13,222.00 L306.02,222.00 L307.90,222.00 L309.78,222.00 L311.67,222.00 L313.55,222.00 L315.43,222.00 L317.32,222.00 L319.20,222.00 L321.08,222.00 L322.97,222.00 L324.85,222.00 L326.73,222.00 L328.62,222.00 L330.50,222.00 L332.38,222.00 L334.27,222.00 L336.15,222.00 L338.03,222.00 L339.92,222.00 L341.80,222.00 L343.68,222.00 L345.57,222.00 L347.45,222.00 L349.33,222.00 L351.22,222.00 L353.10,222.00 L354.98,222.00 L356.87,222.00 L358.75,222.00 L360.63,222.00 L362.52,222.00 L364.40,222.00 L366.28,222.00 L368.17,222.00 L370.05,222.00 L371.93,222.00 L373.82,222.00 L375.70,222.00 L377.58,222.00 L379.47,222.00 L381.35,222.00 L383.23,222.00 L385.12,222.00 L387.00,222.00 L388.88,222.00 L390.77,222.00 L392.65,222.00 L394.53,222.00 L396.42,222.00 L398.30,222.00 L400.18,222.00 L402.07,222.00 L403.95,222.00 L405.83,222.00 L407.72,222.00 L409.60,222.00 L411.48,222.00 L413.37,222.00 L415.25,222.00 L417.13,222.00 L419.02,222.00 L420.90,222.00 L422.78,222.00 L424.67,222.00 L426.55,222.00 L428.43,222.00 L430.32,222.00 L432.20,222.00 L434.08,222.00 L435.97,222.00 L437.85,222.00 L439.73,222.00 L441.62,222.00 L443.50,222.00 L445.38,222.00 L447.27,222.00 L449.15,222.00 L451.03,222.00 L452.92,222.00 L454.80,222.00 L456.68,222.00 L458.57,222.00 L460.45,222.00 L462.33,222.00 L464.22,222.00 L466.10,222.00 L467.98,222.00 L469.87,222.00 L471.75,222.00 L473.63,222.00 L475.52,222.00 L477.40,222.00 L479.28,222.00 L481.17,222.00 L483.05,222.00 L484.93,222.00 L486.82,222.00 L488.70,222.00 L490.58,222.00 L492.47,222.00 L494.35,222.00 L496.23,222.00 L498.12,222.00 L500.00,222.00 L500 222H48Z" fill="#588675" fill-opacity=".16"/><path d="M48.00,222.00 L49.88,222.00 L51.77,222.00 L53.65,222.00 L55.53,222.00 L57.42,222.00 L59.30,222.00 L61.18,222.00 L63.07,222.00 L64.95,222.00 L66.83,222.00 L68.72,222.00 L70.60,222.00 L72.48,222.00 L74.37,222.00 L76.25,222.00 L78.13,222.00 L80.02,222.00 L81.90,222.00 L83.78,222.00 L85.67,222.00 L87.55,222.00 L89.43,222.00 L91.32,222.00 L93.20,222.00 L95.08,222.00 L96.97,222.00 L98.85,222.00 L100.73,222.00 L102.62,222.00 L104.50,222.00 L106.38,221.99 L108.27,221.99 L110.15,221.98 L112.03,221.97 L113.92,221.96 L115.80,221.94 L117.68,221.92 L119.57,221.88 L121.45,221.82 L123.33,221.75 L125.22,221.64 L127.10,221.50 L128.98,221.31 L130.87,221.05 L132.75,220.71 L134.63,220.26 L136.52,219.69 L138.40,218.95 L140.28,218.01 L142.17,216.84 L144.05,215.39 L145.93,213.61 L147.82,211.47 L149.70,208.90 L151.58,205.86 L153.47,202.31 L155.35,198.22 L157.23,193.55 L159.12,188.31 L161.00,182.48 L162.88,176.10 L164.77,169.20 L166.65,161.86 L168.53,154.17 L170.42,146.24 L172.30,138.21 L174.18,130.23 L176.07,122.47 L177.95,115.11 L179.83,108.32 L181.72,102.27 L183.60,97.14 L185.48,93.05 L187.37,90.12 L189.25,88.45 L191.13,88.07 L193.02,89.00 L194.90,91.21 L196.78,94.63 L198.67,99.18 L200.55,104.72 L202.43,111.09 L204.32,118.15 L206.20,125.70 L208.08,133.57 L209.97,141.60 L211.85,149.60 L213.73,157.45 L215.62,165.00 L217.50,172.16 L219.38,178.85 L221.27,185.00 L223.15,190.59 L225.03,195.59 L226.92,200.01 L228.80,203.87 L230.68,207.20 L232.57,210.03 L234.45,212.42 L236.33,214.40 L238.22,216.04 L240.10,217.36 L241.98,218.43 L243.87,219.28 L245.75,219.95 L247.63,220.46 L249.52,220.86 L251.40,221.17 L253.28,221.40 L255.17,221.57 L257.05,221.69 L258.93,221.78 L260.82,221.85 L262.70,221.89 L264.58,221.93 L266.47,221.95 L268.35,221.97 L270.23,221.98 L272.12,221.99 L274.00,221.99 L275.88,221.99 L277.77,222.00 L279.65,222.00 L281.53,222.00 L283.42,222.00 L285.30,222.00 L287.18,222.00 L289.07,222.00 L290.95,222.00 L292.83,222.00 L294.72,222.00 L296.60,222.00 L298.48,222.00 L300.37,222.00 L302.25,222.00 L304.13,222.00 L306.02,222.00 L307.90,222.00 L309.78,222.00 L311.67,222.00 L313.55,222.00 L315.43,222.00 L317.32,222.00 L319.20,222.00 L321.08,222.00 L322.97,222.00 L324.85,222.00 L326.73,222.00 L328.62,222.00 L330.50,222.00 L332.38,222.00 L334.27,222.00 L336.15,222.00 L338.03,222.00 L339.92,222.00 L341.80,222.00 L343.68,222.00 L345.57,222.00 L347.45,222.00 L349.33,222.00 L351.22,222.00 L353.10,222.00 L354.98,222.00 L356.87,222.00 L358.75,222.00 L360.63,222.00 L362.52,222.00 L364.40,222.00 L366.28,222.00 L368.17,222.00 L370.05,222.00 L371.93,222.00 L373.82,222.00 L375.70,222.00 L377.58,222.00 L379.47,222.00 L381.35,222.00 L383.23,222.00 L385.12,222.00 L387.00,222.00 L388.88,222.00 L390.77,222.00 L392.65,222.00 L394.53,222.00 L396.42,222.00 L398.30,222.00 L400.18,222.00 L402.07,222.00 L403.95,222.00 L405.83,222.00 L407.72,222.00 L409.60,222.00 L411.48,222.00 L413.37,222.00 L415.25,222.00 L417.13,222.00 L419.02,222.00 L420.90,222.00 L422.78,222.00 L424.67,222.00 L426.55,222.00 L428.43,222.00 L430.32,222.00 L432.20,222.00 L434.08,222.00 L435.97,222.00 L437.85,222.00 L439.73,222.00 L441.62,222.00 L443.50,222.00 L445.38,222.00 L447.27,222.00 L449.15,222.00 L451.03,222.00 L452.92,222.00 L454.80,222.00 L456.68,222.00 L458.57,222.00 L460.45,222.00 L462.33,222.00 L464.22,222.00 L466.10,222.00 L467.98,222.00 L469.87,222.00 L471.75,222.00 L473.63,222.00 L475.52,222.00 L477.40,222.00 L479.28,222.00 L481.17,222.00 L483.05,222.00 L484.93,222.00 L486.82,222.00 L488.70,222.00 L490.58,222.00 L492.47,222.00 L494.35,222.00 L496.23,222.00 L498.12,222.00 L500.00,222.00" fill="none" stroke="#588675" stroke-width="3"/><path d="M190.73684210526315 77.53333333333333V222" stroke="#588675" stroke-dasharray="4 5" opacity=".5"/><text x="190.73684210526315" y="70.96666666666667" text-anchor="middle" font-size="14" fill="#588675">50 meV</text>
+</svg>
+    </div>
+    <div class="legend">
+     <span style="--color:#b4bfc3">
+      Elastic scattering
+     </span>
+     <span id="motion-legend" style="--color:#588675">
+      Atomic vibration
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="toolbar">
+   <span class="tag" id="motion-energy">
+    Example energy loss · 50 meV
+   </span>
+  </div>
+  <div class="insight">
+   <p aria-atomic="true" aria-live="polite" id="motion-insight">
+    The atoms move together in a wave. Creating one quantum of this vibration—a phonon—costs energy, which an X-ray photon can lose.
+   </p>
+  </div>
+  <details class="xray-method">
+   <summary>
+    About this teaching model
+   </summary>
+   <p class="model-note">
+    Motion and energy scales are illustrative. Each mode is a possible scattering channel, not a unique identification from a single peak. Real energies and intensities depend on the material, momentum and experimental conditions.
+   </p>
+  </details>
+  <noscript>
+   <p class="no-js-note">
+    A phonon is a quantum of atomic vibration; a magnon is a quantum of a spin wave. Charge fluctuations are changes in electron density. Enable JavaScript to switch between these motions and their example spectra.
+   </p>
+  </noscript>
+ </div>
+ <a class="opening-next" href="#title">
+  Discover the thesis project ↓
+ </a>
+</section>
+
    <section aria-labelledby="title" class="hero">
     <picture class="hero-art">
      <source media="(max-width:720px)" srcset="assets/hero-small.webp"/>
-     <img alt="Rococo-inspired oil painting of a crystal lit by a beam of light, with a ring-shaped facility in the distance." fetchpriority="high" height="1024" src="assets/hero.webp" width="1536"/>
+     <img alt="Rococo-inspired oil painting of a crystal lit by a beam of light, with a ring-shaped facility in the distance." loading="lazy" decoding="async" height="1024" src="assets/hero.webp" width="1536"/>
     </picture>
     <div class="hero-copy">
      <p class="eyebrow">
       Bachelor’s &amp; Master’s projects / X-ray scattering
      </p>
-     <h1 id="title">
+     <h2 id="title">
       Small crystal.
       <br/>
       <span>
        Big discoveries.
       </span>
-     </h1>
+     </h2>
      <p class="hero-lead">
       Use powerful X-rays to see how atoms, spins and electrons behave inside materials. Follow the clues from a tiny sample to a scientific answer.
      </p>
@@ -168,145 +236,135 @@
       </figcaption>
      </figure>
     </div>
-    <div aria-labelledby="scattering-heading" class="play-panel" id="scattering-demo">
-     <div class="play-heading">
-      <div>
-       <p class="eyebrow">
-        Try the geometry
-       </p>
-       <h3 id="scattering-heading">
-        Turn the beam. Change the momentum.
-       </h3>
-      </div>
-      <span class="model-label">
-       Elastic scattering · schematic
+
+   </section>
+   <section aria-labelledby="order-title" class="section" id="diffraction">
+ <div aria-labelledby="order-title" class="xray-lab" id="order">
+  <div class="demo-head">
+   <p class="eyebrow">
+    A crystal writes its own fingerprint
+   </p>
+   <h2 id="order-title">
+    Change the order.
+    <br/>
+    <em>
+     Change the pattern.
+    </em>
+   </h2>
+   <p>
+    Move the atoms, change their spacing, or add density stripes. The diffraction image is calculated from the arrangement you create.
+   </p>
+  </div>
+  <div class="demo-body">
+   <div aria-label="Try a crystal arrangement" class="tabs js-only" role="group">
+    <button aria-pressed="true" class="js-only" data-order="perfect" type="button">
+     Perfect lattice
+    </button>
+    <button aria-pressed="false" class="js-only" data-order="disorder" type="button">
+     Add disorder
+    </button>
+    <button aria-pressed="false" class="js-only" data-order="stripes" type="button">
+     Add stripes
+    </button>
+   </div>
+   <div class="density-pair">
+    <div class="stage density-stage">
+     <div class="stage-label">
+      <span>
+       Your crystal
+      </span>
+      <span>
+       Real space
       </span>
      </div>
-     <div class="play-grid">
-      <div class="play-controls">
-       <p>
-        Move the outgoing beam. The arrow
-        <strong>
-         q
-        </strong>
-        shows the momentum transferred to the crystal, in units of ℏ.
-       </p>
-       <label for="scattering-angle">
-        Scattering angle
-        <output for="scattering-angle" id="scattering-angle-value">
-         60°
-        </output>
-       </label>
-       <input aria-describedby="scattering-help" class="js-only" id="scattering-angle" max="160" min="10" step="1" type="range" value="60"/>
-       <p class="play-insight" id="scattering-help">
-        A larger angle gives a larger momentum transfer at fixed X-ray wavelength.
-       </p>
-       <p class="play-equation">
-        q = kᵢₙ − kₒᵤₜ
-        <br/>
-        <strong id="scattering-q">
-         |q| / |k| = 1.00
-        </strong>
-       </p>
-       <p class="demo-caption">
-        Incoming and outgoing wavelengths are equal here. In RIXS, the outgoing photon can also lose energy.
-       </p>
-      </div>
-      <figure class="play-chart">
-       <svg aria-labelledby="scattering-art-title scattering-art-desc" id="scattering-art" role="img" viewbox="0 0 620 350">
-        <title id="scattering-art-title">
-         X-ray scattering geometry and momentum transfer
-        </title>
-        <desc id="scattering-art-desc">
-         An incoming beam hits a crystal and scatters at 60 degrees. Momentum transfer is the difference between incoming and outgoing wavevectors.
-        </desc>
-       </svg>
-       <figcaption>
-        <span class="legend-dot" style="--dot:#355888">
-        </span>
-        Incoming
-        <span class="legend-dot" style="--dot:#739f96">
-        </span>
-        Outgoing
-        <span class="legend-dot" style="--dot:#853e58">
-        </span>
-        Momentum transfer q
-       </figcaption>
-      </figure>
+     <svg aria-label="Two-dimensional finite array of atoms and electron-density weights" id="density-art" role="img" viewbox="0 0 360 360">
+<title>Finite lattice with adjustable positions and density weights</title><circle cx="56" cy="56" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="87" cy="56" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="118" cy="56" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="149" cy="56" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="180" cy="56" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="211" cy="56" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="242" cy="56" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="273" cy="56" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="304" cy="56" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="56" cy="87" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="87" cy="87" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="118" cy="87" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="149" cy="87" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="180" cy="87" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="211" cy="87" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="242" cy="87" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="273" cy="87" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="304" cy="87" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="56" cy="118" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="87" cy="118" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="118" cy="118" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="149" cy="118" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="180" cy="118" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="211" cy="118" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="242" cy="118" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="273" cy="118" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="304" cy="118" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="56" cy="149" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="87" cy="149" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="118" cy="149" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="149" cy="149" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="180" cy="149" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="211" cy="149" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="242" cy="149" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="273" cy="149" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="304" cy="149" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="56" cy="180" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="87" cy="180" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="118" cy="180" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="149" cy="180" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="180" cy="180" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="211" cy="180" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="242" cy="180" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="273" cy="180" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="304" cy="180" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="56" cy="211" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="87" cy="211" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="118" cy="211" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="149" cy="211" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="180" cy="211" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="211" cy="211" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="242" cy="211" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="273" cy="211" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="304" cy="211" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="56" cy="242" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="87" cy="242" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="118" cy="242" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="149" cy="242" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="180" cy="242" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="211" cy="242" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="242" cy="242" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="273" cy="242" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="304" cy="242" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="56" cy="273" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="87" cy="273" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="118" cy="273" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="149" cy="273" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="180" cy="273" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="211" cy="273" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="242" cy="273" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="273" cy="273" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="304" cy="273" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="56" cy="304" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="87" cy="304" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="118" cy="304" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="149" cy="304" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="180" cy="304" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="211" cy="304" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="242" cy="304" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="273" cy="304" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/><circle cx="304" cy="304" r="8.7" fill="#588675" opacity="0.6428571428571428" stroke="#fffdf9" stroke-width="1"/>
+</svg>
+     <div class="axis-labels">
+      <span>
+       Positions + density
+      </span>
+      <span>
+       9 × 9 sites
+      </span>
      </div>
-     <noscript>
-      <p>
-       The interactive geometry needs JavaScript. At 60°, elastic scattering gives |q| = |k|; increasing the angle increases |q|.
-      </p>
-     </noscript>
     </div>
-   </section>
-   <section aria-labelledby="excitation-heading" class="section">
-    <div class="experiment">
-     <div>
-      <p class="eyebrow">
-       Look beyond the atoms
-      </p>
-      <h3 id="excitation-heading">
-       What’s inside a crystal?
-      </h3>
-      <p>
-       Many signals come from particles acting together. Choose a picture to meet three kinds of collective behaviour.
-      </p>
-      <div aria-label="Choose a type of motion" class="button-group js-only" role="group">
-       <button aria-pressed="true" data-excitation="phonon" type="button">
-        Atoms
-       </button>
-       <button aria-pressed="false" data-excitation="magnon" type="button">
-        Spins
-       </button>
-       <button aria-pressed="false" data-excitation="charge" type="button">
-        Charge
-       </button>
-      </div>
-      <div aria-atomic="true" aria-live="polite" class="step-description">
-       <h4 id="excitation-title">
-        Phonon = atoms moving together
-       </h4>
-       <p id="excitation-text">
-        Atoms are always moving. When their motion forms a wave through a crystal, we call one quantum of that vibration a phonon.
-       </p>
+    <div class="stage density-stage dark-stage">
+     <div class="stage-label">
+      <span>
+       Diffraction image
+      </span>
+      <span>
+       Reciprocal space
+      </span>
+     </div>
+     <div class="detector-wrap">
+      <canvas aria-label="Calculated diffraction intensity for the finite two-dimensional lattice" height="97" id="density-detector" role="img" width="97">
+      </canvas>
+      <div aria-hidden="true" class="detector-cross">
       </div>
      </div>
-     <figure class="demo-stage">
-      <svg aria-labelledby="excitation-svg-title" id="excitation-art" role="img" viewbox="0 0 400 230">
-       <title id="excitation-svg-title">
-        Atoms connected by bonds in a crystal
-       </title>
-       <path d="M50 115H350" stroke="#8e9d9d" stroke-width="3">
-       </path>
-       <g fill="#739f96" stroke="#243d45" stroke-width="2">
-        <circle cx="50" cy="115" r="18">
-        </circle>
-        <circle cx="125" cy="115" r="18">
-        </circle>
-        <circle cx="200" cy="115" r="18">
-        </circle>
-        <circle cx="275" cy="115" r="18">
-        </circle>
-        <circle cx="350" cy="115" r="18">
-        </circle>
-       </g>
-       <text fill="#59696b" font-size="13" text-anchor="middle" x="200" y="202">
-        Atoms connected in a crystal
-       </text>
-      </svg>
-      <figcaption class="demo-caption" id="excitation-caption">
-       Schematic: displaced atoms joined by bonds. The displacement is exaggerated.
-      </figcaption>
-     </figure>
+     <div class="axis-labels" style="color:#adc1c9">
+      <span>
+       qₓ: −2 → +2
+      </span>
+      <span>
+       qᵧ: −2 → +2
+      </span>
+     </div>
     </div>
-    <noscript>
-     <p class="no-js-note">
-      A phonon is a quantum of atomic vibration. A magnon is a quantum of a spin wave. Charge fluctuations are changes in electron density. RIXS can probe all three.
-     </p>
-    </noscript>
-   </section>
+   </div>
+   <div class="lab-grid controls">
+    <div class="control">
+     <label for="density-disorder">
+      Positional disorder
+      <output for="density-disorder" id="density-disorder-value">
+       0%
+      </output>
+     </label>
+     <input class="js-only" id="density-disorder" max="100" min="0" step="1" type="range" value="0"/>
+    </div>
+    <div class="control">
+     <label for="density-spacing">
+      Lattice spacing
+      <output for="density-spacing" id="density-spacing-value">
+       1.00 ×
+      </output>
+     </label>
+     <input class="js-only" id="density-spacing" max="120" min="80" step="1" type="range" value="100"/>
+    </div>
+   </div>
+   <div class="control">
+    <label for="density-stripes">
+     Density-stripe strength
+     <output for="density-stripes" id="density-stripes-value">
+      0%
+     </output>
+    </label>
+    <input class="js-only" id="density-stripes" max="100" min="0" step="1" style="accent-color:#a45e79" type="range" value="0"/>
+   </div>
+   <div class="insight">
+    <p id="density-insight">
+     An evenly spaced lattice produces regularly spaced bright peaks. Increase the real-space spacing: the peaks move closer together.
+    </p>
+   </div>
+   <details class="xray-method">
+    <summary>
+     About this teaching model
+    </summary>
+    <p class="model-note">
+     Elastic scattering from a finite, weighted 2D array: I(q) ∝ |Σⱼ wⱼ exp(iq·rⱼ)|². A logarithmic colour scale exposes weak features. The central beam is masked; q is in units of 2π divided by the original lattice spacing. Random displacements weaken sharp peaks and add diffuse intensity. Stripes modulate density weights every three sites; this is separate from the energy-loss demonstrations above.
+    </p>
+   </details>
+   <noscript>
+    <p class="no-js-note">
+     A regular lattice produces regularly spaced diffraction peaks. Increasing the lattice spacing brings those peaks closer together. Density stripes add extra peaks; random displacements add diffuse intensity. Enable JavaScript to calculate the detector image.
+    </p>
+   </noscript>
+  </div>
+ </div>
+</section>
+
    <section aria-labelledby="facilities-title" class="section" id="facilities">
     <div class="section-heading">
      <div>
@@ -512,92 +570,140 @@
       </a>
      </div>
     </div>
-    <div aria-labelledby="spectrum-heading" class="play-panel spectrum-panel" id="spectrum-demo">
-     <div class="play-heading">
-      <div>
-       <p class="eyebrow">
-        Mix your own spectrum
-       </p>
-       <h3 id="spectrum-heading">
-        Many signals. One curve.
-       </h3>
-      </div>
-      <button class="reset-button js-only" id="spectrum-reset" type="button">
-       Reset mix ↺
-      </button>
-     </div>
-     <p>
-      Turn each signal up or down. Can you hide the yellow charge signal beneath the other peaks?
-     </p>
-     <div class="spectrum-layout">
-      <figure class="play-chart">
-       <svg aria-labelledby="spectrum-art-title spectrum-art-desc" id="spectrum-art" role="img" viewbox="0 0 720 370">
-        <title id="spectrum-art-title">
-         A spectrum built from separate scattering signals
-        </title>
-        <desc id="spectrum-art-desc">
-         A gold total curve adds elastic scattering, charge motion, two phonons and background.
-        </desc>
-       </svg>
-       <figcaption>
-        <span class="legend-dot" style="--dot:#b5a064">
-        </span>
-        Total spectrum
-        <span class="legend-dot" style="--dot:#7795a7">
-        </span>
-        Example data at the starting mix
-       </figcaption>
-      </figure>
-      <div class="play-controls spectrum-controls">
-       <label for="mix-elastic" style="--signal:#888888">
-        Elastic
-        <output for="mix-elastic" id="mix-elastic-value">
-         100%
-        </output>
-       </label>
-       <input class="js-only" data-mix="elastic" id="mix-elastic" max="150" min="0" type="range" value="100"/>
-       <label for="mix-charge" style="--signal:#b89839">
-        Charge motion
-        <output for="mix-charge" id="mix-charge-value">
-         100%
-        </output>
-       </label>
-       <input class="js-only" data-mix="charge" id="mix-charge" max="150" min="0" type="range" value="100"/>
-       <label for="mix-bb" style="--signal:#cf388a">
-        Bond-bending phonon
-        <output for="mix-bb" id="mix-bb-value">
-         100%
-        </output>
-       </label>
-       <input class="js-only" data-mix="bb" id="mix-bb" max="150" min="0" type="range" value="100"/>
-       <label for="mix-bs" style="--signal:#ad42e0">
-        Bond-stretching phonon
-        <output for="mix-bs" id="mix-bs-value">
-         100%
-        </output>
-       </label>
-       <input class="js-only" data-mix="bs" id="mix-bs" max="150" min="0" type="range" value="100"/>
-       <label for="mix-background" style="--signal:#777777">
-        Background
-        <output for="mix-background" id="mix-background-value">
-         100%
-        </output>
-       </label>
-       <input class="js-only" data-mix="background" id="mix-background" max="150" min="0" type="range" value="100"/>
-      </div>
-     </div>
-     <p aria-live="polite" class="play-insight" id="spectrum-insight">
-      The yellow charge signal overlaps the elastic tail and the pink phonon. Fitting helps separate them.
-     </p>
-     <p class="demo-caption">
-      Illustrative Gaussian peaks with arbitrary intensity, inspired by the colours of the research figure. Blue dots are simulated examples, fixed while you adjust the model; this is not a fit to measured data.
-     </p>
-     <noscript>
-      <p>
-       Enable JavaScript to mix the components. A measured spectrum is the sum of overlapping signals.
-      </p>
-     </noscript>
+    <div aria-labelledby="signal-title" class="xray-lab" id="spectrum-demo">
+ <div class="demo-head">
+  <p class="eyebrow">
+   A little scientific detective work
+  </p>
+  <h3 id="signal-title">
+   There’s a signal hiding here.
+   <br/>
+   <em>
+    Can you uncover it?
+   </em>
+  </h3>
+  <p>
+   The dots contain overlapping signals. Adjust the three coloured ingredients until their sum matches the dots.
+  </p>
+ </div>
+ <div class="demo-body">
+  <div class="lab-grid">
+   <div class="stage">
+    <div class="stage-label">
+     <span>
+      Your model + the mystery data
+     </span>
+     <span>
+      Synthetic example
+     </span>
     </div>
+    <div class="chart">
+     <svg aria-label="Synthetic spectrum, model and component curves" id="fit-spectrum" role="img" viewbox="0 0 520 280">
+<title>Match the total curve to the synthetic data dots</title><path d="M48 25V222H500" fill="none" stroke="#a1afb0" stroke-width="1.3"/><path d="M48 172.75H500" stroke="#e7e9e4"/><path d="M48 123.5H500" stroke="#e7e9e4"/><path d="M48 74.25H500" stroke="#e7e9e4"/><path d="M48 25H500" stroke="#e7e9e4"/><path d="M144.85714285714283 222v5" stroke="#a1afb0"/><text x="144.85714285714283" y="243" text-anchor="middle" fill="#607074" font-size="13">0</text><path d="M225.57142857142856 222v5" stroke="#a1afb0"/><text x="225.57142857142856" y="243" text-anchor="middle" fill="#607074" font-size="13">25</text><path d="M306.2857142857143 222v5" stroke="#a1afb0"/><text x="306.2857142857143" y="243" text-anchor="middle" fill="#607074" font-size="13">50</text><path d="M387 222v5" stroke="#a1afb0"/><text x="387" y="243" text-anchor="middle" fill="#607074" font-size="13">75</text><path d="M467.7142857142857 222v5" stroke="#a1afb0"/><text x="467.7142857142857" y="243" text-anchor="middle" fill="#607074" font-size="13">100</text><text x="274" y="270" text-anchor="middle" fill="#607074" font-size="14">Energy loss (meV)</text><text x="16" y="125" text-anchor="middle" transform="rotate(-90 16 125)" fill="#607074" font-size="12">Intensity (arb.)</text><path d="M48.00,220.55 L50.51,220.18 L53.02,219.72 L55.53,219.16 L58.04,218.49 L60.56,217.69 L63.07,216.74 L65.58,215.61 L68.09,214.29 L70.60,212.75 L73.11,210.97 L75.62,208.93 L78.13,206.61 L80.64,203.98 L83.16,201.02 L85.67,197.74 L88.18,194.10 L90.69,190.12 L93.20,185.78 L95.71,181.11 L98.22,176.11 L100.73,170.80 L103.24,165.23 L105.76,159.44 L108.27,153.47 L110.78,147.38 L113.29,141.24 L115.80,135.12 L118.31,129.10 L120.82,123.26 L123.33,117.69 L125.84,112.48 L128.36,107.69 L130.87,103.41 L133.38,99.72 L135.89,96.67 L138.40,94.32 L140.91,92.71 L143.42,91.87 L145.93,91.81 L148.44,92.54 L150.96,94.04 L153.47,96.29 L155.98,99.24 L158.49,102.85 L161.00,107.04 L163.51,111.76 L166.02,116.93 L168.53,122.45 L171.04,128.25 L173.56,134.25 L176.07,140.36 L178.58,146.50 L181.09,152.60 L183.60,158.60 L186.11,164.42 L188.62,170.02 L191.13,175.37 L193.64,180.41 L196.16,185.14 L198.67,189.52 L201.18,193.55 L203.69,197.24 L206.20,200.58 L208.71,203.57 L211.22,206.25 L213.73,208.62 L216.24,210.70 L218.76,212.51 L221.27,214.08 L223.78,215.43 L226.29,216.59 L228.80,217.56 L231.31,218.39 L233.82,219.08 L236.33,219.65 L238.84,220.12 L241.36,220.50 L243.87,220.82 L246.38,221.07 L248.89,221.28 L251.40,221.44 L253.91,221.57 L256.42,221.67 L258.93,221.75 L261.44,221.81 L263.96,221.86 L266.47,221.89 L268.98,221.92 L271.49,221.94 L274.00,221.96 L276.51,221.97 L279.02,221.98 L281.53,221.98 L284.04,221.99 L286.56,221.99 L289.07,221.99 L291.58,222.00 L294.09,222.00 L296.60,222.00 L299.11,222.00 L301.62,222.00 L304.13,222.00 L306.64,222.00 L309.16,222.00 L311.67,222.00 L314.18,222.00 L316.69,222.00 L319.20,222.00 L321.71,222.00 L324.22,222.00 L326.73,222.00 L329.24,222.00 L331.76,222.00 L334.27,222.00 L336.78,222.00 L339.29,222.00 L341.80,222.00 L344.31,222.00 L346.82,222.00 L349.33,222.00 L351.84,222.00 L354.36,222.00 L356.87,222.00 L359.38,222.00 L361.89,222.00 L364.40,222.00 L366.91,222.00 L369.42,222.00 L371.93,222.00 L374.44,222.00 L376.96,222.00 L379.47,222.00 L381.98,222.00 L384.49,222.00 L387.00,222.00 L389.51,222.00 L392.02,222.00 L394.53,222.00 L397.04,222.00 L399.56,222.00 L402.07,222.00 L404.58,222.00 L407.09,222.00 L409.60,222.00 L412.11,222.00 L414.62,222.00 L417.13,222.00 L419.64,222.00 L422.16,222.00 L424.67,222.00 L427.18,222.00 L429.69,222.00 L432.20,222.00 L434.71,222.00 L437.22,222.00 L439.73,222.00 L442.24,222.00 L444.76,222.00 L447.27,222.00 L449.78,222.00 L452.29,222.00 L454.80,222.00 L457.31,222.00 L459.82,222.00 L462.33,222.00 L464.84,222.00 L467.36,222.00 L469.87,222.00 L472.38,222.00 L474.89,222.00 L477.40,222.00 L479.91,222.00 L482.42,222.00 L484.93,222.00 L487.44,222.00 L489.96,222.00 L492.47,222.00 L494.98,222.00 L497.49,222.00 L500.00,222.00 L500 222H48Z" fill="#a6a8a5" fill-opacity=".23"/><path d="M48.00,220.55 L50.51,220.18 L53.02,219.72 L55.53,219.16 L58.04,218.49 L60.56,217.69 L63.07,216.74 L65.58,215.61 L68.09,214.29 L70.60,212.75 L73.11,210.97 L75.62,208.93 L78.13,206.61 L80.64,203.98 L83.16,201.02 L85.67,197.74 L88.18,194.10 L90.69,190.12 L93.20,185.78 L95.71,181.11 L98.22,176.11 L100.73,170.80 L103.24,165.23 L105.76,159.44 L108.27,153.47 L110.78,147.38 L113.29,141.24 L115.80,135.12 L118.31,129.10 L120.82,123.26 L123.33,117.69 L125.84,112.48 L128.36,107.69 L130.87,103.41 L133.38,99.72 L135.89,96.67 L138.40,94.32 L140.91,92.71 L143.42,91.87 L145.93,91.81 L148.44,92.54 L150.96,94.04 L153.47,96.29 L155.98,99.24 L158.49,102.85 L161.00,107.04 L163.51,111.76 L166.02,116.93 L168.53,122.45 L171.04,128.25 L173.56,134.25 L176.07,140.36 L178.58,146.50 L181.09,152.60 L183.60,158.60 L186.11,164.42 L188.62,170.02 L191.13,175.37 L193.64,180.41 L196.16,185.14 L198.67,189.52 L201.18,193.55 L203.69,197.24 L206.20,200.58 L208.71,203.57 L211.22,206.25 L213.73,208.62 L216.24,210.70 L218.76,212.51 L221.27,214.08 L223.78,215.43 L226.29,216.59 L228.80,217.56 L231.31,218.39 L233.82,219.08 L236.33,219.65 L238.84,220.12 L241.36,220.50 L243.87,220.82 L246.38,221.07 L248.89,221.28 L251.40,221.44 L253.91,221.57 L256.42,221.67 L258.93,221.75 L261.44,221.81 L263.96,221.86 L266.47,221.89 L268.98,221.92 L271.49,221.94 L274.00,221.96 L276.51,221.97 L279.02,221.98 L281.53,221.98 L284.04,221.99 L286.56,221.99 L289.07,221.99 L291.58,222.00 L294.09,222.00 L296.60,222.00 L299.11,222.00 L301.62,222.00 L304.13,222.00 L306.64,222.00 L309.16,222.00 L311.67,222.00 L314.18,222.00 L316.69,222.00 L319.20,222.00 L321.71,222.00 L324.22,222.00 L326.73,222.00 L329.24,222.00 L331.76,222.00 L334.27,222.00 L336.78,222.00 L339.29,222.00 L341.80,222.00 L344.31,222.00 L346.82,222.00 L349.33,222.00 L351.84,222.00 L354.36,222.00 L356.87,222.00 L359.38,222.00 L361.89,222.00 L364.40,222.00 L366.91,222.00 L369.42,222.00 L371.93,222.00 L374.44,222.00 L376.96,222.00 L379.47,222.00 L381.98,222.00 L384.49,222.00 L387.00,222.00 L389.51,222.00 L392.02,222.00 L394.53,222.00 L397.04,222.00 L399.56,222.00 L402.07,222.00 L404.58,222.00 L407.09,222.00 L409.60,222.00 L412.11,222.00 L414.62,222.00 L417.13,222.00 L419.64,222.00 L422.16,222.00 L424.67,222.00 L427.18,222.00 L429.69,222.00 L432.20,222.00 L434.71,222.00 L437.22,222.00 L439.73,222.00 L442.24,222.00 L444.76,222.00 L447.27,222.00 L449.78,222.00 L452.29,222.00 L454.80,222.00 L457.31,222.00 L459.82,222.00 L462.33,222.00 L464.84,222.00 L467.36,222.00 L469.87,222.00 L472.38,222.00 L474.89,222.00 L477.40,222.00 L479.91,222.00 L482.42,222.00 L484.93,222.00 L487.44,222.00 L489.96,222.00 L492.47,222.00 L494.98,222.00 L497.49,222.00 L500.00,222.00" stroke="#a6a8a5" fill="none" stroke-width="1.6"/><path d="M48.00,222.00 L50.51,222.00 L53.02,222.00 L55.53,222.00 L58.04,222.00 L60.56,222.00 L63.07,222.00 L65.58,222.00 L68.09,222.00 L70.60,222.00 L73.11,222.00 L75.62,222.00 L78.13,222.00 L80.64,222.00 L83.16,222.00 L85.67,222.00 L88.18,222.00 L90.69,222.00 L93.20,222.00 L95.71,222.00 L98.22,222.00 L100.73,222.00 L103.24,222.00 L105.76,222.00 L108.27,222.00 L110.78,222.00 L113.29,222.00 L115.80,222.00 L118.31,222.00 L120.82,222.00 L123.33,222.00 L125.84,222.00 L128.36,222.00 L130.87,222.00 L133.38,222.00 L135.89,222.00 L138.40,222.00 L140.91,222.00 L143.42,222.00 L145.93,222.00 L148.44,222.00 L150.96,222.00 L153.47,222.00 L155.98,222.00 L158.49,222.00 L161.00,222.00 L163.51,222.00 L166.02,222.00 L168.53,222.00 L171.04,222.00 L173.56,222.00 L176.07,222.00 L178.58,222.00 L181.09,222.00 L183.60,222.00 L186.11,222.00 L188.62,222.00 L191.13,222.00 L193.64,222.00 L196.16,222.00 L198.67,222.00 L201.18,222.00 L203.69,222.00 L206.20,222.00 L208.71,222.00 L211.22,222.00 L213.73,222.00 L216.24,222.00 L218.76,222.00 L221.27,222.00 L223.78,222.00 L226.29,222.00 L228.80,222.00 L231.31,222.00 L233.82,222.00 L236.33,222.00 L238.84,222.00 L241.36,222.00 L243.87,222.00 L246.38,222.00 L248.89,222.00 L251.40,222.00 L253.91,222.00 L256.42,222.00 L258.93,222.00 L261.44,222.00 L263.96,222.00 L266.47,222.00 L268.98,222.00 L271.49,222.00 L274.00,222.00 L276.51,222.00 L279.02,222.00 L281.53,222.00 L284.04,222.00 L286.56,222.00 L289.07,222.00 L291.58,222.00 L294.09,222.00 L296.60,222.00 L299.11,222.00 L301.62,222.00 L304.13,222.00 L306.64,222.00 L309.16,222.00 L311.67,222.00 L314.18,222.00 L316.69,222.00 L319.20,222.00 L321.71,222.00 L324.22,222.00 L326.73,222.00 L329.24,222.00 L331.76,222.00 L334.27,222.00 L336.78,222.00 L339.29,222.00 L341.80,222.00 L344.31,222.00 L346.82,222.00 L349.33,222.00 L351.84,222.00 L354.36,222.00 L356.87,222.00 L359.38,222.00 L361.89,222.00 L364.40,222.00 L366.91,222.00 L369.42,222.00 L371.93,222.00 L374.44,222.00 L376.96,222.00 L379.47,222.00 L381.98,222.00 L384.49,222.00 L387.00,222.00 L389.51,222.00 L392.02,222.00 L394.53,222.00 L397.04,222.00 L399.56,222.00 L402.07,222.00 L404.58,222.00 L407.09,222.00 L409.60,222.00 L412.11,222.00 L414.62,222.00 L417.13,222.00 L419.64,222.00 L422.16,222.00 L424.67,222.00 L427.18,222.00 L429.69,222.00 L432.20,222.00 L434.71,222.00 L437.22,222.00 L439.73,222.00 L442.24,222.00 L444.76,222.00 L447.27,222.00 L449.78,222.00 L452.29,222.00 L454.80,222.00 L457.31,222.00 L459.82,222.00 L462.33,222.00 L464.84,222.00 L467.36,222.00 L469.87,222.00 L472.38,222.00 L474.89,222.00 L477.40,222.00 L479.91,222.00 L482.42,222.00 L484.93,222.00 L487.44,222.00 L489.96,222.00 L492.47,222.00 L494.98,222.00 L497.49,222.00 L500.00,222.00 L500 222H48Z" fill="#ba8834" fill-opacity=".23"/><path d="M48.00,222.00 L50.51,222.00 L53.02,222.00 L55.53,222.00 L58.04,222.00 L60.56,222.00 L63.07,222.00 L65.58,222.00 L68.09,222.00 L70.60,222.00 L73.11,222.00 L75.62,222.00 L78.13,222.00 L80.64,222.00 L83.16,222.00 L85.67,222.00 L88.18,222.00 L90.69,222.00 L93.20,222.00 L95.71,222.00 L98.22,222.00 L100.73,222.00 L103.24,222.00 L105.76,222.00 L108.27,222.00 L110.78,222.00 L113.29,222.00 L115.80,222.00 L118.31,222.00 L120.82,222.00 L123.33,222.00 L125.84,222.00 L128.36,222.00 L130.87,222.00 L133.38,222.00 L135.89,222.00 L138.40,222.00 L140.91,222.00 L143.42,222.00 L145.93,222.00 L148.44,222.00 L150.96,222.00 L153.47,222.00 L155.98,222.00 L158.49,222.00 L161.00,222.00 L163.51,222.00 L166.02,222.00 L168.53,222.00 L171.04,222.00 L173.56,222.00 L176.07,222.00 L178.58,222.00 L181.09,222.00 L183.60,222.00 L186.11,222.00 L188.62,222.00 L191.13,222.00 L193.64,222.00 L196.16,222.00 L198.67,222.00 L201.18,222.00 L203.69,222.00 L206.20,222.00 L208.71,222.00 L211.22,222.00 L213.73,222.00 L216.24,222.00 L218.76,222.00 L221.27,222.00 L223.78,222.00 L226.29,222.00 L228.80,222.00 L231.31,222.00 L233.82,222.00 L236.33,222.00 L238.84,222.00 L241.36,222.00 L243.87,222.00 L246.38,222.00 L248.89,222.00 L251.40,222.00 L253.91,222.00 L256.42,222.00 L258.93,222.00 L261.44,222.00 L263.96,222.00 L266.47,222.00 L268.98,222.00 L271.49,222.00 L274.00,222.00 L276.51,222.00 L279.02,222.00 L281.53,222.00 L284.04,222.00 L286.56,222.00 L289.07,222.00 L291.58,222.00 L294.09,222.00 L296.60,222.00 L299.11,222.00 L301.62,222.00 L304.13,222.00 L306.64,222.00 L309.16,222.00 L311.67,222.00 L314.18,222.00 L316.69,222.00 L319.20,222.00 L321.71,222.00 L324.22,222.00 L326.73,222.00 L329.24,222.00 L331.76,222.00 L334.27,222.00 L336.78,222.00 L339.29,222.00 L341.80,222.00 L344.31,222.00 L346.82,222.00 L349.33,222.00 L351.84,222.00 L354.36,222.00 L356.87,222.00 L359.38,222.00 L361.89,222.00 L364.40,222.00 L366.91,222.00 L369.42,222.00 L371.93,222.00 L374.44,222.00 L376.96,222.00 L379.47,222.00 L381.98,222.00 L384.49,222.00 L387.00,222.00 L389.51,222.00 L392.02,222.00 L394.53,222.00 L397.04,222.00 L399.56,222.00 L402.07,222.00 L404.58,222.00 L407.09,222.00 L409.60,222.00 L412.11,222.00 L414.62,222.00 L417.13,222.00 L419.64,222.00 L422.16,222.00 L424.67,222.00 L427.18,222.00 L429.69,222.00 L432.20,222.00 L434.71,222.00 L437.22,222.00 L439.73,222.00 L442.24,222.00 L444.76,222.00 L447.27,222.00 L449.78,222.00 L452.29,222.00 L454.80,222.00 L457.31,222.00 L459.82,222.00 L462.33,222.00 L464.84,222.00 L467.36,222.00 L469.87,222.00 L472.38,222.00 L474.89,222.00 L477.40,222.00 L479.91,222.00 L482.42,222.00 L484.93,222.00 L487.44,222.00 L489.96,222.00 L492.47,222.00 L494.98,222.00 L497.49,222.00 L500.00,222.00" stroke="#ba8834" fill="none" stroke-width="1.6"/><path d="M48.00,222.00 L50.51,222.00 L53.02,222.00 L55.53,222.00 L58.04,222.00 L60.56,222.00 L63.07,222.00 L65.58,222.00 L68.09,222.00 L70.60,222.00 L73.11,222.00 L75.62,222.00 L78.13,222.00 L80.64,222.00 L83.16,222.00 L85.67,222.00 L88.18,222.00 L90.69,222.00 L93.20,222.00 L95.71,222.00 L98.22,222.00 L100.73,222.00 L103.24,222.00 L105.76,222.00 L108.27,222.00 L110.78,222.00 L113.29,222.00 L115.80,222.00 L118.31,222.00 L120.82,222.00 L123.33,222.00 L125.84,222.00 L128.36,222.00 L130.87,222.00 L133.38,222.00 L135.89,222.00 L138.40,222.00 L140.91,222.00 L143.42,222.00 L145.93,222.00 L148.44,222.00 L150.96,222.00 L153.47,222.00 L155.98,222.00 L158.49,222.00 L161.00,222.00 L163.51,222.00 L166.02,222.00 L168.53,222.00 L171.04,222.00 L173.56,222.00 L176.07,222.00 L178.58,222.00 L181.09,222.00 L183.60,222.00 L186.11,222.00 L188.62,221.99 L191.13,221.99 L193.64,221.99 L196.16,221.98 L198.67,221.97 L201.18,221.96 L203.69,221.95 L206.20,221.93 L208.71,221.90 L211.22,221.86 L213.73,221.81 L216.24,221.75 L218.76,221.67 L221.27,221.57 L223.78,221.43 L226.29,221.26 L228.80,221.05 L231.31,220.79 L233.82,220.46 L236.33,220.06 L238.84,219.58 L241.36,218.99 L243.87,218.29 L246.38,217.47 L248.89,216.50 L251.40,215.38 L253.91,214.08 L256.42,212.60 L258.93,210.93 L261.44,209.05 L263.96,206.98 L266.47,204.69 L268.98,202.21 L271.49,199.55 L274.00,196.71 L276.51,193.73 L279.02,190.63 L281.53,187.45 L284.04,184.23 L286.56,181.02 L289.07,177.86 L291.58,174.82 L294.09,171.94 L296.60,169.28 L299.11,166.90 L301.62,164.83 L304.13,163.13 L306.64,161.83 L309.16,160.95 L311.67,160.53 L314.18,160.56 L316.69,161.05 L319.20,161.99 L321.71,163.35 L324.22,165.11 L326.73,167.22 L329.24,169.65 L331.76,172.34 L334.27,175.25 L336.78,178.31 L339.29,181.47 L341.80,184.69 L344.31,187.91 L346.82,191.08 L349.33,194.16 L351.84,197.13 L354.36,199.94 L356.87,202.58 L359.38,205.03 L361.89,207.28 L364.40,209.33 L366.91,211.18 L369.42,212.82 L371.93,214.27 L374.44,215.55 L376.96,216.65 L379.47,217.59 L381.98,218.40 L384.49,219.08 L387.00,219.65 L389.51,220.12 L392.02,220.51 L394.53,220.83 L397.04,221.09 L399.56,221.29 L402.07,221.45 L404.58,221.58 L407.09,221.68 L409.60,221.76 L412.11,221.82 L414.62,221.87 L417.13,221.90 L419.64,221.93 L422.16,221.95 L424.67,221.96 L427.18,221.97 L429.69,221.98 L432.20,221.99 L434.71,221.99 L437.22,221.99 L439.73,222.00 L442.24,222.00 L444.76,222.00 L447.27,222.00 L449.78,222.00 L452.29,222.00 L454.80,222.00 L457.31,222.00 L459.82,222.00 L462.33,222.00 L464.84,222.00 L467.36,222.00 L469.87,222.00 L472.38,222.00 L474.89,222.00 L477.40,222.00 L479.91,222.00 L482.42,222.00 L484.93,222.00 L487.44,222.00 L489.96,222.00 L492.47,222.00 L494.98,222.00 L497.49,222.00 L500.00,222.00 L500 222H48Z" fill="#bd719c" fill-opacity=".23"/><path d="M48.00,222.00 L50.51,222.00 L53.02,222.00 L55.53,222.00 L58.04,222.00 L60.56,222.00 L63.07,222.00 L65.58,222.00 L68.09,222.00 L70.60,222.00 L73.11,222.00 L75.62,222.00 L78.13,222.00 L80.64,222.00 L83.16,222.00 L85.67,222.00 L88.18,222.00 L90.69,222.00 L93.20,222.00 L95.71,222.00 L98.22,222.00 L100.73,222.00 L103.24,222.00 L105.76,222.00 L108.27,222.00 L110.78,222.00 L113.29,222.00 L115.80,222.00 L118.31,222.00 L120.82,222.00 L123.33,222.00 L125.84,222.00 L128.36,222.00 L130.87,222.00 L133.38,222.00 L135.89,222.00 L138.40,222.00 L140.91,222.00 L143.42,222.00 L145.93,222.00 L148.44,222.00 L150.96,222.00 L153.47,222.00 L155.98,222.00 L158.49,222.00 L161.00,222.00 L163.51,222.00 L166.02,222.00 L168.53,222.00 L171.04,222.00 L173.56,222.00 L176.07,222.00 L178.58,222.00 L181.09,222.00 L183.60,222.00 L186.11,222.00 L188.62,221.99 L191.13,221.99 L193.64,221.99 L196.16,221.98 L198.67,221.97 L201.18,221.96 L203.69,221.95 L206.20,221.93 L208.71,221.90 L211.22,221.86 L213.73,221.81 L216.24,221.75 L218.76,221.67 L221.27,221.57 L223.78,221.43 L226.29,221.26 L228.80,221.05 L231.31,220.79 L233.82,220.46 L236.33,220.06 L238.84,219.58 L241.36,218.99 L243.87,218.29 L246.38,217.47 L248.89,216.50 L251.40,215.38 L253.91,214.08 L256.42,212.60 L258.93,210.93 L261.44,209.05 L263.96,206.98 L266.47,204.69 L268.98,202.21 L271.49,199.55 L274.00,196.71 L276.51,193.73 L279.02,190.63 L281.53,187.45 L284.04,184.23 L286.56,181.02 L289.07,177.86 L291.58,174.82 L294.09,171.94 L296.60,169.28 L299.11,166.90 L301.62,164.83 L304.13,163.13 L306.64,161.83 L309.16,160.95 L311.67,160.53 L314.18,160.56 L316.69,161.05 L319.20,161.99 L321.71,163.35 L324.22,165.11 L326.73,167.22 L329.24,169.65 L331.76,172.34 L334.27,175.25 L336.78,178.31 L339.29,181.47 L341.80,184.69 L344.31,187.91 L346.82,191.08 L349.33,194.16 L351.84,197.13 L354.36,199.94 L356.87,202.58 L359.38,205.03 L361.89,207.28 L364.40,209.33 L366.91,211.18 L369.42,212.82 L371.93,214.27 L374.44,215.55 L376.96,216.65 L379.47,217.59 L381.98,218.40 L384.49,219.08 L387.00,219.65 L389.51,220.12 L392.02,220.51 L394.53,220.83 L397.04,221.09 L399.56,221.29 L402.07,221.45 L404.58,221.58 L407.09,221.68 L409.60,221.76 L412.11,221.82 L414.62,221.87 L417.13,221.90 L419.64,221.93 L422.16,221.95 L424.67,221.96 L427.18,221.97 L429.69,221.98 L432.20,221.99 L434.71,221.99 L437.22,221.99 L439.73,222.00 L442.24,222.00 L444.76,222.00 L447.27,222.00 L449.78,222.00 L452.29,222.00 L454.80,222.00 L457.31,222.00 L459.82,222.00 L462.33,222.00 L464.84,222.00 L467.36,222.00 L469.87,222.00 L472.38,222.00 L474.89,222.00 L477.40,222.00 L479.91,222.00 L482.42,222.00 L484.93,222.00 L487.44,222.00 L489.96,222.00 L492.47,222.00 L494.98,222.00 L497.49,222.00 L500.00,222.00" stroke="#bd719c" fill="none" stroke-width="1.6"/><path d="M48.00,217.34 L50.51,216.96 L53.02,216.50 L55.53,215.95 L58.04,215.28 L60.56,214.48 L63.07,213.52 L65.58,212.39 L68.09,211.07 L70.60,209.53 L73.11,207.76 L75.62,205.71 L78.13,203.39 L80.64,200.76 L83.16,197.81 L85.67,194.52 L88.18,190.89 L90.69,186.90 L93.20,182.57 L95.71,177.89 L98.22,172.89 L100.73,167.59 L103.24,162.02 L105.76,156.22 L108.27,150.25 L110.78,144.16 L113.29,138.02 L115.80,131.90 L118.31,125.88 L120.82,120.05 L123.33,114.48 L125.84,109.26 L128.36,104.47 L130.87,100.20 L133.38,96.50 L135.89,93.45 L138.40,91.10 L140.91,89.49 L143.42,88.65 L145.93,88.59 L148.44,89.32 L150.96,90.83 L153.47,93.07 L155.98,96.02 L158.49,99.63 L161.00,103.83 L163.51,108.55 L166.02,113.71 L168.53,119.23 L171.04,125.04 L173.56,131.03 L176.07,137.14 L178.58,143.28 L181.09,149.38 L183.60,155.38 L186.11,161.20 L188.62,166.80 L191.13,172.14 L193.64,177.18 L196.16,181.90 L198.67,186.28 L201.18,190.30 L203.69,193.97 L206.20,197.28 L208.71,200.26 L211.22,202.90 L213.73,205.22 L216.24,207.23 L218.76,208.97 L221.27,210.43 L223.78,211.65 L226.29,212.64 L228.80,213.40 L231.31,213.96 L233.82,214.32 L236.33,214.49 L238.84,214.48 L241.36,214.28 L243.87,213.90 L246.38,213.32 L248.89,212.56 L251.40,211.60 L253.91,210.43 L256.42,209.05 L258.93,207.46 L261.44,205.64 L263.96,203.61 L266.47,201.37 L268.98,198.92 L271.49,196.27 L274.00,193.45 L276.51,190.48 L279.02,187.39 L281.53,184.22 L284.04,181.00 L286.56,177.79 L289.07,174.64 L291.58,171.60 L294.09,168.72 L296.60,166.07 L299.11,163.68 L301.62,161.61 L304.13,159.91 L306.64,158.61 L309.16,157.74 L311.67,157.31 L314.18,157.35 L316.69,157.84 L319.20,158.77 L321.71,160.13 L324.22,161.89 L326.73,164.00 L329.24,166.43 L331.76,169.13 L334.27,172.03 L336.78,175.09 L339.29,178.26 L341.80,181.47 L344.31,184.69 L346.82,187.86 L349.33,190.95 L351.84,193.91 L354.36,196.72 L356.87,199.36 L359.38,201.82 L361.89,204.07 L364.40,206.12 L366.91,207.96 L369.42,209.61 L371.93,211.06 L374.44,212.33 L376.96,213.43 L379.47,214.38 L381.98,215.18 L384.49,215.87 L387.00,216.44 L389.51,216.91 L392.02,217.30 L394.53,217.61 L397.04,217.87 L399.56,218.07 L402.07,218.24 L404.58,218.37 L407.09,218.47 L409.60,218.55 L412.11,218.61 L414.62,218.65 L417.13,218.69 L419.64,218.71 L422.16,218.73 L424.67,218.75 L427.18,218.76 L429.69,218.76 L432.20,218.77 L434.71,218.77 L437.22,218.78 L439.73,218.78 L442.24,218.78 L444.76,218.78 L447.27,218.78 L449.78,218.78 L452.29,218.78 L454.80,218.78 L457.31,218.78 L459.82,218.78 L462.33,218.78 L464.84,218.78 L467.36,218.78 L469.87,218.78 L472.38,218.78 L474.89,218.78 L477.40,218.78 L479.91,218.78 L482.42,218.78 L484.93,218.78 L487.44,218.78 L489.96,218.78 L492.47,218.78 L494.98,218.78 L497.49,218.78 L500.00,218.78" fill="none" stroke="#355d81" stroke-width="3"/><circle cx="57.68571428571428" cy="215.3544242886738" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="66.89057750759878" cy="211.58584722245322" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="76.09544072948329" cy="205.37385375467332" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="85.30030395136778" cy="194.50535493102473" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="94.50516717325229" cy="179.7714179948941" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="103.71003039513678" cy="160.44743060128715" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="112.91489361702126" cy="136.35660691548208" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="122.11975683890577" cy="115.60518779877903" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="131.32462006079027" cy="94.69679321545759" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="140.5294832826748" cy="82.58666803364758" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="149.73434650455926" cy="82.17830495611389" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="158.93920972644375" cy="85.89301168997744" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="168.14407294832824" cy="102.11499945829244" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="177.34893617021277" cy="119.28529948809557" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="186.55379939209726" cy="135.98512646946415" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="195.75866261398176" cy="153.12399045292102" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="204.96352583586628" cy="163.9351342574437" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="214.16838905775077" cy="173.21936243463853" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="223.37325227963527" cy="180.03200168738917" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="232.57811550151973" cy="184.01717590713804" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="241.78297872340426" cy="188.3035537909136" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="250.98784194528875" cy="190.01003688132135" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="260.19270516717324" cy="189.91091018414795" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="269.39756838905777" cy="188.08243472290724" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="278.60243161094223" cy="182.3372651588486" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="287.80729483282676" cy="176.42651293307648" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="297.0121580547112" cy="170.2866254204832" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="306.21702127659574" cy="165.57281515311797" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="315.4218844984802" cy="167.02248771589694" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="324.6267477203648" cy="170.7760190067713" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="333.83161094224926" cy="179.10063241218384" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="343.0364741641337" cy="189.36832493423168" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="352.24133738601824" cy="198.23107035157162" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="361.4462006079027" cy="206.38680615228716" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="370.65106382978723" cy="211.80402465125823" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="379.85592705167176" cy="215.19110706556643" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="389.0607902735562" cy="217.22570241024775" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="398.2656534954407" cy="218.08042925139696" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="407.4705167173252" cy="218.53724585353257" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="416.67537993920973" cy="218.72279524718405" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="425.88024316109426" cy="218.71942527042535" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="435.0851063829787" cy="218.80924093679695" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="444.28996960486324" cy="218.77160161995175" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="453.49483282674777" cy="218.76569325954057" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="462.6996960486321" cy="218.81975719016526" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="471.9045592705167" cy="218.7478861438394" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="481.1094224924012" cy="218.8002588522863" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/><circle cx="490.3142857142857" cy="218.79498064908614" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/>
+</svg>
+    </div>
+    <div class="legend">
+     <span style="--color:#7c8a91">
+      Data dots
+     </span>
+     <span style="--color:#355d81">
+      Your total
+     </span>
+     <span style="--color:#a6a8a5">
+      Elastic
+     </span>
+     <span style="--color:#ba8834">
+      Charge
+     </span>
+     <span style="--color:#bd719c">
+      Phonon
+     </span>
+    </div>
+   </div>
+   <div class="stage rose">
+    <div class="stage-label">
+     <span>
+      Mix the ingredients
+     </span>
+     <span>
+      Try adding charge motion
+     </span>
+    </div>
+    <div class="control">
+     <label for="fit-elastic">
+      Elastic peak
+      <output for="fit-elastic" id="fit-elastic-value">
+       90%
+      </output>
+     </label>
+     <input class="js-only" data-fit="elastic" id="fit-elastic" max="150" min="0" step="1" style="accent-color:#8b928f" type="range" value="90"/>
+    </div>
+    <div class="control">
+     <label for="fit-charge">
+      Charge motion
+      <output for="fit-charge" id="fit-charge-value">
+       0%
+      </output>
+     </label>
+     <input class="js-only" data-fit="charge" id="fit-charge" max="150" min="0" step="1" style="accent-color:#ba8834" type="range" value="0"/>
+    </div>
+    <div class="control">
+     <label for="fit-phonon">
+      Atomic vibration
+      <output for="fit-phonon" id="fit-phonon-value">
+       85%
+      </output>
+     </label>
+     <input class="js-only" data-fit="phonon" id="fit-phonon" max="150" min="0" step="1" style="accent-color:#bd719c" type="range" value="85"/>
+    </div>
+    <div class="readout">
+     <div>
+      <div class="metric" id="fit-error">
+       —
+      </div>
+      <div class="metric-label">
+       relative curve error · lower is closer
+      </div>
+     </div>
+     <span class="tag" id="fit-result">
+      Keep exploring
+     </span>
+    </div>
+    <div aria-hidden="true" class="progress">
+     <div id="fit-progress">
+     </div>
+    </div>
+    <div class="toolbar">
+     <button class="secondary js-only" id="fit-new" type="button">
+      New mystery
+     </button>
+     <button class="quiet js-only" id="fit-reveal" type="button">
+      Reveal this mix
+     </button>
+    </div>
+   </div>
+  </div>
+  <div class="insight">
+   <p id="fit-insight" role="status">
+    Start with the gold slider. Can a weak charge signal explain the missing intensity between the large elastic peak and the phonon?
+   </p>
+  </div>
+  <details class="xray-method">
+   <summary>
+    About this teaching model
+   </summary>
+   <p class="model-note">
+    Generated teaching data with fixed peak positions and widths. The percentage sliders scale model components; they are not percentages of a material. Matching this curve is a puzzle, not a statistical validation or a unique physical interpretation.
+   </p>
+  </details>
+  <noscript>
+   <p class="no-js-note">
+    The synthetic spectrum combines elastic scattering, a weak charge signal and an atomic vibration. Enable JavaScript to adjust the components and solve the puzzle.
+   </p>
+  </noscript>
+ </div>
+</div>
+
    </section>
    <section aria-labelledby="reading-heading" class="section" id="reading">
     <div class="section-heading">

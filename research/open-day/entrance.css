@@ -1,0 +1,138 @@
+/* Interactive openings. Loaded after each project's existing component styles. */
+html{scroll-padding-top:24px}
+.site-header{position:relative;background:var(--paper)}
+.header-inner{min-height:72px;padding-block:12px;flex-wrap:nowrap}
+.demo-opening{padding:40px 0 34px;border-bottom:1px solid var(--line)}
+.opening-heading{margin-bottom:28px}
+.opening-heading .eyebrow{margin-bottom:12px}
+.opening-heading h1{font-size:clamp(2.8rem,5.4vw,4.6rem);max-width:1000px;margin-bottom:16px}
+.opening-heading h1 span{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-style:italic;color:var(--accent)}
+.opening-hint{font-size:1.02rem;color:var(--muted);max-width:650px;line-height:1.6}
+.opening-next{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;margin-top:22px;padding-block:12px;border-top:1px solid var(--line);font-size:.85rem;font-weight:600;color:var(--accent);text-decoration:none}
+.opening-next span{font-size:1.35rem}
+.opening-next:hover{text-decoration:underline}
+.opening-method,.laue-opening .laue-method{font-size:.8rem;line-height:1.6;color:var(--muted);margin-top:14px}
+.opening-method summary,.laue-opening .laue-method summary{cursor:pointer;min-height:44px;display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);list-style:none}
+.opening-method summary::-webkit-details-marker,.laue-opening .laue-method summary::-webkit-details-marker{display:none}
+.opening-method summary::before,.laue-opening .laue-method summary::before{content:"+";font-size:1.2rem;color:var(--accent)}
+.opening-method[open] summary::before,.laue-opening .laue-method[open] summary::before{content:"−"}
+.opening-method p{max-width:850px;margin-top:10px}
+.hero{margin-top:44px}
+.hero h2{font-size:clamp(2.8rem,6vw,5rem);max-width:700px}
+.hero h2 span{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;letter-spacing:-.05em;color:var(--accent)}
+.hero .eyebrow{max-width:340px}
+.opening-experiment{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center;background:radial-gradient(ellipse at 15% 20%,#ffffffb0,transparent 65%),var(--tint);padding:32px;border:1px solid var(--line);border-radius:24px}
+.opening-context{padding:0 16px}
+.opening-context h2{font-size:2.2rem}
+.opening-context p{max-width:400px;font-size:.95rem;color:var(--muted)}
+.opening-symbol{display:block;font-family:Georgia,serif;font-style:italic;font-size:4.6rem;line-height:1;color:var(--accent);margin-bottom:26px}
+.temperature-stage{display:flex;flex-direction:column;padding:24px;background:#fffdfb}
+.temperature-stage svg{order:0;margin-bottom:18px}
+.temperature-row{order:1}
+.temperature-row .demo-label{margin:0}
+.temperature-stage .temperature-control{order:2;margin:2px 0;min-height:44px}
+.temperature-stage .range-ends{order:3}
+.temperature-stage #temperature-help{order:5;margin-top:10px!important}
+.temperature-stage .status-pill{order:4;margin-top:16px;align-self:flex-start}
+.temperature-opening .opening-feedback{font-size:.9rem;color:var(--muted);line-height:1.6;margin:20px 0 0;max-width:850px}
+.temperature-stage[data-state="cold"]{border-color:#853e5870;background:#fff8fc}
+.temperature-stage[data-state="cold"] .status-pill{background:var(--accent);color:#fff}
+.opening-scattering.play-panel{margin-top:0;padding:28px;background:radial-gradient(ellipse at 85% 10%,#ffffffd9,transparent 70%),var(--tint);border-radius:24px}
+.opening-scattering .play-grid{grid-template-columns:1.25fr .75fr;gap:40px}
+.opening-scattering .play-controls label{font-size:.95rem}
+.opening-scattering .play-controls input{min-height:44px}
+.opening-scattering .play-chart{padding:18px;background:#fffdfb}
+.opening-scattering .play-chart figcaption{font-size:.78rem}
+.opening-scattering .play-equation{margin-bottom:0}
+.opening-scattering .play-insight{margin-top:14px}
+.laue-opening .laue-lab{padding:24px;background:radial-gradient(ellipse at 15% 10%,#ffffffb0,transparent 65%),var(--tint)}
+.laue-opening .laue-views{grid-template-columns:1fr 1fr}
+.laue-opening .laue-detector svg{max-height:320px}
+.laue-opening .crystal-drag svg{max-height:280px}
+.laue-opening .laue-feedback{margin-top:16px;padding-top:14px}
+.laue-opening #laue-lab{scroll-margin-top:16px}
+@media screen and (max-width:980px){
+  .opening-experiment{gap:24px;padding:24px}
+  .opening-context{padding:0}
+  .opening-scattering .play-grid{gap:24px}
+}
+@media screen and (max-width:720px){
+  :root{--phone-header:0px}
+  html{scroll-padding-top:16px}
+  .header-inner{min-height:64px;padding:10px 0;gap:0}
+  .brand{gap:9px}
+  .brand svg{width:28px;height:28px;flex-shrink:0}
+  .brand strong{font-size:.88rem}
+  .brand small{font-size:.65rem}
+  .demo-opening{padding:24px 0 14px}
+  .opening-heading{margin-bottom:20px}
+  .opening-heading .eyebrow{font-size:.63rem;letter-spacing:.11em;margin-bottom:10px}
+  .opening-heading h1{font-size:clamp(2rem,8.6vw,3.15rem);line-height:1.06;margin-bottom:12px}
+  .opening-hint{font-size:.88rem;line-height:1.55;max-width:390px}
+  .opening-next{margin-top:10px;font-size:.8rem}
+  .opening-method,.laue-opening .laue-method{margin-top:8px;font-size:.78rem}
+  .opening-experiment{display:block;padding:14px;border-radius:20px}
+  .opening-context{display:none}
+  .temperature-stage{padding:14px;border-radius:14px}
+  .temperature-stage svg{max-height:230px;margin-bottom:12px}
+  .temperature-stage svg text{font-size:13px}
+  .temperature-stage svg tspan{font-size:10px}
+  .temperature-value{font-size:1.65rem}
+  .temperature-stage .demo-label{font-size:.75rem}
+  .temperature-stage .status-pill{margin-top:12px;font-size:.8rem}
+  .temperature-stage #temperature-help{font-size:.73rem!important}
+  .temperature-opening .opening-feedback{font-size:.82rem;margin-top:14px}
+  .opening-scattering.play-panel{padding:14px;border-radius:20px}
+  #scattering-demo .play-grid{display:flex;gap:0}
+  #scattering-demo .play-chart{order:0;padding:10px;margin-bottom:16px}
+  #scattering-demo .scattering-instruction{order:1;font-size:.85rem;line-height:1.55;margin-bottom:12px}
+  #scattering-demo label{order:2;font-size:.88rem}
+  #scattering-demo #scattering-angle{order:3;min-height:44px}
+  #scattering-demo .play-equation{order:4;font-size:.8rem;line-height:1.5;margin:6px 0 0}
+  #scattering-demo .play-equation br{display:none}
+  #scattering-demo .play-equation strong{display:block;margin-top:4px}
+  #scattering-demo .play-insight{order:5;font-size:.8rem;padding:10px 12px;margin-top:12px}
+  #scattering-demo .play-chart figcaption{font-size:.68rem;line-height:1.7}
+  #scattering-demo .legend-dot{width:7px;height:7px;margin-left:6px;margin-right:3px}
+  #scattering-demo .legend-dot:first-child{margin-left:0}
+  .laue-opening .laue-lab{padding:12px;border-radius:20px}
+  .laue-opening .laue-views{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:8px}
+  .laue-opening .laue-view{border-radius:12px}
+  .laue-opening .laue-view figcaption{display:flex;flex-direction:column;align-items:flex-start;padding:10px 10px 0;font-size:.76rem;gap:2px}
+  .laue-opening .laue-view figcaption span{font-size:.64rem}
+  .laue-opening .crystal-drag{min-height:160px}
+  .laue-opening .crystal-drag svg{height:auto;min-height:140px}
+  .laue-opening .laue-detector svg{height:auto;min-height:150px;max-height:210px}
+  .laue-opening .laue-detector-key{font-size:.62rem;padding:0 8px 10px}
+  .laue-opening .laue-controls{grid-template-columns:1fr;gap:0;margin-top:12px}
+  .laue-opening .laue-control{grid-template-columns:112px minmax(0,1fr);gap:8px}
+  .laue-opening .laue-control label{font-size:.74rem}
+  .laue-opening .laue-toolbar{margin-top:8px;gap:8px}
+  .laue-opening .laue-select select{font-size:.78rem}
+  .laue-opening .laue-feedback p{font-size:.78rem}
+  /* Full-width artwork and text share one surface on phones. */
+  .hero{width:calc(100% + 32px);margin:24px -16px 0;min-height:420px;border-radius:0;display:flex;flex-direction:row;align-items:flex-end}
+  .hero-art{position:absolute;inset:0;height:100%;z-index:-2}
+  .hero-art img{object-position:68% 25%}
+  .hero:after{display:block;position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(250,247,238,.99) 0%,rgba(250,247,238,.94) 31%,rgba(250,247,238,.64) 55%,rgba(250,247,238,.08) 82%)}
+  .hero-copy{padding:150px 24px 32px;width:100%;max-width:none;background:transparent}
+  .hero h2{font-size:clamp(2.3rem,9vw,3.3rem);margin-bottom:14px}
+  .hero .eyebrow{font-size:.63rem;margin-bottom:12px;max-width:300px}
+  .hero-lead{font-size:.94rem;max-width:450px}
+}
+@media screen and (max-width:360px){
+  .brand strong{font-size:.82rem}.brand small{font-size:.6rem}
+  .opening-heading h1{font-size:1.95rem}
+  .opening-heading .eyebrow{font-size:.58rem}
+  .laue-opening .laue-lab{padding:10px}
+  .laue-opening .laue-view figcaption{font-size:.68rem;padding-inline:7px}
+  .laue-opening .laue-control{grid-template-columns:104px minmax(0,1fr)}
+}
+@media print{
+  .demo-opening{padding:20px 0;break-inside:avoid}
+  .opening-heading h1{font-size:2.5rem}
+  .opening-next,.opening-method,.laue-method{display:none}
+  .hero{margin-top:24px;min-height:0}
+  .hero h2{font-size:2.5rem}
+  .opening-experiment{gap:20px;padding:20px}
+}

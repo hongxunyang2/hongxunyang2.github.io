@@ -11,7 +11,7 @@ Start with `research/open-day/index.html`. This is the short chooser intended as
 | X-ray scattering | `research/x-ray-scattering/` | RIXS, diffraction, international experiments and structure refinement |
 | Superconductors | `research/superconductors/` | Zero resistance, charge order, magnetic excitations, strain and field |
 
-Each project folder contains `index.html`, `styles.css`, `script.js` and `assets/`. There are no shared CSS/JS dependencies, frameworks, build steps, external fonts or CDN requirements. Text, images and demos work locally; external links lead to further reading or email. Navigation between projects assumes the sibling folder names above.
+Each project folder contains `index.html`, `styles.css`, `script.js` and `assets/`. The project pages also use shared CSS from `open-day/`: `mobile.css`, `entrance.css`, and, where applicable, `interactive.css`. There are no frameworks, build steps, external fonts or CDN requirements. Text, images and demos work locally; external links lead to further reading or email. Navigation between projects assumes the sibling folder names above.
 
 ## Preview and publish
 
@@ -24,7 +24,9 @@ Each project folder contains `index.html`, `styles.css`, `script.js` and `assets
 ## Editing
 
 - Edit the copy in each page's `index.html`. The Bachelor’s and Master’s suggestions are ordinary HTML `<details>` elements.
-- The CSS and JavaScript are copied into each folder intentionally so every project can be moved independently. Apply shared style changes to all four copies if desired.
+- The base CSS and JavaScript live in each project folder. Shared phone layouts live in `mobile.css`; the interactive openings, compact project headers and mobile banner overlays live in `entrance.css`. Keep the `open-day/` folder alongside the project folders when publishing.
+- Each project opens with its main interactive demo, followed by the banner, project facts and introduction. The lab brand in the header links back to the project chooser. Use ordinary document order rather than CSS ordering or scripted scrolling to preserve keyboard and screen-reader navigation.
+- The X-ray page uses its own `labs.css` and `demos.js` for three playgrounds: animated collective motions at the top, a calculated 2D diffraction pattern after the introduction, and a synthetic spectrum-fitting puzzle beneath the measured LESCO example. The diffraction calculation runs when its section approaches the viewport; the opening animation pauses offscreen and honours reduced-motion preferences. The temporary comparison gallery remains in `research/temp-interactive/`.
 - Laue screenshots and recordings are local copies of the existing showcase media. These show operator-driven controls; autonomous recognition and workflow coordination are prospective student work.
 - The temperature demo is an idealised model with an example transition at 90 K. It is not measured data. Its normal-state resistance scale is arbitrary.
 - EuAl₄ is identified as a magnetic comparison material, not a superconductor. Beamtime and travel are possibilities, not promises.

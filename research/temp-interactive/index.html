@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f2">
+  <meta name="robots" content="noindex, nofollow">
+  <title>X-ray playground — five interactive ideas</title>
+  <style>
+    :root{--paper:#faf8f2;--ink:#20383e;--muted:#607074;--blue:#3d668c;--sage:#588675;--rose:#a45e79;--gold:#b38b3b;--line:#dedfd5;--radius:24px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}
+    *{box-sizing:border-box}body{margin:0}html{scroll-behavior:smooth;scroll-padding-top:94px}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-underline-offset:4px}button,a,input,summary{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:4px}button:disabled{cursor:wait;opacity:.6}svg{display:block;width:100%;height:auto}svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}p{line-height:1.65;margin:0 0 16px}h1,h2,h3{line-height:1.08;letter-spacing:-.045em;margin:0}h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:650}h2{font-size:clamp(2rem,4vw,3.15rem);font-weight:650}h3{font-size:1.12rem;letter-spacing:-.02em}h1 em,h2 em{font-family:Georgia,serif;font-weight:400;color:var(--blue)}
+    .page{width:min(1120px,calc(100% - 48px));margin-inline:auto}.topbar{border-bottom:1px solid var(--line)}.topbar-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-size:.9rem;text-decoration:none;font-weight:650}.brand span{display:block;font-weight:400;font-size:.7rem;color:var(--muted);margin-top:3px}.preview-toggle{border:1px solid var(--line);background:#fffdf8;color:var(--ink);border-radius:100px;min-height:44px;padding:10px 16px;font-size:.8rem;white-space:nowrap}.preview-toggle[aria-pressed="true"]{color:#fff;background:var(--blue);border-color:var(--blue)}
+    .intro{padding:52px 0 32px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.67rem;font-weight:700;color:var(--blue);margin-bottom:13px}.intro h1{max-width:950px;margin-bottom:20px}.intro>p:last-child{font-size:1rem;max-width:660px;color:var(--muted)}.jumpbar{position:sticky;top:0;z-index:10;background:#faf8f2f5;backdrop-filter:blur(12px);border-block:1px solid var(--line)}.jumpbar .page{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:thin}.jumpbar a{white-space:nowrap;text-decoration:none;border:1px solid var(--line);border-radius:100px;padding:10px 14px;font-size:.77rem;min-height:40px;display:inline-flex;align-items:center;gap:9px;background:#fffdf9}.jumpbar a span{color:var(--blue);font-variant-numeric:tabular-nums}.jumpbar a:hover{border-color:var(--blue)}
+    main{padding-top:32px;padding-bottom:40px}.demo-card{container-type:inline-size;container-name:demo;border:1px solid var(--line);border-radius:var(--radius);background:#fffdf9;margin-bottom:32px;overflow:hidden;box-shadow:0 12px 40px #20383e06}.demo-head{padding:32px 32px 24px}.demo-head h2{margin-bottom:14px}.demo-head>p:last-child{color:var(--muted);font-size:.95rem;max-width:720px;margin:0}.demo-body{padding:0 24px 24px}.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}.lab-grid>*{min-width:0}.stage{background:linear-gradient(145deg,#edf2f5,#f7f3ec);border:1px solid #dce3e4;border-radius:18px;padding:18px;min-width:0}.stage.rose{background:linear-gradient(145deg,#f6ecf0,#faf3e7)}.stage-label{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:.73rem;font-weight:650;margin-bottom:12px;line-height:1.5}.stage-label span:last-child{font-size:.66rem;color:var(--muted);font-weight:400}.dark-stage{background:#142c39;border-color:#284859;color:#e6eef0}.dark-stage .stage-label span:last-child{color:#abc1c9}.drawing{width:100%;aspect-ratio:480/290;overflow:visible}.chart{background:#fffefb;border-radius:12px;padding:8px}.chart svg{aspect-ratio:520/280}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tabs button,.action,.secondary{min-height:44px;padding:10px 17px;border:1px solid #c6d3d9;color:var(--blue);border-radius:100px;background:#fffdf9;font-size:.82rem;font-weight:600}.tabs button[aria-pressed="true"],.action{background:var(--blue);color:white;border-color:var(--blue)}.tabs button:hover,.secondary:hover{filter:brightness(.96)}.controls{margin-top:18px}.control{margin-bottom:14px}.control:last-child{margin-bottom:0}.control label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.8rem;font-weight:650;line-height:1.5}.control output{font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}.control input[type=range]{width:100%;min-height:44px;margin:2px 0 0;accent-color:var(--blue);cursor:pointer}.control input:disabled{cursor:wait}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}.toolbar .quiet{margin-left:auto}.quiet{min-height:44px;border:0;background:transparent;color:var(--muted);font-size:.8rem;text-decoration:underline;text-underline-offset:4px;padding:10px 2px}.insight{padding:16px 18px;border-left:3px solid var(--blue);border-radius:0 12px 12px 0;background:#edf2f5;font-size:.87rem;line-height:1.65;color:#425d68;margin-top:18px}.insight p{margin:0}.model-note{font-size:.72rem;color:var(--muted);line-height:1.6;margin:18px 8px 0}.tag{display:inline-flex;align-items:center;gap:6px;border-radius:100px;padding:6px 10px;background:#fff8;font-size:.7rem;color:var(--blue)}.metric{font-size:2.3rem;letter-spacing:-.05em;color:var(--blue);font-variant-numeric:tabular-nums;line-height:1.1}.metric-label{font-size:.7rem;letter-spacing:.04em;color:var(--muted);margin-top:6px}.legend{font-size:.68rem;line-height:1.8;color:var(--muted);display:flex;gap:6px 14px;flex-wrap:wrap;margin-top:12px}.legend span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--color,var(--blue));margin-right:6px}.readout{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:14px}.progress{height:7px;background:#dce4e4;border-radius:10px;overflow:hidden;margin:12px 0}.progress>div{width:0;height:100%;background:var(--sage);transition:width .2s}.success{color:var(--sage)}.live-message{min-height:48px;font-size:.83rem;color:var(--muted);line-height:1.6;margin-top:12px}.density-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}.density-stage{min-width:0}.density-stage svg{aspect-ratio:1}.detector-wrap{position:relative;width:100%;aspect-ratio:1;background:#102735;border-radius:12px;overflow:hidden}.detector-wrap canvas{display:block;width:100%;height:100%;image-rendering:auto}.detector-cross{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent calc(50% - .5px),#ffffff1c 50%,transparent calc(50% + .5px)),linear-gradient(0deg,transparent calc(50% - .5px),#ffffff1c 50%,transparent calc(50% + .5px))}.axis-labels{display:flex;justify-content:space-between;font-size:.64rem;color:var(--muted);margin-top:8px}.beam-chart{margin-top:18px}.beam-status{font-size:.82rem;color:var(--muted);margin-top:12px;min-height:44px;line-height:1.6}.footer{font-size:.78rem;line-height:1.7;color:var(--muted);padding-bottom:34px}.footer a{color:var(--blue)}.phone-preview main.page{width:min(390px,calc(100% - 24px))}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.no-js{padding:20px;background:#f5e9db;color:var(--ink);border-radius:14px;margin-bottom:20px}
+    @container demo (max-width:640px){
+      .demo-head{padding:24px 18px 20px}.demo-head h2{font-size:2.05rem}.demo-head>p:last-child{font-size:.87rem}.demo-body{padding:0 12px 18px}.lab-grid{grid-template-columns:1fr;gap:12px}.stage{padding:14px;border-radius:14px}.tabs{gap:6px;margin-bottom:14px}.tabs button{padding-inline:13px;font-size:.77rem}.density-pair{gap:8px}.density-pair .stage{padding:9px}.density-pair .stage-label{font-size:.68rem;display:block;min-height:35px;margin-bottom:8px}.density-pair .stage-label span{display:block;font-size:.6rem}.density-pair .axis-labels{font-size:.58rem}.control label{font-size:.78rem}.insight{font-size:.82rem;padding:14px}.model-note{font-size:.69rem;margin-inline:4px}.drawing{aspect-ratio:480/290}.readout .metric{font-size:2rem}.legend{font-size:.65rem}.toolbar{gap:8px}.action,.secondary{font-size:.77rem;padding-inline:13px}
+    }
+    @media(max-width:720px){.page{width:calc(100% - 28px)}.topbar-inner{min-height:66px;gap:12px}.brand{font-size:.8rem}.brand span{font-size:.63rem}.preview-toggle{font-size:.7rem;padding-inline:11px}.intro{padding:34px 0 24px}.intro h1{font-size:2.7rem}.intro>p:last-child{font-size:.9rem}.jumpbar a{font-size:.72rem;padding-inline:11px}.demo-card{margin-bottom:24px;border-radius:20px}main{padding-top:24px}.footer{font-size:.73rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+    @media print{.jumpbar,.preview-toggle,.toolbar,button,input{display:none!important}.demo-card{break-inside:avoid;box-shadow:none}.page{width:100%}.intro{padding-top:20px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="page topbar-inner">
+      <a class="brand" href="../open-day/index.html">Quantum Matter Research<span>X-ray ideas · temporary playground</span></a>
+      <button class="preview-toggle" id="preview-toggle" type="button" aria-pressed="false">390 px preview</button>
+    </div>
+  </header>
+  <div class="page intro">
+    <p class="eyebrow">Five ideas. One place to try them.</p>
+    <h1>Which experiment<br/>makes you <em>curious?</em></h1>
+    <p>Working sketches for the X-ray page. Tap, slide, collect and explore. These are simplified teaching models with illustrative data.</p>
+  </div>
+  <nav class="jumpbar" aria-label="Interactive ideas">
+    <div class="page">
+      <a href="#motions"><span>01</span> Invisible motions</a>
+      <a href="#photon"><span>02</span> Photon story</a>
+      <a href="#signal"><span>03</span> Hidden signal</a>
+      <a href="#order"><span>04</span> Order → pattern</a>
+      <a href="#beamline"><span>05</span> Your experiment</a>
+    </div>
+  </nav>
+  <main class="page" id="main">
+    <noscript><p class="no-js">Enable JavaScript to try the five interactive prototypes. Everything runs in this one file; no server or internet connection is needed.</p></noscript>
+
+    <section class="demo-card" id="motions" aria-labelledby="motions-title">
+      <div class="demo-head"><p class="eyebrow">01 / Meet the invisible</p><h2 id="motions-title">Atoms move. Spins dance.<br/><em>X-rays tell the story.</em></h2><p>Choose what happens inside a crystal. Watch the motion and the clue it could leave in an X-ray energy-loss spectrum.</p></div>
+      <div class="demo-body">
+        <div class="tabs" role="group" aria-label="Choose a collective motion">
+          <button type="button" data-motion="phonon" aria-pressed="true">Vibrating atoms</button>
+          <button type="button" data-motion="magnon" aria-pressed="false">Moving spins</button>
+          <button type="button" data-motion="charge" aria-pressed="false">Charge fluctuations</button>
+        </div>
+        <div class="lab-grid">
+          <div class="stage"><div class="stage-label"><span>Inside the crystal</span><span id="motion-kind">A collective vibration</span></div><svg class="drawing" id="motion-art" viewBox="0 0 480 290" role="img" aria-label="Schematic collective motion inside a crystal"></svg></div>
+          <div class="stage"><div class="stage-label"><span>What the X-rays reveal</span><span>Example spectrum</span></div><div class="chart"><svg id="motion-spectrum" viewBox="0 0 520 280" role="img" aria-label="Illustrative energy-loss spectrum"></svg></div><div class="legend"><span style="--color:#b4bfc3">Elastic scattering</span><span id="motion-legend" style="--color:#588675">Atomic vibration</span></div></div>
+        </div>
+        <div class="toolbar"><button class="secondary" type="button" id="motion-pause">Pause motion</button><span class="tag" id="motion-energy">Example energy loss · 50 meV</span></div>
+        <div class="insight"><p id="motion-insight">The atoms move together in a wave. Creating one quantum of this vibration—a phonon—costs energy, which an X-ray photon can lose.</p></div>
+        <p class="model-note">Motion and energy scales are illustrative. Each mode is a possible scattering channel, not a unique identification from a single peak. Real energies and intensities depend on the material, momentum and experimental conditions.</p>
+      </div>
+    </section>
+
+    <section class="demo-card" id="photon" aria-labelledby="photon-title">
+      <div class="demo-head"><p class="eyebrow">02 / A tiny energy exchange</p><h2 id="photon-title">Send in a photon.<br/><em>Follow its story.</em></h2><p>Choose an outcome, then fire an X-ray. See where some of its energy goes and what the detector records.</p></div>
+      <div class="demo-body">
+        <div class="tabs" role="group" aria-label="Choose a scattering outcome">
+          <button type="button" data-photon="elastic" aria-pressed="false">No energy loss</button>
+          <button type="button" data-photon="phonon" aria-pressed="true">Create a vibration</button>
+          <button type="button" data-photon="magnon" aria-pressed="false">Excite a spin wave</button>
+        </div>
+        <div class="lab-grid">
+          <div class="stage dark-stage"><div class="stage-label"><span>The photon’s journey</span><span id="photon-step">Ready to fire</span></div><svg class="drawing" id="photon-art" viewBox="0 0 480 290" role="img" aria-label="An X-ray travels from a source through a crystal to a detector"></svg><div class="toolbar"><button class="action" id="photon-fire" type="button">Fire an X-ray ↗</button><button class="quiet" id="photon-clear" type="button">Clear detector</button></div></div>
+          <div class="stage"><div class="stage-label"><span>The energy-loss detector</span><span id="photon-count">0 photons collected</span></div><div class="chart"><svg id="photon-spectrum" viewBox="0 0 520 280" role="img" aria-label="Collected photon counts at the selected energy losses"></svg></div><div class="readout"><div><div class="metric" id="photon-loss">50 meV</div><div class="metric-label">energy left in the crystal per photon</div></div></div></div>
+        </div>
+        <div class="insight"><p id="photon-message" role="status">Fire a photon to create an atomic vibration. Its lost energy appears as a detector event at 50 meV.</p></div>
+        <p class="model-note">A schematic energy-exchange story, not the full resonant scattering process. Outcomes are selected for demonstration; real scattering is probabilistic. The colour change and motion are exaggerated. It is the photon’s energy loss, not its travel time, that is measured here.</p>
+      </div>
+    </section>
+
+    <section class="demo-card" id="signal" aria-labelledby="signal-title">
+      <div class="demo-head"><p class="eyebrow">03 / A little scientific detective work</p><h2 id="signal-title">There’s a signal hiding here.<br/><em>Can you uncover it?</em></h2><p>The dots contain overlapping signals. Adjust the three coloured ingredients until their sum matches the dots.</p></div>
+      <div class="demo-body">
+        <div class="lab-grid">
+          <div class="stage"><div class="stage-label"><span>Your model + the mystery data</span><span>Synthetic example</span></div><div class="chart"><svg id="fit-spectrum" viewBox="0 0 520 280" role="img" aria-label="Synthetic spectrum, model and component curves"></svg></div><div class="legend"><span style="--color:#7c8a91">Data dots</span><span style="--color:#355d81">Your total</span><span style="--color:#a6a8a5">Elastic</span><span style="--color:#ba8834">Charge</span><span style="--color:#bd719c">Phonon</span></div></div>
+          <div class="stage rose">
+            <div class="stage-label"><span>Mix the ingredients</span><span>Try adding charge motion</span></div>
+            <div class="control"><label for="fit-elastic">Elastic peak<output id="fit-elastic-value" for="fit-elastic">90%</output></label><input id="fit-elastic" data-fit="elastic" type="range" min="0" max="150" value="90" step="1" style="accent-color:#8b928f"></div>
+            <div class="control"><label for="fit-charge">Charge motion<output id="fit-charge-value" for="fit-charge">0%</output></label><input id="fit-charge" data-fit="charge" type="range" min="0" max="150" value="0" step="1" style="accent-color:#ba8834"></div>
+            <div class="control"><label for="fit-phonon">Atomic vibration<output id="fit-phonon-value" for="fit-phonon">85%</output></label><input id="fit-phonon" data-fit="phonon" type="range" min="0" max="150" value="85" step="1" style="accent-color:#bd719c"></div>
+            <div class="readout"><div><div class="metric" id="fit-error">—</div><div class="metric-label">relative curve error · lower is closer</div></div><span class="tag" id="fit-result">Keep exploring</span></div>
+            <div class="progress" aria-hidden="true"><div id="fit-progress"></div></div>
+            <div class="toolbar"><button class="secondary" id="fit-new" type="button">New mystery</button><button class="quiet" id="fit-reveal" type="button">Reveal this mix</button></div>
+          </div>
+        </div>
+        <div class="insight"><p id="fit-insight" role="status">Start with the gold slider. Can a weak charge signal explain the missing intensity between the large elastic peak and the phonon?</p></div>
+        <p class="model-note">Generated teaching data with fixed peak positions and widths. The percentage sliders scale model components; they are not percentages of a material. Matching this curve is a puzzle, not a statistical validation or a unique physical interpretation.</p>
+      </div>
+    </section>
+
+    <section class="demo-card" id="order" aria-labelledby="order-title">
+      <div class="demo-head"><p class="eyebrow">04 / A crystal writes its own fingerprint</p><h2 id="order-title">Change the order.<br/><em>Change the pattern.</em></h2><p>Move the atoms, change their spacing, or add density stripes. The diffraction image is calculated from the arrangement you create.</p></div>
+      <div class="demo-body">
+        <div class="tabs" role="group" aria-label="Try a crystal arrangement">
+          <button type="button" data-order="perfect" aria-pressed="true">Perfect lattice</button>
+          <button type="button" data-order="disorder" aria-pressed="false">Add disorder</button>
+          <button type="button" data-order="stripes" aria-pressed="false">Add stripes</button>
+        </div>
+        <div class="density-pair">
+          <div class="stage density-stage"><div class="stage-label"><span>Your crystal</span><span>Real space</span></div><svg id="density-art" viewBox="0 0 360 360" role="img" aria-label="Two-dimensional finite array of atoms and electron-density weights"></svg><div class="axis-labels"><span>Positions + density</span><span>9 × 9 sites</span></div></div>
+          <div class="stage density-stage dark-stage"><div class="stage-label"><span>Diffraction image</span><span>Reciprocal space</span></div><div class="detector-wrap"><canvas id="density-detector" width="97" height="97" role="img" aria-label="Calculated diffraction intensity for the finite two-dimensional lattice"></canvas><div class="detector-cross" aria-hidden="true"></div></div><div class="axis-labels" style="color:#adc1c9"><span>qₓ: −2 → +2</span><span>qᵧ: −2 → +2</span></div></div>
+        </div>
+        <div class="lab-grid controls">
+          <div class="control"><label for="density-disorder">Positional disorder<output id="density-disorder-value" for="density-disorder">0%</output></label><input id="density-disorder" type="range" min="0" max="100" value="0" step="1"></div>
+          <div class="control"><label for="density-spacing">Lattice spacing<output id="density-spacing-value" for="density-spacing">1.00 ×</output></label><input id="density-spacing" type="range" min="80" max="120" value="100" step="1"></div>
+        </div>
+        <div class="control"><label for="density-stripes">Density-stripe strength<output id="density-stripes-value" for="density-stripes">0%</output></label><input id="density-stripes" type="range" min="0" max="100" value="0" step="1" style="accent-color:#a45e79"></div>
+        <div class="insight"><p id="density-insight">An evenly spaced lattice produces regularly spaced bright peaks. Increase the real-space spacing: the peaks move closer together.</p></div>
+        <p class="model-note">Elastic scattering from a finite, weighted 2D array: I(q) ∝ |Σⱼ wⱼ exp(iq·rⱼ)|². A logarithmic colour scale exposes weak features. The central beam is masked; q is in units of 2π divided by the original lattice spacing. Random displacements weaken sharp peaks and add diffuse intensity. Stripes modulate density weights every three sites; this is separate from the energy-loss demonstrations above.</p>
+      </div>
+    </section>
+
+    <section class="demo-card" id="beamline" aria-labelledby="beamline-title">
+      <div class="demo-head"><p class="eyebrow">05 / Take the controls</p><h2 id="beamline-title">Your beam. Your sample.<br/><em>Your first discovery.</em></h2><p>Turn the detector and collect a measurement. Build your own scan—or sweep through the angles and watch a diffraction peak appear.</p></div>
+      <div class="demo-body">
+        <div class="lab-grid">
+          <div class="stage"><div class="stage-label"><span>A miniature beamline</span><span id="beam-angle-label">Scattering angle · 30°</span></div><svg class="drawing" id="beam-art" viewBox="0 0 480 290" role="img" aria-label="X-ray source, crystal and detector at an adjustable scattering angle"></svg><div class="control"><label for="beam-angle">Detector angle, 2θ<output id="beam-angle-value" for="beam-angle">30°</output></label><input id="beam-angle" type="range" min="10" max="80" value="30" step="1"></div><div class="toolbar"><button class="action" type="button" id="beam-collect">Collect a point</button><button class="secondary" type="button" id="beam-sweep" aria-pressed="false">Sweep a scan</button><button class="quiet" type="button" id="beam-clear">Clear</button></div></div>
+          <div class="stage"><div class="stage-label"><span>Your measurements</span><span id="beam-point-count">0 angles measured</span></div><div class="chart"><svg id="beam-spectrum" viewBox="0 0 520 280" role="img" aria-label="Collected diffraction intensity versus scattering angle"></svg></div><div class="beam-status" id="beam-status" role="status">The scan is empty. Collect your first point or start a sweep.</div></div>
+        </div>
+        <div class="insight"><p id="beam-insight">Most angles give a weak signal. At just the right angle, waves scattered by successive crystal planes add together: a diffraction peak.</p></div>
+        <p class="model-note">A synthetic first-order Bragg reflection with λ = 1.00 Å and d = 1.20 Å, centred at 2θ = 2 arcsin(λ/2d) ≈ 49.2°. Peak width, background and counts are illustrative. This models an elastic angular scan, not an energy-resolved RIXS experiment.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="page footer">Temporary comparison page · <a href="../x-ray-scattering/index.html">Back to the current X-ray page ↗</a><br/>All five prototypes run locally in this HTML file. The existing project pages are unchanged by this gallery.</footer>
+  <script>
+    'use strict';
+    const $=id=>document.getElementById(id);
+    const $$=selector=>[...document.querySelectorAll(selector)];
+    const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+    const gaussian=(x,center,width,height=1)=>height*Math.exp(-.5*((x-center)/width)**2);
+    const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
+    const plot={left:48,right:500,top:25,bottom:222};
+    function axis({xmin=-10,xmax=180,ymax=1.5,xticks=[0,50,100,150],xlabel='Energy loss (meV)',ylabel='Intensity (arb.)'}={}){
+      const x=v=>plot.left+(v-xmin)/(xmax-xmin)*(plot.right-plot.left);
+      const y=v=>plot.bottom-v/ymax*(plot.bottom-plot.top);
+      let svg='<path d="M48 25V222H500" fill="none" stroke="#a1afb0" stroke-width="1.3"/>';
+      for(const f of [.25,.5,.75,1])svg+=`<path d="M48 ${y(ymax*f)}H500" stroke="#e7e9e4"/>`;
+      for(const v of xticks)svg+=`<path d="M${x(v)} 222v5" stroke="#a1afb0"/><text x="${x(v)}" y="243" text-anchor="middle" fill="#607074" font-size="13">${v}</text>`;
+      svg+=`<text x="274" y="270" text-anchor="middle" fill="#607074" font-size="14">${xlabel}</text><text x="16" y="125" text-anchor="middle" transform="rotate(-90 16 125)" fill="#607074" font-size="12">${ylabel}</text>`;
+      return {svg,x,y};
+    }
+    function linePath(points,x,y){return points.map(([px,py],i)=>(i?'L':'M')+x(px).toFixed(2)+','+y(py).toFixed(2)).join(' ')}
+    function crystal(cx,cy,size=46){return `<g transform="translate(${cx} ${cy})"><path d="M0 ${-size}L${size*.82} ${-size*.24}L0 ${size*.77}L${-size*.82} ${-size*.24}Z" fill="#d2bde3" stroke="#8f76a5" stroke-width="2"/><path d="M0 ${-size}V${size*.77}M${-size*.82} ${-size*.24}L0 0L${size*.82} ${-size*.24}" fill="none" stroke="#a18ab5" stroke-width="2"/></g>`}
+    function pressGroup(selector,button){$$(selector).forEach(b=>b.setAttribute('aria-pressed',String(b===button)))}
+    $('preview-toggle').addEventListener('click',()=>{const on=document.body.classList.toggle('phone-preview');$('preview-toggle').setAttribute('aria-pressed',String(on));$('preview-toggle').textContent=on?'Full width':'390 px preview'});
+
+    // 01. Collective motions linked to representative energy-loss peaks.
+    const motionInfo={
+      phonon:{energy:50,color:'#588675',kind:'A collective vibration',legend:'Atomic vibration',text:'The atoms move together in a wave. Creating one quantum of this vibration—a phonon—costs energy, which an X-ray photon can lose.'},
+      magnon:{energy:120,color:'#3d668c',kind:'A wave of magnetic moments',legend:'Spin wave',text:'Each arrow represents a tiny magnetic moment. Their directions move together. An X-ray can transfer energy to this collective magnetic motion.'},
+      charge:{energy:20,color:'#b38b3b',kind:'A fluctuating density pattern',legend:'Charge fluctuation',text:'Electron density can become uneven and fluctuate collectively. Darker dots represent higher density; X-rays can probe some of these low-energy fluctuations.'}
+    };
+    const motion={mode:'phonon',paused:reduced.matches,inView:true};
+    function drawMotion(t=0){
+      const {mode}=motion,info=motionInfo[mode];let art='';
+      for(let row=0;row<4;row++)for(let col=0;col<8;col++){
+        const px=52+col*53,py=62+row*54,phase=col*.85-t*2.8;
+        if(mode==='phonon'){
+          const dx=10*Math.sin(phase);
+          if(col<7){const next=52+(col+1)*53+10*Math.sin(phase+.85);art+=`<path d="M${px+dx} ${py}H${next}" stroke="#b4c6c0" stroke-width="2"/>`}
+          if(row<3)art+=`<path d="M${px+dx} ${py}v54" stroke="#cbd5cb" stroke-width="1.2"/>`;
+          art+=`<circle cx="${px+dx}" cy="${py}" r="12" fill="${row%2?'#a7c2b5':'#588675'}" stroke="#fffdf9" stroke-width="2"/><circle cx="${px+dx-3}" cy="${py-4}" r="3" fill="#ffffff70"/>`;
+        }else if(mode==='magnon'){
+          const angle=(row+col)%2?180+27*Math.sin(phase):27*Math.sin(phase);
+          art+=`<circle cx="${px}" cy="${py+12}" r="5" fill="#c6b0cf"/><g transform="rotate(${angle} ${px} ${py})"><path d="M${px} ${py+16}V${py-17}m-7 8 7-8 7 8" fill="none" stroke="${(row+col)%2?'#a45e79':'#3d668c'}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+        }else{
+          const density=.5+.45*Math.cos(col*2*Math.PI/3)*Math.cos(t*2);
+          art+=`<circle cx="${px}" cy="${py}" r="${8+7*density}" fill="#b38b3b" opacity="${.2+.75*density}"/><circle cx="${px}" cy="${py}" r="3" fill="#785a22" opacity=".35"/>`;
+        }
+      }
+      art+=`<text x="240" y="273" text-anchor="middle" font-size="14" fill="#607074">${mode==='phonon'?'A wave in atomic positions':mode==='magnon'?'A wave in spin directions':'A wave in electron density'}</text>`;
+      $('motion-art').innerHTML=art;
+    }
+    function drawMotionSpectrum(){
+      const info=motionInfo[motion.mode],a=axis();
+      const samples=Array.from({length:241},(_,i)=>-10+i*190/240);
+      const elastic=samples.map(e=>[e,gaussian(e,0,5,.7)]);
+      const mode=samples.map(e=>[e,gaussian(e,info.energy,motion.mode==='charge'?11:8,1.02)]);
+      $('motion-spectrum').innerHTML='<title>Illustrative elastic and '+info.legend+' peaks</title>'+a.svg+`<path d="${linePath(elastic,a.x,a.y)}" fill="none" stroke="#b4bfc3" stroke-width="2"/><path d="${linePath(mode,a.x,a.y)} L${a.x(180)} 222H${a.x(-10)}Z" fill="${info.color}" fill-opacity=".16"/><path d="${linePath(mode,a.x,a.y)}" fill="none" stroke="${info.color}" stroke-width="3"/><path d="M${a.x(info.energy)} ${a.y(1.1)}V222" stroke="${info.color}" stroke-dasharray="4 5" opacity=".5"/><text x="${a.x(info.energy)}" y="${a.y(1.15)}" text-anchor="middle" font-size="14" fill="${info.color}">${info.energy} meV</text>`;
+      $('motion-kind').textContent=info.kind;$('motion-legend').textContent=info.legend;$('motion-legend').style.setProperty('--color',info.color);
+      $('motion-energy').textContent='Example energy loss · '+info.energy+' meV';$('motion-insight').textContent=info.text;
+    }
+    $$('[data-motion]').forEach(button=>button.addEventListener('click',()=>{motion.mode=button.dataset.motion;pressGroup('[data-motion]',button);drawMotion(clock);drawMotionSpectrum();wake()}));
+    $('motion-pause').textContent=motion.paused?'Play motion':'Pause motion';
+    $('motion-pause').addEventListener('click',()=>{motion.paused=!motion.paused;$('motion-pause').textContent=motion.paused?'Play motion':'Pause motion';wake()});
+
+    // 02. A selected channel deposits energy and adds one detector event.
+    const photon={mode:'phonon',running:false,start:0,counts:{elastic:0,phonon:0,magnon:0}};
+    const photonInfo={elastic:{energy:0,color:'#b6c6d0',name:'elastic scattering'},phonon:{energy:50,color:'#a8cfb7',name:'an atomic vibration'},magnon:{energy:120,color:'#dab0d0',name:'a spin wave'}};
+    function wave(x1,y1,x2,y2,color,period=23){const dx=x2-x1,dy=y2-y1,length=Math.hypot(dx,dy);let p='';for(let n=0;n<=90;n++){const f=n/90,off=5*Math.sin(f*length/period*2*Math.PI);p+=(n?'L':'M')+(x1+dx*f-dy/length*off).toFixed(2)+','+(y1+dy*f+dx/length*off).toFixed(2)}return `<path d="${p}" fill="none" stroke="${color}" stroke-width="2.2" opacity=".75"/>`}
+    function drawPhoton(p=0){
+      const info=photonInfo[photon.mode],hit=p>=.45;
+      const first=[48,190],sample=[240,170],end=[421,65];
+      const f=p<.45?p/.45:(p-.45)/.55,from=p<.45?first:sample,to=p<.45?sample:end;
+      const x=from[0]+(to[0]-from[0])*clamp(f,0,1),y=from[1]+(to[1]-from[1])*clamp(f,0,1);
+      let svg='<defs><radialGradient id="photon-glow"><stop stop-color="#fff8d7"/><stop offset="1" stop-color="#fff8d7" stop-opacity="0"/></radialGradient></defs><path d="M48 190L240 170L421 65" fill="none" stroke="#617e8a" stroke-dasharray="5 6" opacity=".5"/>';
+      svg+=wave(...first,...sample,'#a9cbe5',18)+wave(...sample,...end,hit?info.color:'#78929e',hit&&info.energy?30:18);
+      svg+='<rect x="21" y="169" width="40" height="42" rx="10" fill="#426c89" stroke="#9dbdce"/><circle cx="41" cy="190" r="7" fill="#cce5f1"/>';
+      svg+=crystal(240,170,40);
+      svg+='<g transform="translate(421 65) rotate(60)"><rect x="-28" y="-10" width="56" height="20" rx="5" fill="#668e7c" stroke="#bcd6bf"/><path d="M-18 0H18" stroke="#dfe9c7" stroke-width="3"/></g><text x="42" y="242" text-anchor="middle" fill="#c6dae2" font-size="14">Source</text><text x="240" y="242" text-anchor="middle" fill="#c6dae2" font-size="14">Crystal</text><text x="410" y="32" text-anchor="middle" fill="#c6dae2" font-size="14">Detector</text>';
+      if(photon.running){svg+=`<circle cx="${x}" cy="${y}" r="23" fill="url(#photon-glow)"/><circle cx="${x}" cy="${y}" r="6" fill="${hit?info.color:'#deeff7'}"/>`;}
+      if(hit&&info.energy){const ring=12+((p-.45)/.55)*38;svg+=`<circle cx="240" cy="170" r="${ring}" fill="none" stroke="${info.color}" stroke-width="2" opacity="${1-(p-.45)/.65}"/><text x="240" y="101" text-anchor="middle" fill="${info.color}" font-size="15">+${info.energy} meV in the crystal</text>`;}
+      $('photon-art').innerHTML=svg;
+    }
+    function drawPhotonSpectrum(){
+      const ymax=Math.max(3,...Object.values(photon.counts))+1,a=axis({xmin:-10,xmax:160,ymax,xticks:[0,50,100,150],ylabel:'Photons collected'});let svg=a.svg;
+      for(const [key,n]of Object.entries(photon.counts)){
+        const info=photonInfo[key],xx=a.x(info.energy);
+        if(n)svg+=`<rect x="${xx-11}" y="${a.y(n)}" width="22" height="${222-a.y(n)}" rx="5" fill="${info.color}" stroke="#53798d"/><text x="${xx}" y="${a.y(n)-9}" text-anchor="middle" fill="#3d668c" font-size="15">${n}</text>`;
+      }
+      const count=Object.values(photon.counts).reduce((a,b)=>a+b,0);$('photon-count').textContent=count+' photon'+(count===1?'':'s')+' collected';$('photon-spectrum').innerHTML='<title>Counts at zero, 50 and 120 meV energy loss</title>'+svg;
+    }
+    function finishPhoton(){photon.running=false;photon.counts[photon.mode]++;drawPhoton(1);drawPhotonSpectrum();$('photon-fire').disabled=false;$$('[data-photon]').forEach(b=>b.disabled=false);$('photon-step').textContent='Photon recorded';const info=photonInfo[photon.mode];$('photon-message').textContent=info.energy?`The photon left ${info.energy} meV in the crystal, creating ${info.name}. The detector records one event at that energy loss.`:'The photon scattered without losing energy. The detector records an elastic event at zero energy loss.';}
+    $$('[data-photon]').forEach(button=>button.addEventListener('click',()=>{photon.mode=button.dataset.photon;pressGroup('[data-photon]',button);$('photon-loss').textContent=photonInfo[photon.mode].energy+' meV';$('photon-step').textContent='Ready to fire';$('photon-message').textContent=photon.mode==='elastic'?'Fire an X-ray to record an event without energy loss.':'Fire an X-ray to create '+photonInfo[photon.mode].name+'.';drawPhoton(0)}));
+    $('photon-fire').addEventListener('click',()=>{if(photon.running)return;photon.running=true;photon.start=performance.now();$('photon-fire').disabled=true;$$('[data-photon]').forEach(b=>b.disabled=true);$('photon-step').textContent='Photon incoming…';$('photon-message').textContent='An X-ray is on its way to the crystal.';if(reduced.matches)finishPhoton();else wake()});
+    $('photon-clear').addEventListener('click',()=>{if(photon.running){photon.running=false;$('photon-fire').disabled=false;$$('[data-photon]').forEach(b=>b.disabled=false);}for(const k of Object.keys(photon.counts))photon.counts[k]=0;drawPhoton(0);drawPhotonSpectrum();$('photon-step').textContent='Ready to fire';$('photon-message').textContent='Detector cleared. Choose an outcome and fire another X-ray.'});
+
+    // 03. Fixed-width components form a reproducible synthetic fitting puzzle.
+    const fit={round:0,targets:[{elastic:90,charge:65,phonon:70},{elastic:110,charge:45,phonon:95},{elastic:70,charge:90,phonon:55}]};
+    const fitColors={elastic:'#a6a8a5',charge:'#ba8834',phonon:'#bd719c'};
+    const fitSamples=Array.from({length:181},(_,i)=>-30+i*140/180);
+    const fitComponents=e=>({elastic:gaussian(e,0,10,1.8),charge:gaussian(e,22,13,.62),phonon:gaussian(e,52,9,.9)});
+    const fitIntensity=(e,gains)=>Object.entries(fitComponents(e)).reduce((sum,[key,v])=>sum+v*gains[key]/100,.04);
+    function drawFit(){
+      const target=fit.targets[fit.round%fit.targets.length],gains=Object.fromEntries($$('[data-fit]').map(i=>[i.dataset.fit,Number(i.value)])),a=axis({xmin:-30,xmax:110,ymax:2.45,xticks:[0,25,50,75,100]});let svg=a.svg;
+      for(const [key,color]of Object.entries(fitColors)){const pts=fitSamples.map(e=>[e,fitComponents(e)[key]*gains[key]/100]);svg+=`<path d="${linePath(pts,a.x,a.y)} L500 222H48Z" fill="${color}" fill-opacity=".23"/><path d="${linePath(pts,a.x,a.y)}" stroke="${color}" fill="none" stroke-width="1.6"/>`;}
+      svg+=`<path d="${linePath(fitSamples.map(e=>[e,fitIntensity(e,gains)]),a.x,a.y)}" fill="none" stroke="#355d81" stroke-width="3"/>`;
+      let error=0,norm=0;for(let i=0;i<48;i++){const e=-27+i*134/47,targetY=fitIntensity(e,target)*(1+.012*Math.sin(i*2.4)),actual=fitIntensity(e,gains);error+=(actual-targetY)**2;norm+=targetY**2;svg+=`<circle cx="${a.x(e)}" cy="${a.y(targetY)}" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/>`;}
+      const relative=Math.sqrt(error/norm),won=relative<.03;
+      $('fit-spectrum').innerHTML='<title>Match the total curve to the synthetic data dots</title>'+svg;
+      $$('[data-fit]').forEach(i=>{$(i.id+'-value').textContent=i.value+'%';i.setAttribute('aria-valuetext',i.value+' percent of component scale')});
+      $('fit-error').textContent=(100*relative).toFixed(1)+'%';$('fit-progress').style.width=(100*clamp(1-relative/.35,0,1))+'%';$('fit-result').textContent=won?'Close match ✓':'Keep exploring';$('fit-result').classList.toggle('success',won);
+      $('fit-insight').textContent=won?'You found a close match. The weak charge component fills in the intensity between the elastic tail and the phonon. This is the sort of overlap researchers work to disentangle.':gains.charge<10?'Start with the gold slider. Can a weak charge signal explain the missing intensity between the large elastic peak and the phonon?':'Watch the dots near 20 meV. Adjust the elastic tail and the charge signal together, then check the phonon peak near 50 meV.';
+    }
+    $$('[data-fit]').forEach(i=>i.addEventListener('input',drawFit));
+    $('fit-new').addEventListener('click',()=>{fit.round++;$('fit-elastic').value=90;$('fit-charge').value=0;$('fit-phonon').value=85;drawFit()});
+    $('fit-reveal').addEventListener('click',()=>{const target=fit.targets[fit.round%fit.targets.length];$$('[data-fit]').forEach(i=>i.value=target[i.dataset.fit]);drawFit();$('fit-insight').textContent=`This mystery used elastic ${target.elastic}%, charge ${target.charge}% and phonon ${target.phonon}%. Small offsets in the dots imitate measurement noise. Try a new mystery without revealing the mix.`});
+
+    // 04. Compute the complex structure factor, rather than drawing preset spots.
+    let densityPending=false;
+    const densityCanvas=$('density-detector'),densityCtx=densityCanvas.getContext('2d');
+    function noise(n){const v=Math.sin(n*127.1+31.7)*43758.5453;return (v-Math.floor(v))*2-1}
+    function drawDensity(){
+      densityPending=false;
+      const disorder=Number($('density-disorder').value)/100,spacing=Number($('density-spacing').value)/100,strength=Number($('density-stripes').value)/100,atoms=[];let svg='';
+      for(let row=0;row<9;row++)for(let col=0;col<9;col++){
+        const n=row*9+col,x=(col-4)*spacing+disorder*.42*noise(n+1),y=(row-4)*spacing+disorder*.42*noise(n+102),w=1+.75*strength*Math.cos(2*Math.PI*col/3);atoms.push({x,y,w});
+        svg+=`<circle cx="${180+x*31}" cy="${180+y*31}" r="${5.7+3*w}" fill="${strength?'#a45e79':'#588675'}" opacity="${.3+.6*w/1.75}" stroke="#fffdf9" stroke-width="1"/>`;
+      }
+      $('density-art').innerHTML='<title>Finite lattice with adjustable positions and density weights</title>'+svg;
+      const n=densityCanvas.width,img=densityCtx.createImageData(n,n),normal=81**2;
+      const stops=[[0,[13,35,49]],[.18,[27,63,81]],[.45,[65,116,134]],[.72,[173,193,158]],[1,[255,235,169]]];
+      for(let iy=0;iy<n;iy++)for(let ix=0;ix<n;ix++){
+        const qx=-2+ix*4/(n-1),qy=2-iy*4/(n-1);let re=0,im=0;
+        for(const atom of atoms){const phi=2*Math.PI*(qx*atom.x+qy*atom.y);re+=atom.w*Math.cos(phi);im+=atom.w*Math.sin(phi);}
+        let intensity=(re*re+im*im)/normal;if(qx*qx+qy*qy<.009)intensity=0;
+        const t=clamp(Math.log1p(220*intensity)/Math.log(221),0,1);let j=0;while(j<stops.length-2&&t>stops[j+1][0])j++;const a=stops[j],b=stops[j+1],f=clamp((t-a[0])/(b[0]-a[0]),0,1),off=(iy*n+ix)*4;
+        for(let k=0;k<3;k++)img.data[off+k]=a[1][k]+(b[1][k]-a[1][k])*f;img.data[off+3]=255;
+      }
+      densityCtx.putImageData(img,0,0);
+      $('density-disorder-value').textContent=Math.round(disorder*100)+'%';$('density-spacing-value').textContent=spacing.toFixed(2)+' ×';$('density-stripes-value').textContent=Math.round(strength*100)+'%';
+      const parts=[];if(disorder>.05)parts.push('Random atomic shifts weaken the regular peaks and add diffuse intensity.');if(strength>.05)parts.push('A three-site density pattern adds satellite peaks between the main lattice peaks.');if(Math.abs(spacing-1)>.01)parts.push(spacing>1?'Larger real-space spacing brings the peaks closer together.':'Smaller real-space spacing pushes the peaks farther apart.');
+      $('density-insight').textContent=parts.join(' ')||'An evenly spaced lattice produces regularly spaced bright peaks. Increase the real-space spacing: the peaks move closer together.';
+      $$('[data-order]').forEach(b=>b.setAttribute('aria-pressed',String(spacing===1&&((b.dataset.order==='perfect'&&!disorder&&!strength)||(b.dataset.order==='disorder'&&disorder===.65&&!strength)||(b.dataset.order==='stripes'&&!disorder&&strength===1)))));
+    }
+    function scheduleDensity(){if(!densityPending){densityPending=true;requestAnimationFrame(drawDensity)}}
+    ['density-disorder','density-spacing','density-stripes'].forEach(id=>$(id).addEventListener('input',scheduleDensity));
+    $$('[data-order]').forEach(b=>b.addEventListener('click',()=>{$('density-disorder').value=b.dataset.order==='disorder'?65:0;$('density-stripes').value=b.dataset.order==='stripes'?100:0;$('density-spacing').value=100;drawDensity()}));
+
+    // 05. Angle scans of a synthetic peak centred at the Bragg condition.
+    const beam={points:new Map(),running:false,next:10,last:0,hit:false};
+    const bragg=2*Math.asin(1/(2*1.2))*180/Math.PI;
+    const beamIntensity=angle=>Math.max(0,22+gaussian(angle,bragg,1.55,960)+6*Math.sin(angle*3.1));
+    function drawBeam(){
+      const angle=Number($('beam-angle').value),a=angle*Math.PI/180,sx=224,sy=187,r=157,dx=sx+r*Math.cos(a),dy=sy-r*Math.sin(a);
+      let svg='<path d="M58 187H225" stroke="#a3b8c8" stroke-width="9" opacity=".3"/><path d="M58 187H225" stroke="#3d668c" stroke-width="2"/><path d="M224 187H422" stroke="#bcc7c8" stroke-dasharray="4 5"/><path d="M381 187A157 157 0 0 0 251 32" fill="none" stroke="#cad5d6" stroke-dasharray="4 5"/>';
+      svg+=`<path d="M224 187L${dx} ${dy}" stroke="#588675" stroke-width="${2+beamIntensity(angle)/170}" opacity=".7"/><path d="M266 187A42 42 0 0 0 ${sx+42*Math.cos(a)} ${sy-42*Math.sin(a)}" fill="none" stroke="#95a5b0"/><text x="${sx+60*Math.cos(a/2)}" y="${sy-60*Math.sin(a/2)}" font-size="14" fill="#3d668c">${angle}°</text>`;
+      svg+='<rect x="25" y="164" width="45" height="46" rx="10" fill="#3d668c"/><circle cx="48" cy="187" r="8" fill="#d8e8ef"/>'+crystal(sx,sy,27);
+      svg+=`<g transform="translate(${dx} ${dy}) rotate(${-angle})"><rect x="-11" y="-26" width="22" height="52" rx="6" fill="#588675" stroke="#3a6253" stroke-width="2"/><path d="M-4 -17V17" stroke="#e7e6b9" stroke-width="3"/></g><text x="48" y="252" text-anchor="middle" font-size="14" fill="#607074">Source</text><text x="224" y="252" text-anchor="middle" font-size="14" fill="#607074">Crystal</text><text x="${clamp(dx,42,435)}" y="${Math.max(18,dy-38)}" text-anchor="middle" font-size="14" fill="#588675">Detector</text>`;
+      $('beam-art').innerHTML=svg;$('beam-angle-value').textContent=angle+'°';$('beam-angle-label').textContent='Scattering angle · '+angle+'°';$('beam-angle').setAttribute('aria-valuetext',angle+' degrees');
+      drawBeamChart();
+    }
+    function drawBeamChart(){
+      const a=axis({xmin:10,xmax:80,ymax:1150,xticks:[10,30,50,70],xlabel:'Scattering angle 2θ (degrees)',ylabel:'Counts (illustrative)'}),current=Number($('beam-angle').value),pts=[...beam.points].sort((a,b)=>a[0]-b[0]);
+      let svg=a.svg+`<path d="M${a.x(current)} 25V222" stroke="#b8c7cc" stroke-dasharray="4 5"/>`;
+      if(pts.length>1)svg+=`<path d="${linePath(pts,a.x,a.y)}" fill="none" stroke="#8eaca3" stroke-width="1.5"/>`;
+      for(const [angle,n]of pts)svg+=`<circle cx="${a.x(angle)}" cy="${a.y(n)}" r="4" fill="${n>300?'#b38b3b':'#3d668c'}" stroke="#fffdf9" stroke-width="1.2"/>`;
+      $('beam-spectrum').innerHTML='<title>Your collected angular diffraction scan</title>'+svg;$('beam-point-count').textContent=beam.points.size+' angle'+(beam.points.size===1?'':'s')+' measured';
+    }
+    function collectBeam(){
+      const angle=Number($('beam-angle').value),counts=Math.round(beamIntensity(angle));beam.points.set(angle,counts);drawBeamChart();
+      if(counts>500){beam.hit=true;$('beam-status').textContent=`A bright reflection! ${counts} counts at ${angle}°. Nearby angles trace the peak.`;$('beam-insight').textContent='You found a Bragg reflection. Constructive interference reveals a repeating spacing between crystal planes. Keep scanning to measure the peak shape.';}
+      else $('beam-status').textContent=`Collected ${counts} counts at ${angle}°. `+(beam.hit?'Keep scanning to see how the intensity changes.':'Try more angles to find a reflection.');
+    }
+    function stopBeam(){beam.running=false;$('beam-sweep').textContent='Sweep a scan';$('beam-sweep').setAttribute('aria-pressed','false');$('beam-angle').disabled=false;$('beam-collect').disabled=false;}
+    $('beam-angle').addEventListener('input',drawBeam);$('beam-collect').addEventListener('click',collectBeam);
+    $('beam-sweep').addEventListener('click',()=>{if(beam.running){stopBeam();$('beam-status').textContent='Scan paused. Your collected points are kept.';return;}beam.running=true;beam.next=10;beam.last=0;$('beam-sweep').textContent='Pause scan';$('beam-sweep').setAttribute('aria-pressed','true');$('beam-angle').disabled=true;$('beam-collect').disabled=true;wake()});
+    $('beam-clear').addEventListener('click',()=>{stopBeam();beam.points.clear();beam.hit=false;drawBeamChart();$('beam-status').textContent='Scan cleared. Try collecting individual points or sweep again.';$('beam-insight').textContent='Most angles give a weak signal. At just the right angle, waves scattered by successive crystal planes add together: a diffraction peak.'});
+
+    // Share one animation clock. Idle/offscreen demos do not keep rendering.
+    let clock=0,raf=0,previous=0,lastPaint=0;
+    function wake(){if(!raf&&!document.hidden)raf=requestAnimationFrame(tick)}
+    function tick(now){
+      raf=0;
+      if(document.hidden){previous=0;return;}
+      const dt=previous?Math.min((now-previous)/1000,.06):0;previous=now;
+      if(!motion.paused&&motion.inView){clock+=dt;if(now-lastPaint>32){drawMotion(clock);lastPaint=now;}}
+      if(photon.running){const p=(now-photon.start)/1900;if(p>=1)finishPhoton();else{drawPhoton(p);$('photon-step').textContent=p<.45?'Photon incoming…':'Energy exchanged → detector';}}
+      if(beam.running&&now-beam.last>75){beam.last=now;$('beam-angle').value=beam.next;drawBeam();collectBeam();beam.next+=1;if(beam.next>80){stopBeam();const best=[...beam.points].reduce((a,b)=>a[1]>b[1]?a:b);$('beam-status').textContent=`Scan complete. The strongest point is near ${best[0]}°, with ${best[1]} counts.`;}}
+      if((!motion.paused&&motion.inView)||photon.running||beam.running)wake();else previous=0;
+    }
+    if('IntersectionObserver' in window)new IntersectionObserver(entries=>{motion.inView=entries[0].isIntersecting;if(motion.inView)wake()},{rootMargin:'80px'}).observe($('motions'));
+    document.addEventListener('visibilitychange',()=>{previous=0;if(!document.hidden)wake()});
+    reduced.addEventListener('change',()=>{if(reduced.matches){motion.paused=true;$('motion-pause').textContent='Play motion';if(photon.running)finishPhoton();}wake()});
+    drawMotion();drawMotionSpectrum();drawPhoton();drawPhotonSpectrum();drawFit();drawDensity();drawBeam();wake();
+  </script>
+</body>
+</html>
