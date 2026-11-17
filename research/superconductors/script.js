@@ -1,74 +1,51 @@
 'use strict';
 document.documentElement.classList.add('js-enabled');
 
-// The pages work as plain HTML; JavaScript adds only these small teaching demos.
-const workflowButtons = document.querySelectorAll('[data-workflow]');
-const workflow = {
-  move: {image:'assets/startup.webp', alt:'Laue control interface beside the Meca500 robot view.', title:'01 / Move the sample', text:'The robot brings the sample holder to a known position. A useful next step is to make a whole sequence repeatable.', caption:'Existing setup: robot positioning and instrument controls.'},
-  find: {image:'assets/camera-alignment.webp', alt:'Two camera views used to locate the sample in the Laue control interface.', title:'02 / Find the crystal', text:'Two cameras help locate the crystal and its centre of rotation. A student project could teach the software to find it in the images.', caption:'Existing setup: camera-guided alignment. Automatic recognition is a project idea.'},
-  record: {image:'assets/image-acquisition.webp', alt:'Laue image acquisition interface for capturing and saving a diffraction pattern.', title:'03 / Record the pattern', text:'Collect an X-ray image and save it with the sample position. The pattern of spots tells us how the crystal is oriented.', caption:'Existing setup: diffraction image acquisition and saving.'}
-};
-workflowButtons.forEach(button => button.addEventListener('click', () => {
-  const step = workflow[button.dataset.workflow];
-  workflowButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-  const img = document.getElementById('workflow-image');
-  img.src = step.image; img.alt = step.alt;
-  document.getElementById('workflow-title').textContent = step.title;
-  document.getElementById('workflow-text').textContent = step.text;
-  document.getElementById('workflow-caption').textContent = step.caption;
-}));
-
-const excitationButtons = document.querySelectorAll('[data-excitation]');
-const svg = document.getElementById('excitation-art');
-const excitations = {
-  phonon:{title:'Phonon / Atoms moving together',text:'Atoms are always moving. When their motion forms a wave through a crystal, we call one quantum of that vibration a phonon.',caption:'Schematic: displaced atoms joined by bonds. The displacement is exaggerated.'},
-  magnon:{title:'Magnon / A wave of tiny magnets',text:'Electrons have a magnetic property called spin. A wave in how the spins point is a spin wave; one quantum is called a magnon.',caption:'Schematic: a snapshot of tilted spins, shown as arrows. No measured data.'},
-  charge:{title:'Charge motion / Electrons acting together',text:'Electron density can form a repeating pattern. We study how those patterns change and fluctuate, and how they relate to superconductivity.',caption:'Schematic: darker regions represent higher electron density. No measured data.'}
-};
-function excitationDrawing(type) {
-  const heading = '<title id="excitation-svg-title">'+excitations[type].title+'</title>';
-  if(type==='phonon'){
-    let drawing='';
-    const xs=[48,116,200,268,352]; const ys=[115,92,115,138,115];
-    for(let i=0;i<4;i++) drawing += `<path d="M${xs[i]+18} ${ys[i]} L${xs[i]+27} ${ys[i]-8} L${xs[i]+35} ${ys[i]+8} L${xs[i+1]-27} ${ys[i+1]-8} L${xs[i+1]-18} ${ys[i+1]}" fill="none" stroke="#8e9d9d" stroke-width="2"/>`;
-    xs.forEach((x,i)=>drawing+=`<circle cx="${x}" cy="${ys[i]}" r="18" fill="${i%2?'#d8a4b3':'#739f96'}" stroke="#243d45" stroke-width="2"/><path d="M${x-6} ${ys[i]+1}q6 6 12 0" fill="none" stroke="#243d45" stroke-width="1.5"/>`);
-    return heading+drawing+'<text x="200" y="202" text-anchor="middle" fill="#59696b" font-size="13">A wave in the positions of atoms</text>';
+// Both defining properties respond to one temperature in this teaching model.
+function fieldY(x,level,radius){
+  let lo=Math.max(level,Math.sqrt(Math.max(0,radius*radius-x*x))),hi=level+2*radius;
+  for(let n=0;n<32;n++){
+    const mid=(lo+hi)/2,flux=mid*(1-radius*radius/(x*x+mid*mid));
+    if(flux>level)hi=mid;else lo=mid;
   }
-  if(type==='magnon'){
-    let drawing='<path d="M30 130Q110 60 200 130T370 130" stroke="#b6c9db" stroke-width="2" stroke-dasharray="5 5" fill="none"/>';
-    [48,124,200,276,352].forEach((x,i)=>drawing+=`<g transform="rotate(${[-25,0,25,0,-25][i]} ${x} 126)"><circle cx="${x}" cy="153" r="8" fill="#d8a4b3"/><path d="M${x} 145V83m-11 13 11-13 11 13" stroke="#355888" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>`);
-    return heading+drawing+'<text x="200" y="202" text-anchor="middle" fill="#59696b" font-size="13">A wave in the directions of spins</text>';
-  }
-  let drawing='';
-  for(let row=0;row<4;row++)for(let col=0;col<9;col++)drawing+=`<circle cx="${40+col*40}" cy="${65+row*30}" r="${[6,9,12,9,6,9,12,9,6][col]}" fill="#853e58" opacity="${[.25,.5,.9,.5,.25,.5,.9,.5,.25][col]}"/>`;
-  return heading+drawing+'<text x="200" y="202" text-anchor="middle" fill="#59696b" font-size="13">A repeating pattern of electron density</text>';
+  return (lo+hi)/2;
 }
-excitationButtons.forEach(button => button.addEventListener('click', () => {
-  const type=button.dataset.excitation, item=excitations[type];
-  excitationButtons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
-  svg.innerHTML=excitationDrawing(type);
-  document.getElementById('excitation-title').textContent=item.title;
-  document.getElementById('excitation-text').textContent=item.text;
-  document.getElementById('excitation-caption').textContent=item.caption;
-}));
-if(svg) svg.innerHTML=excitationDrawing('phonon');
 
-const temperature = document.getElementById('temperature');
-function resistance(t){return t<90 ? 0 : .42+(t-90)/100;}
+function fieldDrawing(cold) {
+  let svg='<title>'+(cold?'Magnetic field expelled below 90 kelvin':'Magnetic field penetrates at or above 90 kelvin')+'</title><defs><marker id="field-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 1L9 5L0 9" fill="none" stroke="#b4d7d6" stroke-width="1.5"/></marker></defs>';
+  svg+=`<circle cx="240" cy="145" r="60" fill="${cold?'#8d5073':'#627d85'}" fill-opacity=".4" stroke="${cold?'#e0b5cb':'#a5c2c7'}" stroke-width="2"/>`;
+  for(let n=0;n<8;n++)for(const sign of [-1,1]){
+    const level=9+(n+.5)/8*109,points=[];
+    for(let i=0;i<=120;i++){
+      const x=-220+i*440/120,y=sign*(cold?fieldY(x,level,60):level);
+      points.push((i?'L':'M')+(240+x).toFixed(2)+','+(145-y).toFixed(2));
+    }
+    svg+=`<path d="${points.join(' ')}" fill="none" stroke="#b4d7d6" stroke-width="1.5" opacity=".78" marker-end="url(#field-arrow)"/>`;
+  }
+  if(cold)svg+='<text x="240" y="151" text-anchor="middle" fill="#ffe5f2" font-size="16">B ≈ 0 inside</text>';
+  return svg;
+}
+const temperature=document.getElementById('temperature');
+const fieldPictures={warm:fieldDrawing(false),cold:fieldDrawing(true)};
+function resistance(t){return t<90?0:.42+(t-90)/100;}
 function point(t){return [48+(t-20)/120*312,176-resistance(t)*130];}
 if(temperature){
   const curve=document.getElementById('resistance-curve');
-  const p1=point(20), p2=point(89.99), p3=point(90), p4=point(140);
-  curve.setAttribute('d',`M${p1} L${p2} L${p3} L${p4}`);
+  curve.setAttribute('d',`M${point(20)} L${point(89.99)} L${point(90)} L${point(140)}`);
+  let previousCold=null;
   const updateTemperature=()=>{
-    const t=Number(temperature.value), cold=t<90, pos=point(t);
+    const t=Number(temperature.value),cold=t<90,pos=point(t);
     document.getElementById('temperature-value').textContent=t+' K';
-    temperature.setAttribute('aria-valuetext',t+' kelvin, '+(cold?'superconducting':'normal state'));
+    temperature.setAttribute('aria-valuetext',t+' kelvin; '+(cold?'superconducting, zero resistance, field expelled':'normal state, finite resistance, field penetrates'));
     document.getElementById('resistance-marker').setAttribute('cx',pos[0]);
     document.getElementById('resistance-marker').setAttribute('cy',pos[1]);
     document.getElementById('temperature-status').textContent=cold?'Superconducting':'Normal state';
     temperature.closest('.temperature-stage').dataset.state=cold?'cold':'warm';
-    document.getElementById('temperature-description').textContent=cold?'Zero DC resistance. The material is now superconducting. What are its electrons doing together?':'Above 90 K, this example has electrical resistance. Slide left to cool it down.';
+    document.getElementById('field-caption').textContent=cold?'Below 90 K, the weak field is expelled from the bulk.':'At or above 90 K, the field passes through the sample.';
+    const field=document.getElementById('field-art');
+    if(cold!==previousCold){field.innerHTML=fieldPictures[cold?'cold':'warm'];previousCold=cold;}
+    field.setAttribute('aria-label',cold?'Meissner state: magnetic field lines bend around the sample.':'Normal state: magnetic field lines pass through the sample.');
+    document.getElementById('temperature-description').textContent=cold?'At '+t+' K: zero DC resistance, and the weak magnetic field bends around the sample. One temperature change reveals both properties.':'At '+t+' K: finite electrical resistance, and the magnetic field passes through the sample. Slide below 90 K to change both views.';
   };
-  temperature.addEventListener('input',updateTemperature); updateTemperature();
+  temperature.addEventListener('input',updateTemperature);updateTemperature();
 }

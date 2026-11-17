@@ -15,3 +15,8 @@ models while removing student recruitment and contact sections. The original
 research pages remain independent. Shared responsive and demo styles live at
 this folder’s root; topic-specific code and media live inside each topic folder.
 Edits to the research originals do not automatically update these copies.
+
+The superconductors opening couples the resistance graph and Meissner field
+picture to one temperature slider. Its synthetic spectrum-fitting puzzle sits
+before the measured LESCO example. Their code and styles are independent local
+copies in `superconductors/`; the X-ray page links to the relocated puzzle.

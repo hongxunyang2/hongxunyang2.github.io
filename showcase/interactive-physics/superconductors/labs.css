@@ -1,0 +1,86 @@
+/* Coupled resistance/Meissner opening and the synthetic-spectrum puzzle. */
+.superconducting-experiment{display:block;padding:24px}
+.super-properties{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-bottom:18px}
+.property-view{min-width:0;padding:18px;border:1px solid var(--line);border-radius:18px;background:#fffdfb}
+.property-view figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px;font-size:.85rem;line-height:1.5}
+.property-view figcaption span{font-size:.72rem;color:var(--muted)}
+.property-view svg{display:block;width:100%;height:auto;max-height:320px}
+.property-view svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.field-view{background:#122e3a;border-color:#284859;color:#e0eceb}
+.field-view figcaption span{color:#b6cacc}
+.field-view>p{font-size:.78rem;line-height:1.55;color:#c5d8dc;margin:12px 0 0;min-height:2.5em}
+.superconducting-experiment .temperature-stage{padding:18px 22px}
+.superconducting-experiment .temperature-row{gap:12px}
+.superconducting-experiment .temperature-stage .status-pill{margin-top:10px}
+.superconducting-experiment .temperature-stage #temperature-help{margin-top:8px!important}
+.super-lab{--lab-accent:#853e58;--lab-muted:#607074;container-type:inline-size;container-name:super-lab;min-width:0;border:1px solid var(--line);border-radius:24px;background:#fffdf9;overflow:hidden}
+.super-lab .demo-head{padding:30px 28px 24px}
+.super-lab .demo-head h2{font-size:clamp(2rem,4vw,3.15rem);max-width:100%;margin:0 0 14px;line-height:1.08;letter-spacing:-.045em}
+.super-lab .demo-head em{font-family:Georgia,"Times New Roman",serif;font-weight:400;color:var(--lab-accent)}
+.super-lab .demo-head .eyebrow{margin-bottom:13px}
+.super-lab .demo-head>p:last-child{font-size:.95rem;line-height:1.65;color:var(--lab-muted);max-width:720px;margin-bottom:0}
+.super-lab .demo-body{padding:0 24px 24px}
+.super-lab .lab-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:stretch}
+.super-lab .lab-grid>*{min-width:0}
+.super-lab .stage{min-width:0;border:1px solid #dce3e4;border-radius:18px;padding:18px;background:linear-gradient(145deg,#edf2f5,#f7f3ec)}
+.super-lab .stage.rose{background:linear-gradient(145deg,#f6ecf0,#faf3e7)}
+.super-lab .stage-label{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.73rem;font-weight:650;line-height:1.5;margin-bottom:12px}
+.super-lab .stage-label span:last-child{font-size:.66rem;font-weight:400;color:var(--lab-muted)}
+.super-lab svg{display:block;width:100%;height:auto}
+.super-lab svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.super-lab .chart{padding:8px;border-radius:12px;background:#fffefb}
+.super-lab .chart svg{aspect-ratio:520/280}
+.super-lab button.secondary{min-height:44px;padding:10px 17px;border:1px solid #c6d3d9;border-radius:100px;background:#fffdf9;color:var(--lab-accent);font-size:.82rem;font-weight:600}
+.super-lab button.secondary:hover{filter:brightness(.96)}
+.super-lab .control{margin-bottom:14px}
+.super-lab .control:last-child{margin-bottom:0}
+.super-lab .control label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.8rem;font-weight:650;line-height:1.5}
+.super-lab .control output{font-weight:400;color:var(--lab-muted);font-variant-numeric:tabular-nums;text-align:right}
+.super-lab .control input[type=range]{width:100%;min-height:44px;margin:2px 0 0;accent-color:var(--lab-accent);cursor:pointer;touch-action:pan-y}
+.super-lab .toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.super-lab .toolbar .quiet{margin-left:auto;min-height:44px;padding:10px 2px;border:0;background:transparent;color:var(--lab-muted);font-size:.8rem;text-decoration:underline;text-underline-offset:4px}
+.super-lab .insight{padding:16px 18px;margin-top:18px;border-left:3px solid var(--lab-accent);border-radius:0 12px 12px 0;background:#f5eaf0;color:#654c59;font-size:.87rem;line-height:1.65}
+.super-lab .insight p{margin:0}
+.super-lab .tag{display:inline-flex;align-items:center;gap:6px;margin:0;padding:6px 10px;border-radius:100px;background:#ffffff80;color:var(--lab-accent);font-size:.7rem;font-weight:400;line-height:1.5}
+.super-lab .metric{font-size:2.3rem;letter-spacing:-.05em;color:var(--lab-accent);font-variant-numeric:tabular-nums;line-height:1.1}
+.super-lab .metric-label{font-size:.7rem;letter-spacing:.04em;color:var(--lab-muted);margin-top:6px;line-height:1.5}
+.super-lab .legend{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:.68rem;line-height:1.8;color:var(--lab-muted);margin-top:12px}
+.super-lab .legend span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--color,var(--lab-accent));margin-right:6px}
+.super-lab .readout{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:14px}
+.super-lab .progress{height:7px;background:#dce4e4;border-radius:10px;overflow:hidden;margin:12px 0}
+.super-lab .progress>div{width:0;height:100%;background:#588675;transition:width .2s}
+.super-lab .success{color:#588675}
+.super-lab .super-method{margin-top:12px;font-size:.77rem;line-height:1.6;color:var(--lab-muted)}
+.super-lab .super-method summary{cursor:pointer;min-height:44px;display:flex;align-items:center;gap:8px;list-style:none;font-weight:600;color:var(--ink)}
+.super-lab .super-method summary::-webkit-details-marker{display:none}
+.super-lab .super-method summary::before{content:"+";font-size:1.2rem;color:var(--lab-accent)}
+.super-lab .super-method[open] summary::before{content:"−"}
+.super-lab .model-note{font-size:.75rem;color:var(--lab-muted);line-height:1.65;margin:8px 0 0;max-width:920px}
+@container super-lab (max-width:640px){
+ .super-lab .demo-head{padding:24px 18px 20px}
+ .super-lab .demo-head h2{font-size:2.05rem}
+ .super-lab .demo-head>p:last-child{font-size:.87rem}
+ .super-lab .demo-body{padding:0 12px 18px}
+ .super-lab .lab-grid{grid-template-columns:1fr;gap:12px}
+ .super-lab .stage{padding:14px;border-radius:14px}
+ .super-lab .control label{font-size:.78rem}
+ .super-lab .insight{font-size:.82rem;padding:14px}
+ .super-lab .model-note{font-size:.72rem}
+ .super-lab .readout .metric{font-size:2rem}
+ .super-lab .legend{font-size:.65rem}
+ .super-lab .toolbar{gap:8px}
+ .super-lab button.secondary{font-size:.77rem;padding-inline:13px}
+}
+@media screen and (max-width:720px){
+ .superconducting-experiment{padding:12px}
+ .super-properties{grid-template-columns:1fr;gap:10px;margin-bottom:10px}
+ .property-view{padding:12px;border-radius:14px}
+ .property-view figcaption{margin-bottom:6px;font-size:.78rem;gap:4px 10px}
+ .property-view figcaption span{font-size:.66rem}
+ .property-view svg{max-height:170px}
+ .field-view>p{margin-top:6px;min-height:0;font-size:.73rem}
+ .superconducting-experiment .temperature-stage{padding:12px 14px}
+ .super-lab .chart svg text{font-size:20px}
+}
+@media(prefers-reduced-motion:reduce){.super-lab .progress>div{transition:none}}
+@media print{.super-lab{break-inside:avoid}.super-lab .js-only,.js-enabled .super-lab .js-only,.super-lab .super-method{display:none!important}}

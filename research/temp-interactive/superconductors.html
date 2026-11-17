@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#faf8f2"><title>Superconductors — four interactive ideas</title><style>
+    :root{--paper:#faf8f2;--ink:#20383e;--muted:#607074;--blue:#3d668c;--sage:#588675;--rose:#a45e79;--gold:#b38b3b;--line:#dedfd5;--radius:24px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}
+    *{box-sizing:border-box}body{margin:0}html{scroll-behavior:smooth;scroll-padding-top:94px}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-underline-offset:4px}button,a,input,summary{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:4px}button:disabled{cursor:wait;opacity:.6}svg{display:block;width:100%;height:auto}svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}p{line-height:1.65;margin:0 0 16px}h1,h2,h3{line-height:1.08;letter-spacing:-.045em;margin:0}h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:650}h2{font-size:clamp(2rem,4vw,3.15rem);font-weight:650}h3{font-size:1.12rem;letter-spacing:-.02em}h1 em,h2 em{font-family:Georgia,serif;font-weight:400;color:var(--blue)}
+    .page{width:min(1120px,calc(100% - 48px));margin-inline:auto}.topbar{border-bottom:1px solid var(--line)}.topbar-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-size:.9rem;text-decoration:none;font-weight:650}.brand span{display:block;font-weight:400;font-size:.7rem;color:var(--muted);margin-top:3px}.preview-toggle{border:1px solid var(--line);background:#fffdf8;color:var(--ink);border-radius:100px;min-height:44px;padding:10px 16px;font-size:.8rem;white-space:nowrap}.preview-toggle[aria-pressed="true"]{color:#fff;background:var(--blue);border-color:var(--blue)}
+    .intro{padding:52px 0 32px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.67rem;font-weight:700;color:var(--blue);margin-bottom:13px}.intro h1{max-width:950px;margin-bottom:20px}.intro>p:last-child{font-size:1rem;max-width:660px;color:var(--muted)}.jumpbar{position:sticky;top:0;z-index:10;background:#faf8f2f5;backdrop-filter:blur(12px);border-block:1px solid var(--line)}.jumpbar .page{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:thin}.jumpbar a{white-space:nowrap;text-decoration:none;border:1px solid var(--line);border-radius:100px;padding:10px 14px;font-size:.77rem;min-height:40px;display:inline-flex;align-items:center;gap:9px;background:#fffdf9}.jumpbar a span{color:var(--blue);font-variant-numeric:tabular-nums}.jumpbar a:hover{border-color:var(--blue)}
+    main{padding-top:32px;padding-bottom:40px}.demo-card{container-type:inline-size;container-name:demo;border:1px solid var(--line);border-radius:var(--radius);background:#fffdf9;margin-bottom:32px;overflow:hidden;box-shadow:0 12px 40px #20383e06}.demo-head{padding:32px 32px 24px}.demo-head h2{margin-bottom:14px}.demo-head>p:last-child{color:var(--muted);font-size:.95rem;max-width:720px;margin:0}.demo-body{padding:0 24px 24px}.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}.lab-grid>*{min-width:0}.stage{background:linear-gradient(145deg,#edf2f5,#f7f3ec);border:1px solid #dce3e4;border-radius:18px;padding:18px;min-width:0}.stage.rose{background:linear-gradient(145deg,#f6ecf0,#faf3e7)}.stage-label{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:.73rem;font-weight:650;margin-bottom:12px;line-height:1.5}.stage-label span:last-child{font-size:.66rem;color:var(--muted);font-weight:400}.dark-stage{background:#142c39;border-color:#284859;color:#e6eef0}.dark-stage .stage-label span:last-child{color:#abc1c9}.drawing{width:100%;aspect-ratio:480/290;overflow:visible}.chart{background:#fffefb;border-radius:12px;padding:8px}.chart svg{aspect-ratio:520/280}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tabs button,.action,.secondary{min-height:44px;padding:10px 17px;border:1px solid #c6d3d9;color:var(--blue);border-radius:100px;background:#fffdf9;font-size:.82rem;font-weight:600}.tabs button[aria-pressed="true"],.action{background:var(--blue);color:white;border-color:var(--blue)}.tabs button:hover,.secondary:hover{filter:brightness(.96)}.controls{margin-top:18px}.control{margin-bottom:14px}.control:last-child{margin-bottom:0}.control label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.8rem;font-weight:650;line-height:1.5}.control output{font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}.control input[type=range]{width:100%;min-height:44px;margin:2px 0 0;accent-color:var(--blue);cursor:pointer}.control input:disabled{cursor:wait}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}.toolbar .quiet{margin-left:auto}.quiet{min-height:44px;border:0;background:transparent;color:var(--muted);font-size:.8rem;text-decoration:underline;text-underline-offset:4px;padding:10px 2px}.insight{padding:16px 18px;border-left:3px solid var(--blue);border-radius:0 12px 12px 0;background:#edf2f5;font-size:.87rem;line-height:1.65;color:#425d68;margin-top:18px}.insight p{margin:0}.model-note{font-size:.72rem;color:var(--muted);line-height:1.6;margin:18px 8px 0}.tag{display:inline-flex;align-items:center;gap:6px;border-radius:100px;padding:6px 10px;background:#fff8;font-size:.7rem;color:var(--blue)}.metric{font-size:2.3rem;letter-spacing:-.05em;color:var(--blue);font-variant-numeric:tabular-nums;line-height:1.1}.metric-label{font-size:.7rem;letter-spacing:.04em;color:var(--muted);margin-top:6px}.legend{font-size:.68rem;line-height:1.8;color:var(--muted);display:flex;gap:6px 14px;flex-wrap:wrap;margin-top:12px}.legend span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--color,var(--blue));margin-right:6px}.readout{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:14px}.progress{height:7px;background:#dce4e4;border-radius:10px;overflow:hidden;margin:12px 0}.progress>div{width:0;height:100%;background:var(--sage);transition:width .2s}.success{color:var(--sage)}.live-message{min-height:48px;font-size:.83rem;color:var(--muted);line-height:1.6;margin-top:12px}.density-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}.density-stage{min-width:0}.density-stage svg{aspect-ratio:1}.detector-wrap{position:relative;width:100%;aspect-ratio:1;background:#102735;border-radius:12px;overflow:hidden}.detector-wrap canvas{display:block;width:100%;height:100%;image-rendering:auto}.detector-cross{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent calc(50% - .5px),#ffffff1c 50%,transparent calc(50% + .5px)),linear-gradient(0deg,transparent calc(50% - .5px),#ffffff1c 50%,transparent calc(50% + .5px))}.axis-labels{display:flex;justify-content:space-between;font-size:.64rem;color:var(--muted);margin-top:8px}.beam-chart{margin-top:18px}.beam-status{font-size:.82rem;color:var(--muted);margin-top:12px;min-height:44px;line-height:1.6}.footer{font-size:.78rem;line-height:1.7;color:var(--muted);padding-bottom:34px}.footer a{color:var(--blue)}.phone-preview main.page{width:min(390px,calc(100% - 24px))}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.no-js{padding:20px;background:#f5e9db;color:var(--ink);border-radius:14px;margin-bottom:20px}
+    @container demo (max-width:640px){
+      .demo-head{padding:24px 18px 20px}.demo-head h2{font-size:2.05rem}.demo-head>p:last-child{font-size:.87rem}.demo-body{padding:0 12px 18px}.lab-grid{grid-template-columns:1fr;gap:12px}.stage{padding:14px;border-radius:14px}.tabs{gap:6px;margin-bottom:14px}.tabs button{padding-inline:13px;font-size:.77rem}.density-pair{gap:8px}.density-pair .stage{padding:9px}.density-pair .stage-label{font-size:.68rem;display:block;min-height:35px;margin-bottom:8px}.density-pair .stage-label span{display:block;font-size:.6rem}.density-pair .axis-labels{font-size:.58rem}.control label{font-size:.78rem}.insight{font-size:.82rem;padding:14px}.model-note{font-size:.69rem;margin-inline:4px}.drawing{aspect-ratio:480/290}.readout .metric{font-size:2rem}.legend{font-size:.65rem}.toolbar{gap:8px}.action,.secondary{font-size:.77rem;padding-inline:13px}
+    }
+    @media(max-width:720px){.page{width:calc(100% - 28px)}.topbar-inner{min-height:66px;gap:12px}.brand{font-size:.8rem}.brand span{font-size:.63rem}.preview-toggle{font-size:.7rem;padding-inline:11px}.intro{padding:34px 0 24px}.intro h1{font-size:2.7rem}.intro>p:last-child{font-size:.9rem}.jumpbar a{font-size:.72rem;padding-inline:11px}.demo-card{margin-bottom:24px;border-radius:20px}main{padding-top:24px}.footer{font-size:.73rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+    @media print{.jumpbar,.preview-toggle,.toolbar,button,input{display:none!important}.demo-card{break-inside:avoid;box-shadow:none}.page{width:100%}.intro{padding-top:20px}}
+  
+:root{--blue:#853e58;--rose:#a45e79}.stage-label{flex-wrap:wrap}.chart svg{aspect-ratio:520/280}.placement{margin:18px 0 0;padding:16px 18px;border:1px dashed #cbb9bf;border-radius:12px;color:#6b5260;font-size:.8rem;line-height:1.6}.pill{display:inline-flex;border-radius:100px;padding:8px 12px;background:#f0e3e9;color:#853e58;font-size:.78rem;font-weight:650}.pill.normal{color:#52696a;background:#e5ece8}.field-stage{background:#122e3a}.field-stage svg{min-height:220px}.field-stage .stage-label{color:#e0eceb}.field-stage .stage-label span:last-child{color:#b6cacc}.loop-readouts{display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:center;margin-top:10px}.loop-readouts strong{display:block;font-size:1.8rem;letter-spacing:-.04em}.loop-readouts small{font-size:.72rem;color:var(--muted)}.readout .metric{font-size:1.9rem}.map-stage{background:#fffdf8}#phase-map{touch-action:none;cursor:crosshair}.intro a{color:var(--blue)}.note-source{font-size:.72rem;line-height:1.6;margin-top:16px}.empty-note{font-size:.78rem;color:var(--muted);min-height:44px}.phone-preview .intro.page,.phone-preview .topbar-inner.page{width:min(390px,calc(100% - 24px))}.phone-preview .topbar-inner{flex-wrap:wrap;padding-block:12px}.phone-preview .intro h1{font-size:2.7rem}details{margin-top:18px}summary{cursor:pointer;font-size:.78rem;color:var(--muted);padding:8px 0}details p{font-size:.75rem;color:var(--muted);margin-top:8px}button:disabled{cursor:default}.chart{overflow:hidden}input[type=range]{touch-action:pan-y}.sr-status{min-height:50px}
+@container demo (max-width:640px){.loop-readouts strong{font-size:1.6rem}.readout{flex-wrap:wrap}.field-stage svg{min-height:0}.placement{font-size:.75rem}}
+</style></head><body>
+<header class="topbar"><div class="page topbar-inner"><a class="brand" href="../superconductors/index.html">Quantum Matter Research<span>Superconductors · temporary playground</span></a><button class="preview-toggle" id="preview-toggle" type="button" aria-pressed="false">390 px preview</button></div></header>
+<div class="page intro"><p class="eyebrow">Open-day page / Four ideas to compare</p><h1>Cool it. Test it.<br><em>Find what changes.</em></h1><p>Working prototypes for Bachelor’s and Master’s visitors. Start with what makes a superconductor special, then explore how we study its electrons. <a href="index.html">Compare the X-ray ideas →</a></p></div>
+<nav class="jumpbar" aria-label="Interactive ideas"><div class="page"><a href="#current"><span>01</span> Keep it flowing</a><a href="#meissner"><span>02</span> Bend the field</a><a href="#limits"><span>03</span> Find the boundary</a><a href="#signal"><span>04</span> Hidden signal</a></div></nav>
+<main class="page" id="main"><noscript><p class="no-js">Enable JavaScript to try these prototypes. Their code is all in this file; no server or internet connection is needed.</p></noscript>
+<section class="demo-card" id="current" aria-labelledby="current-title"><div class="demo-head"><p class="eyebrow">01 / Make zero resistance mean something</p><h2 id="current-title">Give it a push.<br><em>Does the current fade?</em></h2><p>Set the sample’s temperature, then put the same initial current into two closed loops. Watch what happens after the power source is disconnected.</p></div><div class="demo-body"><div class="lab-grid"><div class="stage"><div class="stage-label"><span>Two closed circuits</span><span id="loop-state">Sample below its transition</span></div><svg id="loop-art" class="drawing" viewBox="0 0 480 290" role="img" aria-label="Two current loops; arrow brightness represents circulating current"></svg><div class="loop-readouts"><div><strong id="loop-normal" style="color:#588675">0%</strong><small>Resistive reference</small></div><div><strong id="loop-sample" style="color:#853e58">0%</strong><small>Switchable sample</small></div></div></div><div class="stage rose"><div class="stage-label"><span>Current remaining</span><span id="loop-time">Ready for a pulse</span></div><div class="chart"><svg id="loop-chart" viewBox="0 0 520 280" role="img" aria-label="Relative loop currents versus demonstration time"></svg></div><div class="legend"><span style="--color:#588675">Resistive reference</span><span style="--color:#853e58">Switchable sample</span></div></div></div><div class="controls"><div class="control"><label for="loop-temperature">Sample temperature<output id="loop-temperature-value" for="loop-temperature">50 K</output></label><input id="loop-temperature" type="range" min="20" max="140" value="50" step="1"></div></div><div class="toolbar"><button class="action" id="loop-pulse" type="button">Start both currents ↻</button><button class="secondary" id="loop-pause" type="button" aria-pressed="false">Pause time</button><button class="secondary" id="loop-step" type="button">Advance 1 second</button><button class="quiet" id="loop-reset" type="button">Reset</button></div><div class="insight"><p id="loop-insight" class="sr-status" role="status">Cool the sample below 90 K, then start both currents. Can you make one keep flowing after the other fades?</p></div><details><summary>About this model</summary><p>A closed-loop circuit model: dI/dt = −(R/L)I. The sample has zero resistance below an illustrative Tc = 90 K; above it, its decay time is the same as the reference. The resistive time constant is 2.5 demonstration seconds. Cooling alone does not create or restore a current. Arrows show conventional current, not individual electron trajectories. The reference is assumed resistive throughout; this is not a microscopic model of pairing.</p></details><div class="placement"><strong>Best use:</strong> extend or replace the existing temperature opening. Visitors see the consequence of R = 0, beyond moving a point on a graph.</div></div></section>
+<section class="demo-card" id="meissner" aria-labelledby="meissner-title"><div class="demo-head"><p class="eyebrow">02 / My first choice for visual impact</p><h2 id="meissner-title">Cool the sample.<br><em>Make the field go around.</em></h2><p>A weak magnetic field is already present. Cool the sample into its Meissner state and see the field expelled from its interior.</p></div><div class="demo-body"><div class="tabs" role="group" aria-label="Choose the sample state"><button data-magnetic="normal" type="button" aria-pressed="true">Warm · normal state</button><button data-magnetic="cold" type="button" aria-pressed="false">Cool · Meissner state</button></div><div class="lab-grid"><div class="stage field-stage"><div class="stage-label"><span>Magnetic field lines</span><span>Cross-section of a long cylinder</span></div><svg id="field-art" class="drawing" viewBox="0 0 480 290" role="img" aria-label="Magnetic field lines through or around a circular sample"></svg></div><div class="stage rose"><div class="stage-label"><span>What changed?</span><span id="field-state" class="pill normal">Normal state</span></div><h3 id="field-headline" style="margin:20px 0 12px;font-size:1.7rem">The field passes through.</h3><p id="field-description">For this normal, non-magnetic sample, the applied field penetrates its interior. Now cool it while the field is still on.</p><div class="control"><label for="field-strength">Applied field · weak-field range<output id="field-strength-value" for="field-strength">60%</output></label><input id="field-strength" type="range" min="0" max="100" value="60" step="1"></div><div class="insight"><p id="field-insight" role="status">Cool the sample. This is a different property from simply keeping an existing current flowing.</p></div></div></div><details><summary>About this model</summary><p>An ideal diamagnetic cylinder in a transverse uniform field, with zero field inside in the Meissner state. Field lines outside are contours of y[1 − a²/(x² + y²)]. Line density represents relative field strength; every nonzero setting is assumed safely within the weak-field Meissner regime. Penetration depth, intermediate states, vortices and trapped flux are omitted. This diagram does not model stable magnetic levitation.</p></details><div class="placement"><strong>Best use:</strong> beside the Meissner-effect explanation and levitating-magnet illustration. Cooling in an existing field makes the expulsion visible.</div></div></section>
+<section class="demo-card" id="limits" aria-labelledby="limits-title"><div class="demo-head"><p class="eyebrow">03 / A more exploratory option</p><h2 id="limits-title">Cold enough?<br><em>The field matters too.</em></h2><p>Move the point across a simplified temperature–field map. Try leaving the superconducting region without warming the sample.</p></div><div class="demo-body"><div class="lab-grid"><div class="stage map-stage"><div class="stage-label"><span>A type-I example</span><span>Drag the point or use the sliders</span></div><svg id="phase-map" viewBox="0 0 520 350" role="img" aria-label="Temperature and magnetic field map with a movable point"></svg><div class="legend"><span style="--color:#bd719c">Superconducting region</span><span style="--color:#d0d8d3">Normal region</span></div></div><div class="stage rose"><div class="control"><label for="phase-temperature">Temperature · T / Tc(0)<output id="phase-temperature-value" for="phase-temperature">0.35</output></label><input id="phase-temperature" type="range" min="0" max="120" step="1" value="35"></div><div class="control"><label for="phase-field">Applied field · H / Hc(0)<output id="phase-field-value" for="phase-field">0.25</output></label><input id="phase-field" type="range" min="0" max="120" step="1" value="25"></div><div class="readout"><span class="pill" id="phase-state">Superconducting</span></div><div class="toolbar"><button class="secondary" id="phase-cold" type="button">Cold + weak field</button><button class="secondary" id="phase-warm" type="button">Warm it up</button><button class="secondary" id="phase-strong" type="button">Raise the field</button></div><div class="insight"><p id="phase-insight" class="sr-status" role="status">At this temperature, the sample is superconducting below the curved boundary.</p></div></div></div><details><summary>About this model</summary><p>A simplified type-I phase boundary Hc(T) / Hc(0) = 1 − [T / Tc(0)]² for T &lt; Tc(0), treating applied field as uniform and neglecting demagnetisation, hysteresis and intermediate states. Axes are normalised; no specific material is predicted. Cuprates and nickelates are type-II materials, with additional field regimes. This map introduces the idea of a phase boundary, not their phase diagrams.</p></details><div class="placement"><strong>Best use:</strong> an optional deeper section after the basic properties. This is richer than the opening temperature slider, but less directly connected to the charge-order story.</div></div></section>
+    <section class="demo-card" id="signal" aria-labelledby="signal-title">
+      <div class="demo-head"><p class="eyebrow">04 / From superconductors to our research</p><h2 id="signal-title">What are the electrons hiding?<br/><em>Can you uncover it?</em></h2><p>What are the electrons doing in a cuprate? Before answering, we need to separate their signal from atomic vibrations. Adjust the three ingredients to uncover a weak charge signal.</p></div>
+      <div class="demo-body">
+        <div class="lab-grid">
+          <div class="stage"><div class="stage-label"><span>Your model + the mystery data</span><span>Synthetic example</span></div><div class="chart"><svg id="fit-spectrum" viewBox="0 0 520 280" role="img" aria-label="Synthetic spectrum, model and component curves"></svg></div><div class="legend"><span style="--color:#7c8a91">Data dots</span><span style="--color:#355d81">Your total</span><span style="--color:#a6a8a5">Elastic</span><span style="--color:#ba8834">Charge</span><span style="--color:#bd719c">Phonon</span></div></div>
+          <div class="stage rose">
+            <div class="stage-label"><span>Mix the ingredients</span><span>Try adding charge motion</span></div>
+            <div class="control"><label for="fit-elastic">Elastic peak<output id="fit-elastic-value" for="fit-elastic">90%</output></label><input id="fit-elastic" data-fit="elastic" type="range" min="0" max="150" value="90" step="1" style="accent-color:#8b928f"></div>
+            <div class="control"><label for="fit-charge">Charge motion<output id="fit-charge-value" for="fit-charge">0%</output></label><input id="fit-charge" data-fit="charge" type="range" min="0" max="150" value="0" step="1" style="accent-color:#ba8834"></div>
+            <div class="control"><label for="fit-phonon">Atomic vibration<output id="fit-phonon-value" for="fit-phonon">85%</output></label><input id="fit-phonon" data-fit="phonon" type="range" min="0" max="150" value="85" step="1" style="accent-color:#bd719c"></div>
+            <div class="readout"><div><div class="metric" id="fit-error">—</div><div class="metric-label">relative curve error · lower is closer</div></div><span class="tag" id="fit-result">Keep exploring</span></div>
+            <div class="progress" aria-hidden="true"><div id="fit-progress"></div></div>
+            <div class="toolbar"><button class="secondary" id="fit-new" type="button">New mystery</button><button class="quiet" id="fit-reveal" type="button">Reveal this mix</button></div>
+          </div>
+        </div>
+        <div class="insight"><p id="fit-insight" role="status">Start with the gold slider. Can a weak charge signal explain the missing intensity between the large elastic peak and the phonon?</p></div>
+        <div class="placement"><strong>Suggested placement:</strong> just before “Finding charge motion among atomic vibrations” on the superconductors page. Charge fluctuations are a research clue; finding them does not by itself identify the pairing mechanism.</div>
+        <p class="model-note">Generated teaching data with fixed peak positions and widths. The percentage sliders scale model components; they are not percentages of a material. Matching this curve is a puzzle, not a statistical validation or a unique physical interpretation.</p>
+      </div>
+    </section>
+
+
+</main><footer class="page footer"><p><strong>My suggested shortlist:</strong> try “Bend the field” for the basic physics, then “Hidden signal” as the bridge into the LESCO research example. The current-loop idea could replace the present opening; the phase map is an optional extra.</p><p><a href="../superconductors/index.html">Current superconductors page ↗</a> · <a href="../superconductors/index.html#spectrum-demo">Integrated fitting puzzle ↗</a> · <a href="index.html">Other interactive prototypes ↗</a></p><p class="note-source">Physics background: <a href="https://home.cern/science/physics/superconductivity/" target="_blank" rel="noopener">CERN: superconductivity</a> and <a href="https://cds.cern.ch/record/1342844/files/Darriulat-98.pdf" target="_blank" rel="noopener">P. Darriulat: An Introduction to Superconductivity</a>. The spectrum puzzle uses generated data, adapted from the existing X-ray prototype.</p></footer>
+<script>
+'use strict';
+    const $=id=>document.getElementById(id);
+    const $$=selector=>[...document.querySelectorAll(selector)];
+    const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+    const gaussian=(x,center,width,height=1)=>height*Math.exp(-.5*((x-center)/width)**2);
+    const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
+    const plot={left:48,right:500,top:25,bottom:222};
+    function axis({xmin=-10,xmax=180,ymax=1.5,xticks=[0,50,100,150],xlabel='Energy loss (meV)',ylabel='Intensity (arb.)'}={}){
+      const x=v=>plot.left+(v-xmin)/(xmax-xmin)*(plot.right-plot.left);
+      const y=v=>plot.bottom-v/ymax*(plot.bottom-plot.top);
+      let svg='<path d="M48 25V222H500" fill="none" stroke="#a1afb0" stroke-width="1.3"/>';
+      for(const f of [.25,.5,.75,1])svg+=`<path d="M48 ${y(ymax*f)}H500" stroke="#e7e9e4"/>`;
+      for(const v of xticks)svg+=`<path d="M${x(v)} 222v5" stroke="#a1afb0"/><text x="${x(v)}" y="243" text-anchor="middle" fill="#607074" font-size="13">${v}</text>`;
+      svg+=`<text x="274" y="270" text-anchor="middle" fill="#607074" font-size="14">${xlabel}</text><text x="16" y="125" text-anchor="middle" transform="rotate(-90 16 125)" fill="#607074" font-size="12">${ylabel}</text>`;
+      return {svg,x,y};
+    }
+    function linePath(points,x,y){return points.map(([px,py],i)=>(i?'L':'M')+x(px).toFixed(2)+','+y(py).toFixed(2)).join(' ')}
+
+$('preview-toggle').addEventListener('click',()=>{const on=document.body.classList.toggle('phone-preview');$('preview-toggle').setAttribute('aria-pressed',String(on));$('preview-toggle').textContent=on?'Full width':'390 px preview';});
+// 01. A closed circuit: integrate current decay only while the experiment runs.
+const loop={t:0,normal:0,sample:0,angle:0,started:false,paused:reduced.matches,inView:true,history:[],last:0,raf:0};
+function loopCold(){return Number($('loop-temperature').value)<90;}
+function drawLoop(){
+  const cold=loopCold(),temp=$('loop-temperature').value;
+  $('loop-temperature-value').textContent=temp+' K · Tc = 90 K';
+  $('loop-temperature').setAttribute('aria-valuetext',temp+' kelvin; '+(cold?'below':'at or above')+' the transition');
+  $('loop-state').textContent=cold?'Sample: zero resistance':'Sample: resistive';
+  $('loop-normal').textContent=Math.round(loop.normal*100)+'%';$('loop-sample').textContent=Math.round(loop.sample*100)+'%';
+  $('loop-time').textContent=loop.started?loop.t.toFixed(1)+' demonstration seconds':'Ready for a pulse';
+  $('loop-pause').disabled=!loop.started||loop.t>=12;
+  $('loop-pause').textContent=loop.paused?'Resume time':'Pause time';
+  $('loop-pause').setAttribute('aria-pressed',String(loop.paused));
+  $('loop-step').disabled=!loop.started||loop.t>=12;
+  let svg='<title>Current in two closed circuits</title>';
+  for(const [cx,I,color,name]of [[125,loop.normal,'#588675','Resistive reference'],[355,loop.sample,'#853e58','Switchable sample']]){
+    svg+=`<circle cx="${cx}" cy="131" r="69" fill="none" stroke="#d2dcd5" stroke-width="18"/><circle cx="${cx}" cy="131" r="69" fill="none" stroke="${color}" stroke-width="13" opacity="${I*.8}"/><text x="${cx}" y="128" text-anchor="middle" font-size="14" fill="#607074">Current</text><text x="${cx}" y="153" text-anchor="middle" font-size="24" fill="${color}">${Math.round(I*100)}%</text><text x="${cx}" y="237" text-anchor="middle" font-size="14" fill="#607074">${name}</text>`;
+    if(I>.006)for(let n=0;n<3;n++){
+      const a=loop.angle+n*2*Math.PI/3,xx=cx+69*Math.cos(a),yy=131+69*Math.sin(a);
+      svg+=`<g transform="translate(${xx} ${yy}) rotate(${a*180/Math.PI+90})" opacity="${.25+.75*I}"><path d="M-9 -6L9 0L-9 6Z" fill="${color}" stroke="#fffdf8" stroke-width="1"/></g>`;
+    }
+  }
+  $('loop-art').innerHTML=svg;
+  const a=axis({xmin:0,xmax:12,ymax:1.1,xticks:[0,3,6,9,12],xlabel:'Demonstration time (seconds)',ylabel:'Current / initial current'});
+  let chart='<title>Relative circulating current after disconnecting the source</title>'+a.svg;
+  for(const [key,color]of [['normal','#588675'],['sample','#853e58']]){
+    const points=loop.history.map(p=>[p.t,p[key]]);
+    if(points.length)chart+=`<path d="${linePath(points,a.x,a.y)}" fill="none" stroke="${color}" stroke-width="3"/><circle cx="${a.x(loop.t)}" cy="${a.y(loop[key])}" r="4" fill="${color}"/>`;
+  }
+  $('loop-chart').innerHTML=chart;
+}
+function advanceLoop(dt){
+  if(!loop.started||loop.t>=12)return;
+  const step=Math.min(dt,12-loop.t);
+  loop.normal*=Math.exp(-step/2.5);
+  if(!loopCold())loop.sample*=Math.exp(-step/2.5);
+  loop.t+=step;loop.angle+=step*2;
+  loop.history.push({t:loop.t,normal:loop.normal,sample:loop.sample});
+  if(loop.history.length>800)loop.history.splice(1,1);
+  if(loop.t>=12){loop.t=12;loop.paused=true;$('loop-insight').textContent=loopCold()?'The animation has reached 12 demonstration seconds. In this ideal model, the remaining superconducting current would continue unchanged. Warm it and start again to compare.':'Both currents decay when both loops are resistive. Cool the sample, then start a new pulse to compare.';}
+  drawLoop();
+}
+function wakeLoop(){if(!loop.raf&&!document.hidden&&loop.inView&&loop.started&&!loop.paused&&loop.t<12)loop.raf=requestAnimationFrame(tickLoop);}
+function tickLoop(now){
+  loop.raf=0;
+  if(document.hidden||!loop.inView||loop.paused){loop.last=0;return;}
+  if(!loop.last)loop.last=now;
+  if(now-loop.last>=32){advanceLoop(Math.min((now-loop.last)/1000,.12));loop.last=now;}
+  wakeLoop();
+}
+$('loop-pulse').addEventListener('click',()=>{
+  loop.t=0;loop.normal=1;loop.sample=1;loop.angle=0;loop.started=true;loop.paused=reduced.matches;loop.last=0;loop.history=[{t:0,normal:1,sample:1}];
+  $('loop-insight').textContent=loopCold()?'Both currents start equally. The reference loses current, while the ideal superconducting loop keeps its current. Try warming the sample while time runs.':'Both loops are resistive, so both currents decay. Cool the sample during the run: the remaining sample current will stop decaying, but lost current will not return.';
+  drawLoop();wakeLoop();
+});
+$('loop-pause').addEventListener('click',()=>{loop.paused=!loop.paused;loop.last=0;drawLoop();wakeLoop();});
+$('loop-step').addEventListener('click',()=>{loop.paused=true;loop.last=0;for(let n=0;n<10;n++)advanceLoop(.1);drawLoop();});
+$('loop-reset').addEventListener('click',()=>{Object.assign(loop,{t:0,normal:0,sample:0,angle:0,started:false,last:0,paused:reduced.matches,history:[]});$('loop-insight').textContent='Ready again. Set a temperature, then start both currents.';drawLoop();});
+$('loop-temperature').addEventListener('input',()=>{
+  $('loop-insight').textContent=loopCold()?'Below 90 K: resistance is zero in this model. Any remaining current can persist; cooling does not create a current.':'At or above 90 K: the sample is resistive. Its current now decays while time runs.';
+  drawLoop();
+});
+if('IntersectionObserver' in window)new IntersectionObserver(entries=>{loop.inView=entries[0].isIntersecting;loop.last=0;wakeLoop();},{rootMargin:'60px'}).observe($('current'));
+document.addEventListener('visibilitychange',()=>{loop.last=0;wakeLoop();});
+reduced.addEventListener('change',()=>{if(reduced.matches){loop.paused=true;drawLoop();}});
+
+// 02. Streamlines of an ideal diamagnetic cylinder, not hand-drawn levitation.
+let magneticCold=false;
+function fieldY(x,level,radius){
+  let lo=Math.max(level,Math.sqrt(Math.max(0,radius*radius-x*x))),hi=level+2*radius;
+  for(let n=0;n<32;n++){
+    const mid=(lo+hi)/2,flux=mid*(1-radius*radius/(x*x+mid*mid));
+    if(flux>level)hi=mid;else lo=mid;
+  }
+  return (lo+hi)/2;
+}
+function drawField(){
+  const strength=Number($('field-strength').value),count=strength===0?0:Math.max(2,Math.round(strength/8));
+  let svg='<title>'+(magneticCold?'Magnetic field expelled from the sample interior':'Magnetic field passes through the normal sample')+'</title><defs><marker id="field-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 1L9 5L0 9" fill="none" stroke="#b4d7d6" stroke-width="1.5"/></marker></defs>';
+  svg+=`<circle cx="240" cy="145" r="60" fill="${magneticCold?'#8d5073':'#627d85'}" fill-opacity=".4" stroke="${magneticCold?'#e0b5cb':'#a5c2c7'}" stroke-width="2"/>`;
+  for(let n=0;n<count;n++)for(const sign of [-1,1]){
+    const level=9+(n+.5)/count*109,pts=[];
+    for(let i=0;i<=120;i++){
+      const x=-220+i*440/120,y=sign*(magneticCold?fieldY(x,level,60):level);
+      pts.push([240+x,145-y]);
+    }
+    svg+=`<path d="${pts.map(([x,y],i)=>(i?'L':'M')+x.toFixed(2)+','+y.toFixed(2)).join(' ')}" fill="none" stroke="#b4d7d6" stroke-width="1.5" opacity=".78" marker-end="url(#field-arrow)"/>`;
+  }
+  if(magneticCold)svg+='<text x="240" y="151" text-anchor="middle" fill="#ffe5f2" font-size="16">B ≈ 0 inside</text>';
+  if(!count)svg+='<text x="240" y="28" text-anchor="middle" fill="#b4d7d6" font-size="14">Applied field is off</text>';
+  svg+='<text x="240" y="282" text-anchor="middle" fill="#b4ced3" font-size="13">Field lines, not particle paths</text>';
+  $('field-art').innerHTML=svg;
+  $('field-strength-value').textContent=strength+'%';
+  $('field-state').textContent=magneticCold?'Meissner state':'Normal state';
+  $('field-state').classList.toggle('normal',!magneticCold);
+  $('field-headline').textContent=magneticCold?'The field bends around.':'The field passes through.';
+  $('field-description').textContent=magneticCold?'Screening currents near the surface expel the weak field from the bulk. The field outside is redirected around the sample.':'For this normal, non-magnetic sample, the applied field penetrates its interior. Now cool it while the field is still on.';
+  $('field-insight').textContent=!count?'With the applied field off there are no field lines to see. Turn it back on and compare the two states.':magneticCold?'The field was already present before cooling. Its expulsion illustrates the Meissner effect, beyond simply having zero resistance.':'Cool the sample. This is a different property from simply keeping an existing current flowing.';
+}
+$$('[data-magnetic]').forEach(button=>button.addEventListener('click',()=>{magneticCold=button.dataset.magnetic==='cold';$$('[data-magnetic]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));drawField();}));
+$('field-strength').addEventListener('input',drawField);
+
+// 03. A labelled, deliberately type-I boundary; no cuprate phase prediction.
+function drawPhase(){
+  const t=Number($('phase-temperature').value)/100,h=Number($('phase-field').value)/100,hc=Math.max(0,1-t*t),sc=t<1&&h<hc;
+  const x=v=>56+v/1.2*440,y=v=>284-v/1.2*244;
+  const boundary=Array.from({length:101},(_,i)=>[i/100,1-(i/100)**2]);
+  let svg='<title>Illustrative type-I temperature–field phase map</title><rect x="56" y="40" width="440" height="244" fill="#eef1ed" rx="6"/>';
+  svg+=`<path d="M56 284L${x(0)} ${y(1)} ${boundary.map(([xx,yy])=>'L'+x(xx).toFixed(2)+' '+y(yy).toFixed(2)).join(' ')}Z" fill="#e8c4d4"/><path d="${linePath(boundary,x,y)}" fill="none" stroke="#853e58" stroke-width="3"/><path d="M56 40V284H496" fill="none" stroke="#839a9a"/>`;
+  for(const v of [0,.4,.8,1.2])svg+=`<text x="${x(v)}" y="306" fill="#607074" font-size="13" text-anchor="middle">${v}</text><text x="44" y="${y(v)+4}" fill="#607074" font-size="13" text-anchor="end">${v}</text>`;
+  svg+='<text x="276" y="336" fill="#607074" font-size="14" text-anchor="middle">Temperature T / Tc(0)</text><text x="16" y="164" fill="#607074" font-size="13" text-anchor="middle" transform="rotate(-90 16 164)">Applied field H / Hc(0)</text><text x="140" y="228" fill="#853e58" font-size="15">Superconducting</text><text x="345" y="99" fill="#607074" font-size="15">Normal</text>';
+  svg+=`<path d="M56 ${y(h)}H${x(t)}V284" fill="none" stroke="#8d6f75" stroke-dasharray="4 5"/><circle cx="${x(t)}" cy="${y(h)}" r="18" fill="#853e58" opacity=".12"/><circle cx="${x(t)}" cy="${y(h)}" r="8" fill="${sc?'#853e58':'#476e70'}" stroke="#fffdf8" stroke-width="3"/>`;
+  $('phase-map').innerHTML=svg;
+  $('phase-temperature-value').textContent=t.toFixed(2);$('phase-field-value').textContent=h.toFixed(2);
+  $('phase-state').textContent=sc?'Superconducting':'Normal';$('phase-state').classList.toggle('normal',!sc);
+  $('phase-insight').textContent=t>=1?'Too warm: the sample is normal, even at zero applied field. Cool below T / Tc(0) = 1 to find the superconducting region.':sc?'Inside the boundary. Keep this temperature fixed and raise the field past '+hc.toFixed(2)+' to leave the superconducting region.':'The sample is cold, but the field is at or above this model’s critical value ('+hc.toFixed(2)+'). Reduce the field or cool further.';
+}
+['phase-temperature','phase-field'].forEach(id=>$(id).addEventListener('input',drawPhase));
+for(const [id,t,h]of [['phase-cold',35,25],['phase-warm',110,25],['phase-strong',35,110]])$(id).addEventListener('click',()=>{$('phase-temperature').value=t;$('phase-field').value=h;drawPhase();});
+let phaseDragging=false;
+function movePhase(event){const r=$('phase-map').getBoundingClientRect(),x=(event.clientX-r.left)/r.width*520,y=(event.clientY-r.top)/r.height*350;$('phase-temperature').value=Math.round(clamp((x-56)/440*120,0,120));$('phase-field').value=Math.round(clamp((284-y)/244*120,0,120));drawPhase();}
+$('phase-map').addEventListener('pointerdown',event=>{if(event.button!==0)return;phaseDragging=true;$('phase-map').setPointerCapture(event.pointerId);movePhase(event);});
+$('phase-map').addEventListener('pointermove',event=>{if(phaseDragging)movePhase(event);});
+$('phase-map').addEventListener('pointerup',()=>{phaseDragging=false;});
+$('phase-map').addEventListener('pointercancel',()=>{phaseDragging=false;});
+$('phase-map').addEventListener('lostpointercapture',()=>{phaseDragging=false;});
+drawLoop();drawField();drawPhase();
+    const fit={round:0,targets:[{elastic:90,charge:65,phonon:70},{elastic:110,charge:45,phonon:95},{elastic:70,charge:90,phonon:55}]};
+    const fitColors={elastic:'#a6a8a5',charge:'#ba8834',phonon:'#bd719c'};
+    const fitSamples=Array.from({length:181},(_,i)=>-30+i*140/180);
+    const fitComponents=e=>({elastic:gaussian(e,0,10,1.8),charge:gaussian(e,22,13,.62),phonon:gaussian(e,52,9,.9)});
+    const fitIntensity=(e,gains)=>Object.entries(fitComponents(e)).reduce((sum,[key,v])=>sum+v*gains[key]/100,.04);
+    function drawFit(){
+      const target=fit.targets[fit.round%fit.targets.length],gains=Object.fromEntries($$('[data-fit]').map(i=>[i.dataset.fit,Number(i.value)])),a=axis({xmin:-30,xmax:110,ymax:2.45,xticks:[0,25,50,75,100]});let svg=a.svg;
+      for(const [key,color]of Object.entries(fitColors)){const pts=fitSamples.map(e=>[e,fitComponents(e)[key]*gains[key]/100]);svg+=`<path d="${linePath(pts,a.x,a.y)} L500 222H48Z" fill="${color}" fill-opacity=".23"/><path d="${linePath(pts,a.x,a.y)}" stroke="${color}" fill="none" stroke-width="1.6"/>`;}
+      svg+=`<path d="${linePath(fitSamples.map(e=>[e,fitIntensity(e,gains)]),a.x,a.y)}" fill="none" stroke="#355d81" stroke-width="3"/>`;
+      let error=0,norm=0;for(let i=0;i<48;i++){const e=-27+i*134/47,targetY=fitIntensity(e,target)*(1+.012*Math.sin(i*2.4)),actual=fitIntensity(e,gains);error+=(actual-targetY)**2;norm+=targetY**2;svg+=`<circle cx="${a.x(e)}" cy="${a.y(targetY)}" r="2.7" fill="#7c8a91" stroke="#fffdf9" stroke-width=".7"/>`;}
+      const relative=Math.sqrt(error/norm),won=relative<.03;
+      $('fit-spectrum').innerHTML='<title>Match the total curve to the synthetic data dots</title>'+svg;
+      $$('[data-fit]').forEach(i=>{$(i.id+'-value').textContent=i.value+'%';i.setAttribute('aria-valuetext',i.value+' percent of component scale')});
+      $('fit-error').textContent=(100*relative).toFixed(1)+'%';$('fit-progress').style.width=(100*clamp(1-relative/.35,0,1))+'%';$('fit-result').textContent=won?'Close match ✓':'Keep exploring';$('fit-result').classList.toggle('success',won);
+      $('fit-insight').textContent=won?'You found a close match. The weak charge component fills in the intensity between the elastic tail and the phonon. This is the sort of overlap researchers work to disentangle.':gains.charge<10?'Start with the gold slider. Can a weak charge signal explain the missing intensity between the large elastic peak and the phonon?':'Watch the dots near 20 meV. Adjust the elastic tail and the charge signal together, then check the phonon peak near 50 meV.';
+    }
+    $$('[data-fit]').forEach(i=>i.addEventListener('input',drawFit));
+    $('fit-new').addEventListener('click',()=>{fit.round++;$('fit-elastic').value=90;$('fit-charge').value=0;$('fit-phonon').value=85;drawFit()});
+    $('fit-reveal').addEventListener('click',()=>{const target=fit.targets[fit.round%fit.targets.length];$$('[data-fit]').forEach(i=>i.value=target[i.dataset.fit]);drawFit();$('fit-insight').textContent=`This mystery used elastic ${target.elastic}%, charge ${target.charge}% and phonon ${target.phonon}%. Small offsets in the dots imitate measurement noise. Try a new mystery without revealing the mix.`});
+
+
+drawFit();
+</script></body></html>
