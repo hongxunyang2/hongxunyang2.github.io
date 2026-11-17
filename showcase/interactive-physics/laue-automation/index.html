@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#faf9f5" name="theme-color"/>
+  <title>
+   Laue automation — build a smarter crystal lab | Interactive physics · Xunyang Hong
+  </title>
+  <meta content="Rotate a crystal and watch its Laue pattern change. Explore how I bring together robotics, cameras and software for crystal alignment." name="description"/>
+  <meta content="Laue automation — build a smarter crystal lab · Interactive physics · Xunyang Hong" property="og:title"/>
+  <meta content="Rotate a crystal and watch its Laue pattern change. Explore how I bring together robotics, cameras and software for crystal alignment." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="assets/hero.webp" property="og:image"/>
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="styles.css" rel="stylesheet"/>
+
+  <script defer="" src="script.js?v=20261116-mobile">
+  </script>
+  <link href="../mobile.css" rel="stylesheet"/>
+  <link href="laue-demo.css?v=2" rel="stylesheet"/>
+  <script defer src="laue-model.js?v=1"></script>
+  <script defer src="laue-demo.js?v=6"></script>
+  <link href="../entrance.css?v=20261117" rel="stylesheet"/>
+ </head>
+ <body data-project="laue">
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <header class="site-header">
+   <div class="wrap header-inner">
+    <a aria-label="Interactive physics overview" class="brand" href="../index.html">
+     <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 40 40">
+      <ellipse cx="20" cy="20" rx="18" ry="7" transform="rotate(-35 20 20)">
+      </ellipse>
+      <ellipse cx="20" cy="20" rx="18" ry="7" transform="rotate(35 20 20)">
+      </ellipse>
+      <circle cx="20" cy="20" fill="currentColor" r="3">
+      </circle>
+     </svg>
+     <span>
+      <strong>
+       Quantum Matter Research
+      </strong>
+      <small>
+       Xunyang Hong · University of Zurich
+      </small>
+     </span>
+    </a>
+   </div>
+  </header>
+  <main class="wrap" id="main">
+   <section class="demo-opening laue-opening" id="laue-playground" aria-labelledby="opening-title">
+<div class="opening-heading"><p class="eyebrow">Laue automation · Try it yourself</p><h1 id="opening-title">Turn a crystal.<br/><span>Move a whole pattern.</span></h1></div>
+    <div class="laue-lab" id="laue-lab">
+     <div class="laue-views">
+      <figure class="laue-view"><figcaption>Your crystal <span>Drag ↔ ↕</span></figcaption>
+       <div class="crystal-drag" id="laue-drag"><svg id="laue-crystal" viewBox="0 0 360 220" role="img" aria-labelledby="laue-crystal-title laue-crystal-desc"><defs><marker id="laue-beam-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#bb995c"/></marker></defs><title id="laue-crystal-title">Rotatable cubic crystal lattice</title><desc id="laue-crystal-desc">Drag to rotate the crystal, or use the three rotation sliders. The X-ray beam stays fixed.</desc><path d="M51.00,84.50L130.55,102.08" stroke="#bb995c" stroke-width="4" marker-end="url(#laue-beam-arrow)"/><path d="M231.60,124.40L309.00,141.50" stroke="#bb995c" stroke-width="2" stroke-dasharray="5 5" opacity=".45"/><text x="20" y="63" fill="#866833" font-size="12">Fixed X-rays</text><polygon points="162.00,131.00 112.00,166.00 112.00,76.00 162.00,41.00" fill="#c9b4dc" fill-opacity=".07" stroke="#9c83ad" stroke-opacity=".4" stroke-width="1.2"/><polygon points="248.00,150.00 198.00,185.00 198.00,95.00 248.00,60.00" fill="#c9b4dc" fill-opacity=".07" stroke="#9c83ad" stroke-opacity=".4" stroke-width="1.2"/><polygon points="162.00,131.00 112.00,166.00 198.00,185.00 248.00,150.00" fill="#c9b4dc" fill-opacity=".07" stroke="#9c83ad" stroke-opacity=".4" stroke-width="1.2"/><polygon points="162.00,41.00 112.00,76.00 198.00,95.00 248.00,60.00" fill="#c9b4dc" fill-opacity=".07" stroke="#9c83ad" stroke-opacity=".4" stroke-width="1.2"/><polygon points="162.00,131.00 162.00,41.00 248.00,60.00 248.00,150.00" fill="#c9b4dc" fill-opacity=".07" stroke="#9c83ad" stroke-opacity=".4" stroke-width="1.2"/><polygon points="112.00,166.00 112.00,76.00 198.00,95.00 198.00,185.00" fill="#c9b4dc" fill-opacity=".07" stroke="#9c83ad" stroke-opacity=".4" stroke-width="1.2"/><path d="M167.04,125.96L198.00,132.80" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M167.04,125.96L167.04,93.56" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M167.04,125.96L149.04,138.56" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M149.04,138.56L180.00,145.40" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M149.04,138.56L149.04,106.16" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M149.04,138.56L131.04,151.16" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M131.04,151.16L162.00,158.00" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M131.04,151.16L131.04,118.76" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M167.04,93.56L198.00,100.40" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M167.04,93.56L167.04,61.16" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M167.04,93.56L149.04,106.16" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M149.04,106.16L180.00,113.00" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M149.04,106.16L149.04,73.76" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M149.04,106.16L131.04,118.76" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M131.04,118.76L162.00,125.60" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M131.04,118.76L131.04,86.36" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M167.04,61.16L198.00,68.00" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M167.04,61.16L149.04,73.76" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M149.04,73.76L180.00,80.60" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M149.04,73.76L131.04,86.36" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M131.04,86.36L162.00,93.20" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M198.00,132.80L228.96,139.64" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M198.00,132.80L198.00,100.40" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M198.00,132.80L180.00,145.40" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M180.00,145.40L210.96,152.24" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M180.00,145.40L180.00,113.00" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M180.00,145.40L162.00,158.00" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M162.00,158.00L192.96,164.84" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M162.00,158.00L162.00,125.60" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M198.00,100.40L228.96,107.24" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M198.00,100.40L198.00,68.00" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M198.00,100.40L180.00,113.00" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M180.00,113.00L210.96,119.84" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M180.00,113.00L180.00,80.60" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M180.00,113.00L162.00,125.60" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M162.00,125.60L192.96,132.44" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M162.00,125.60L162.00,93.20" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M198.00,68.00L228.96,74.84" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M198.00,68.00L180.00,80.60" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M180.00,80.60L210.96,87.44" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M180.00,80.60L162.00,93.20" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M162.00,93.20L192.96,100.04" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M228.96,139.64L228.96,107.24" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M228.96,139.64L210.96,152.24" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M210.96,152.24L210.96,119.84" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M210.96,152.24L192.96,164.84" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M192.96,164.84L192.96,132.44" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M228.96,107.24L228.96,74.84" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M228.96,107.24L210.96,119.84" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M210.96,119.84L210.96,87.44" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M210.96,119.84L192.96,132.44" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M192.96,132.44L192.96,100.04" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M228.96,74.84L210.96,87.44" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><path d="M210.96,87.44L192.96,100.04" stroke="#a6b5a6" stroke-opacity=".6" stroke-width="1.5"/><circle cx="167.04" cy="125.96" r="4.06" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="167.04" cy="93.56" r="4.1499999999999995" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="198" cy="132.8" r="4.2219999999999995" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="167.04" cy="61.160000000000004" r="4.239999999999999" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="198" cy="100.4" r="4.311999999999999" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="149.04" cy="138.56" r="4.348" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="228.96" cy="139.64000000000001" r="4.3839999999999995" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="198" cy="68" r="4.401999999999999" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="149.04" cy="106.16" r="4.438" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="228.96" cy="107.24" r="4.473999999999999" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="180" cy="145.4" r="4.51" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="149.04" cy="73.75999999999999" r="4.528" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="228.96" cy="74.84" r="4.564" fill="#b6a3c4" stroke="#fffdf8" stroke-width="1"/><circle cx="180" cy="113" r="4.6" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="131.04" cy="151.16" r="4.635999999999999" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="210.96" cy="152.24" r="4.672" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="180" cy="80.6" r="4.6899999999999995" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="131.04" cy="118.76" r="4.726" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="210.96" cy="119.84" r="4.762" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="162" cy="158" r="4.798" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="131.04" cy="86.36" r="4.816" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="210.96" cy="87.44" r="4.851999999999999" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="162" cy="125.6" r="4.888" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="192.96" cy="164.84" r="4.96" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="162" cy="93.2" r="4.978" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="192.96" cy="132.44" r="5.05" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><circle cx="192.96" cy="100.04" r="5.14" fill="#8c6ca4" stroke="#fffdf8" stroke-width="1"/><path d="M180.00,113.00L248.80,128.20" stroke="#52836b" stroke-width="1.5"/><text x="252.8" y="125.19999999999999" font-size="13" fill="#52836b" font-weight="650">a</text><path d="M180.00,113.00L180.00,41.00" stroke="#9b6b9f" stroke-width="1.5"/><text x="184" y="37.999999999999986" font-size="13" fill="#9b6b9f" font-weight="650">b</text><path d="M180.00,113.00L140.00,141.00" stroke="#ac7a4c" stroke-width="1.5"/><text x="144" y="138" font-size="13" fill="#ac7a4c" font-weight="650">c</text><text x="180" y="208" text-anchor="middle" font-size="12" fill="#59696b">Drag the lattice ↔ ↕</text></svg></div>
+      </figure>
+      <figure class="laue-view laue-detector"><figcaption>X-ray pattern <span id="laue-spot-count">44 spots</span></figcaption>
+       <svg id="laue-pattern" viewBox="0 0 360 360" role="img" aria-labelledby="laue-pattern-title laue-pattern-desc"><title id="laue-pattern-title">Calculated back-reflection Laue pattern</title><desc id="laue-pattern-desc">44 diffraction spots for the current cubic crystal orientation.</desc><rect x="18" y="18" width="324" height="324" rx="12" fill="#102e2e" stroke="#49645d"/><path d="M90 26V334 M26 90H334" stroke="#bfd6cc" stroke-opacity=".12" stroke-width="1"/><path d="M180 26V334 M26 180H334" stroke="#bfd6cc" stroke-opacity=".12" stroke-width="1"/><path d="M270 26V334 M26 270H334" stroke="#bfd6cc" stroke-opacity=".12" stroke-width="1"/><circle cx="62.35294117647054" cy="297.64705882352945" r="3.138679245283019" fill="#faedca" opacity="0.6386792452830189"/><circle cx="79.99999999999997" cy="230" r="3.15" fill="#faedca" opacity="0.65"/><circle cx="84.76190476190474" cy="180" r="3.154081632653061" fill="#faedca" opacity="0.6540816326530612"/><circle cx="79.99999999999997" cy="130" r="3.15" fill="#faedca" opacity="0.65"/><circle cx="62.35294117647054" cy="62.35294117647054" r="3.138679245283019" fill="#faedca" opacity="0.6386792452830189"/><circle cx="130" cy="280" r="3.15" fill="#faedca" opacity="0.65"/><circle cx="136.52173913043478" cy="223.47826086956522" r="3.1627659574468083" fill="#faedca" opacity="0.6627659574468086"/><circle cx="138.33333333333331" cy="180" r="3.1673913043478263" fill="#faedca" opacity="0.6673913043478261"/><circle cx="136.52173913043478" cy="136.52173913043478" r="3.1627659574468083" fill="#faedca" opacity="0.6627659574468086"/><circle cx="130" cy="79.99999999999997" r="3.15" fill="#faedca" opacity="0.65"/><circle cx="180" cy="275.23809523809524" r="3.154081632653061" fill="#faedca" opacity="0.6540816326530612"/><circle cx="180" cy="221.66666666666669" r="3.1673913043478263" fill="#faedca" opacity="0.6673913043478261"/><circle cx="180" cy="138.33333333333331" r="3.1673913043478263" fill="#faedca" opacity="0.6673913043478261"/><circle cx="180" cy="84.76190476190474" r="3.154081632653061" fill="#faedca" opacity="0.6540816326530612"/><circle cx="230" cy="280" r="3.15" fill="#faedca" opacity="0.65"/><circle cx="223.47826086956522" cy="223.47826086956522" r="3.1627659574468083" fill="#faedca" opacity="0.6627659574468086"/><circle cx="221.66666666666669" cy="180" r="3.1673913043478263" fill="#faedca" opacity="0.6673913043478261"/><circle cx="223.47826086956522" cy="136.52173913043478" r="3.1627659574468083" fill="#faedca" opacity="0.6627659574468086"/><circle cx="230" cy="79.99999999999997" r="3.15" fill="#faedca" opacity="0.65"/><circle cx="297.64705882352945" cy="297.64705882352945" r="3.138679245283019" fill="#faedca" opacity="0.6386792452830189"/><circle cx="280" cy="230" r="3.15" fill="#faedca" opacity="0.65"/><circle cx="275.23809523809524" cy="180" r="3.154081632653061" fill="#faedca" opacity="0.6540816326530612"/><circle cx="280" cy="130" r="3.15" fill="#faedca" opacity="0.65"/><circle cx="297.64705882352945" cy="62.35294117647054" r="3.138679245283019" fill="#faedca" opacity="0.6386792452830189"/><circle cx="46.666666666666686" cy="180" r="3.2" fill="#faedca" opacity="0.7"/><circle cx="122.85714285714285" cy="237.14285714285717" r="3.213157894736842" fill="#faedca" opacity="0.7131578947368421"/><circle cx="126.66666666666666" cy="180" r="3.2202702702702704" fill="#faedca" opacity="0.7202702702702702"/><circle cx="122.85714285714285" cy="122.85714285714285" r="3.213157894736842" fill="#faedca" opacity="0.7131578947368421"/><circle cx="180" cy="313.3333333333333" r="3.2" fill="#faedca" opacity="0.7"/><circle cx="180" cy="233.33333333333334" r="3.2202702702702704" fill="#faedca" opacity="0.7202702702702702"/><circle cx="180" cy="126.66666666666666" r="3.2202702702702704" fill="#faedca" opacity="0.7202702702702702"/><circle cx="180" cy="46.666666666666686" r="3.2" fill="#faedca" opacity="0.7"/><circle cx="237.14285714285717" cy="237.14285714285717" r="3.213157894736842" fill="#faedca" opacity="0.7131578947368421"/><circle cx="233.33333333333334" cy="180" r="3.2202702702702704" fill="#faedca" opacity="0.7202702702702702"/><circle cx="237.14285714285717" cy="122.85714285714285" r="3.213157894736842" fill="#faedca" opacity="0.7131578947368421"/><circle cx="313.3333333333333" cy="180" r="3.2" fill="#faedca" opacity="0.7"/><circle cx="94.28571428571426" cy="265.7142857142857" r="3.27258064516129" fill="#faedca" opacity="0.7725806451612903"/><circle cx="104.99999999999999" cy="180" r="3.283333333333333" fill="#faedca" opacity="0.7833333333333333"/><circle cx="94.28571428571426" cy="94.28571428571426" r="3.27258064516129" fill="#faedca" opacity="0.7725806451612903"/><circle cx="180" cy="255" r="3.283333333333333" fill="#faedca" opacity="0.7833333333333333"/><circle cx="180" cy="104.99999999999999" r="3.283333333333333" fill="#faedca" opacity="0.7833333333333333"/><circle cx="265.7142857142857" cy="265.7142857142857" r="3.27258064516129" fill="#faedca" opacity="0.7725806451612903"/><circle cx="255" cy="180" r="3.283333333333333" fill="#faedca" opacity="0.7833333333333333"/><circle cx="265.7142857142857" cy="94.28571428571426" r="3.27258064516129" fill="#faedca" opacity="0.7725806451612903"/><circle cx="180" cy="180" r="10.5" fill="#081f20" stroke="#527068" stroke-width="1"/><path d="M177 180h6m-3-3v6" stroke="#8daba0" stroke-width="1"/></svg>
+       <div class="laue-detector-key"><i aria-hidden="true"></i> Live spots <span id="laue-target-key" hidden><i class="target-key" aria-hidden="true"></i> Target rings</span></div>
+      </figure>
+     </div>
+     <div class="laue-controls js-only" role="group" aria-label="Rotate the crystal">
+      <div class="laue-control"><label for="laue-yaw">Left / right <output id="laue-yaw-value" for="laue-yaw">0°</output></label><input id="laue-yaw" data-laue-angle="yaw" type="range" min="-25" max="25" value="0" step="0.1"/></div>
+      <div class="laue-control"><label for="laue-pitch">Up / down <output id="laue-pitch-value" for="laue-pitch">0°</output></label><input id="laue-pitch" data-laue-angle="pitch" type="range" min="-25" max="25" value="0" step="0.1"/></div>
+      <div class="laue-control"><label for="laue-twist">Twist <output id="laue-twist-value" for="laue-twist">0°</output></label><input id="laue-twist" data-laue-angle="twist" type="range" min="-60" max="60" value="0" step="0.1"/></div>
+     </div>
+     <div class="laue-toolbar js-only">
+      <div class="laue-select"><label for="laue-preset">Starting orientation</label><select id="laue-preset"><option value="face">Face-on · [100]</option><option value="edge">Edge-on · [110]</option><option value="corner">Corner-on · [111]</option></select></div>
+      <button class="laue-action" type="button" id="laue-rotation" aria-pressed="false">Auto-rotate</button>
+      <button class="laue-action" type="button" id="laue-reset">Reset ↺</button>
+      <button class="laue-action primary" type="button" id="laue-challenge" aria-pressed="false">Try an alignment challenge</button>
+      <button class="laue-action" type="button" id="laue-new" hidden>New target</button>
+      <button class="laue-action" type="button" id="laue-hint" hidden>Hint</button>
+     </div>
+     <div class="laue-feedback"><p id="laue-feedback">Same crystal, different orientation. Watch the spots move and the pattern’s symmetry change as you tilt it.</p><span class="laue-score" id="laue-score" hidden></span></div>
+     <p id="laue-announcement" class="laue-sr-only" role="status" aria-live="polite"></p>
+     <noscript><p class="no-js-note">The picture shows a face-on cubic crystal. Enable JavaScript to rotate it and try the alignment challenge.</p></noscript>
+    </div>
+    <details class="laue-method"><summary>What does this simulation show?</summary><p>A simple cubic lattice, illuminated by a range of X-ray wavelengths (0.35–2.5 Å), with a flat detector on the source side of the crystal (back-reflection). Spot positions are calculated from diffraction geometry for each orientation. The central opening lets the incoming beam through. Overlapping harmonics share a spot.</p><p>This teaching model uses a 3.6 Å lattice spacing and a finite set of reflections. Spot brightness is illustrative; this is not a measured pattern or a prediction for a particular material. The challenge compares crystal orientations, allowing for equivalent orientations of a cube.</p></details>
+
+<a class="opening-next" href="#title">Explore the research <span aria-hidden="true">↓</span></a>
+   </section>
+   <section aria-labelledby="title" class="hero">
+    <picture class="hero-art">
+     <source media="(max-width:720px)" srcset="assets/hero-small.webp"/>
+     <img alt="Rococo-inspired oil painting of a robot arm holding a crystal beside a laboratory instrument." loading="lazy" decoding="async" height="1024" src="assets/hero.webp" width="1536"/>
+    </picture>
+    <div class="hero-copy">
+     <p class="eyebrow">
+      My research / Laue automation
+     </p>
+     <h2 id="title">
+      A tiny crystal.
+      <br/>
+      <span>
+       A smarter lab.
+      </span>
+     </h2>
+     <p class="hero-lead">
+      You’ve moved the crystal. Now see how I connect robots, cameras and software to make crystal alignment easier and build a smarter lab.
+     </p>
+    </div>
+   </section>
+   <div aria-label="Research at a glance" class="quick-facts">
+    <div>
+     <span>
+      What I explore
+     </span>
+     <strong>
+      Robots, cameras &amp; crystals
+     </strong>
+    </div>
+    <div>
+     <span>
+      The tools I use
+     </span>
+     <strong>
+      Python &amp; real lab hardware
+     </strong>
+    </div>
+    <div>
+     <span>
+      The goal
+     </span>
+     <strong>
+      A more efficient crystal lab
+     </strong>
+    </div>
+   </div>
+   <section aria-labelledby="discover-title" class="section" id="discover">
+    <div class="split">
+     <div class="copy">
+      <p class="eyebrow">
+       01 / The idea in a minute
+      </p>
+      <h2 id="discover-title">
+       Give a crystal lab
+       <br/>
+       a helping hand.
+      </h2>
+      <p>
+       Finding, positioning and measuring tiny crystals takes time.
+       <strong>
+        Automate the repetitive steps
+       </strong>
+       so researchers can focus on the physics.
+      </p>
+      <p>
+       Laue diffraction uses X-ray spots to reveal a crystal’s orientation. My work connects robots, cameras and software, laying the groundwork for a more automated workflow.
+      </p>
+     </div>
+     <figure class="illustration">
+      <img alt="A smiling robot arm holds a violet crystal beside a camera and a screen of diffraction spots." height="667" loading="lazy" sizes="(max-width:720px) calc(100vw - 32px), 48vw" src="assets/illustration.webp" srcset="assets/illustration-small.webp 768w, assets/illustration.webp 1000w" width="1000"/>
+      <figcaption>
+       The team: a robot to move, cameras to see, and a diffraction pattern to understand. Concept illustration.
+      </figcaption>
+     </figure>
+    </div>
+   </section>
+
+   <section aria-labelledby="starting-title" class="section" id="starting-point">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       02 / Already in the lab
+      </p>
+      <h2 id="starting-title">
+       A real setup to build on.
+      </h2>
+     </div>
+    </div>
+    <div class="split">
+     <figure class="lab-media">
+      <video aria-label="Existing robot and Laue interface startup demonstration, at three times recorded speed" controls="" height="720" playsinline="" poster="assets/startup.webp" preload="none" width="1280">
+       <source src="assets/startup-3x.mp4" type="video/mp4"/>
+       <a href="assets/startup-3x.mp4">
+        Download the robot demonstration
+       </a>
+      </video>
+      <figcaption>
+       The existing Laue interface in action: the robot picks up the sample holder and moves it towards the cameras. 9 seconds · 3× speed.
+      </figcaption>
+     </figure>
+     <div class="copy">
+      <p>
+       The current interface connects a Meca500 robot arm, two sample cameras and Laue image acquisition. The operator can position a sample, use the camera views and save a diffraction image.
+      </p>
+      <p>
+       <strong>
+        Where this is heading:
+       </strong>
+       automatic sample recognition, repeatable photo capture and better coordination between these steps. These are next steps beyond the current operator-driven controls.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="workflow-heading" class="section" id="workflow">
+    <div class="experiment">
+     <div>
+      <p class="eyebrow" id="workflow-heading">
+       Try the workflow
+      </p>
+      <p>
+       Follow the three main steps. These screenshots show the tools I bring together in the current lab interface.
+      </p>
+      <div aria-label="Choose a workflow step" class="button-group js-only" role="group">
+       <button aria-pressed="true" data-workflow="move" type="button">
+        1. Move
+       </button>
+       <button aria-pressed="false" data-workflow="find" type="button">
+        2. Find
+       </button>
+       <button aria-pressed="false" data-workflow="record" type="button">
+        3. Record
+       </button>
+      </div>
+      <div aria-atomic="true" aria-live="polite" class="step-description">
+       <h4 id="workflow-title">
+        01 / Move the sample
+       </h4>
+       <p id="workflow-text">
+        The robot brings the sample holder to a known position. A useful next step is to make a whole sequence repeatable.
+       </p>
+      </div>
+     </div>
+     <figure class="demo-stage">
+      <a class="workflow-image-link" id="workflow-full-image" href="assets/startup.webp" target="_blank" rel="noopener" aria-label="Open the full lab screenshot in a new tab">
+      <img alt="Laue control interface beside the Meca500 robot view." height="720" id="workflow-image" loading="lazy" src="assets/startup.webp" width="1280"/>
+      </a>
+      <figcaption class="demo-caption" id="workflow-caption">
+       Existing setup: robot positioning and instrument controls.
+      </figcaption>
+     </figure>
+    </div>
+    <noscript>
+     <p class="no-js-note">
+      The workflow is: move the sample, find it in the two camera views, then record its diffraction pattern. The videos below show the last two steps.
+     </p>
+    </noscript>
+    <div class="media-grid" style="margin-top:24px">
+     <figure class="mini-media">
+      <video aria-label="Camera-guided sample alignment demonstration at three times recorded speed" controls="" height="720" playsinline="" poster="assets/camera-alignment.webp" preload="none" width="1280">
+       <source src="assets/camera-alignment-3x.mp4" type="video/mp4"/>
+       <a href="assets/camera-alignment-3x.mp4">
+        Download the alignment demo
+       </a>
+      </video>
+      <figcaption>
+       Two camera views help locate the sample. 27 seconds · 3× speed.
+      </figcaption>
+     </figure>
+     <figure class="mini-media">
+      <video aria-label="Laue diffraction image capture demonstration at three times recorded speed" controls="" height="720" playsinline="" poster="assets/image-acquisition.webp" preload="none" width="1280">
+       <source src="assets/image-acquisition-3x.mp4" type="video/mp4"/>
+       <a href="assets/image-acquisition-3x.mp4">
+        Download the acquisition demo
+       </a>
+      </video>
+      <figcaption>
+       Record and save the diffraction pattern. 14 seconds · 3× speed.
+      </figcaption>
+     </figure>
+    </div>
+   </section>
+   <div class="more-projects" style="margin-bottom:48px">
+    <a class="button" href="../index.html">
+     Explore more physics <span aria-hidden="true">→</span>
+    </a>
+   </div>
+  </main>
+  <div class="wrap">
+   <footer class="footer">
+    <div>
+     Laboratory for Quantum Matter Research
+     <br/>
+     Interactive physics · Xunyang Hong · UZH
+    </div>
+    <nav aria-label="More interactive physics" class="footer-links">
+     <a href="../index.html">
+      All experiments
+     </a>
+     <a href="../x-ray-scattering/index.html">
+      X-ray scattering ↗
+     </a>
+     <a href="../superconductors/index.html">
+      Superconductors ↗
+     </a>
+    </nav>
+   </footer>
+  </div>
+ </body>
+</html>

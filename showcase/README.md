@@ -18,6 +18,10 @@ These copies do not load code from the research pages or GitHub Pages. Update
 them here when changing the showcase demo; edits to the separate research demo
 do not automatically change this version.
 
-Links to the open-day website, art gallery, PyPI, publications, and course
+The `interactive-physics/` folder contains the complete interactive research
+tour, including its own styles, scripts, illustrations and lab videos. It can
+also be deployed independently.
+
+Links to the art gallery, PyPI, publications, and course
 materials intentionally open external destinations. They are navigation links,
 not dependencies needed to display or run the showcase.
